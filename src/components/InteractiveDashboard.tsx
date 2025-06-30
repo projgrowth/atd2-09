@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Home, Users, FileText, Activity, Clock, DollarSign, CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const InteractiveDashboard = () => {
-  const [currentView, setCurrentView] = useState("overview");
+type ViewKey = "overview" | "jobs" | "documents";
 
-  const views = {
+const InteractiveDashboard = () => {
+  const [currentView, setCurrentView] = useState<ViewKey>("overview");
+
+  const views: Record<ViewKey, { title: string; content: JSX.Element }> = {
     overview: {
       title: "Dashboard Overview",
       content: (
@@ -115,8 +117,16 @@ const InteractiveDashboard = () => {
     }
   };
 
-  const viewKeys = Object.keys(views) as Array<keyof typeof views>;
+  const viewKeys: ViewKey[] = ["overview", "jobs", "documents"];
   const currentIndex = viewKeys.indexOf(currentView);
+
+  const navigateToView = (direction: 'prev' | 'next') => {
+    if (direction === 'prev' && currentIndex > 0) {
+      setCurrentView(viewKeys[currentIndex - 1]);
+    } else if (direction === 'next' && currentIndex < viewKeys.length - 1) {
+      setCurrentView(viewKeys[currentIndex + 1]);
+    }
+  };
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 max-w-md mx-auto">
@@ -151,7 +161,7 @@ const InteractiveDashboard = () => {
         <Button
           variant="outline"
           size="sm"
-          onClick={() => setCurrentView(viewKeys[Math.max(0, currentIndex - 1)])}
+          onClick={() => navigateToView('prev')}
           disabled={currentIndex === 0}
           className="flex items-center space-x-1"
         >
@@ -174,7 +184,7 @@ const InteractiveDashboard = () => {
         <Button
           variant="outline"
           size="sm"
-          onClick={() => setCurrentView(viewKeys[Math.min(viewKeys.length - 1, currentIndex + 1)])}
+          onClick={() => navigateToView('next')}
           disabled={currentIndex === viewKeys.length - 1}
           className="flex items-center space-x-1"
         >
