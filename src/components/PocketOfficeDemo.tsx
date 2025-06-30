@@ -1,11 +1,15 @@
-
 import { useState } from "react";
-import { Smartphone, Camera, MessageSquare, Clock, CheckCircle, Upload, Send } from "lucide-react";
+import { Smartphone, Camera, MessageSquare, Clock, CheckCircle, Upload, Send, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TouchRipple } from "./TouchRipple";
+import { useSwipe } from "@/hooks/use-swipe";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 const PocketOfficeDemo = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isUpdating, setIsUpdating] = useState(false);
+  const isMobile = useIsMobile();
 
   const steps = [
     {
@@ -61,12 +65,14 @@ const PocketOfficeDemo = () => {
               </div>
             </div>
           </div>
-          <Button 
-            className="w-full"
-            onClick={() => setIsUpdating(!isUpdating)}
-          >
-            {isUpdating ? 'Status Updated!' : 'Mark as Complete'}
-          </Button>
+          <TouchRipple>
+            <Button 
+              className="w-full mobile-button-press"
+              onClick={() => setIsUpdating(!isUpdating)}
+            >
+              {isUpdating ? 'Status Updated!' : 'Mark as Complete'}
+            </Button>
+          </TouchRipple>
         </div>
       )
     },
@@ -84,10 +90,12 @@ const PocketOfficeDemo = () => {
                 <Camera className="h-6 w-6 text-gray-400" />
               </div>
             </div>
-            <Button variant="outline" className="w-full">
-              <Upload className="h-4 w-4 mr-2" />
-              Upload Photos
-            </Button>
+            <TouchRipple>
+              <Button variant="outline" className="w-full mobile-button-press">
+                <Upload className="h-4 w-4 mr-2" />
+                Upload Photos
+              </Button>
+            </TouchRipple>
           </div>
           <div className="bg-green-50 rounded-lg p-3 border border-green-200">
             <div className="text-sm text-green-700 font-medium">✓ Photos help build trust</div>
@@ -116,11 +124,13 @@ const PocketOfficeDemo = () => {
               <input 
                 type="text" 
                 placeholder="Type a message..."
-                className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm mobile-input"
               />
-              <Button size="sm">
-                <Send className="h-4 w-4" />
-              </Button>
+              <TouchRipple>
+                <Button size="sm" className="mobile-button-press">
+                  <Send className="h-4 w-4" />
+                </Button>
+              </TouchRipple>
             </div>
           </div>
         </div>
@@ -128,8 +138,21 @@ const PocketOfficeDemo = () => {
     }
   ];
 
+  const nextStep = () => {
+    setCurrentStep(Math.min(steps.length - 1, currentStep + 1));
+  };
+
+  const prevStep = () => {
+    setCurrentStep(Math.max(0, currentStep - 1));
+  };
+
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: nextStep,
+    onSwipeRight: prevStep,
+  });
+
   return (
-    <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-xl p-6 max-w-sm mx-auto">
+    <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-xl p-4 sm:p-6 max-w-sm mx-auto">
       <div className="flex items-center space-x-2 mb-6">
         <Smartphone className="h-6 w-6 text-purple-600" />
         <div>
@@ -141,46 +164,71 @@ const PocketOfficeDemo = () => {
         </div>
       </div>
 
-      <div className="mb-4">
-        <h3 className="font-semibold text-[hsl(var(--atd-text))] mb-1">
+      <div className="mb-4 flex items-center justify-between">
+        <h3 className="font-semibold text-[hsl(var(--atd-text))]">
           {steps[currentStep].title}
         </h3>
+        {isMobile && (
+          <div className="text-xs text-[hsl(var(--atd-text-muted))] flex items-center space-x-1">
+            <ChevronLeft className="h-3 w-3" />
+            <span>Swipe</span>
+            <ChevronRight className="h-3 w-3" />
+          </div>
+        )}
       </div>
 
-      <div className="min-h-[350px] mb-6">
-        {steps[currentStep].content}
+      <div 
+        className={cn(
+          "min-h-[350px] mb-6 transition-all duration-300",
+          "mobile-interactive"
+        )}
+        {...swipeHandlers}
+      >
+        <div className="animate-mobile-fade-in">
+          {steps[currentStep].content}
+        </div>
       </div>
 
       <div className="flex items-center justify-between">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
-          disabled={currentStep === 0}
-        >
-          Previous
-        </Button>
+        <TouchRipple>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={prevStep}
+            disabled={currentStep === 0}
+            className="mobile-button-press"
+          >
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            {isMobile ? "" : "Previous"}
+          </Button>
+        </TouchRipple>
         
         <div className="flex space-x-2">
           {steps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentStep(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentStep ? 'bg-purple-600' : 'bg-gray-300'
-              }`}
-            />
+            <TouchRipple key={index}>
+              <button
+                onClick={() => setCurrentStep(index)}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-200 mobile-interactive",
+                  index === currentStep ? 'bg-purple-600 scale-125' : 'bg-gray-300'
+                )}
+              />
+            </TouchRipple>
           ))}
         </div>
 
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setCurrentStep(Math.min(steps.length - 1, currentStep + 1))}
-          disabled={currentStep === steps.length - 1}
-        >
-          Next
-        </Button>
+        <TouchRipple>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={nextStep}
+            disabled={currentStep === steps.length - 1}
+            className="mobile-button-press"
+          >
+            {isMobile ? "" : "Next"}
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Button>
+        </TouchRipple>
       </div>
     </div>
   );

@@ -1,10 +1,14 @@
-
 import { useState } from "react";
 import { Home, Wrench, Users, Eye, Shield, FileText, Activity, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TouchRipple } from "./TouchRipple";
+import { useSwipe } from "@/hooks/use-swipe";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 const UserJourneyDemo = () => {
   const [selectedUserType, setSelectedUserType] = useState("homeowner");
+  const isMobile = useIsMobile();
 
   const userTypes = {
     homeowner: {
@@ -122,10 +126,28 @@ const UserJourneyDemo = () => {
     }
   };
 
+  const userTypeKeys = Object.keys(userTypes) as Array<keyof typeof userTypes>;
+  const currentIndex = userTypeKeys.indexOf(selectedUserType as keyof typeof userTypes);
+
+  const nextUserType = () => {
+    const nextIndex = (currentIndex + 1) % userTypeKeys.length;
+    setSelectedUserType(userTypeKeys[nextIndex]);
+  };
+
+  const prevUserType = () => {
+    const prevIndex = (currentIndex - 1 + userTypeKeys.length) % userTypeKeys.length;
+    setSelectedUserType(userTypeKeys[prevIndex]);
+  };
+
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: nextUserType,
+    onSwipeRight: prevUserType,
+  });
+
   const currentUser = userTypes[selectedUserType as keyof typeof userTypes];
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+    <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold text-[hsl(var(--atd-text))] mb-4">
           Tailored Access for Everyone
@@ -135,64 +157,91 @@ const UserJourneyDemo = () => {
         </p>
       </div>
 
-      {/* User Type Selector */}
-      <div className="flex justify-center space-x-4 mb-8">
+      {/* User Type Selector - Mobile Optimized */}
+      <div className={cn(
+        "flex justify-center mb-8",
+        isMobile ? "flex-col space-y-2" : "space-x-4"
+      )}>
         {Object.entries(userTypes).map(([key, user]) => {
           const IconComponent = user.icon;
           return (
-            <Button
-              key={key}
-              variant={selectedUserType === key ? "default" : "outline"}
-              onClick={() => setSelectedUserType(key)}
-              className="flex items-center space-x-2 px-6 py-3"
-            >
-              <IconComponent className="h-4 w-4" />
-              <span>{user.title.split(' ')[0]}</span>
-            </Button>
+            <TouchRipple key={key}>
+              <Button
+                variant={selectedUserType === key ? "default" : "outline"}
+                onClick={() => setSelectedUserType(key)}
+                className={cn(
+                  "flex items-center space-x-2 px-4 sm:px-6 py-3 mobile-button-press transition-all duration-200",
+                  isMobile && "w-full justify-start",
+                  selectedUserType === key && "animate-mobile-scale-in"
+                )}
+              >
+                <IconComponent className="h-4 w-4 flex-shrink-0" />
+                <span className="text-sm sm:text-base">{user.title.split(' ')[0]}</span>
+                {isMobile && selectedUserType === key && (
+                  <span className="ml-auto text-xs opacity-70">Active</span>
+                )}
+              </Button>
+            </TouchRipple>
           );
         })}
       </div>
 
-      {/* Selected User Journey */}
-      <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100">
-        <div className="flex items-center space-x-3 mb-6">
-          <div className={`p-3 rounded-lg bg-${currentUser.color}-100`}>
-            <currentUser.icon className={`h-6 w-6 text-${currentUser.color}-600`} />
+      {/* Selected User Journey - Enhanced with Swipe */}
+      <div 
+        className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-4 sm:p-6 border border-gray-100"
+        {...(isMobile ? swipeHandlers : {})}
+      >
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-3">
+            <div className={`p-3 rounded-lg bg-${currentUser.color}-100`}>
+              <currentUser.icon className={`h-6 w-6 text-${currentUser.color}-600`} />
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-[hsl(var(--atd-text))]">
+                {currentUser.title}
+              </h4>
+              <p className="text-sm text-[hsl(var(--atd-text-muted))]">
+                {selectedUserType === "homeowner" && "Complete control and management capabilities"}
+                {selectedUserType === "provider" && "Job-focused tools for efficient service delivery"}
+                {selectedUserType === "family" && "Stay informed with appropriate access levels"}
+              </p>
+            </div>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold text-[hsl(var(--atd-text))]">
-              {currentUser.title}
-            </h4>
-            <p className="text-sm text-[hsl(var(--atd-text-muted))]">
-              {selectedUserType === "homeowner" && "Complete control and management capabilities"}
-              {selectedUserType === "provider" && "Job-focused tools for efficient service delivery"}
-              {selectedUserType === "family" && "Stay informed with appropriate access levels"}
-            </p>
-          </div>
+          
+          {isMobile && (
+            <div className="text-xs text-[hsl(var(--atd-text-muted))] text-center">
+              <div>Swipe</div>
+              <div>← →</div>
+            </div>
+          )}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid gap-3 sm:gap-4 animate-mobile-fade-in">
           {currentUser.features.map((feature, index) => {
             const FeatureIcon = feature.icon;
             return (
               <div 
                 key={index}
-                className="bg-white rounded-lg p-4 border border-gray-100 hover:shadow-md transition-shadow"
+                className="bg-white rounded-lg p-3 sm:p-4 border border-gray-100 hover:shadow-md transition-shadow mobile-interactive"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0">
                     <FeatureIcon className="h-5 w-5 text-[hsl(var(--atd-primary))] mt-1" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h5 className="font-medium text-[hsl(var(--atd-text))]">
+                      <h5 className="font-medium text-[hsl(var(--atd-text))] text-sm sm:text-base truncate">
                         {feature.title}
                       </h5>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(feature.level)}`}>
+                      <span className={cn(
+                        "px-2 py-1 rounded-full text-xs font-medium flex-shrink-0 ml-2",
+                        getLevelColor(feature.level)
+                      )}>
                         {getLevelText(feature.level)}
                       </span>
                     </div>
-                    <p className="text-sm text-[hsl(var(--atd-text-muted))]">
+                    <p className="text-xs sm:text-sm text-[hsl(var(--atd-text-muted))]">
                       {feature.description}
                     </p>
                   </div>
@@ -203,18 +252,20 @@ const UserJourneyDemo = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-8 text-center">
+        <div className="mt-6 sm:mt-8 text-center">
           <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4 border border-blue-100">
             <p className="text-sm text-[hsl(var(--atd-text-muted))] mb-3">
               {selectedUserType === "homeowner" && "Ready to take control of your home management?"}
               {selectedUserType === "provider" && "Want to streamline your service delivery?"}
               {selectedUserType === "family" && "Perfect for staying connected with family properties"}
             </p>
-            <Button className="px-6">
-              {selectedUserType === "homeowner" && "Join Beta as Homeowner"}
-              {selectedUserType === "provider" && "Apply as Service Provider"}
-              {selectedUserType === "family" && "Learn More About Access"}
-            </Button>
+            <TouchRipple>
+              <Button className="px-4 sm:px-6 mobile-button-press">
+                {selectedUserType === "homeowner" && "Join Beta as Homeowner"}
+                {selectedUserType === "provider" && "Apply as Service Provider"}
+                {selectedUserType === "family" && "Learn More About Access"}
+              </Button>
+            </TouchRipple>
           </div>
         </div>
       </div>

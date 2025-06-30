@@ -1,11 +1,16 @@
 
 import { useState, useEffect } from "react";
-import { QrCode, Smartphone, CheckCircle, Wifi, Home } from "lucide-react";
+import { QrCode, Smartphone, CheckCircle, Wifi, Home, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TouchRipple } from "./TouchRipple";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 const QRScanDemo = () => {
   const [scanningState, setScanningState] = useState("idle"); // idle, scanning, success
   const [animationStep, setAnimationStep] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (scanningState === "scanning") {
@@ -32,10 +37,15 @@ const QRScanDemo = () => {
   const resetDemo = () => {
     setScanningState("idle");
     setAnimationStep(0);
+    setIsZoomed(false);
+  };
+
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl p-8 max-w-md mx-auto">
+    <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl p-6 sm:p-8 max-w-md mx-auto">
       <div className="text-center mb-8">
         <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
           <QrCode className="h-8 w-8 text-white" />
@@ -50,18 +60,28 @@ const QRScanDemo = () => {
 
       <div className="relative">
         {/* Phone Mockup */}
-        <div className="bg-black rounded-3xl p-3 mx-auto max-w-[200px]">
-          <div className="bg-white rounded-2xl p-4 aspect-[9/16]">
+        <div 
+          className={cn(
+            "bg-black rounded-3xl p-3 mx-auto max-w-[200px] transition-all duration-300 cursor-pointer",
+            isZoomed && "scale-110 z-10 relative",
+            isMobile && "active:scale-105"
+          )}
+          onClick={isMobile ? toggleZoom : undefined}
+        >
+          <div className="bg-white rounded-2xl p-4 aspect-[9/16] relative overflow-hidden">
             {scanningState === "idle" && (
-              <div className="h-full flex flex-col items-center justify-center text-center">
-                <Smartphone className="h-12 w-12 text-gray-400 mb-4" />
+              <div className="h-full flex flex-col items-center justify-center text-center animate-mobile-fade-in">
+                <Smartphone className="h-12 w-12 text-gray-400 mb-4 animate-bounce-subtle" />
                 <div className="text-sm font-medium text-gray-600 mb-2">Ready to Scan</div>
                 <div className="text-xs text-gray-500">Point camera at QR code</div>
+                {isMobile && (
+                  <div className="text-xs text-blue-500 mt-2">Tap to zoom</div>
+                )}
               </div>
             )}
 
             {scanningState === "scanning" && (
-              <div className="h-full flex flex-col items-center justify-center">
+              <div className="h-full flex flex-col items-center justify-center animate-mobile-fade-in">
                 {/* Scanning Animation */}
                 <div className="relative w-32 h-32 mb-4">
                   <div className="absolute inset-0 border-4 border-blue-200 rounded-lg"></div>
@@ -73,7 +93,7 @@ const QRScanDemo = () => {
                   ></div>
                   <QrCode className="absolute inset-4 w-24 h-24 text-gray-600" />
                   <div 
-                    className="absolute w-full h-1 bg-blue-500 opacity-80 transition-all duration-500"
+                    className="absolute w-full h-1 bg-blue-500 opacity-80 transition-all duration-500 animate-scan-line"
                     style={{ top: `${25 + (animationStep * 25)}%` }}
                   ></div>
                 </div>
@@ -82,9 +102,10 @@ const QRScanDemo = () => {
                   {[0, 1, 2].map((i) => (
                     <div
                       key={i}
-                      className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                        animationStep >= i ? 'bg-blue-500' : 'bg-gray-300'
-                      }`}
+                      className={cn(
+                        "w-2 h-2 rounded-full transition-all duration-300",
+                        animationStep >= i ? 'bg-blue-500 animate-pulse' : 'bg-gray-300'
+                      )}
                     />
                   ))}
                 </div>
@@ -92,8 +113,8 @@ const QRScanDemo = () => {
             )}
 
             {scanningState === "success" && (
-              <div className="h-full flex flex-col items-center justify-center text-center">
-                <div className="bg-green-100 rounded-full p-3 mb-4">
+              <div className="h-full flex flex-col items-center justify-center text-center animate-mobile-fade-in">
+                <div className="bg-green-100 rounded-full p-3 mb-4 animate-success-bounce">
                   <CheckCircle className="h-8 w-8 text-green-600" />
                 </div>
                 <div className="text-sm font-medium text-green-600 mb-2">Access Granted!</div>
@@ -114,17 +135,19 @@ const QRScanDemo = () => {
         </div>
 
         {/* Status Indicators */}
-        <div className="flex justify-center space-x-4 mt-6">
-          <div className={`flex items-center space-x-2 px-3 py-2 rounded-full text-sm ${
-            scanningState === "scanning" ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
-          }`}>
-            <Wifi className="h-4 w-4" />
+        <div className="flex justify-center space-x-2 sm:space-x-4 mt-6">
+          <div className={cn(
+            "flex items-center space-x-2 px-2 sm:px-3 py-2 rounded-full text-xs sm:text-sm transition-all duration-300",
+            scanningState === "scanning" ? 'bg-blue-100 text-blue-700 animate-pulse' : 'bg-gray-100 text-gray-500'
+          )}>
+            <Wifi className="h-3 w-3 sm:h-4 sm:w-4" />
             <span>Connected</span>
           </div>
-          <div className={`flex items-center space-x-2 px-3 py-2 rounded-full text-sm ${
+          <div className={cn(
+            "flex items-center space-x-2 px-2 sm:px-3 py-2 rounded-full text-xs sm:text-sm transition-all duration-300",
             scanningState === "success" ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
-          }`}>
-            <CheckCircle className="h-4 w-4" />
+          )}>
+            <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
             <span>Verified</span>
           </div>
         </div>
@@ -132,15 +155,20 @@ const QRScanDemo = () => {
 
       <div className="flex justify-center space-x-3 mt-8">
         {scanningState === "idle" && (
-          <Button onClick={startScan} className="px-6">
-            <QrCode className="h-4 w-4 mr-2" />
-            Start Scan Demo
-          </Button>
+          <TouchRipple>
+            <Button onClick={startScan} className="px-4 sm:px-6 mobile-button-press">
+              <QrCode className="h-4 w-4 mr-2" />
+              Start Scan Demo
+            </Button>
+          </TouchRipple>
         )}
         {(scanningState === "scanning" || scanningState === "success") && (
-          <Button variant="outline" onClick={resetDemo} className="px-6">
-            Reset Demo
-          </Button>
+          <TouchRipple>
+            <Button variant="outline" onClick={resetDemo} className="px-4 sm:px-6 mobile-button-press">
+              <RotateCcw className="h-4 w-4 mr-2" />
+              Reset Demo
+            </Button>
+          </TouchRipple>
         )}
       </div>
     </div>
