@@ -38,19 +38,19 @@ const InteractiveDemo = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-gray-50">
+    <section className="section-spacing section-bg-content section-separator">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
             Try ATD Yourself
           </h2>
-          <p className="text-xl text-[hsl(var(--atd-text-muted))] max-w-3xl mx-auto">
+          <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced">
             Get hands-on with interactive demos. See exactly how ATD works for homeowners, providers, and families.
           </p>
         </div>
 
         {/* Demo Selector - Enhanced for mobile */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
           {Object.entries(demos).map(([key, demo]) => {
             const IconComponent = demo.icon;
             return (
@@ -59,15 +59,16 @@ const InteractiveDemo = () => {
                 variant={activeDemo === key ? "default" : "outline"}
                 onClick={() => setActiveDemo(key)}
                 className={cn(
-                  "flex items-center space-x-2 px-3 sm:px-6 py-3 text-sm mobile-interactive",
-                  "min-h-[48px] transition-all duration-200",
-                  activeDemo === key && "animate-mobile-scale-in"
+                  "flex items-center space-x-3 px-4 sm:px-6 py-4 text-sm mobile-interactive",
+                  "min-h-[52px] transition-all duration-200 font-semibold",
+                  activeDemo === key && "animate-mobile-scale-in button-primary-enhanced",
+                  activeDemo !== key && "button-secondary-enhanced"
                 )}
               >
-                <IconComponent className="h-4 w-4 flex-shrink-0" />
+                <IconComponent className="h-5 w-5 flex-shrink-0" />
                 <div className="text-left">
-                  <div className="font-medium text-xs sm:text-sm">{demo.title}</div>
-                  <div className="text-xs opacity-70 hidden lg:block">{demo.description}</div>
+                  <div className="font-bold text-sm sm:text-base">{demo.title}</div>
+                  <div className="text-xs opacity-80 hidden lg:block font-medium">{demo.description}</div>
                 </div>
               </Button>
             );
@@ -81,18 +82,18 @@ const InteractiveDemo = () => {
 
         {/* Bottom CTA - Enhanced with new form */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="bg-gradient-to-r from-[hsl(var(--atd-primary))]/10 to-[hsl(var(--atd-accent))]/10 rounded-2xl p-6 sm:p-8 border border-blue-100">
-            <h3 className="text-2xl font-bold text-[hsl(var(--atd-text))] mb-4">
+          <div className="card-enhanced p-8 sm:p-10 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4 text-enhanced">
               Ready to Experience ATD?
             </h3>
-            <p className="text-[hsl(var(--atd-text-muted))] mb-6 max-w-2xl mx-auto">
+            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-muted-enhanced">
               These demos show just a glimpse of what's possible. Join our beta to get full access and help shape the future of home management.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 size="lg" 
-                className="px-8 w-full sm:w-auto"
+                className="premium-button px-10 w-full sm:w-auto text-lg py-6"
                 onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
               >
                 Join Beta Program
@@ -100,7 +101,7 @@ const InteractiveDemo = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="px-8 w-full sm:w-auto"
+                className="button-secondary-enhanced px-10 w-full sm:w-auto text-lg py-6"
                 onClick={() => window.open('https://forms.gle/8rKm3xNz5tB9YdAk7', '_blank')}
               >
                 Apply as Provider

@@ -42,13 +42,13 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="section-spacing section-bg-interactive section-separator">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
             How It Works
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
+          <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced">
             Six simple steps to transform how you manage your home.
           </p>
         </div>
@@ -60,23 +60,23 @@ const HowItWorks = () => {
               className="relative group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 h-full">
-                {/* Step Number */}
-                <div className="absolute -top-3 -left-3 bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+              <div className="card-interactive p-8 h-full">
+                {/* Step Number - enhanced */}
+                <div className="absolute -top-4 -left-4 bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] text-white w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-xl">
                   {step.number}
                 </div>
                 
-                {/* Icon */}
-                <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/10 to-[hsl(var(--atd-accent))]/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <step.icon className="h-7 w-7 text-[hsl(var(--atd-primary))]" />
+                {/* Icon - enhanced */}
+                <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <step.icon className="h-8 w-8 text-[hsl(var(--atd-primary))]" />
                 </div>
                 
-                {/* Content */}
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                {/* Content - improved typography */}
+                <h3 className="text-xl font-bold mb-4 text-enhanced">
                   {step.title}
                 </h3>
                 
-                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                <p className="leading-relaxed text-base font-semibold text-muted-enhanced">
                   {step.description}
                 </p>
               </div>

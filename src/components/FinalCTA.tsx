@@ -4,51 +4,51 @@ import { ArrowRight, Smartphone, CheckCircle, Home, Users } from "lucide-react";
 
 const FinalCTA = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--atd-primary))]/5 via-background to-[hsl(var(--atd-accent))]/5 relative overflow-hidden">
+    <section className="section-spacing section-bg-primary section-separator relative overflow-hidden">
       {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-green-50/20"></div>
-      <div className="absolute top-10 left-10 w-20 h-20 bg-[hsl(var(--atd-primary))]/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-[hsl(var(--atd-accent))]/10 rounded-full blur-xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-transparent to-green-100/40"></div>
+      <div className="absolute top-10 left-10 w-32 h-32 bg-[hsl(var(--atd-primary))]/15 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-40 h-40 bg-[hsl(var(--atd-accent))]/15 rounded-full blur-3xl"></div>
       
       <div className="container max-w-6xl mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Enhanced Text Content */}
           <div className="text-center lg:text-left animate-fade-in-up">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6 text-balance">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-balance text-enhanced">
               Take control of your home—
-              <span className="text-[hsl(var(--atd-primary))]">without the chaos.</span>
+              <span className="text-[hsl(var(--atd-primary))] block mt-2">without the chaos.</span>
             </h2>
             
-            <p className="text-xl text-[hsl(var(--atd-text-muted))] mb-8 leading-relaxed">
+            <p className="text-xl mb-10 leading-relaxed font-semibold text-muted-enhanced">
               Join beta users who are already experiencing the calm of total home control.
             </p>
             
-            {/* Beta Benefits */}
-            <div className="flex flex-col space-y-3 mb-8">
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[hsl(var(--atd-accent))]" />
-                <span className="text-[hsl(var(--atd-text-muted))]">Early access to all features</span>
+            {/* Beta Benefits - enhanced cards */}
+            <div className="flex flex-col space-y-4 mb-10">
+              <div className="flex items-center space-x-4 p-4 bg-white/80 rounded-xl border border-gray-200">
+                <CheckCircle className="h-6 w-6 text-[hsl(var(--atd-accent))]" />
+                <span className="font-semibold text-enhanced">Early access to all features</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[hsl(var(--atd-accent))]" />
-                <span className="text-[hsl(var(--atd-text-muted))]">Personal onboarding session</span>
+              <div className="flex items-center space-x-4 p-4 bg-white/80 rounded-xl border border-gray-200">
+                <CheckCircle className="h-6 w-6 text-[hsl(var(--atd-accent))]" />
+                <span className="font-semibold text-enhanced">Personal onboarding session</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-[hsl(var(--atd-accent))]" />
-                <span className="text-[hsl(var(--atd-text-muted))]">Direct feedback line to our team</span>
+              <div className="flex items-center space-x-4 p-4 bg-white/80 rounded-xl border border-gray-200">
+                <CheckCircle className="h-6 w-6 text-[hsl(var(--atd-accent))]" />
+                <span className="font-semibold text-enhanced">Direct feedback line to our team</span>
               </div>
             </div>
             
             <Button 
               size="lg" 
-              className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+              className="premium-button px-12 py-6 text-xl font-bold mb-6"
               onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
             >
               Get Early Access
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
             
-            <p className="text-sm text-[hsl(var(--atd-text-muted))] mt-4">
+            <p className="text-base font-semibold text-muted-enhanced">
               Limited beta spots available. No credit card required.
             </p>
           </div>
