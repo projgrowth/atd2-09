@@ -8,10 +8,12 @@ import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import MobileNavigation from "@/components/MobileNavigation";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <MobileNavigation />
       <Hero />
       <WhyATD />
       <HowItWorks />

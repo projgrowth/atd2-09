@@ -109,6 +109,17 @@
   }
 }
 
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes bounce-subtle {
   0%, 100% {
     transform: translateY(0);
@@ -147,6 +158,40 @@
   }
 }
 
+/* Mobile-optimized animations */
+@keyframes mobile-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out;
 }
@@ -157,6 +202,10 @@
 
 .animate-slide-in-right {
   animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
 }
 
 .animate-bounce-subtle {
@@ -171,6 +220,19 @@
   animation: scan-line 2s ease-in-out infinite;
 }
 
+/* Mobile-specific animations */
+.animate-mobile-fade-in {
+  animation: mobile-fade-in 0.4s ease-out;
+}
+
+.animate-mobile-slide-up {
+  animation: mobile-slide-up 0.3s ease-out;
+}
+
+.animate-mobile-scale-in {
+  animation: mobile-scale-in 0.2s ease-out;
+}
+
 /* Interactive Elements */
 .interactive-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -179,6 +241,16 @@
 .interactive-hover:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Mobile-optimized interactive elements */
+.mobile-interactive {
+  transition: all 0.2s ease-out;
+  touch-action: manipulation;
+}
+
+.mobile-interactive:active {
+  transform: scale(0.98);
 }
 
 .demo-card {
@@ -194,6 +266,26 @@
 .demo-card.active {
   transform: scale(1.05);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced mobile demo cards */
+@media (max-width: 768px) {
+  .demo-card {
+    transition: all 0.2s ease;
+  }
+  
+  .demo-card:active {
+    transform: scale(0.98);
+  }
+  
+  .demo-card:hover {
+    transform: none;
+  }
+  
+  .demo-card.active {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* Responsive Text */
@@ -216,6 +308,14 @@
   box-shadow: 0 0 0 3px hsl(var(--atd-primary) / 0.1);
 }
 
+/* Enhanced focus states for mobile */
+.mobile-focus:focus {
+  outline: none;
+  border-color: hsl(var(--atd-primary));
+  box-shadow: 0 0 0 4px hsl(var(--atd-primary) / 0.15);
+  transform: scale(1.02);
+}
+
 /* Loading States */
 .loading-shimmer {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -229,6 +329,23 @@
   }
   100% {
     background-position: 200% 0;
+  }
+}
+
+/* Mobile-optimized loading spinner */
+.mobile-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -287,11 +404,54 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+  
+  /* Enhanced mobile touch targets */
+  button, .interactive-element {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improved mobile spacing */
+  .mobile-section {
+    padding: 2rem 1rem;
+  }
+  
+  .mobile-card {
+    margin: 0.5rem 0;
+    padding: 1.5rem;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Print Styles */
 @media print {
   .no-print {
     display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button, .interactive-element {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode improvements for mobile */
+@media (prefers-color-scheme: dark) {
+  .mobile-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
