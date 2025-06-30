@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import WhyATD from "@/components/WhyATD";
 import HowItWorks from "@/components/HowItWorks";
 import FeatureShowcase from "@/components/FeatureShowcase";
+import InteractiveDemo from "@/components/InteractiveDemo";
 import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
@@ -15,6 +16,7 @@ const Index = () => {
       <WhyATD />
       <HowItWorks />
       <FeatureShowcase />
+      <InteractiveDemo />
       <SocialProof />
       <FAQ />
       <FinalCTA />
