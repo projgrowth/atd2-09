@@ -34,14 +34,14 @@ const WhyATD = () => {
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in-up">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
-            <span className="text-sm font-medium text-blue-700">Why Choose ATD?</span>
+            <span className="text-sm font-semibold text-blue-800">Why Choose ATD?</span>
           </div>
           
           <h2 className="heading-secondary mb-6 text-gray-900">
             Your Home Deserves Better
           </h2>
           
-          <p className="text-large max-w-3xl mx-auto text-gray-600">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium leading-relaxed">
             Stop juggling scattered apps and endless phone calls. Experience the peace of mind 
             that comes with having everything organized in one place.
           </p>
@@ -73,7 +73,7 @@ const WhyATD = () => {
                     {feature.title}
                   </h3>
                   
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  <p className="text-gray-700 leading-relaxed font-medium group-hover:text-gray-800 transition-colors">
                     {feature.description}
                   </p>
                 </div>
@@ -87,9 +87,9 @@ const WhyATD = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <div className="inline-flex items-center space-x-2 text-sm text-gray-500">
+          <div className="inline-flex items-center space-x-2 text-sm text-gray-700">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span>Currently in beta • Join 500+ early adopters</span>
+            <span className="font-medium">Currently in beta • Join 500+ early adopters</span>
           </div>
         </div>
       </div>

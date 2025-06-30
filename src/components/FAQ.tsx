@@ -38,10 +38,10 @@ const FAQ = () => {
     <section className="py-20 px-4 bg-gradient-to-b from-blue-50/30 to-background">
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-[hsl(var(--atd-text-muted))]">
+          <p className="text-xl text-gray-700 font-medium">
             Everything you need to know about All Things Done.
           </p>
         </div>
@@ -54,10 +54,10 @@ const FAQ = () => {
                 value={`item-${index}`}
                 className="bg-white rounded-2xl border border-gray-100 px-6 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <AccordionTrigger className="text-left font-semibold text-[hsl(var(--atd-text))] hover:text-[hsl(var(--atd-primary))] py-6">
+                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-[hsl(var(--atd-primary))] py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-[hsl(var(--atd-text-muted))] leading-relaxed pb-6">
+                <AccordionContent className="text-gray-700 leading-relaxed pb-6 font-medium">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

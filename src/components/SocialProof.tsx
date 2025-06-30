@@ -31,14 +31,14 @@ const SocialProof = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-50 border border-green-100 mb-6">
               <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-              <span className="text-sm font-medium text-green-700">Growing Community</span>
+              <span className="text-sm font-semibold text-green-800">Growing Community</span>
             </div>
             
             <h3 className="heading-secondary text-gray-900 mb-4">
               Join the Revolution
             </h3>
             
-            <p className="text-large text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
               See why homeowners and service providers are choosing ATD for seamless home management.
             </p>
           </div>
@@ -60,7 +60,7 @@ const SocialProof = () => {
                     <div className={`text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300`}>
                       {stat.number}
                     </div>
-                    <div className="text-sm font-medium text-gray-600 uppercase tracking-wider">
+                    <div className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
                       {stat.label}
                     </div>
                   </div>
@@ -81,7 +81,7 @@ const SocialProof = () => {
                     <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full animate-[width_2s_ease-out] w-4/5"></div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600">Beta capacity: <span className="font-semibold">80% full</span></p>
+                <p className="text-sm text-gray-700 font-medium">Beta capacity: <span className="font-semibold">80% full</span></p>
               </div>
               
               <div className="text-center">
@@ -90,7 +90,7 @@ const SocialProof = () => {
                     <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full animate-[width_2s_ease-out_0.5s] w-full"></div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600">Satisfaction rate: <span className="font-semibold">98%</span></p>
+                <p className="text-sm text-gray-700 font-medium">Satisfaction rate: <span className="font-semibold">98%</span></p>
               </div>
             </div>
           </div>

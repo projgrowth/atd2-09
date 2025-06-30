@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
@@ -32,7 +31,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    /* Enhanced ATD Design System */
+    /* Enhanced ATD Design System with Better Contrast */
     --atd-primary: 214 84% 56%;
     --atd-primary-dark: 214 84% 46%;
     --atd-primary-light: 214 84% 66%;
@@ -40,8 +39,10 @@
     --atd-accent-dark: 142 71% 35%;
     --atd-accent-light: 142 71% 55%;
     --atd-text: 222 84% 5%;
-    --atd-text-muted: 215 16% 47%;
-    --atd-text-light: 215 16% 65%;
+    --atd-text-muted: 215 16% 35%; /* Improved from 47% to 35% */
+    --atd-text-light: 215 16% 50%; /* Improved from 65% to 50% */
+    --atd-text-strong: 222 84% 10%; /* New stronger text color */
+    --atd-text-emphasis: 222 84% 15%; /* New emphasis color */
     
     /* New Visual Elements */
     --atd-surface: 0 0% 98%;
@@ -101,6 +102,8 @@
     --atd-surface-elevated: 222 84% 8%;
     --atd-border-light: 217 32% 20%;
     --atd-border-medium: 217 32% 25%;
+    --atd-text-muted: 215 20% 75%; /* Better contrast in dark mode */
+    --atd-text-light: 215 20% 65%;
   }
 }
 
@@ -218,6 +221,34 @@
   
   .animate-slide-in-right {
     animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  /* Enhanced Text Contrast Classes */
+  .text-contrast-high {
+    color: hsl(var(--atd-text-strong));
+  }
+  
+  .text-contrast-medium {
+    color: hsl(var(--atd-text-emphasis));
+  }
+  
+  .text-contrast-muted {
+    color: hsl(var(--atd-text-muted));
+  }
+  
+  .text-contrast-light {
+    color: hsl(var(--atd-text-light));
+  }
+  
+  /* Small text with better contrast */
+  .text-small-enhanced {
+    @apply text-sm font-semibold;
+    color: hsl(var(--atd-text-muted));
+  }
+  
+  .text-xs-enhanced {
+    @apply text-xs font-semibold;
+    color: hsl(var(--atd-text-muted));
   }
 }
 

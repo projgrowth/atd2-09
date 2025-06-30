@@ -45,10 +45,10 @@ const HowItWorks = () => {
     <section className="py-20 px-4 bg-background">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             How It Works
           </h2>
-          <p className="text-xl text-[hsl(var(--atd-text-muted))] max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
             Six simple steps to transform how you manage your home.
           </p>
         </div>
@@ -72,11 +72,11 @@ const HowItWorks = () => {
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-lg font-semibold text-[hsl(var(--atd-text))] mb-3">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
                   {step.title}
                 </h3>
                 
-                <p className="text-[hsl(var(--atd-text-muted))] text-sm leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">
                   {step.description}
                 </p>
               </div>

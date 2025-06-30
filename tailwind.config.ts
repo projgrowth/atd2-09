@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,7 +66,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Enhanced ATD colors
+				// Enhanced ATD colors with better contrast
 				atd: {
 					primary: 'hsl(var(--atd-primary))',
 					'primary-dark': 'hsl(var(--atd-primary-dark))',
@@ -78,6 +77,8 @@ export default {
 					text: 'hsl(var(--atd-text))',
 					'text-muted': 'hsl(var(--atd-text-muted))',
 					'text-light': 'hsl(var(--atd-text-light))',
+					'text-strong': 'hsl(var(--atd-text-strong))',
+					'text-emphasis': 'hsl(var(--atd-text-emphasis))',
 					surface: 'hsl(var(--atd-surface))',
 					'surface-elevated': 'hsl(var(--atd-surface-elevated))',
 					'border-light': 'hsl(var(--atd-border-light))',

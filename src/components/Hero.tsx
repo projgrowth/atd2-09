@@ -21,7 +21,7 @@ const Hero = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm mb-8 animate-fade-in-up">
               <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-              <span className="text-sm font-medium text-gray-700">Trusted by 500+ homeowners</span>
+              <span className="text-sm font-semibold text-gray-800">Trusted by 500+ homeowners</span>
             </div>
 
             {/* Main Headline */}
@@ -31,7 +31,7 @@ const Hero = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-large max-w-3xl mx-auto mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12 animate-fade-in-up leading-relaxed font-medium" style={{ animationDelay: '0.2s' }}>
               Stop juggling apps, phone calls, and paperwork. All Things Done organizes your home services, 
               payments, and trusted providers in one beautiful, simple dashboard.
             </p>
@@ -64,7 +64,7 @@ const Hero = () => {
               ].map((benefit, index) => (
                 <div key={index} className="text-center p-6 rounded-xl bg-white/60 backdrop-blur-sm border border-white/80 shadow-sm hover:shadow-md transition-all duration-300">
                   <h3 className="font-semibold text-gray-900 mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600">{benefit.desc}</p>
+                  <p className="text-sm font-medium text-gray-700">{benefit.desc}</p>
                 </div>
               ))}
             </div>
@@ -73,7 +73,7 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="h-6 w-6 text-gray-400" />
+          <ArrowDown className="h-6 w-6 text-gray-600" />
         </div>
       </div>
     </section>
