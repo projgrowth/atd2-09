@@ -17,7 +17,7 @@ interface Ripple {
 export const TouchRipple = ({ children, className, disabled = false }: RippleProps) => {
   const [ripples, setRipples] = useState<Ripple[]>([]);
 
-  const addRipple = (event: React.TouchStart | React.MouseEvent) => {
+  const addRipple = (event: React.TouchEvent | React.MouseEvent) => {
     if (disabled) return;
 
     const rect = event.currentTarget.getBoundingClientRect();
