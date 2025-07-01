@@ -36,8 +36,8 @@ const HowItWorks = () => {
     {
       number: "06",
       icon: CheckCircle,
-      title: "Relax",
-      description: "Everything handled. Nothing forgotten."
+      title: "Earn Rewards",
+      description: "Get rewards for consistency and loyalty."
     }
   ];
 
