@@ -1,5 +1,5 @@
 
-import { Home, Github, Twitter, Linkedin } from "lucide-react";
+import { Home } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = [
@@ -8,12 +8,6 @@ const Footer = () => {
     { name: "Providers", href: "#providers" },
     { name: "Join Beta", href: "https://forms.gle/YXvNQm7P8hW2KzGz9" },
     { name: "FAQ", href: "#faq" }
-  ];
-
-  const socialLinks = [
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "GitHub", icon: Github, href: "#" }
   ];
 
   return (
@@ -49,18 +43,11 @@ const Footer = () => {
                 beautiful, simple technology. Join us in making home care effortless.
               </p>
 
-              {/* Social Links */}
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="group p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                    aria-label={social.name}
-                  >
-                    <social.icon className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-                  </a>
-                ))}
+              {/* Social Media Coming Soon */}
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <p className="text-gray-400 text-sm font-medium">
+                  Social Media - <span className="text-blue-400">Coming Soon</span>
+                </p>
               </div>
             </div>
 
