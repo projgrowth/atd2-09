@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
 
-## Project info
+# All Things Done
 
-**URL**: https://lovable.dev/projects/1219c1d4-503b-4c6e-9a33-70ddb1463e3a
+**Your Home's Quiet Command Center**
 
-## How can I edit this code?
+## About
 
-There are several ways of editing your application.
+All Things Done (ATD) is a private, collaborative dashboard for homeowners and their trusted service providers. We help you manage your home with clarity, not chaos.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1219c1d4-503b-4c6e-9a33-70ddb1463e3a) and start prompting.
+- Private dashboard for managing your home maintenance
+- Collaborate with your own trusted service providers
+- No marketplace interference or third-party complications
+- Clean, organized interface for all your home management needs
+- Mobile-friendly PocketOffice for service providers
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (recommended: use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- npm or yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1. Clone the repository:
+```bash
+git clone <your-repository-url>
+cd all-things-done
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Technology Stack
 
-**Use GitHub Codespaces**
+- **Frontend**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Backend**: Supabase integration
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Development
 
-## What technologies are used for this project?
+### Available Scripts
 
-This project is built with:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Project Structure
 
-## How can I deploy this project?
+```
+src/
+├── components/        # React components
+├── pages/            # Page components
+├── hooks/            # Custom hooks
+├── lib/              # Utility functions
+├── integrations/     # Third-party integrations
+└── main.tsx         # Application entry point
+```
 
-Simply open [Lovable](https://lovable.dev/projects/1219c1d4-503b-4c6e-9a33-70ddb1463e3a) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+Build the project for production:
 
-Yes, you can!
+```bash
+npm run build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The built files will be in the `dist` directory, ready for deployment to any static hosting service.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contributing
+
+This is a private project for All Things Done. For questions or support, please contact the development team.
+
+## License
+
+© 2024 All Things Done. All rights reserved.
