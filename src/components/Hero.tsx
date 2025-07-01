@@ -5,53 +5,40 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-primary">
-      {/* Enhanced Background with stronger gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-transparent to-green-100/30"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
-      
-      {/* Subtle Pattern Overlay */}
-      <div className="absolute inset-0 opacity-8" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }}></div>
+      {/* Clean, minimal background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/30 via-white/10 to-slate-100/20"></div>
 
       <div className="container-responsive relative z-10 text-center section-spacing">
         <div className="content-max-width">
           {/* Enhanced Hero Content */}
           <div className="visual-hierarchy">
-            {/* Trust Badge */}
-            <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 rounded-full bg-white/90 backdrop-blur-sm border-2 border-gray-200 shadow-md mb-6 md:mb-8 animate-fade-in-up">
-              <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-600 mr-2 md:mr-3" />
-              <span className="text-xs md:text-sm font-bold text-gray-800">Trusted by 500+ homeowners</span>
-            </div>
-
             {/* Main Headline */}
-            <h1 className="heading-primary mb-6 md:mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              Your Home's
-              <span className="text-gradient block mt-2 md:mt-3">Quiet Command Center</span>
+            <h1 className="heading-primary mb-6 md:mb-8 animate-fade-in-up">
+              One Command Center
+              <span className="text-gradient block mt-2 md:mt-3">for Your Home</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced" style={{ animationDelay: '0.2s' }}>
-              Stop juggling apps, phone calls, and paperwork. All Things Done organizes your home services, 
-              payments, and trusted providers in one beautiful, simple dashboard.
+            <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced" style={{ animationDelay: '0.1s' }}>
+              Invite your own trusted pros — or choose from our vetted provider network. Track updates, manage budgets, and earn rewards for consistency.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
                 className="premium-button w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
-                onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
+                onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Join the Beta
+                Try It Now
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="button-secondary-enhanced w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
-                onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                See How It Works
+                Get Started
               </Button>
             </div>
 
