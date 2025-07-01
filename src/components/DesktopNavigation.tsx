@@ -37,7 +37,7 @@ const DesktopNavigation = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden lg:block ${
       isScrolled 
-        ? 'bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm' 
+        ? 'bg-slate-900/80 backdrop-blur-xl border-b border-white/10 shadow-sm' 
         : 'bg-transparent'
     }`}>
       <div className="container-responsive">
@@ -50,7 +50,7 @@ const DesktopNavigation = () => {
               </div>
               <div className="absolute -inset-1 bg-gradient-to-br from-atd-primary to-atd-accent rounded-xl blur opacity-20"></div>
             </div>
-            <div className="text-xl font-bold text-atd-text-strong">All Things Done</div>
+            <div className="text-xl font-bold text-white">All Things Done</div>
           </div>
 
           {/* Navigation Links */}
@@ -59,10 +59,10 @@ const DesktopNavigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-atd-text font-medium hover:text-atd-primary transition-colors duration-200 relative group"
+                className="text-white/80 font-medium hover:text-cyan-400 transition-colors duration-200 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-atd-primary to-atd-accent transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </nav>
@@ -71,13 +71,13 @@ const DesktopNavigation = () => {
           <div className="flex items-center space-x-4">
             <Button 
               variant="outline"
-              className="hidden xl:inline-flex text-atd-text border-atd-border-medium hover:bg-atd-surface-elevated"
+              className="hidden xl:inline-flex text-white border-white/30 hover:bg-white/10 hover:border-white/50"
               onClick={() => scrollToSection('#demo')}
             >
               Try Demo
             </Button>
             <Button 
-              className="bg-gradient-to-r from-atd-primary to-atd-accent text-white hover:shadow-lg hover:shadow-atd-primary/25 transition-all duration-300"
+              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 border border-blue-400/50"
               onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
             >
               Join Beta
