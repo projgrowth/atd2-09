@@ -1,7 +1,6 @@
 
 import { ArrowDown, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BetaSignupNative } from "@/components/BetaSignupNative";
 
 const Hero = () => {
   return (
@@ -22,23 +21,38 @@ const Hero = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 rounded-full bg-white/90 backdrop-blur-sm border-2 border-gray-200 shadow-md mb-6 md:mb-8 animate-fade-in-up">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-600 mr-2 md:mr-3" />
-              <span className="text-xs md:text-sm font-bold text-gray-800">Currently in beta testing with verified users</span>
+              <span className="text-xs md:text-sm font-bold text-gray-800">Trusted by 500+ homeowners</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="heading-primary mb-6 md:mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              Invite your trusted pros — or choose from our
-              <span className="text-gradient block mt-2 md:mt-3">vetted network</span>
+              Your Home's
+              <span className="text-gradient block mt-2 md:mt-3">Quiet Command Center</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced" style={{ animationDelay: '0.2s' }}>
-              Track jobs, earn rewards, and manage your home with ease.
+              Stop juggling apps, phone calls, and paperwork. All Things Done organizes your home services, 
+              payments, and trusted providers in one beautiful, simple dashboard.
             </p>
 
-            {/* Beta Form */}
-            <div className="mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <BetaSignupNative variant="hero" className="max-w-lg mx-auto" />
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <Button 
+                size="lg" 
+                className="premium-button w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
+                onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
+              >
+                Join the Beta
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="button-secondary-enhanced w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
+                onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                See How It Works
+              </Button>
             </div>
 
             {/* Key Benefits */}

@@ -10,15 +10,15 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What makes ATD different?",
-      answer: "ATD isn't a marketplace or directory. It's a private dashboard where you work with your own trusted providers or browse our vetted network. No strangers, no third-party interference—just clean organization for all your home service relationships."
+      answer: "ATD isn't a marketplace or directory. It's a private dashboard where you work with your own trusted providers. No strangers, no third-party interference—just clean organization for the relationships you already have."
     },
     {
       question: "Can I use my own providers?",
-      answer: "Absolutely. You can invite your existing, trusted service providers to work through ATD while also having access to browse our vetted network when you need new professionals."
+      answer: "Absolutely. That's the whole point. ATD is designed for homeowners who want to work with their existing, trusted service providers while having everything organized in one place."
     },
     {
       question: "Do you background check providers?",
-      answer: "Yes—we conduct background checks on all verified providers in our vetted network. For providers you invite, you already know and trust them, so we focus on giving you tools to manage those relationships effectively."
+      answer: "No—because you're inviting your own providers. You already know and trust them. We just give you the tools to manage those relationships more effectively."
     },
     {
       question: "Is it free? What's the catch?",

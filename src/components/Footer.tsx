@@ -1,6 +1,5 @@
 
 import { Home } from "lucide-react";
-import { BetaSignupNative } from "@/components/BetaSignupNative";
 
 const Footer = () => {
   const footerLinks = [
@@ -72,11 +71,21 @@ const Footer = () => {
                 </nav>
               </div>
 
-              {/* Beta Signup Form */}
+              {/* Beta CTA */}
               <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm">
                 <h4 className="font-semibold text-white mb-2">Ready to get started?</h4>
                 <p className="text-gray-400 text-sm mb-4">Join our beta and be among the first to experience the future of home management.</p>
-                <BetaSignupNative variant="footer" />
+                <a
+                  href="https://forms.gle/YXvNQm7P8hW2KzGz9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
+                >
+                  Join Beta
+                  <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
