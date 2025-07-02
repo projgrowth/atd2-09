@@ -9,12 +9,10 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import MobileNavigation from "@/components/MobileNavigation";
-import DesktopNavigation from "@/components/DesktopNavigation";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <DesktopNavigation />
       <MobileNavigation />
       <Hero />
       <WhyATD />
