@@ -1,15 +1,23 @@
 
 import { useState, useEffect } from "react";
-import { QrCode, Smartphone, CheckCircle, Wifi, Home, RotateCcw } from "lucide-react";
+import { QrCode, Smartphone, CheckCircle, Wifi, Home, RotateCcw, User, Camera, Shield, Eye, EyeOff, Clock, FileText, Users, DollarSign, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import { TouchRipple } from "./TouchRipple";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 const QRScanDemo = () => {
-  const [scanningState, setScanningState] = useState("idle"); // idle, scanning, success
+  const [scanningState, setScanningState] = useState("idle"); // idle, scanning, recognized, profileCreation, accessGranted
   const [animationStep, setAnimationStep] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [showNFC, setShowNFC] = useState(false);
+  const [historyVisible, setHistoryVisible] = useState({
+    previousWork: true,
+    budget: false,
+    family: false,
+    documents: true
+  });
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -19,13 +27,27 @@ const QRScanDemo = () => {
       }, 500);
       
       const timeout = setTimeout(() => {
-        setScanningState("success");
-      }, 3000);
+        setScanningState("recognized");
+      }, 2500);
 
       return () => {
         clearInterval(interval);
         clearTimeout(timeout);
       };
+    }
+    
+    if (scanningState === "recognized") {
+      const timeout = setTimeout(() => {
+        setScanningState("profileCreation");
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+    
+    if (scanningState === "profileCreation") {
+      const timeout = setTimeout(() => {
+        setScanningState("accessGranted");
+      }, 3000);
+      return () => clearTimeout(timeout);
     }
   }, [scanningState]);
 
@@ -48,14 +70,23 @@ const QRScanDemo = () => {
     <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl p-6 sm:p-8 max-w-md mx-auto">
       <div className="text-center mb-8">
         <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-          <QrCode className="h-8 w-8 text-white" />
+          {showNFC ? <Zap className="h-8 w-8 text-white" /> : <QrCode className="h-8 w-8 text-white" />}
         </div>
         <h3 className="text-xl font-semibold text-[hsl(var(--atd-text))] mb-2">
-          QR Code Access
+          {showNFC ? "NFC Provider Access" : "QR Provider Access"}
         </h3>
         <p className="text-sm text-[hsl(var(--atd-text-muted))]">
-          Instant provider access to your home's information
+          Professional provider onboarding with privacy controls
         </p>
+        
+        {/* Branded Lanyard/Sticker Visualization */}
+        <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] rounded-lg p-3 mt-4 text-white text-xs">
+          <div className="flex items-center justify-center space-x-2 mb-1">
+            <Shield className="h-3 w-3" />
+            <span className="font-semibold">ATD Provider Badge</span>
+          </div>
+          <div className="text-white/80">Official Access Credential</div>
+        </div>
       </div>
 
       <div className="relative">
@@ -112,21 +143,100 @@ const QRScanDemo = () => {
               </div>
             )}
 
-            {scanningState === "success" && (
+            {scanningState === "recognized" && (
               <div className="h-full flex flex-col items-center justify-center text-center animate-mobile-fade-in">
-                <div className="bg-green-100 rounded-full p-3 mb-4 animate-success-bounce">
-                  <CheckCircle className="h-8 w-8 text-green-600" />
+                <div className="bg-blue-100 rounded-full p-3 mb-4 animate-pulse">
+                  <Shield className="h-8 w-8 text-blue-600" />
                 </div>
-                <div className="text-sm font-medium text-green-600 mb-2">Access Granted!</div>
-                <div className="bg-green-50 rounded-lg p-3 w-full text-xs">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <Home className="h-3 w-3 text-green-600" />
-                    <span className="text-green-700 font-medium">123 Oak Street</span>
+                <div className="text-sm font-medium text-blue-600 mb-2">Code Recognized!</div>
+                <div className="bg-blue-50 rounded-lg p-3 w-full text-xs">
+                  <div className="text-blue-700 font-medium mb-2">ATD Provider Badge</div>
+                  <div className="text-blue-600 text-left space-y-1">
+                    <div>• Valid Credentials ✓</div>
+                    <div>• Service Area: Local ✓</div>
+                    <div>• Verification Status: Active</div>
                   </div>
-                  <div className="text-green-600 text-left space-y-1">
-                    <div>• Job: Kitchen Repair</div>
-                    <div>• Contact: Sarah M.</div>
-                    <div>• Documents: 3 files</div>
+                </div>
+              </div>
+            )}
+
+            {scanningState === "profileCreation" && (
+              <div className="h-full flex flex-col items-center justify-center text-center animate-mobile-fade-in">
+                <div className="bg-orange-100 rounded-full p-3 mb-4">
+                  <User className="h-8 w-8 text-orange-600" />
+                </div>
+                <div className="text-sm font-medium text-orange-600 mb-2">Creating Profile...</div>
+                <div className="bg-orange-50 rounded-lg p-3 w-full text-xs space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-orange-700">Mike Johnson</span>
+                    <CheckCircle className="h-3 w-3 text-green-500" />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-orange-700">Plumbing Expert</span>
+                    <CheckCircle className="h-3 w-3 text-green-500" />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-orange-700">License Verified</span>
+                    <div className="w-3 h-3 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {scanningState === "accessGranted" && (
+              <div className="h-full flex flex-col justify-start pt-2 animate-mobile-fade-in overflow-y-auto">
+                <div className="bg-green-100 rounded-full p-2 mb-3 mx-auto">
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                </div>
+                <div className="text-sm font-medium text-green-600 mb-3 text-center">Access Granted!</div>
+                
+                {/* Privacy Controls */}
+                <div className="space-y-2 text-xs">
+                  <div className="bg-green-50 rounded-lg p-2">
+                    <div className="font-medium text-green-700 mb-2 flex items-center">
+                      <Eye className="h-3 w-3 mr-1" />
+                      Provider Can See:
+                    </div>
+                    <div className="space-y-1">
+                      <div className={cn("flex items-center justify-between p-1 rounded", 
+                        historyVisible.previousWork ? "bg-green-100" : "bg-red-100")}>
+                        <span className="flex items-center">
+                          <Clock className="h-2 w-2 mr-1" />
+                          Previous Work
+                        </span>
+                        {historyVisible.previousWork ? 
+                          <Eye className="h-2 w-2 text-green-600" /> : 
+                          <EyeOff className="h-2 w-2 text-red-600" />}
+                      </div>
+                      <div className={cn("flex items-center justify-between p-1 rounded", 
+                        historyVisible.budget ? "bg-green-100" : "bg-red-100")}>
+                        <span className="flex items-center">
+                          <DollarSign className="h-2 w-2 mr-1" />
+                          Budget Info
+                        </span>
+                        {historyVisible.budget ? 
+                          <Eye className="h-2 w-2 text-green-600" /> : 
+                          <EyeOff className="h-2 w-2 text-red-600" />}
+                      </div>
+                      <div className={cn("flex items-center justify-between p-1 rounded", 
+                        historyVisible.documents ? "bg-green-100" : "bg-red-100")}>
+                        <span className="flex items-center">
+                          <FileText className="h-2 w-2 mr-1" />
+                          Documents
+                        </span>
+                        {historyVisible.documents ? 
+                          <Eye className="h-2 w-2 text-green-600" /> : 
+                          <EyeOff className="h-2 w-2 text-red-600" />}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-blue-50 rounded-lg p-2">
+                    <div className="flex items-center space-x-2 mb-1">
+                      <Home className="h-3 w-3 text-blue-600" />
+                      <span className="text-blue-700 font-medium">123 Oak Street</span>
+                    </div>
+                    <div className="text-blue-600">Job: Kitchen Repair • Mike J.</div>
                   </div>
                 </div>
               </div>
@@ -138,14 +248,14 @@ const QRScanDemo = () => {
         <div className="flex justify-center space-x-2 sm:space-x-4 mt-6">
           <div className={cn(
             "flex items-center space-x-2 px-2 sm:px-3 py-2 rounded-full text-xs sm:text-sm transition-all duration-300",
-            scanningState === "scanning" ? 'bg-blue-100 text-blue-700 animate-pulse' : 'bg-gray-100 text-gray-500'
+            ["scanning", "recognized", "profileCreation", "accessGranted"].includes(scanningState) ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
           )}>
             <Wifi className="h-3 w-3 sm:h-4 sm:w-4" />
             <span>Connected</span>
           </div>
           <div className={cn(
             "flex items-center space-x-2 px-2 sm:px-3 py-2 rounded-full text-xs sm:text-sm transition-all duration-300",
-            scanningState === "success" ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
+            scanningState === "accessGranted" ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
           )}>
             <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
             <span>Verified</span>
@@ -153,16 +263,27 @@ const QRScanDemo = () => {
         </div>
       </div>
 
-      <div className="flex justify-center space-x-3 mt-8">
+      <div className="flex flex-col items-center space-y-3 mt-8">
         {scanningState === "idle" && (
-          <TouchRipple>
-            <Button onClick={startScan} className="px-4 sm:px-6 mobile-button-press">
-              <QrCode className="h-4 w-4 mr-2" />
-              Start Scan Demo
-            </Button>
-          </TouchRipple>
+          <div className="flex items-center space-x-3">
+            <TouchRipple>
+              <Button onClick={startScan} className="px-4 sm:px-6 mobile-button-press">
+                {showNFC ? <Zap className="h-4 w-4 mr-2" /> : <QrCode className="h-4 w-4 mr-2" />}
+                {showNFC ? "Start NFC Demo" : "Start QR Demo"}
+              </Button>
+            </TouchRipple>
+            <TouchRipple>
+              <Button 
+                variant="outline" 
+                onClick={() => setShowNFC(!showNFC)} 
+                className="px-3 mobile-button-press"
+              >
+                {showNFC ? <QrCode className="h-4 w-4" /> : <Zap className="h-4 w-4" />}
+              </Button>
+            </TouchRipple>
+          </div>
         )}
-        {(scanningState === "scanning" || scanningState === "success") && (
+        {["scanning", "recognized", "profileCreation", "accessGranted"].includes(scanningState) && (
           <TouchRipple>
             <Button variant="outline" onClick={resetDemo} className="px-4 sm:px-6 mobile-button-press">
               <RotateCcw className="h-4 w-4 mr-2" />
