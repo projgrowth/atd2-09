@@ -15,10 +15,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <MobileNavigation />
       <Hero />
+      <InteractiveDemo />
       <WhyATD />
       <HowItWorks />
       <FeatureShowcase />
-      <InteractiveDemo />
       <SocialProof />
       <FAQ />
       <FinalCTA />

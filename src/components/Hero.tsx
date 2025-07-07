@@ -1,6 +1,7 @@
 
 import { ArrowDown, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DualScreenGraphic from "./DualScreenGraphic";
 
 const Hero = () => {
   return (
@@ -18,9 +19,16 @@ const Hero = () => {
               <span className="text-gradient block mt-2 md:mt-3">for Your Home</span>
             </h1>
 
+            {/* Tagline */}
+            <div className="mb-4 md:mb-6 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
+              <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-lg md:text-xl font-bold border border-primary/20">
+                Scan. Submit. Get it done.
+              </span>
+            </div>
+
             {/* Subheadline */}
             <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced" style={{ animationDelay: '0.1s' }}>
-              Invite your own trusted pros — or choose from our vetted provider network. Track updates, manage budgets, and earn rewards for consistency.
+              Bring your own trusted pros or choose from our vetted provider network. Track updates, manage budgets, and streamline your home management.
             </p>
 
             {/* CTA Buttons */}
@@ -28,32 +36,37 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="premium-button w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
-                onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('interactive-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Try It Now
+                See Live Demo
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="button-secondary-enhanced w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
-                onClick={() => document.getElementById('intake-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('early-access-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Get Started
+                Join Early Access
               </Button>
             </div>
 
             {/* Key Benefits */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               {[
-                { title: "Invite Your Pros", desc: "Work with providers you trust" },
+                { title: "Dual Provider Options", desc: "Your pros or our trusted network" },
                 { title: "Track Everything", desc: "Jobs, payments, all organized" },
-                { title: "Share Access", desc: "Family and assistants included" }
+                { title: "QR Code Access", desc: "Instant provider onboarding" }
               ].map((benefit, index) => (
                 <div key={index} className="card-base card-padding text-center enhanced-card-hover">
                   <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3 text-enhanced">{benefit.title}</h3>
                   <p className="text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">{benefit.desc}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Dual Screen Graphic */}
+            <div className="mt-16 md:mt-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <DualScreenGraphic />
             </div>
           </div>
         </div>

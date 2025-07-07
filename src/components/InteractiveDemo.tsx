@@ -40,12 +40,12 @@ const InteractiveDemo = () => {
   return (
     <section className="section-spacing section-bg-content section-separator">
       <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16 animate-fade-in-up" id="interactive-demo">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
-            Try ATD Yourself
+            See It In Action
           </h2>
           <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced">
-            Get hands-on with interactive demos. See exactly how ATD works for homeowners, providers, and families.
+            Experience ATD's dual-perspective platform with hands-on demos for homeowners and providers.
           </p>
         </div>
 
