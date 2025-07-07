@@ -9,15 +9,13 @@ import JobProgressTracker from "./job-tracking/JobProgressTracker";
 import PhotoProgressDocumentation from "./job-tracking/PhotoProgressDocumentation";
 import RealtimeMessaging from "./job-tracking/RealtimeMessaging";
 import TimeTrackingInvoice from "./job-tracking/TimeTrackingInvoice";
+import { useDemoContext } from "@/contexts/DemoContext";
 import { cn } from "@/lib/utils";
 
 const PocketOfficeDemo = () => {
+  const { state, actions } = useDemoContext();
+  const { currentJob, userType, notifications } = state;
   const [activeTab, setActiveTab] = useState("progress");
-  const [currentJobStatus, setCurrentJobStatus] = useState("onsite");
-  const [notifications, setNotifications] = useState([
-    { id: "1", message: "New message from homeowner", time: "2 min ago", type: "message" },
-    { id: "2", message: "Photo uploaded successfully", time: "5 min ago", type: "photo" }
-  ]);
   const isMobile = useIsMobile();
 
   const tabs = [
@@ -29,26 +27,7 @@ const PocketOfficeDemo = () => {
 
   // Auto-advance job status simulation
   const handleStatusChange = (statusId: string) => {
-    setCurrentJobStatus(statusId);
-    // Add notification
-    const statusMessages = {
-      enroute: "Provider is on the way",
-      onsite: "Provider has arrived on site", 
-      inprogress: "Work has begun",
-      complete: "Job has been completed"
-    };
-    
-    if (statusMessages[statusId as keyof typeof statusMessages]) {
-      setNotifications(prev => [
-        {
-          id: Date.now().toString(),
-          message: statusMessages[statusId as keyof typeof statusMessages],
-          time: "Just now",
-          type: "status"
-        },
-        ...prev.slice(0, 4) // Keep only 5 most recent
-      ]);
-    }
+    actions.updateJobStatus(statusId as any);
   };
 
   return (
@@ -81,12 +60,12 @@ const PocketOfficeDemo = () => {
       <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 mb-6 border border-purple-100">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <div className="font-semibold text-[hsl(var(--atd-text))]">Kitchen Repair</div>
-            <div className="text-sm text-[hsl(var(--atd-text-muted))]">123 Oak Street • Sarah Chen</div>
+            <div className="font-semibold text-[hsl(var(--atd-text))]">{currentJob.title}</div>
+            <div className="text-sm text-[hsl(var(--atd-text-muted))]">123 Oak Street • Current Client</div>
           </div>
           <div className="text-right">
-            <div className="text-sm font-medium text-purple-600">On Site</div>
-            <div className="text-xs text-[hsl(var(--atd-text-muted))]">2h 15m active</div>
+            <div className="text-sm font-medium text-purple-600 capitalize">{currentJob.status}</div>
+            <div className="text-xs text-[hsl(var(--atd-text-muted))]">{currentJob.progress}% complete</div>
           </div>
         </div>
         
@@ -120,7 +99,7 @@ const PocketOfficeDemo = () => {
         <div className="min-h-[400px]">
           <TabsContent value="progress" className="mt-0">
             <JobProgressTracker
-              currentStatusId={currentJobStatus}
+              currentStatusId={currentJob.status}
               onStatusChange={handleStatusChange}
               isLive={true}
             />
@@ -128,50 +107,33 @@ const PocketOfficeDemo = () => {
 
           <TabsContent value="photos" className="mt-0">
             <PhotoProgressDocumentation
-              onPhotoUpload={(photoId) => {
-                setNotifications(prev => [
-                  {
-                    id: Date.now().toString(),
-                    message: `Photo uploaded: ${photoId}`,
-                    time: "Just now",
-                    type: "photo"
-                  },
-                  ...prev.slice(0, 4)
-                ]);
+              onPhotoUpload={(photoDescription) => {
+                actions.addPhoto({
+                  url: '/placeholder-progress-photo.jpg',
+                  description: photoDescription
+                });
               }}
             />
           </TabsContent>
 
           <TabsContent value="chat" className="mt-0">
             <RealtimeMessaging
-              isProvider={true}
+              isProvider={userType === 'provider'}
               onMessageSent={(message) => {
-                setNotifications(prev => [
-                  {
-                    id: Date.now().toString(),
-                    message: "Message sent to homeowner",
-                    time: "Just now", 
-                    type: "message"
-                  },
-                  ...prev.slice(0, 4)
-                ]);
+                actions.addMessage({
+                  sender: userType === 'provider' ? 'provider' : 'homeowner',
+                  message: message
+                });
               }}
             />
           </TabsContent>
 
           <TabsContent value="invoice" className="mt-0">
             <TimeTrackingInvoice
-              isActive={currentJobStatus === "inprogress" || currentJobStatus === "onsite"}
+              isActive={currentJob.status === "inprogress" || currentJob.status === "onsite"}
               onInvoiceGenerated={(invoice) => {
-                setNotifications(prev => [
-                  {
-                    id: Date.now().toString(),
-                    message: `Invoice generated: $${invoice.grandTotal.toFixed(2)}`,
-                    time: "Just now",
-                    type: "invoice"
-                  },
-                  ...prev.slice(0, 4)
-                ]);
+                // Update job with actual cost when invoice is generated
+                // This would normally update the global state
               }}
             />
           </TabsContent>
@@ -185,8 +147,8 @@ const PocketOfficeDemo = () => {
           <div className="space-y-2">
             {notifications.slice(0, 3).map((notification) => (
               <div key={notification.id} className="flex items-center justify-between text-xs">
-                <span className="text-[hsl(var(--atd-text-muted))]">{notification.message}</span>
-                <span className="text-gray-500">{notification.time}</span>
+                <span className="text-[hsl(var(--atd-text-muted))]">{notification.title}</span>
+                <span className="text-gray-500">{new Date(notification.timestamp).toLocaleTimeString()}</span>
               </div>
             ))}
           </div>

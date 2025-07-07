@@ -7,14 +7,16 @@ import QuickActionButtons from "./dashboard/QuickActionButtons";
 import NotificationCenter from "./dashboard/NotificationCenter";
 import ServiceRequestWizard from "./dashboard/ServiceRequestWizard";
 import ProviderAvailabilityCalendar from "./dashboard/ProviderAvailabilityCalendar";
+import { useDemoContext } from "@/contexts/DemoContext";
 
 type ViewKey = "overview" | "jobs" | "documents" | "messaging" | "payments" | "properties" | "actions" | "notifications" | "schedule" | "request";
 
 const InteractiveDashboard = () => {
+  const { state, actions } = useDemoContext();
+  const { userType, currentJob, notifications } = state;
   const [currentView, setCurrentView] = useState<ViewKey>("overview");
-  const [isProviderView, setIsProviderView] = useState(false);
   const [showPrivacyPanel, setShowPrivacyPanel] = useState(false);
-  const [showServiceRequest, setShowServiceRequest] = useState(false);
+  const isProviderView = userType === 'provider';
 
   const views: Record<ViewKey, { title: string; content: JSX.Element }> = {
     overview: {
@@ -30,9 +32,9 @@ const InteractiveDashboard = () => {
                 </span>
               </div>
               <div className="text-3xl font-bold text-[hsl(var(--atd-primary))]">
-                {isProviderView ? "2" : "4"}
+                {isProviderView ? "1" : "1"}
               </div>
-              <div className="text-xs text-[hsl(var(--atd-text-muted))]">In Progress</div>
+              <div className="text-xs text-[hsl(var(--atd-text-muted))]">Active</div>
             </div>
             <div className="bg-white/80 rounded-xl p-4 shadow-sm border border-green-100">
               <div className="flex items-center space-x-2 mb-2">
@@ -42,10 +44,10 @@ const InteractiveDashboard = () => {
                 </span>
               </div>
               <div className="text-3xl font-bold text-[hsl(var(--atd-accent))]">
-                {isProviderView ? "$325" : "$840"}
+                ${isProviderView ? currentJob.estimatedCost * 0.75 : currentJob.estimatedCost}
               </div>
               <div className="text-xs text-[hsl(var(--atd-text-muted))]">
-                {isProviderView ? "This month" : "of $1,200"}
+                {isProviderView ? "To earn" : "Pending"}
               </div>
             </div>
           </div>
@@ -66,7 +68,9 @@ const InteractiveDashboard = () => {
                 <div className="font-semibold text-[hsl(var(--atd-text))]">
                   {isProviderView ? "Next Job" : "Next Appointment"}
                 </div>
-                <div className="text-sm text-[hsl(var(--atd-text-muted))]">Tomorrow 9:00 AM - Weekly Cleaning</div>
+                <div className="text-sm text-[hsl(var(--atd-text-muted))]">
+                  {currentJob.title} - {currentJob.progress}% complete
+                </div>
               </div>
               <CheckCircle className="h-6 w-6 text-[hsl(var(--atd-accent))]" />
             </div>
@@ -78,29 +82,36 @@ const InteractiveDashboard = () => {
       title: isProviderView ? "My Active Jobs" : "Active Jobs",
       content: (
         <div className="space-y-3">
-          <div className="bg-white/80 rounded-lg p-4 border-l-4 border-[hsl(var(--atd-accent))] shadow-sm">
-            <div className="flex items-center justify-between mb-2">
-              <div className="font-medium">HVAC Maintenance</div>
-              <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 bg-[hsl(var(--atd-accent))] rounded-full animate-pulse"></div>
-                <span className="text-sm text-[hsl(var(--atd-accent))]">75% Complete</span>
+            <div className="bg-white/80 rounded-lg p-4 border-l-4 border-[hsl(var(--atd-accent))] shadow-sm">
+              <div className="flex items-center justify-between mb-2">
+                <div className="font-medium">{currentJob.title}</div>
+                <div className="flex items-center space-x-1">
+                  <div className="w-3 h-3 bg-[hsl(var(--atd-accent))] rounded-full animate-pulse"></div>
+                  <span className="text-sm text-[hsl(var(--atd-accent))]">{currentJob.progress}% Complete</span>
+                </div>
+              </div>
+              <div className="text-sm text-[hsl(var(--atd-text-muted))] mb-2">
+                {isProviderView ? "Property Address" : "Service Provider"} • Status: {currentJob.status}
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                <div 
+                  className="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full transition-all duration-500" 
+                  style={{ width: `${currentJob.progress}%` }}
+                ></div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-[hsl(var(--atd-primary))] font-medium">
+                  ${isProviderView ? `${currentJob.estimatedCost * 0.75} to earn` : `${currentJob.estimatedCost} pending`}
+                </span>
+                <Button 
+                  size="sm" 
+                  variant="outline"
+                  onClick={() => actions.setActiveDemo('pocketoffice')}
+                >
+                  {isProviderView ? "Update Job" : "Track Progress"}
+                </Button>
               </div>
             </div>
-            <div className="text-sm text-[hsl(var(--atd-text-muted))] mb-2">
-              {isProviderView ? "Johnson Residence" : "Mike's HVAC"} • Started 2 hours ago
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-              <div className="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full w-3/4 animate-pulse"></div>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-[hsl(var(--atd-primary))] font-medium">
-                ${isProviderView ? "240 to earn" : "240 pending"}
-              </span>
-              <Button size="sm" variant="outline">
-                {isProviderView ? "Update Job" : "View Details"}
-              </Button>
-            </div>
-          </div>
           {!isProviderView && (
             <div className="bg-white/80 rounded-lg p-4 border-l-4 border-[hsl(var(--atd-primary))] shadow-sm">
               <div className="flex items-center justify-between mb-2">
@@ -172,24 +183,30 @@ const InteractiveDashboard = () => {
       title: "Messages",
       content: (
         <div className="space-y-3">
-          <div className="bg-white/80 rounded-lg p-3 shadow-sm border border-gray-100">
-            <div className="flex items-center space-x-3 mb-2">
-              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-                M
+          {currentJob.messages.slice(-2).map((message) => (
+            <div key={message.id} className="bg-white/80 rounded-lg p-3 shadow-sm border border-gray-100">
+              <div className="flex items-center space-x-3 mb-2">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  {message.sender === 'provider' ? 'P' : 'H'}
+                </div>
+                <div className="flex-1">
+                  <div className="font-medium text-sm">
+                    {message.sender === 'provider' ? 'Service Provider' : 'Homeowner'}
+                  </div>
+                  <div className="text-xs text-[hsl(var(--atd-text-muted))]">
+                    {new Date(message.timestamp).toLocaleTimeString()}
+                  </div>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                </div>
               </div>
-              <div className="flex-1">
-                <div className="font-medium text-sm">Mike's HVAC</div>
-                <div className="text-xs text-[hsl(var(--atd-text-muted))]">2 minutes ago</div>
-              </div>
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <CheckCircle className="h-4 w-4 text-green-500" />
+              <div className="text-sm text-[hsl(var(--atd-text))]">
+                "{message.message}"
               </div>
             </div>
-            <div className="text-sm text-[hsl(var(--atd-text))]">
-              "Filter replacement complete. System running efficiently. Photo attached."
-            </div>
-          </div>
+          ))}
           <div className="bg-white/80 rounded-lg p-3 shadow-sm border border-gray-100">
             <div className="flex items-center space-x-3 mb-2">
               <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
@@ -206,7 +223,12 @@ const InteractiveDashboard = () => {
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3 text-center">
-            <Button size="sm" variant="outline" className="w-full">
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="w-full"
+              onClick={() => actions.setActiveDemo('pocketoffice')}
+            >
               <MessageSquare className="h-4 w-4 mr-2" />
               Send Message
             </Button>
@@ -323,15 +345,15 @@ const InteractiveDashboard = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={() => setIsProviderView(!isProviderView)}
-            className="text-xs px-2 py-1"
-          >
-            {isProviderView ? <Eye className="h-3 w-3 mr-1" /> : <EyeOff className="h-3 w-3 mr-1" />}
-            {isProviderView ? "Owner" : "Provider"}
-          </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={actions.toggleUserType}
+              className="text-xs px-2 py-1"
+            >
+              {isProviderView ? <Eye className="h-3 w-3 mr-1" /> : <EyeOff className="h-3 w-3 mr-1" />}
+              {isProviderView ? "Owner" : "Provider"}
+            </Button>
           <div className="flex space-x-1">
             <div className="w-2 h-2 bg-green-400 rounded-full"></div>
             <div className="w-2 h-2 bg-blue-400 rounded-full"></div>

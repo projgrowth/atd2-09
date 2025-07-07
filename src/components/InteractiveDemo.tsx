@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { Monitor, Smartphone, QrCode, Users, Star } from "lucide-react";
+import { Monitor, Smartphone, QrCode, Users, Star, RotateCcw, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InteractiveDashboard from "./InteractiveDashboard";
 import PocketOfficeDemo from "./PocketOfficeDemo";
 import QRScanDemo from "./QRScanDemo";
 import UserJourneyDemo from "./UserJourneyDemo";
 import RatingSystemDemo from "./RatingSystemDemo";
+import { DemoProvider, useDemoContext } from "@/contexts/DemoContext";
 import { cn } from "@/lib/utils";
 
-const InteractiveDemo = () => {
-  const [activeDemo, setActiveDemo] = useState("dashboard");
+const InteractiveDemoContent = () => {
+  const { state, actions } = useDemoContext();
+  const { activeDemo, demoProgress, userType } = state;
 
   const demos = {
     dashboard: {
@@ -48,12 +50,52 @@ const InteractiveDemo = () => {
     <section className="section-spacing section-bg-content section-separator">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up" id="interactive-demo">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
-            See It In Action
-          </h2>
+          <div className="flex items-center justify-center mb-6 space-x-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-enhanced">
+              See It In Action
+            </h2>
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={actions.toggleUserType}
+                className="text-xs"
+              >
+                {userType === 'homeowner' ? <Eye className="h-3 w-3 mr-1" /> : <EyeOff className="h-3 w-3 mr-1" />}
+                {userType === 'homeowner' ? 'Provider View' : 'Owner View'}
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={actions.resetDemos}
+                className="text-xs"
+              >
+                <RotateCcw className="h-3 w-3 mr-1" />
+                Reset
+              </Button>
+            </div>
+          </div>
           <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced">
             Experience ATD's dual-perspective platform with hands-on demos for homeowners and providers.
           </p>
+          <div className="mt-4 flex justify-center">
+            <div className="bg-white/80 rounded-lg px-4 py-2 border border-blue-200">
+              <div className="text-sm font-medium text-[hsl(var(--atd-text))]">
+                Demo Progress: {demoProgress.length}/5 explored
+              </div>
+              <div className="flex space-x-1 mt-2">
+                {Object.keys(demos).map((demoKey) => (
+                  <div
+                    key={demoKey}
+                    className={cn(
+                      "w-2 h-2 rounded-full transition-colors",
+                      demoProgress.includes(demoKey) ? "bg-[hsl(var(--atd-primary))]" : "bg-gray-300"
+                    )}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Demo Selector - Enhanced for mobile */}
@@ -64,12 +106,13 @@ const InteractiveDemo = () => {
               <Button
                 key={key}
                 variant={activeDemo === key ? "default" : "outline"}
-                onClick={() => setActiveDemo(key)}
+                onClick={() => actions.setActiveDemo(key)}
                 className={cn(
                   "flex items-center space-x-3 px-4 sm:px-6 py-4 text-sm mobile-interactive",
                   "min-h-[52px] transition-all duration-200 font-semibold",
                   activeDemo === key && "animate-mobile-scale-in button-primary-enhanced",
-                  activeDemo !== key && "button-secondary-enhanced"
+                  activeDemo !== key && "button-secondary-enhanced",
+                  demoProgress.includes(key) && "ring-1 ring-[hsl(var(--atd-primary))]/30"
                 )}
               >
                 <IconComponent className="h-5 w-5 flex-shrink-0" />
@@ -83,7 +126,7 @@ const InteractiveDemo = () => {
         </div>
 
         {/* Active Demo */}
-        <div className="animate-fade-in">
+        <div className="animate-fade-in transition-all duration-300">
           {demos[activeDemo as keyof typeof demos].component}
         </div>
 
@@ -118,6 +161,14 @@ const InteractiveDemo = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const InteractiveDemo = () => {
+  return (
+    <DemoProvider>
+      <InteractiveDemoContent />
+    </DemoProvider>
   );
 };
 
