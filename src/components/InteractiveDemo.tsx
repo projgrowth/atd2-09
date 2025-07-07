@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Monitor, Smartphone, QrCode, Users } from "lucide-react";
+import { Monitor, Smartphone, QrCode, Users, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InteractiveDashboard from "./InteractiveDashboard";
 import PocketOfficeDemo from "./PocketOfficeDemo";
 import QRScanDemo from "./QRScanDemo";
 import UserJourneyDemo from "./UserJourneyDemo";
+import RatingSystemDemo from "./RatingSystemDemo";
 import { cn } from "@/lib/utils";
 
 const InteractiveDemo = () => {
@@ -28,6 +29,12 @@ const InteractiveDemo = () => {
       description: "Watch the instant access system in action",
       icon: QrCode,
       component: <QRScanDemo />
+    },
+    ratings: {
+      title: "Rating System",
+      description: "Experience two-sided accountability ratings",
+      icon: Star,
+      component: <RatingSystemDemo />
     },
     journey: {
       title: "User Journeys",
