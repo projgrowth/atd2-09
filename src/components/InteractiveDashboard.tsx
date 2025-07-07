@@ -1,14 +1,20 @@
 
 import { useState } from "react";
-import { Home, Users, FileText, Activity, Clock, DollarSign, CheckCircle, ArrowLeft, ArrowRight, MessageSquare, Shield, Eye, EyeOff } from "lucide-react";
+import { Home, Users, FileText, Activity, Clock, DollarSign, CheckCircle, ArrowLeft, ArrowRight, MessageSquare, Shield, Eye, EyeOff, Settings, Bell, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import PropertyManagementCards from "./dashboard/PropertyManagementCards";
+import QuickActionButtons from "./dashboard/QuickActionButtons";
+import NotificationCenter from "./dashboard/NotificationCenter";
+import ServiceRequestWizard from "./dashboard/ServiceRequestWizard";
+import ProviderAvailabilityCalendar from "./dashboard/ProviderAvailabilityCalendar";
 
-type ViewKey = "overview" | "jobs" | "documents" | "messaging" | "payments";
+type ViewKey = "overview" | "jobs" | "documents" | "messaging" | "payments" | "properties" | "actions" | "notifications" | "schedule" | "request";
 
 const InteractiveDashboard = () => {
   const [currentView, setCurrentView] = useState<ViewKey>("overview");
   const [isProviderView, setIsProviderView] = useState(false);
   const [showPrivacyPanel, setShowPrivacyPanel] = useState(false);
+  const [showServiceRequest, setShowServiceRequest] = useState(false);
 
   const views: Record<ViewKey, { title: string; content: JSX.Element }> = {
     overview: {
@@ -253,10 +259,45 @@ const InteractiveDashboard = () => {
           </div>
         </div>
       )
+    },
+    properties: {
+      title: "Property Management",
+      content: <PropertyManagementCards isProviderView={isProviderView} />
+    },
+    actions: {
+      title: "Quick Actions",
+      content: <QuickActionButtons 
+        isProviderView={isProviderView}
+        onActionClick={(actionId) => {
+          if (actionId === 'schedule') {
+            setCurrentView('request');
+          }
+        }}
+      />
+    },
+    notifications: {
+      title: "Notification Center",
+      content: <NotificationCenter isProviderView={isProviderView} />
+    },
+    schedule: {
+      title: isProviderView ? "My Schedule" : "Book Service",
+      content: <ProviderAvailabilityCalendar isProviderView={isProviderView} />
+    },
+    request: {
+      title: "Service Request",
+      content: <ServiceRequestWizard 
+        onRequestSubmit={(request) => {
+          console.log('Service request submitted:', request);
+          setCurrentView('overview');
+        }}
+        onClose={() => setCurrentView('overview')}
+      />
     }
   };
 
-  const viewKeys: ViewKey[] = ["overview", "jobs", "documents", "messaging", "payments"];
+  const viewKeys: ViewKey[] = isProviderView 
+    ? ["overview", "jobs", "actions", "notifications", "schedule"] 
+    : ["overview", "properties", "actions", "notifications", "schedule", "request"];
   const currentIndex = viewKeys.indexOf(currentView);
 
   const navigateToView = (direction: 'prev' | 'next') => {
