@@ -192,160 +192,118 @@ const SimplifiedDemo = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* iPhone 16 Pro Max Mockup */}
-          <div className="flex justify-center lg:order-2">
-            <div className="relative">
-              {/* iPhone 16 Pro Max Frame */}
-              <div className="relative bg-gradient-to-b from-slate-900 via-gray-800 to-black rounded-[3.5rem] p-2 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                {/* Titanium Frame */}
-                <div className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 rounded-[3.2rem] p-1">
-                  <div className="bg-black rounded-[3rem] overflow-hidden relative">
-                    {/* Dynamic Island */}
-                    <div className="absolute top-3 left-1/2 transform -translate-x-1/2 z-20">
-                      <div className="bg-black rounded-full w-32 h-8 flex items-center justify-center">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                          <div className="text-white text-xs font-medium">9:41</div>
-                          <div className="w-4 h-2 bg-green-500 rounded-sm"></div>
-                        </div>
+        {/* Step Information */}
+        <div className="text-center mb-12 max-w-2xl mx-auto">
+          <div className="flex items-center justify-center mb-6">
+            <div className="text-5xl mr-4">
+              {currentStep === 0 && "📱"}
+              {currentStep === 1 && "📸"}
+              {currentStep === 2 && "💬"}
+              {currentStep === 3 && "💳"}
+            </div>
+            <div className="text-left">
+              <h3 className="text-3xl md:text-4xl font-bold text-enhanced mb-2">
+                {currentDemo.title}
+              </h3>
+              <p className="text-xl font-semibold text-muted-enhanced">
+                {currentDemo.description}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* iPhone 16 Pro Max Mockup - Centered */}
+        <div className="flex justify-center mb-12">
+          <div className="relative max-w-sm">
+            {/* iPhone 16 Pro Max Frame */}
+            <div className="relative bg-gradient-to-b from-slate-900 via-gray-800 to-black rounded-[3.5rem] p-2 shadow-2xl hover:scale-105 transition-transform duration-300">
+              {/* Titanium Frame */}
+              <div className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 rounded-[3.2rem] p-1">
+                <div className="bg-black rounded-[3rem] overflow-hidden relative">
+                  {/* Dynamic Island */}
+                  <div className="absolute top-3 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-black rounded-full w-32 h-8 flex items-center justify-center">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <div className="text-white text-xs font-medium">9:41</div>
+                        <div className="w-4 h-2 bg-green-500 rounded-sm"></div>
                       </div>
                     </div>
+                  </div>
+                  
+                  {/* Screen Content with Glass Morphism */}
+                  <div className="h-[650px] relative overflow-hidden mt-12">
+                    {/* iOS Wallpaper Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 opacity-80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 via-transparent to-purple-600/30"></div>
                     
-                    {/* Screen Content with Glass Morphism */}
-                    <div className="h-[650px] relative overflow-hidden mt-12">
-                      {/* iOS Wallpaper Background */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 opacity-80"></div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 via-transparent to-purple-600/30"></div>
-                      
-                      <div 
-                        className="absolute inset-0 transition-all duration-700 ease-in-out"
-                        style={{
-                          transform: `translateX(${currentStep * -100}%)`,
-                          width: `${demoSteps.length * 100}%`
-                        }}
-                      >
-                        <div className="flex h-full">
-                          {demoSteps.map((step, index) => (
-                            <div 
-                              key={index} 
-                              className="w-full h-full flex-shrink-0 relative"
-                              style={{ width: `${100 / demoSteps.length}%` }}
-                            >
-                              {/* Glass Morphism Container */}
-                              <div className="absolute inset-4 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
-                                {step.screen.content}
-                              </div>
+                    <div 
+                      className="absolute inset-0 transition-all duration-700 ease-in-out"
+                      style={{
+                        transform: `translateX(${currentStep * -100}%)`,
+                        width: `${demoSteps.length * 100}%`
+                      }}
+                    >
+                      <div className="flex h-full">
+                        {demoSteps.map((step, index) => (
+                          <div 
+                            key={index} 
+                            className="w-full h-full flex-shrink-0 relative"
+                            style={{ width: `${100 / demoSteps.length}%` }}
+                          >
+                            {/* Glass Morphism Container */}
+                            <div className="absolute inset-4 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
+                              {step.screen.content}
                             </div>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    
-                    {/* Home Indicator */}
-                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-                      <div className="w-32 h-1 bg-white/60 rounded-full"></div>
-                    </div>
+                  </div>
+                  
+                  {/* Home Indicator */}
+                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+                    <div className="w-32 h-1 bg-white/60 rounded-full"></div>
                   </div>
                 </div>
               </div>
-
-              {/* Floating Glass Elements */}
-              <div className="absolute -right-12 top-12 bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-xl animate-float border border-white/30">
-                <div className="text-sm font-bold text-white mb-1">⚡ Live Sync</div>
-                <div className="text-xs text-white/80">Real-time updates</div>
-              </div>
-              
-              <div className="absolute -left-12 bottom-16 bg-white/20 backdrop-blur-md rounded-2xl p-4 shadow-xl animate-float border border-white/30" style={{ animationDelay: '1.5s' }}>
-                <div className="text-sm font-bold text-white mb-1">🔒 Secure</div>
-                <div className="text-xs text-white/80">Protected payments</div>
-              </div>
             </div>
           </div>
+        </div>
 
-          {/* Content Side */}
-          <div className="lg:order-1">
-            <div className="mb-8">
-              <div className="flex items-center mb-6">
-                <div className="text-4xl mr-4">
-                  {currentStep === 0 && "📱"}
-                  {currentStep === 1 && "📸"}
-                  {currentStep === 2 && "💬"}
-                  {currentStep === 3 && "💳"}
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-enhanced mb-2">
-                    {currentDemo.title}
-                  </h3>
-                  <p className="text-lg font-semibold text-muted-enhanced">
-                    {currentDemo.description}
-                  </p>
-                </div>
-              </div>
+        {/* Clean Navigation Controls */}
+        <div className="flex flex-col items-center space-y-6">
+          {/* Progress Indicators */}
+          <div className="flex space-x-3">
+            {demoSteps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentStep(index)}
+                className={cn(
+                  "h-3 rounded-full transition-all duration-300 hover:scale-110",
+                  index === currentStep 
+                    ? "bg-primary w-12" 
+                    : "bg-gray-300 w-3 hover:bg-gray-400"
+                )}
+                aria-label={`Go to step ${index + 1}`}
+              />
+            ))}
+          </div>
 
-              {/* Progress Indicators */}
-              <div className="flex space-x-3 mb-6">
-                {demoSteps.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentStep(index)}
-                    className={cn(
-                      "h-2 rounded-full transition-all duration-300",
-                      index === currentStep 
-                        ? "bg-primary w-8" 
-                        : "bg-gray-300 w-2 hover:bg-gray-400"
-                    )}
-                  />
-                ))}
-              </div>
-
-              {/* Play/Pause Controls */}
-              <div className="flex items-center space-x-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="flex items-center space-x-2"
-                >
-                  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                  <span>{isPlaying ? 'Pause' : 'Play'}</span>
-                </Button>
-                <span className="text-sm text-gray-500">
-                  Step {currentStep + 1} of {demoSteps.length}
-                </span>
-              </div>
-            </div>
-
-            {/* Feature List */}
-            <div className="space-y-4">
-              {[
-                "QR code instant access for providers",
-                "Real-time photo and status updates", 
-                "Centralized communication platform",
-                "Secure milestone-based payments"
-              ].map((feature, index) => (
-                <div 
-                  key={index}
-                  className={cn(
-                    "flex items-center space-x-3 p-3 rounded-lg transition-all duration-300",
-                    index === currentStep 
-                      ? "bg-primary/10 border border-primary/20" 
-                      : "bg-gray-50"
-                  )}
-                >
-                  <div className={cn(
-                    "w-2 h-2 rounded-full transition-colors",
-                    index === currentStep ? "bg-primary" : "bg-gray-400"
-                  )} />
-                  <span className={cn(
-                    "text-sm font-semibold",
-                    index === currentStep ? "text-primary" : "text-gray-600"
-                  )}>
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
+          {/* Play/Pause Controls */}
+          <div className="flex items-center space-x-4">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="flex items-center space-x-2"
+            >
+              {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+              <span>{isPlaying ? 'Pause Demo' : 'Play Demo'}</span>
+            </Button>
+            <span className="text-sm text-muted-foreground">
+              {currentStep + 1} of {demoSteps.length}
+            </span>
           </div>
         </div>
 
