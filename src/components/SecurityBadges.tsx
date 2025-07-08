@@ -30,7 +30,7 @@ const SecurityBadges = () => {
   ];
 
   return (
-    <section className="section-spacing section-bg-primary section-separator">
+    <section className="section-spacing-large section-bg-primary section-separator">
       <div className="container-standard">
         <div className="text-center mb-12 animate-fade-in-up">
           <h3 className="text-2xl font-bold text-[hsl(var(--atd-text))] mb-4">

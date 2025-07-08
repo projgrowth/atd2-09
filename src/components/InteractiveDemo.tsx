@@ -73,7 +73,7 @@ const InteractiveDemoContent = () => {
   };
 
   return (
-    <section className="section-spacing section-bg-content section-separator">
+    <section className="section-spacing-large section-bg-content section-separator">
       <div className="container-standard">
         <div className="text-center mb-16 animate-fade-in-up" id="interactive-demo">
           <div className="flex items-center justify-center mb-6 space-x-4">
