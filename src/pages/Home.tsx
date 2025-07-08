@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import ProblemSolution from "@/components/ProblemSolution";
-import SimplifiedDemo from "@/components/SimplifiedDemo";
+import EnhancedDemo from "@/components/EnhancedDemo";
 import SocialProofTeaser from "@/components/SocialProofTeaser";
 import StoryConnector from "@/components/StoryConnector";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ const Home = () => {
       {/* Story Transition */}
       <StoryConnector />
       
-      <SimplifiedDemo />
+      <EnhancedDemo />
       
       {/* Story Transition */}
       <StoryConnector />
