@@ -23,7 +23,7 @@ const Navigation = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <header className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-atd-surface/95 backdrop-blur-sm border-b border-atd-border/20">
         <div className="container max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -31,7 +31,7 @@ const Navigation = () => {
               <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
                 <Home className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-[hsl(var(--atd-text))]">All Things Done</span>
+              <span className="text-xl font-bold text-enhanced">All Things Done</span>
             </Link>
 
             {/* Navigation Links */}
@@ -42,8 +42,8 @@ const Navigation = () => {
                   to={item.href}
                   className={`font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-[hsl(var(--atd-primary))] border-b-2 border-[hsl(var(--atd-primary))] pb-1'
-                      : 'text-[hsl(var(--atd-text))] hover:text-[hsl(var(--atd-primary))]'
+                      ? 'text-atd-primary border-b-2 border-atd-primary pb-1'
+                      : 'text-enhanced hover:text-atd-primary'
                   }`}
                 >
                   {item.name}
@@ -51,7 +51,7 @@ const Navigation = () => {
               ))}
               
               <Link to="/join-beta">
-                <Button className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white">
+                <Button className="bg-atd-primary hover:bg-atd-primary/90 text-white">
                   Join Beta
                 </Button>
               </Link>
@@ -61,14 +61,14 @@ const Navigation = () => {
       </header>
 
       {/* Mobile Navigation */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-4 py-3">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-atd-surface/95 backdrop-blur-sm border-b border-atd-border/20 px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
               <Home className="h-5 w-5 text-white" />
             </div>
-            <span className="text-lg font-bold text-[hsl(var(--atd-text))]">ATD</span>
+            <span className="text-lg font-bold text-enhanced">ATD</span>
           </Link>
 
           {/* Hamburger Button */}
@@ -76,13 +76,13 @@ const Navigation = () => {
             variant="ghost"
             size="sm"
             onClick={toggleMenu}
-            className="w-11 h-11 p-0 hover:bg-gray-100 transition-colors"
+            className="w-11 h-11 p-0 hover:bg-atd-surface-muted transition-colors"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-[hsl(var(--atd-text))]" />
+              <X className="h-6 w-6 text-enhanced" />
             ) : (
-              <Menu className="h-6 w-6 text-[hsl(var(--atd-text))]" />
+              <Menu className="h-6 w-6 text-enhanced" />
             )}
           </Button>
         </div>
@@ -96,13 +96,13 @@ const Navigation = () => {
       >
         {/* Background Overlay */}
         <div
-          className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+          className="absolute inset-0 bg-atd-neutral-900/20 backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         />
 
         {/* Slide Menu */}
         <div
-          className={`absolute top-0 right-0 h-full w-72 bg-white shadow-2xl transform transition-transform duration-300 ease-out ${
+          className={`absolute top-0 right-0 h-full w-72 bg-atd-surface shadow-2xl transform transition-transform duration-300 ease-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -115,8 +115,8 @@ const Navigation = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`w-full flex items-center px-4 py-4 text-left rounded-xl transition-colors duration-200 min-h-[52px] ${
                     isActive(item.href)
-                      ? 'bg-[hsl(var(--atd-primary))]/10 text-[hsl(var(--atd-primary))] font-bold'
-                      : 'text-[hsl(var(--atd-text))] hover:bg-gray-50'
+                      ? 'bg-atd-primary/10 text-atd-primary font-bold'
+                      : 'text-enhanced hover:bg-atd-surface-muted'
                   }`}
                 >
                   <span className="font-medium text-lg">{item.name}</span>

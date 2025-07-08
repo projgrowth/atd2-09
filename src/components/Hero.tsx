@@ -28,44 +28,44 @@ const Hero = () => {
   const viewContent = {
     homeowner: {
       content: (
-        <div className="h-full bg-gradient-to-br from-blue-50 to-blue-100 p-4">
+        <div className="h-full bg-gradient-to-br from-atd-primary/10 to-atd-primary/20 p-4">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-atd-primary rounded-full flex items-center justify-center">
                 <span className="text-white text-xs font-bold">ATD</span>
               </div>
-              <span className="font-bold text-gray-800">Dashboard</span>
+              <span className="font-bold text-enhanced">Dashboard</span>
             </div>
-            <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">
+            <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full font-medium">
               2 Active Jobs
             </div>
           </div>
 
           {/* Active Projects */}
           <div className="space-y-3 mb-4">
-            <div className="bg-white rounded-lg p-3 shadow-sm">
+            <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="font-bold text-gray-800 text-sm">Kitchen Renovation</h3>
-                  <p className="text-xs text-gray-600">Mike Johnson - Elite Construction</p>
+                  <h3 className="font-bold text-enhanced text-sm">Kitchen Renovation</h3>
+                  <p className="text-xs text-muted-enhanced">Mike Johnson - Elite Construction</p>
                 </div>
-                <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+                <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full">
                   75% Complete
                 </div>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-1.5">
-                <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '75%' }}></div>
+              <div className="w-full bg-atd-surface-muted rounded-full h-1.5">
+                <div className="bg-atd-success h-1.5 rounded-full" style={{ width: '75%' }}></div>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-3 shadow-sm">
+            <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="font-bold text-gray-800 text-sm">Bathroom Repair</h3>
-                  <p className="text-xs text-gray-600">Sarah Davis - Fix It Fast</p>
+                  <h3 className="font-bold text-enhanced text-sm">Bathroom Repair</h3>
+                  <p className="text-xs text-muted-enhanced">Sarah Davis - Fix It Fast</p>
                 </div>
-                <div className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                <div className="text-xs bg-atd-primary/10 text-atd-primary px-2 py-1 rounded-full">
                   Starting Soon
                 </div>
               </div>
@@ -74,25 +74,25 @@ const Hero = () => {
 
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <button className="bg-blue-600 text-white rounded-lg py-2 px-3 text-xs font-medium">
+            <button className="bg-atd-primary text-white rounded-lg py-2 px-3 text-xs font-medium">
               Add Provider
             </button>
-            <button className="bg-gray-100 text-gray-700 rounded-lg py-2 px-3 text-xs font-medium">
+            <button className="bg-atd-surface-muted text-enhanced rounded-lg py-2 px-3 text-xs font-medium">
               New Project
             </button>
           </div>
 
           {/* Recent Activity */}
-          <div className="bg-white rounded-lg p-3 shadow-sm">
-            <h4 className="font-bold text-gray-800 text-xs mb-2">Recent Updates</h4>
+          <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
+            <h4 className="font-bold text-enhanced text-xs mb-2">Recent Updates</h4>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-xs text-gray-700">New photos from Mike</span>
+                <div className="w-2 h-2 bg-atd-success rounded-full"></div>
+                <span className="text-xs text-muted-enhanced">New photos from Mike</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-xs text-gray-700">Payment processed</span>
+                <div className="w-2 h-2 bg-atd-primary rounded-full"></div>
+                <span className="text-xs text-muted-enhanced">Payment processed</span>
               </div>
             </div>
           </div>
@@ -107,44 +107,44 @@ const Hero = () => {
     },
     provider: {
       content: (
-        <div className="h-full bg-gradient-to-br from-orange-50 to-orange-100 p-4">
+        <div className="h-full bg-gradient-to-br from-atd-warning/10 to-atd-warning/20 p-4">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-atd-warning rounded-full flex items-center justify-center">
                 <span className="text-white text-xs font-bold">PO</span>
               </div>
-              <span className="font-bold text-gray-800">PocketOffice</span>
+              <span className="font-bold text-enhanced">PocketOffice</span>
             </div>
-            <div className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">
+            <div className="text-xs bg-atd-warning/10 text-atd-warning px-2 py-1 rounded-full font-medium">
               Active Job
             </div>
           </div>
 
           {/* Current Job */}
-          <div className="bg-white rounded-lg p-3 shadow-sm mb-4">
+          <div className="bg-atd-surface rounded-lg p-3 shadow-sm mb-4">
             <div className="flex justify-between items-start mb-3">
               <div>
-                <h3 className="font-bold text-gray-800 text-sm">Kitchen Renovation</h3>
-                <p className="text-xs text-gray-600">Sarah Johnson • 123 Oak St</p>
+                <h3 className="font-bold text-enhanced text-sm">Kitchen Renovation</h3>
+                <p className="text-xs text-muted-enhanced">Sarah Johnson • 123 Oak St</p>
               </div>
-              <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+              <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full">
                 In Progress
               </div>
             </div>
             
             {/* Timer */}
             <div className="flex items-center space-x-2 mb-3">
-              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-gray-700 font-medium">Time: 2h 15m</span>
+              <div className="w-2 h-2 bg-atd-error rounded-full animate-pulse"></div>
+              <span className="text-xs text-muted-enhanced font-medium">Time: 2h 15m</span>
             </div>
 
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-2">
-              <button className="bg-orange-600 text-white rounded-lg py-2 px-3 text-xs font-medium">
+              <button className="bg-atd-warning text-white rounded-lg py-2 px-3 text-xs font-medium">
                 Add Photo
               </button>
-              <button className="bg-gray-100 text-gray-700 rounded-lg py-2 px-3 text-xs font-medium">
+              <button className="bg-atd-surface-muted text-enhanced rounded-lg py-2 px-3 text-xs font-medium">
                 Update Status
               </button>
             </div>
@@ -152,14 +152,14 @@ const Hero = () => {
 
           {/* Recent Updates */}
           <div className="space-y-2">
-            <h4 className="text-xs font-bold text-gray-700">Today's Updates</h4>
-            <div className="bg-white rounded-lg p-2 border-l-4 border-orange-500">
-              <p className="text-xs font-medium text-gray-800">Progress photo sent</p>
-              <p className="text-xs text-gray-600">✓ Client notified</p>
+            <h4 className="text-xs font-bold text-enhanced">Today's Updates</h4>
+            <div className="bg-atd-surface rounded-lg p-2 border-l-4 border-atd-warning">
+              <p className="text-xs font-medium text-enhanced">Progress photo sent</p>
+              <p className="text-xs text-muted-enhanced">✓ Client notified</p>
             </div>
-            <div className="bg-white rounded-lg p-2">
-              <p className="text-xs font-medium text-gray-800">Started work at 8:30 AM</p>
-              <p className="text-xs text-gray-600">Auto-tracked</p>
+            <div className="bg-atd-surface rounded-lg p-2">
+              <p className="text-xs font-medium text-enhanced">Started work at 8:30 AM</p>
+              <p className="text-xs text-muted-enhanced">Auto-tracked</p>
             </div>
           </div>
         </div>
@@ -178,7 +178,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-primary px-4 sm:px-6">
       {/* Clean, minimal background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/30 via-white/10 to-slate-100/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
       <div className="container max-w-7xl mx-auto relative z-10 py-16 sm:py-20 md:py-24">
         {/* Two-column layout */}
@@ -187,7 +187,7 @@ const Hero = () => {
           <div className="lg:col-span-3 text-center lg:text-left">
             {/* Problem Statement */}
             <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
-              <span className="inline-block bg-red-50 text-red-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-red-200">
+              <span className="inline-block bg-atd-error/10 text-atd-error px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20">
                 Managing home projects shouldn't be chaotic
               </span>
             </div>
@@ -209,7 +209,7 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-bold transition-colors duration-200"
+                className="bg-atd-primary hover:bg-atd-primary/90 text-white w-full sm:w-auto px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-bold transition-colors duration-200"
                 onClick={() => document.getElementById('enhanced-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
@@ -222,15 +222,15 @@ const Hero = () => {
             <div className="w-full max-w-sm space-y-6">
               {/* View Toggle */}
               <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <div className="flex bg-white rounded-xl p-1 shadow-lg border border-gray-200">
+                <div className="flex bg-atd-surface rounded-xl p-1 shadow-lg border border-atd-border">
                   <button
                     onClick={() => handleViewChange('homeowner')}
                     disabled={isTransitioning}
                     className={cn(
                       "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
                       viewType === 'homeowner'
-                        ? "bg-blue-600 text-white shadow-sm"
-                        : "text-gray-600 hover:text-gray-800"
+                        ? "bg-atd-primary text-white shadow-sm"
+                        : "text-muted-enhanced hover:text-enhanced"
                     )}
                   >
                     Homeowner View
@@ -241,8 +241,8 @@ const Hero = () => {
                     className={cn(
                       "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
                       viewType === 'provider'
-                        ? "bg-orange-600 text-white shadow-sm"
-                        : "text-gray-600 hover:text-gray-800"
+                        ? "bg-atd-warning text-white shadow-sm"
+                        : "text-muted-enhanced hover:text-enhanced"
                     )}
                   >
                     Provider View
@@ -255,7 +255,7 @@ const Hero = () => {
                 "animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                <div className="bg-atd-surface rounded-2xl shadow-lg border border-atd-border overflow-hidden">
                   {currentView.content}
                 </div>
               </div>
@@ -268,16 +268,16 @@ const Hero = () => {
                 {currentView.features.map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div key={index} className="flex items-start space-x-3 bg-atd-surface rounded-xl p-4 shadow-sm border border-atd-border/50">
                       <div className={cn(
                         "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
-                        viewType === 'homeowner' ? "bg-blue-100 text-blue-600" : "bg-orange-100 text-orange-600"
+                        viewType === 'homeowner' ? "bg-atd-primary/10 text-atd-primary" : "bg-atd-warning/10 text-atd-warning"
                       )}>
                         <IconComponent className="h-4 w-4" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-gray-900 mb-1">{feature.title}</h4>
-                        <p className="text-xs text-gray-600 leading-relaxed">{feature.description}</p>
+                        <h4 className="text-sm font-semibold text-enhanced mb-1">{feature.title}</h4>
+                        <p className="text-xs text-muted-enhanced leading-relaxed">{feature.description}</p>
                       </div>
                     </div>
                   );
@@ -289,8 +289,8 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="bg-white/80 p-2 md:p-3 rounded-full shadow-lg">
-            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-gray-700" />
+          <div className="bg-atd-surface/80 p-2 md:p-3 rounded-full shadow-lg">
+            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-enhanced" />
           </div>
         </div>
       </div>

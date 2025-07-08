@@ -14,8 +14,8 @@ const ProblemSolution = () => {
       solution: "All communication happens in one secure platform with automatic organization",
       benefit: "Never lose track of important conversations again",
       stats: "87% fewer missed messages",
-      color: "from-blue-500/10 to-blue-600/10",
-      iconColor: "text-blue-600"
+      color: "from-atd-primary/10 to-atd-primary/20",
+      iconColor: "text-atd-primary"
     },
     {
       icon: FileX,
@@ -24,8 +24,8 @@ const ProblemSolution = () => {
       solution: "Every photo, document, and conversation is automatically saved and searchable",
       benefit: "Complete project history at your fingertips",
       stats: "100% project documentation",
-      color: "from-purple-500/10 to-purple-600/10",
-      iconColor: "text-purple-600"
+      color: "from-atd-accent/10 to-atd-accent/20",
+      iconColor: "text-atd-accent"
     },
     {
       icon: Clock,
@@ -34,8 +34,8 @@ const ProblemSolution = () => {
       solution: "Live updates with photos and progress tracking from your providers' mobile app",
       benefit: "Stay informed without constant check-ins",
       stats: "Real-time notifications",
-      color: "from-green-500/10 to-green-600/10",
-      iconColor: "text-green-600"
+      color: "from-atd-success/10 to-atd-success/20",
+      iconColor: "text-atd-success"
     },
     {
       icon: Shield,
@@ -44,8 +44,8 @@ const ProblemSolution = () => {
       solution: "Two-way rating system and documented work history builds trust and accountability",
       benefit: "Confidence in every project outcome",
       stats: "95% satisfaction rate",
-      color: "from-orange-500/10 to-orange-600/10",
-      iconColor: "text-orange-600"
+      color: "from-atd-warning/10 to-atd-warning/20",
+      iconColor: "text-atd-warning"
     }
   ];
 

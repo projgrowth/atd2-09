@@ -502,6 +502,51 @@
     color: hsl(var(--atd-error));
   }
   
+  /* ATD Color Utility Classes */
+  
+  /* Background Colors */
+  .bg-atd-primary { background-color: hsl(var(--atd-primary)); }
+  .bg-atd-primary\/10 { background-color: hsl(var(--atd-primary) / 0.1); }
+  .bg-atd-primary\/20 { background-color: hsl(var(--atd-primary) / 0.2); }
+  .bg-atd-accent { background-color: hsl(var(--atd-accent)); }
+  .bg-atd-accent\/10 { background-color: hsl(var(--atd-accent) / 0.1); }
+  .bg-atd-accent\/20 { background-color: hsl(var(--atd-accent) / 0.2); }
+  .bg-atd-success { background-color: hsl(var(--atd-success)); }
+  .bg-atd-success\/10 { background-color: hsl(var(--atd-success) / 0.1); }
+  .bg-atd-success\/20 { background-color: hsl(var(--atd-success) / 0.2); }
+  .bg-atd-error { background-color: hsl(var(--atd-error)); }
+  .bg-atd-error\/10 { background-color: hsl(var(--atd-error) / 0.1); }
+  .bg-atd-error\/20 { background-color: hsl(var(--atd-error) / 0.2); }
+  .bg-atd-warning { background-color: hsl(var(--atd-warning)); }
+  .bg-atd-warning\/10 { background-color: hsl(var(--atd-warning) / 0.1); }
+  .bg-atd-warning\/20 { background-color: hsl(var(--atd-warning) / 0.2); }
+  
+  /* Text Colors */
+  .text-atd-primary { color: hsl(var(--atd-primary)); }
+  .text-atd-accent { color: hsl(var(--atd-accent)); }
+  .text-atd-success { color: hsl(var(--atd-success)); }
+  .text-atd-error { color: hsl(var(--atd-error)); }
+  .text-atd-warning { color: hsl(var(--atd-warning)); }
+  
+  /* Neutral Colors */
+  .bg-atd-surface { background-color: hsl(var(--atd-surface-primary)); }
+  .bg-atd-surface-secondary { background-color: hsl(var(--atd-surface-secondary)); }
+  .bg-atd-surface-muted { background-color: hsl(var(--atd-surface-muted)); }
+  .border-atd-border { border-color: hsl(var(--atd-border)); }
+  
+  /* Status Indicator Colors */
+  .status-online { 
+    background-color: hsl(var(--atd-success)); 
+    color: white; 
+  }
+  .status-pending { 
+    background-color: hsl(var(--atd-warning)); 
+    color: white; 
+  }
+  .status-inactive { 
+    background-color: hsl(var(--atd-neutral-400)); 
+    color: white; 
+  }
   /* Mobile Optimizations */
   .mobile-touch-target {
     @apply min-h-[48px] min-w-[48px];
