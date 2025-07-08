@@ -223,7 +223,7 @@ const Hero = () => {
 
           {/* Right side - Interactive Showcase (40%) */}
           <div className="lg:col-span-2 flex flex-col items-center lg:items-end">
-            <div className="w-full max-w-sm space-y-6">
+            <div className="w-full max-w-md space-y-6">
               {/* View Toggle */}
               <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex bg-white rounded-xl p-1 shadow-lg border border-gray-200">
@@ -259,20 +259,20 @@ const Hero = () => {
                 "animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden h-80">
                   {currentView.content}
                 </div>
               </div>
 
               {/* Feature Showcase */}
               <div className={cn(
-                "space-y-3 animate-fade-in-up transition-all duration-500",
+                "grid grid-cols-1 gap-3 animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70"
               )} style={{ animationDelay: '0.5s' }}>
                 {currentView.features.map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div key={index} className="flex items-start space-x-3 bg-white rounded-xl p-3 shadow-sm border border-gray-100">
                       <div className={cn(
                         "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
                         viewType === 'homeowner' ? "bg-blue-100 text-blue-600" : "bg-orange-100 text-orange-600"

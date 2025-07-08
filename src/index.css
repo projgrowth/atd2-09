@@ -317,7 +317,7 @@
   /* Premium Button System */
   .premium-button-primary {
     @apply relative overflow-hidden font-semibold text-white transition-all duration-200 border-0;
-    background: var(--atd-gradient-primary);
+    background: hsl(214 84% 56%); /* Unified blue-600 equivalent */
     border-radius: var(--button-radius);
     box-shadow: var(--shadow-medium);
     padding: 0.75rem 1.5rem;
@@ -325,8 +325,13 @@
   }
   
   .premium-button-primary:hover {
+    background: hsl(214 84% 50%); /* Darker blue on hover */
     box-shadow: var(--shadow-elevated);
     transform: translateY(-1px);
+  }
+  
+  .premium-button {
+    @apply premium-button-primary;
   }
   
   .premium-button-secondary {
