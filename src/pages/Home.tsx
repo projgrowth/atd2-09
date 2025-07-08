@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import QuickBenefits from "@/components/QuickBenefits";
+import ProblemSolution from "@/components/ProblemSolution";
 import Interactive3DDemo from "@/components/Interactive3DDemo";
 import SocialProofTeaser from "@/components/SocialProofTeaser";
 import StoryConnector from "@/components/StoryConnector";
@@ -13,9 +13,9 @@ const Home = () => {
       <Hero />
       
       {/* Story Transition */}
-      <StoryConnector text="Here's what makes ATD different" />
+      <StoryConnector text="Here's the challenge most homeowners face" />
       
-      <QuickBenefits />
+      <ProblemSolution />
       
       {/* Story Transition */}
       <StoryConnector text="See it in action" />
@@ -23,7 +23,7 @@ const Home = () => {
       <Interactive3DDemo />
       
       {/* Story Transition */}
-      <StoryConnector text="Join thousands of satisfied users" />
+      <StoryConnector text="Join thousands who've solved this problem" />
       
       <SocialProofTeaser />
       
@@ -40,17 +40,11 @@ const Home = () => {
             Experience the complete ATD platform and join our growing community of satisfied homeowners.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link to="/how-it-works">
-              <Button size="lg" className="premium-button px-8 py-6 text-lg font-bold">
-                Learn More
-                <ArrowRight className="ml-3 h-6 w-6" />
-              </Button>
-            </Link>
-            
+          <div className="flex justify-center">
             <Link to="/join-beta">
-              <Button variant="outline" size="lg" className="button-secondary-enhanced px-8 py-6 text-lg font-semibold">
+              <Button size="lg" className="premium-button px-10 py-6 text-lg font-bold">
                 Join Beta Program
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>
           </div>

@@ -13,55 +13,33 @@ const Hero = () => {
         <div className="content-max-width">
           {/* Enhanced Hero Content */}
           <div className="visual-hierarchy">
+            {/* Problem Statement */}
+            <div className="mb-6 md:mb-8 animate-fade-in-up">
+              <span className="inline-block bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm md:text-base font-bold border border-red-200">
+                Managing home projects shouldn't be chaotic
+              </span>
+            </div>
+
             {/* Main Headline */}
-            <h1 className="heading-primary mb-6 md:mb-8 animate-fade-in-up">
+            <h1 className="heading-primary mb-6 md:mb-8 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
               One Command Center
               <span className="text-gradient block mt-2 md:mt-3">for Your Home</span>
             </h1>
 
-            {/* Tagline */}
-            <div className="mb-4 md:mb-6 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
-              <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-lg md:text-xl font-bold border border-primary/20">
-                Scan. Submit. Get it done.
-              </span>
-            </div>
-
             {/* Subheadline */}
             <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced" style={{ animationDelay: '0.1s' }}>
-              Bring your own trusted pros or choose from our vetted provider network. Track updates, manage budgets, and streamline your home management.
+              Stop juggling emails, texts, and spreadsheets. ATD brings your trusted providers and all your home projects into one organized platform.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            {/* Single CTA */}
+            <div className="flex justify-center mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
-                className="premium-button w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
+                className="premium-button px-10 py-6 text-lg md:text-xl"
                 onClick={() => document.getElementById('interactive-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                See Live Demo
+                See How It Works
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="button-secondary-enhanced w-full sm:w-auto sm:min-w-[220px] text-base md:text-lg"
-                onClick={() => document.getElementById('early-access-form')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Join Early Access
-              </Button>
-            </div>
-
-            {/* Key Benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              {[
-                { title: "Dual Provider Options", desc: "Your pros or our trusted network" },
-                { title: "Track Everything", desc: "Jobs, payments, all organized" },
-                { title: "QR Code Access", desc: "Instant provider onboarding" }
-              ].map((benefit, index) => (
-                <div key={index} className="card-base card-padding text-center enhanced-card-hover">
-                  <h3 className="font-bold text-base md:text-lg mb-2 md:mb-3 text-enhanced">{benefit.title}</h3>
-                  <p className="text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">{benefit.desc}</p>
-                </div>
-              ))}
             </div>
 
             {/* Dual Screen Graphic */}
