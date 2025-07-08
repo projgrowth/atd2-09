@@ -7,31 +7,37 @@ const CoreBenefits = () => {
       title: "Bring Your Own Trusted Pros",
       description: "Work with providers you already trust, or choose from our vetted network. Your home, your choice.",
       mockup: (
-        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 border border-blue-100">
-          <div className="flex items-center space-x-2 mb-3">
-            <Users className="h-4 w-4 text-[hsl(var(--atd-primary))]" />
-            <span className="text-sm font-medium">Your Provider Network</span>
-            <div className="ml-auto bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">
+        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-3 md:p-4 border border-blue-100">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-3 space-y-2 sm:space-y-0">
+            <div className="flex items-center space-x-2">
+              <Users className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-primary))]" />
+              <span className="text-sm md:text-base font-medium">Your Provider Network</span>
+            </div>
+            <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs md:text-sm font-medium w-fit">
               3 Active
             </div>
           </div>
-          <div className="space-y-2">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
-              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-xs text-white font-bold">TH</span>
-              </div>
-              <div className="flex-1">
-                <div className="text-xs font-medium">Tom's HVAC (Your Pro)</div>
-                <div className="text-xs text-gray-500">Available • 4.9 rating</div>
+          <div className="space-y-3">
+            <div className="bg-white rounded-lg p-3 md:p-4 shadow-sm border border-gray-100 min-h-[60px] touch-target">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm md:text-base text-white font-bold">TH</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm md:text-base font-medium truncate">Tom's HVAC (Your Pro)</div>
+                  <div className="text-xs md:text-sm text-gray-500">Available • 4.9 rating</div>
+                </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-xs text-white font-bold">MC</span>
-              </div>
-              <div className="flex-1">
-                <div className="text-xs font-medium">Metro Cleaning (Network)</div>
-                <div className="text-xs text-gray-500">Verified • 4.8 rating</div>
+            <div className="bg-white rounded-lg p-3 md:p-4 shadow-sm border border-gray-100 min-h-[60px] touch-target">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm md:text-base text-white font-bold">MC</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm md:text-base font-medium truncate">Metro Cleaning (Network)</div>
+                  <div className="text-xs md:text-sm text-gray-500">Verified • 4.8 rating</div>
+                </div>
               </div>
             </div>
           </div>
@@ -43,32 +49,34 @@ const CoreBenefits = () => {
       title: "Track Everything in Real-Time",
       description: "Jobs, payments, documents, and communication—all organized automatically. See exactly what's happening and what you owe.",
       mockup: (
-        <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 border border-green-100">
-          <div className="flex items-center space-x-2 mb-3">
-            <Activity className="h-4 w-4 text-[hsl(var(--atd-accent))]" />
-            <span className="text-sm font-medium">Live Tracking</span>
-            <div className="ml-auto flex items-center space-x-1">
+        <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-3 md:p-4 border border-green-100">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-3 space-y-2 sm:space-y-0">
+            <div className="flex items-center space-x-2">
+              <Activity className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-accent))]" />
+              <span className="text-sm md:text-base font-medium">Live Tracking</span>
+            </div>
+            <div className="flex items-center space-x-1 w-fit">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-green-600">Live</span>
+              <span className="text-xs md:text-sm text-green-600">Live</span>
             </div>
           </div>
-          <div className="space-y-3">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-xs font-medium">Kitchen Repair</span>
-                <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">75% Complete</span>
+          <div className="bg-white rounded-lg p-3 md:p-4 shadow-sm border border-gray-100 min-h-[100px]">
+            <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-2 sm:space-y-0">
+                <span className="text-sm md:text-base font-medium">Kitchen Repair</span>
+                <span className="text-xs md:text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full w-fit">75% Complete</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                <div className="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full w-3/4 transition-all duration-500"></div>
+              <div className="w-full bg-gray-200 rounded-full h-2 md:h-3">
+                <div className="bg-gradient-to-r from-green-400 to-green-500 h-2 md:h-3 rounded-full w-3/4 transition-all duration-500"></div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-1">
-                  <Clock className="h-3 w-3 text-gray-400" />
-                  <span className="text-xs text-gray-500">Started 2 hours ago</span>
+                  <Clock className="h-3 w-3 md:h-4 md:w-4 text-gray-400" />
+                  <span className="text-xs md:text-sm text-gray-500">Started 2 hours ago</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <DollarSign className="h-3 w-3 text-blue-500" />
-                  <span className="text-xs text-blue-600 font-medium">$240 due</span>
+                  <DollarSign className="h-3 w-3 md:h-4 md:w-4 text-blue-500" />
+                  <span className="text-xs md:text-sm text-blue-600 font-medium">$240 due</span>
                 </div>
               </div>
             </div>
@@ -176,20 +184,20 @@ const CoreBenefits = () => {
               key={index}
               className="group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="premium-card enhanced-card-hover p-4 md:p-6 h-full">
-                <div className="flex items-start space-x-4 md:space-x-6">
+             >
+              <div className="premium-card enhanced-card-hover p-4 md:p-6 h-full min-h-[300px] md:min-h-[350px]">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-4 md:space-x-6 space-y-4 lg:space-y-0">
                   <div className="flex-shrink-0">
-                    <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <benefit.icon className="h-8 w-8 md:h-10 md:w-10 text-[hsl(var(--atd-primary))]" />
+                    <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
+                      <benefit.icon className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-[hsl(var(--atd-primary))]" />
                     </div>
                   </div>
                   
-                  <div className="flex-1">
-                    <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-enhanced">
+                  <div className="flex-1 text-center lg:text-left">
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-enhanced">
                       {benefit.title}
                     </h3>
-                    <p className="text-sm md:text-base leading-relaxed font-semibold text-muted-enhanced mobile-text-readable mb-4 md:mb-6">
+                    <p className="text-sm md:text-base lg:text-lg leading-relaxed font-semibold text-muted-enhanced mobile-text-readable mb-4 md:mb-6">
                       {benefit.description}
                     </p>
                     

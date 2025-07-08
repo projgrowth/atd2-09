@@ -110,13 +110,13 @@ const FeatureShowcase = () => {
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
               <div className="text-xs font-medium mb-2">Current Job: Kitchen Repair</div>
               <div className="space-y-2">
-                <button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-2 text-xs font-medium hover:from-purple-600 hover:to-purple-700 transition-all duration-200">
+                <button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-3 md:p-4 text-sm md:text-base font-medium hover:from-purple-600 hover:to-purple-700 transition-all duration-200 min-h-[48px] touch-target">
                   Update Job Status
                 </button>
-                <button className="w-full bg-atd-surface border-2 border-atd-accent/20 text-atd-accent rounded-lg p-2 text-caption font-body-medium hover:bg-atd-accent/10 transition-all duration-200">
+                <button className="w-full bg-atd-surface border-2 border-atd-accent/20 text-atd-accent rounded-lg p-3 md:p-4 text-sm md:text-base font-body-medium hover:bg-atd-accent/10 transition-all duration-200 min-h-[48px] touch-target">
                   Upload Progress Photos
                 </button>
-                <button className="w-full bg-gray-50 border border-gray-200 text-gray-600 rounded-lg p-2 text-xs font-medium hover:bg-gray-100 transition-all duration-200">
+                <button className="w-full bg-gray-50 border border-gray-200 text-gray-600 rounded-lg p-3 md:p-4 text-sm md:text-base font-medium hover:bg-gray-100 transition-all duration-200 min-h-[48px] touch-target">
                   Message Homeowner
                 </button>
               </div>
