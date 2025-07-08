@@ -64,6 +64,26 @@
     --atd-bg-muted: var(--atd-surface-muted);
     --atd-bg-accent: linear-gradient(135deg, hsl(var(--atd-primary) / 0.02) 0%, hsl(var(--atd-accent) / 0.02) 100%);
     
+    /* Section Background System Variables */
+    --section-bg-primary: linear-gradient(135deg, hsl(var(--atd-surface-primary)) 0%, hsl(var(--atd-surface-secondary)) 100%);
+    --section-bg-content: hsl(var(--atd-surface-primary));
+    --section-bg-interactive: linear-gradient(180deg, hsl(var(--atd-surface-secondary)) 0%, hsl(var(--atd-surface-primary)) 100%);
+    --section-bg-info: linear-gradient(135deg, hsl(var(--atd-primary) / 0.02) 0%, hsl(var(--atd-surface-secondary)) 100%);
+    --section-bg-dark: hsl(var(--atd-neutral-900));
+    --section-bg-elevated: linear-gradient(135deg, hsl(var(--atd-surface-primary)) 0%, hsl(var(--atd-surface-secondary)) 50%, hsl(var(--atd-surface-primary)) 100%);
+    --section-bg-premium: var(--atd-bg-accent);
+    
+    /* Text System Variables */
+    --atd-text: var(--atd-neutral-900);
+    --atd-text-enhanced: var(--atd-neutral-800);
+    --atd-text-muted-enhanced: var(--atd-neutral-600);
+    
+    /* Shadow System Variables */
+    --shadow-section: var(--shadow-subtle);
+    
+    /* Visual Separator Variables */
+    --atd-separator: var(--atd-neutral-200);
+    
     /* Premium Card System */
     --card-bg: hsl(var(--atd-surface-primary));
     --card-border: hsl(var(--atd-neutral-200));
@@ -130,6 +150,23 @@
     --atd-text-light: 215 20% 65%;
     --card-bg: 222 84% 6%;
     --card-border: 217 32% 20%;
+    
+    /* Dark mode section backgrounds */
+    --section-bg-primary: linear-gradient(135deg, hsl(var(--atd-surface)) 0%, hsl(var(--atd-surface-elevated)) 100%);
+    --section-bg-content: hsl(var(--atd-surface));
+    --section-bg-interactive: linear-gradient(180deg, hsl(var(--atd-surface-elevated)) 0%, hsl(var(--atd-surface)) 100%);
+    --section-bg-info: linear-gradient(135deg, hsl(var(--atd-primary) / 0.1) 0%, hsl(var(--atd-surface-elevated)) 100%);
+    --section-bg-dark: hsl(var(--atd-surface));
+    --section-bg-elevated: linear-gradient(135deg, hsl(var(--atd-surface-elevated)) 0%, hsl(var(--atd-surface)) 50%, hsl(var(--atd-surface-elevated)) 100%);
+    --section-bg-premium: linear-gradient(135deg, hsl(var(--atd-primary) / 0.05) 0%, hsl(var(--atd-accent) / 0.05) 100%);
+    
+    /* Dark mode text variables */
+    --atd-text: var(--atd-text-light);
+    --atd-text-enhanced: var(--atd-text-muted);
+    --atd-text-muted-enhanced: var(--atd-text-light);
+    
+    /* Dark mode separator */
+    --atd-separator: var(--atd-border-light);
   }
 }
 
@@ -346,6 +383,11 @@
     box-shadow: var(--shadow-subtle);
   }
   
+  /* Generic Premium Button (alias for primary) */
+  .premium-button {
+    @apply premium-button-primary;
+  }
+  
   /* Premium Typography System */
   .premium-heading {
     font-family: "Space Grotesk", sans-serif;
@@ -353,25 +395,62 @@
     letter-spacing: -0.025em;
     color: hsl(var(--atd-neutral-900));
   }
-  
+
   .premium-text-primary {
     color: hsl(var(--atd-neutral-900));
     font-weight: 500;
   }
-  
+
   .premium-text-secondary {
     color: hsl(var(--atd-neutral-600));
     font-weight: 500;
   }
-  
+
   .premium-text-muted {
     color: hsl(var(--atd-neutral-500));
     font-weight: 400;
   }
-  
+
   .premium-gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: var(--atd-gradient-primary);
+  }
+  
+  /* Gradient Text Utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--atd-gradient-primary);
+  }
+  
+  /* Enhanced Text Classes */
+  .text-enhanced {
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  .text-muted-enhanced {
+    color: hsl(var(--atd-text-muted-enhanced));
+  }
+  
+  /* Enhanced Heading Classes */
+  .heading-primary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.025em;
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  .heading-secondary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.025em;
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  .heading-tertiary {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.025em;
+    color: hsl(var(--atd-text-enhanced));
   }
   
   /* Visual Hierarchy */
