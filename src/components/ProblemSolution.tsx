@@ -57,7 +57,7 @@ const ProblemSolution = () => {
           <h2 className="heading-secondary mb-6 text-enhanced">
             Home Management Challenges
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced mobile-text-readable">
+          <p className="text-body-large max-w-3xl mx-auto mobile-text-readable">
             Most homeowners struggle with the same frustrating problems. Here's how ATD solves each one.
           </p>
         </div>
@@ -99,17 +99,17 @@ const ProblemSolution = () => {
                       <challenge.icon className={cn("h-6 w-6", challenge.iconColor)} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl font-bold mb-2 text-enhanced">
+                      <h3 className="heading-quaternary text-enhanced mb-2">
                         {challenge.problem}
                       </h3>
-                      <p className="text-muted-enhanced leading-relaxed">
+                      <p className="text-body leading-relaxed">
                         {challenge.description}
                       </p>
                     </div>
                   </div>
                   
                   {/* Stats Badge */}
-                  <div className="text-xs bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1 font-bold text-primary">
+                  <div className="text-caption bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1 font-heading text-primary">
                     {challenge.stats}
                   </div>
                 </div>
@@ -134,8 +134,8 @@ const ProblemSolution = () => {
                   <div className="flex items-start space-x-3 mb-4">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-primary mb-2">ATD Solution</h4>
-                      <p className="text-enhanced leading-relaxed">
+                      <h4 className="font-heading text-primary mb-2">ATD Solution</h4>
+                      <p className="text-body leading-relaxed">
                         {challenge.solution}
                       </p>
                     </div>
@@ -148,7 +148,7 @@ const ProblemSolution = () => {
                   )}>
                     <div className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                      <span className="text-sm font-semibold text-accent">
+                      <span className="text-body-small font-body-bold text-accent">
                         {challenge.benefit}
                       </span>
                     </div>
@@ -175,10 +175,10 @@ const ProblemSolution = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-enhanced">
+          <h3 className="heading-tertiary mb-6 text-enhanced">
             Ready to See ATD in Action?
           </h3>
-          <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-muted-enhanced">
+          <p className="text-body-large mb-8 max-w-2xl mx-auto">
             Watch how ATD transforms each of these pain points into organized, efficient home management.
           </p>
         </div>

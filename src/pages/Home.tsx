@@ -33,13 +33,13 @@ const Home = () => {
           <h2 className="heading-secondary mb-6 text-enhanced">
             Transform Your Home Management Today
           </h2>
-          <p className="text-lg md:text-xl mb-8 font-semibold text-muted-enhanced mobile-text-readable">
+          <p className="text-body-large mb-8 mobile-text-readable">
             Experience the complete ATD platform and join our growing community of satisfied homeowners.
           </p>
           
           <div className="flex justify-center">
             <Link to="/join-beta">
-              <Button size="lg" className="premium-button px-10 py-6 text-lg font-bold">
+              <Button size="lg" className="btn-primary btn-large">
                 Join Beta Program
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>

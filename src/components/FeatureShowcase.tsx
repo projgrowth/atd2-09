@@ -56,14 +56,14 @@ const FeatureShowcase = () => {
             <span className="text-sm font-medium">Live Tracking</span>
             <div className="ml-auto flex items-center space-x-1">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-green-600">Live</span>
+              <span className="text-caption text-atd-success">Live</span>
             </div>
           </div>
           <div className="space-y-3">
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium">Kitchen Repair</span>
-                <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">75% Complete</span>
+                <span className="text-caption text-atd-success bg-atd-success/10 px-2 py-1 rounded-full">75% Complete</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                 <div className="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full w-3/4 transition-all duration-500"></div>
@@ -75,14 +75,14 @@ const FeatureShowcase = () => {
                 </div>
                 <div className="flex items-center space-x-1">
                   <DollarSign className="h-3 w-3 text-blue-500" />
-                  <span className="text-xs text-blue-600 font-medium">$240 due</span>
+                  <span className="text-caption text-atd-primary font-body-medium">$240 due</span>
                 </div>
               </div>
             </div>
             <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium">Plumbing Check</span>
-                <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full">Scheduled</span>
+                <span className="text-caption text-atd-primary bg-atd-primary/10 px-2 py-1 rounded-full">Scheduled</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">Tomorrow 10:00 AM</span>
@@ -100,7 +100,7 @@ const FeatureShowcase = () => {
       mockup: (
         <div className="bg-gradient-to-br from-purple-50 to-white rounded-lg p-4 border border-purple-100">
           <div className="flex items-center space-x-2 mb-3">
-            <Smartphone className="h-4 w-4 text-purple-600" />
+            <Smartphone className="h-4 w-4 text-atd-accent" />
             <span className="text-sm font-medium">PocketOffice</span>
             <div className="ml-auto bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
               Mobile
@@ -113,7 +113,7 @@ const FeatureShowcase = () => {
                 <button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-2 text-xs font-medium hover:from-purple-600 hover:to-purple-700 transition-all duration-200">
                   Update Job Status
                 </button>
-                <button className="w-full bg-white border-2 border-purple-200 text-purple-600 rounded-lg p-2 text-xs font-medium hover:bg-purple-50 transition-all duration-200">
+                <button className="w-full bg-atd-surface border-2 border-atd-accent/20 text-atd-accent rounded-lg p-2 text-caption font-body-medium hover:bg-atd-accent/10 transition-all duration-200">
                   Upload Progress Photos
                 </button>
                 <button className="w-full bg-gray-50 border border-gray-200 text-gray-600 rounded-lg p-2 text-xs font-medium hover:bg-gray-100 transition-all duration-200">
@@ -123,7 +123,7 @@ const FeatureShowcase = () => {
             </div>
             <div className="bg-green-50 rounded-lg p-2 border border-green-200">
               <div className="text-xs text-green-700 font-medium">✓ Payment confirmed</div>
-              <div className="text-xs text-green-600">Auto-deposited to your account</div>
+              <div className="text-caption text-atd-success">Auto-deposited to your account</div>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ const FeatureShowcase = () => {
       mockup: (
         <div className="bg-gradient-to-br from-orange-50 to-white rounded-lg p-4 border border-orange-100">
           <div className="flex items-center space-x-2 mb-3">
-            <Share2 className="h-4 w-4 text-orange-600" />
+            <Share2 className="h-4 w-4 text-atd-warning" />
             <span className="text-sm font-medium">Access Control</span>
             <div className="ml-auto bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-medium">
               4 Members

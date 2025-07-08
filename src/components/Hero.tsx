@@ -47,8 +47,8 @@ const Hero = () => {
             <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="font-bold text-enhanced text-sm">Kitchen Renovation</h3>
-                  <p className="text-xs text-muted-enhanced">Mike Johnson - Elite Construction</p>
+                  <h3 className="font-heading text-enhanced text-sm">Kitchen Renovation</h3>
+                  <p className="text-caption">Mike Johnson - Elite Construction</p>
                 </div>
                 <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full">
                   75% Complete
@@ -62,8 +62,8 @@ const Hero = () => {
             <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="font-bold text-enhanced text-sm">Bathroom Repair</h3>
-                  <p className="text-xs text-muted-enhanced">Sarah Davis - Fix It Fast</p>
+                  <h3 className="font-heading text-enhanced text-sm">Bathroom Repair</h3>
+                  <p className="text-caption">Sarah Davis - Fix It Fast</p>
                 </div>
                 <div className="text-xs bg-atd-primary/10 text-atd-primary px-2 py-1 rounded-full">
                   Starting Soon
@@ -84,15 +84,15 @@ const Hero = () => {
 
           {/* Recent Activity */}
           <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
-            <h4 className="font-bold text-enhanced text-xs mb-2">Recent Updates</h4>
+            <h4 className="font-heading text-enhanced text-xs mb-2">Recent Updates</h4>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-atd-success rounded-full"></div>
-                <span className="text-xs text-muted-enhanced">New photos from Mike</span>
+                <span className="text-caption">New photos from Mike</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-atd-primary rounded-full"></div>
-                <span className="text-xs text-muted-enhanced">Payment processed</span>
+                <span className="text-caption">Payment processed</span>
               </div>
             </div>
           </div>
@@ -125,8 +125,8 @@ const Hero = () => {
           <div className="bg-atd-surface rounded-lg p-3 shadow-sm mb-4">
             <div className="flex justify-between items-start mb-3">
               <div>
-                <h3 className="font-bold text-enhanced text-sm">Kitchen Renovation</h3>
-                <p className="text-xs text-muted-enhanced">Sarah Johnson • 123 Oak St</p>
+                <h3 className="font-heading text-enhanced text-sm">Kitchen Renovation</h3>
+                <p className="text-caption">Sarah Johnson • 123 Oak St</p>
               </div>
               <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full">
                 In Progress
@@ -136,7 +136,7 @@ const Hero = () => {
             {/* Timer */}
             <div className="flex items-center space-x-2 mb-3">
               <div className="w-2 h-2 bg-atd-error rounded-full animate-pulse"></div>
-              <span className="text-xs text-muted-enhanced font-medium">Time: 2h 15m</span>
+              <span className="text-caption font-medium">Time: 2h 15m</span>
             </div>
 
             {/* Quick Actions */}
@@ -152,7 +152,7 @@ const Hero = () => {
 
           {/* Recent Updates */}
           <div className="space-y-2">
-            <h4 className="text-xs font-bold text-enhanced">Today's Updates</h4>
+            <h4 className="font-heading text-enhanced text-xs mb-2">Today's Updates</h4>
             <div className="bg-atd-surface rounded-lg p-2 border-l-4 border-atd-warning">
               <p className="text-xs font-medium text-enhanced">Progress photo sent</p>
               <p className="text-xs text-muted-enhanced">✓ Client notified</p>
@@ -193,14 +193,14 @@ const Hero = () => {
             </div>
 
             {/* Static Headlines */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 animate-fade-in-up text-enhanced leading-tight"
+            <h1 className="heading-primary animate-fade-in-up leading-tight"
                 style={{ animationDelay: '0.05s' }}>
               {heroContent.headline}
               <span className="text-gradient block mt-1 sm:mt-2 md:mt-3">{heroContent.subHeadline}</span>
             </h1>
 
             {/* Static Subheadline */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced"
+            <p className="text-body-large max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-8 md:mb-12 animate-fade-in-up leading-relaxed"
                style={{ animationDelay: '0.15s' }}>
               {heroContent.description}
             </p>
@@ -209,7 +209,7 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
-                className="bg-atd-primary hover:bg-atd-primary/90 text-white w-full sm:w-auto px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-bold transition-colors duration-200"
+                className="btn-primary btn-large w-full sm:w-auto"
                 onClick={() => document.getElementById('enhanced-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
@@ -276,8 +276,8 @@ const Hero = () => {
                         <IconComponent className="h-4 w-4" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-enhanced mb-1">{feature.title}</h4>
-                        <p className="text-xs text-muted-enhanced leading-relaxed">{feature.description}</p>
+                        <h4 className="font-heading text-enhanced text-sm mb-1">{feature.title}</h4>
+                        <p className="text-caption leading-relaxed">{feature.description}</p>
                       </div>
                     </div>
                   );

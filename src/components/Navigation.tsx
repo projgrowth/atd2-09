@@ -31,7 +31,7 @@ const Navigation = () => {
               <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
                 <Home className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-enhanced">All Things Done</span>
+              <span className="font-heading text-enhanced text-xl">All Things Done</span>
             </Link>
 
             {/* Navigation Links */}
@@ -40,7 +40,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-medium transition-colors duration-200 ${
+                  className={`font-body-medium transition-colors duration-200 ${
                     isActive(item.href)
                       ? 'text-atd-primary border-b-2 border-atd-primary pb-1'
                       : 'text-enhanced hover:text-atd-primary'
@@ -51,7 +51,7 @@ const Navigation = () => {
               ))}
               
               <Link to="/join-beta">
-                <Button className="bg-atd-primary hover:bg-atd-primary/90 text-white">
+                <Button className="btn-primary">
                   Join Beta
                 </Button>
               </Link>
@@ -68,7 +68,7 @@ const Navigation = () => {
             <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
               <Home className="h-5 w-5 text-white" />
             </div>
-            <span className="text-lg font-bold text-enhanced">ATD</span>
+            <span className="font-heading text-enhanced text-lg">ATD</span>
           </Link>
 
           {/* Hamburger Button */}
@@ -119,7 +119,7 @@ const Navigation = () => {
                       : 'text-enhanced hover:bg-atd-surface-muted'
                   }`}
                 >
-                  <span className="font-medium text-lg">{item.name}</span>
+                  <span className="font-body-medium text-lg">{item.name}</span>
                 </Link>
               ))}
             </nav>

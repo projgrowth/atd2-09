@@ -453,6 +453,71 @@
     color: hsl(var(--atd-text-enhanced));
   }
   
+  /* Additional Heading Classes */
+  .heading-quaternary {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.025em;
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  .heading-small {
+    @apply text-lg md:text-xl lg:text-2xl font-bold;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.025em;
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  /* Enhanced Text Size Classes */
+  .text-body-large {
+    @apply text-lg md:text-xl;
+    font-weight: 500;
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg;
+    font-weight: 500;
+    color: hsl(var(--atd-text-enhanced));
+  }
+  
+  .text-body-small {
+    @apply text-sm md:text-base;
+    font-weight: 500;
+    color: hsl(var(--atd-text-muted-enhanced));
+  }
+  
+  .text-caption {
+    @apply text-xs md:text-sm;
+    font-weight: 500;
+    color: hsl(var(--atd-text-muted-enhanced));
+  }
+  
+  /* Enhanced Font Weight Classes */
+  .font-display {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-heading {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-body-bold {
+    font-weight: 600;
+  }
+  
+  .font-body-medium {
+    font-weight: 500;
+  }
+  
+  .font-body-regular {
+    font-weight: 400;
+  }
+  
   /* Visual Hierarchy */
   .visual-hierarchy {
     @apply space-y-4 md:space-y-6;
@@ -502,6 +567,33 @@
     color: hsl(var(--atd-error));
   }
   
+  /* Responsive Typography Enhancements */
+  @media (max-width: 768px) {
+    .heading-primary {
+      @apply text-3xl md:text-4xl lg:text-5xl;
+    }
+    
+    .heading-secondary {
+      @apply text-2xl md:text-3xl lg:text-4xl;
+    }
+    
+    .heading-tertiary {
+      @apply text-xl md:text-2xl lg:text-3xl;
+    }
+    
+    .text-body-large {
+      @apply text-base md:text-lg;
+    }
+    
+    .mobile-heading {
+      @apply heading-tertiary;
+    }
+    
+    .mobile-text {
+      @apply text-body-small;
+    }
+  }
+  
   /* ATD Color Utility Classes */
   
   /* Background Colors */
@@ -546,6 +638,41 @@
   .status-inactive { 
     background-color: hsl(var(--atd-neutral-400)); 
     color: white; 
+  }
+  
+  /* Enhanced Button System */
+  .btn-primary {
+    @apply premium-button-primary;
+  }
+  
+  .btn-secondary {
+    @apply premium-button-secondary;
+  }
+  
+  .btn-outline {
+    @apply font-semibold transition-all duration-200 bg-transparent border border-atd-border text-enhanced hover:bg-atd-primary hover:text-white hover:border-atd-primary;
+    border-radius: var(--button-radius);
+    padding: 0.75rem 1.5rem;
+    min-height: 48px;
+  }
+  
+  .btn-ghost {
+    @apply font-semibold transition-all duration-200 bg-transparent text-enhanced hover:bg-atd-surface-muted;
+    border-radius: var(--button-radius);
+    padding: 0.75rem 1.5rem;
+    min-height: 48px;
+  }
+  
+  .btn-small {
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+    font-size: 0.875rem;
+  }
+  
+  .btn-large {
+    padding: 1rem 2rem;
+    min-height: 56px;
+    font-size: 1.125rem;
   }
   /* Mobile Optimizations */
   .mobile-touch-target {
