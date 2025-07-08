@@ -4,52 +4,44 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const TestimonialCarousel = () => {
-  const testimonials = [
+  const problemStatements = [
     {
       id: 1,
-      quote: "I can finally manage my mom's home remotely. ATD changed everything.",
-      author: "Jenna K.",
-      role: "Early Beta User",
-      rating: 5,
-      location: "San Francisco, CA"
+      quote: "I'm tired of juggling texts, emails, and calls with different contractors. There has to be a better way to organize all this.",
+      context: "The Scattered Communication Problem",
+      pain: "Every project feels chaotic"
     },
     {
       id: 2,
-      quote: "As a contractor, PocketOffice has streamlined my entire workflow. No more lost paperwork or missed appointments.",
-      author: "Mike Rodriguez",
-      role: "Licensed Contractor",
-      rating: 5,
-      location: "Austin, TX"
+      quote: "I need to manage my elderly parents' home remotely, but I have no visibility into what's happening or what needs to be done.",
+      context: "The Distance Management Challenge",
+      pain: "Feeling helpless from afar"
     },
     {
       id: 3,
-      quote: "The peace of mind knowing everything about Dad's house is organized in one place is invaluable.",
-      author: "Sarah Chen",
-      role: "Family Caregiver",
-      rating: 5,
-      location: "Portland, OR"
+      quote: "Finding good contractors is hard enough. Once I find them, I shouldn't have to go through a marketplace every time I need work done.",
+      context: "The Marketplace Frustration",
+      pain: "Losing trusted relationships"
     },
     {
       id: 4,
-      quote: "My clients love how organized I am now. ATD has made me a better service provider.",
-      author: "Lisa Thompson",
-      role: "House Cleaner",
-      rating: 5,
-      location: "Denver, CO"
+      quote: "I spend more time managing my home maintenance than I do enjoying my home. The paperwork and coordination is overwhelming.",
+      context: "The Time Drain Reality",
+      pain: "Home ownership stress"
     }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const nextStatement = () => {
+    setCurrentIndex((prev) => (prev + 1) % problemStatements.length);
   };
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const prevStatement = () => {
+    setCurrentIndex((prev) => (prev - 1 + problemStatements.length) % problemStatements.length);
   };
 
-  const currentTestimonial = testimonials[currentIndex];
+  const currentStatement = problemStatements[currentIndex];
 
   return (
     <div className="relative max-w-4xl mx-auto">
@@ -57,21 +49,20 @@ const TestimonialCarousel = () => {
         <Quote className="h-12 w-12 text-[hsl(var(--atd-primary))]/20 mx-auto mb-6" />
         
         <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
-          <blockquote className="text-2xl lg:text-3xl font-medium text-[hsl(var(--atd-text))] mb-8 leading-relaxed">
-            "{currentTestimonial.quote}"
-          </blockquote>
-          
-          <div className="flex items-center justify-center space-x-1 mb-4">
-            {[...Array(currentTestimonial.rating)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-            ))}
+          <div className="text-center mb-6">
+            <div className="inline-block bg-atd-primary/10 text-atd-primary px-4 py-2 rounded-full text-sm font-bold">
+              {currentStatement.context}
+            </div>
           </div>
           
-          <cite className="text-[hsl(var(--atd-text-muted))] font-medium">
-            — {currentTestimonial.author}, {currentTestimonial.role}
-          </cite>
-          <div className="text-sm text-[hsl(var(--atd-text-muted))]/70 mt-1">
-            {currentTestimonial.location}
+          <blockquote className="text-2xl lg:text-3xl font-medium text-[hsl(var(--atd-text))] mb-8 leading-relaxed">
+            "{currentStatement.quote}"
+          </blockquote>
+          
+          <div className="text-center">
+            <cite className="text-[hsl(var(--atd-text-muted))] font-medium italic">
+              — {currentStatement.pain}
+            </cite>
           </div>
         </div>
 
@@ -80,7 +71,7 @@ const TestimonialCarousel = () => {
           <Button
             variant="outline"
             size="icon"
-            onClick={prevTestimonial}
+            onClick={prevStatement}
             className="rounded-full border-[hsl(var(--atd-primary))]/20 hover:bg-[hsl(var(--atd-primary))]/10"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -88,7 +79,7 @@ const TestimonialCarousel = () => {
           
           {/* Dots Indicator */}
           <div className="flex space-x-2">
-            {testimonials.map((_, index) => (
+            {problemStatements.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
@@ -104,7 +95,7 @@ const TestimonialCarousel = () => {
           <Button
             variant="outline"
             size="icon"
-            onClick={nextTestimonial}
+            onClick={nextStatement}
             className="rounded-full border-[hsl(var(--atd-primary))]/20 hover:bg-[hsl(var(--atd-primary))]/10"
           >
             <ChevronRight className="h-4 w-4" />

@@ -66,24 +66,24 @@ const JoinBeta = () => {
       {/* Hero Section */}
       <section className="section-spacing section-bg-primary">
         <div className="container max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-atd-success/10 border-2 border-atd-success/20 mb-8">
-            <div className="w-3 h-3 bg-atd-success rounded-full mr-3 animate-pulse"></div>
-            <span className="text-sm font-bold text-atd-success">Limited Beta Spots Available</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-atd-primary/10 border-2 border-atd-primary/20 mb-8">
+            <div className="w-3 h-3 bg-atd-primary rounded-full mr-3"></div>
+            <span className="text-sm font-bold text-atd-primary">Early Access Program</span>
           </div>
           
           <h1 className="heading-primary text-enhanced">
-            Join the ATD Beta Program
+            Join the ATD Early Access List
           </h1>
           <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable mb-8">
-            Get early access to the home management solution that puts you back in control.
+            Be notified when the home management solution is ready for testing.
           </p>
           
           <div className="premium-card p-6 md:p-8 mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <Clock className="h-5 w-5 text-atd-warning" />
-              <span className="text-lg font-bold text-enhanced">Beta capacity: 80% full</span>
+              <Clock className="h-5 w-5 text-atd-primary" />
+              <span className="text-lg font-bold text-enhanced">Currently in Development</span>
             </div>
-            <p className="text-body text-muted-enhanced mobile-text-readable">Only 50 spots remaining for Q1 2024 cohort</p>
+            <p className="text-body text-muted-enhanced mobile-text-readable">We're building something better—honest development, no rush to market</p>
           </div>
         </div>
       </section>
@@ -152,10 +152,12 @@ const JoinBeta = () => {
               <Button 
                 size="lg" 
                 className="mb-6 w-full lg:w-auto"
-                onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
+                asChild
               >
-                Get Early Access Now
-                <ArrowRight className="ml-3 h-6 w-6" />
+                <Link to="/signup">
+                  Join Early Access List
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </Link>
               </Button>
               
               <p className="text-sm font-semibold text-muted-enhanced mobile-text-readable">
@@ -219,10 +221,12 @@ const JoinBeta = () => {
           <div className="text-center mt-12">
             <Button 
               size="lg" 
-              onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
+              asChild
             >
-              Secure Your Beta Spot
-              <ArrowRight className="ml-3 h-6 w-6" />
+              <Link to="/signup">
+                Join Early Access List
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Link>
             </Button>
           </div>
         </div>

@@ -2,11 +2,11 @@
 import TestimonialCarousel from "./TestimonialCarousel";
 
 const SocialProof = () => {
-  const stats = [
-    { number: "500+", label: "Beta Users" },
-    { number: "200+", label: "Service Providers" },
-    { number: "1,000+", label: "Homes Connected" },
-    { number: "98%", label: "Satisfaction Rate" }
+  const visionPoints = [
+    { number: "∞", label: "Possibilities" },
+    { number: "1", label: "Simple Platform" },
+    { number: "0", label: "Marketplace Chaos" },
+    { number: "100%", label: "Your Control" }
   ];
 
   return (
@@ -31,17 +31,17 @@ const SocialProof = () => {
             </div>
             
             <h3 className="heading-secondary mb-6">
-              Join the Growing Revolution
+              A New Vision for Home Management
             </h3>
             
             <p className="text-xl max-w-2xl mx-auto font-semibold text-muted-enhanced">
-              See why homeowners and service providers choose ATD for seamless home management.
+              Built for homeowners who want organization without losing control. Coming soon.
             </p>
           </div>
           
-          {/* Stats Grid */}
+          {/* Vision Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
+            {visionPoints.map((point, index) => (
               <div 
                 key={index}
                 className="group animate-scale-in"
@@ -49,35 +49,28 @@ const SocialProof = () => {
               >
                 <div className="premium-card enhanced-card-hover p-8 text-center">
                   <div className="text-4xl lg:text-5xl font-bold text-primary mb-4 group-hover:scale-105 transition-transform duration-300">
-                    {stat.number}
+                    {point.number}
                   </div>
                   <div className="text-caption font-body-bold uppercase tracking-wider text-muted-enhanced">
-                    {stat.label}
+                    {point.label}
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Progress Indicators */}
+          {/* Development Status */}
           <div className="mt-16 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="premium-card enhanced-card-hover p-8 text-center">
-                <div className="mb-6">
-                  <div className="w-full bg-atd-surface-muted rounded-full h-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-primary to-accent h-3 rounded-full animate-[width_2s_ease-out] w-4/5"></div>
-                  </div>
-                </div>
-                <p className="text-body font-body-medium text-enhanced mobile-text-readable">Beta capacity: <span className="font-body-bold">80% full</span></p>
-              </div>
-              
-              <div className="premium-card enhanced-card-hover p-8 text-center">
-                <div className="mb-6">
-                  <div className="w-full bg-atd-surface-muted rounded-full h-3 overflow-hidden">
-                    <div className="bg-gradient-to-r from-primary to-accent h-3 rounded-full animate-[width_2s_ease-out_0.5s] w-full"></div>
-                  </div>
-                </div>
-                <p className="text-body font-body-medium text-enhanced mobile-text-readable">Satisfaction rate: <span className="font-body-bold">98%</span></p>
+            <div className="premium-card enhanced-card-hover p-8 text-center">
+              <h4 className="heading-quaternary mb-4 text-enhanced">Currently in Development</h4>
+              <p className="text-body font-body-medium text-muted-enhanced mobile-text-readable mb-6">
+                We're building ATD to solve real problems that homeowners face every day. 
+                No fake promises, no inflated numbers—just honest development toward a better solution.
+              </p>
+              <div className="bg-atd-primary/10 rounded-lg p-4">
+                <p className="text-sm font-semibold text-atd-primary">
+                  Join our early access list to be notified when we're ready for testing.
+                </p>
               </div>
             </div>
           </div>

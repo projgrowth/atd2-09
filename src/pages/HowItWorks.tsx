@@ -122,9 +122,9 @@ const HowItWorks = () => {
               </Button>
             </Link>
             
-            <Link to="/join-beta">
+            <Link to="/signup">
               <Button variant="outline" size="lg">
-                Join the Beta Now
+                Join Early Access Now
               </Button>
             </Link>
           </div>

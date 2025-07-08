@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import HowItWorks from "./pages/HowItWorks";
 import SocialProofPage from "./pages/SocialProofPage";
 import JoinBeta from "./pages/JoinBeta";
+import Signup from "./pages/Signup";
+import SignupSuccess from "./pages/SignupSuccess";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -27,6 +29,8 @@ const App = () => {
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/social-proof" element={<SocialProofPage />} />
               <Route path="/join-beta" element={<JoinBeta />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/signup-success" element={<SignupSuccess />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -47,8 +47,9 @@ const BetaSignupForm = ({ className, onSubmit }: BetaSignupFormProps) => {
       if (onSubmit) {
         await onSubmit(formData)
       } else {
-        // Default behavior - open Google Form
-        window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')
+        // Default behavior - redirect to signup page
+        window.location.href = '/signup'
+        return
       }
       setSuccess(true)
       setFormData({ email: "", name: "" })

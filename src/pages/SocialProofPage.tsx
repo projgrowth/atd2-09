@@ -53,10 +53,10 @@ const SocialProofPage = () => {
       <section className="section-spacing section-bg-primary">
         <div className="container max-w-4xl mx-auto text-center">
           <h1 className="heading-primary text-enhanced">
-            What Our Users Say
+            The Problems We're Solving
           </h1>
           <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable">
-            Real stories from homeowners who've taken control of their home management.
+            Real challenges homeowners face every day—and our vision for a better way.
           </p>
         </div>
       </section>
@@ -101,15 +101,15 @@ const SocialProofPage = () => {
       <section className="section-spacing section-bg-primary section-separator">
         <div className="container max-w-4xl mx-auto text-center">
           <h2 className="heading-secondary mb-6 text-enhanced">
-            Ready to join them?
+            Ready for a better way?
           </h2>
           <p className="text-lg md:text-xl mb-8 font-semibold text-muted-enhanced mobile-text-readable">
-            Get early access to the home management solution that actually works.
+            Join our early access list and be notified when ATD is ready for testing.
           </p>
           
-          <Link to="/join-beta">
+          <Link to="/signup">
             <Button size="lg">
-              Join the Beta Program
+              Join Early Access List
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
           </Link>
