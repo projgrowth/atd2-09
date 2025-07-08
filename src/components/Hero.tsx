@@ -176,7 +176,7 @@ const Hero = () => {
   const currentView = viewContent[viewType];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-primary section-spacing-large">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-primary">
       {/* Clean, minimal background */}
       <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
