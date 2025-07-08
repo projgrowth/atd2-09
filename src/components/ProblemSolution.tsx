@@ -57,7 +57,7 @@ const ProblemSolution = () => {
           <h2 className="heading-secondary mb-6 text-enhanced">
             Home Management Challenges
           </h2>
-          <p className="text-body-large max-w-3xl mx-auto mobile-text-readable">
+          <p className="text-body-large mobile-text-readable">
             Most homeowners struggle with the same frustrating problems. Here's how ATD solves each one.
           </p>
         </div>
