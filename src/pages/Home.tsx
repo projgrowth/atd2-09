@@ -21,18 +21,18 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="premium-button px-8 py-6 text-lg font-bold">
-              <Link to="/how-it-works">
+            <Link to="/how-it-works">
+              <Button size="lg" className="premium-button px-8 py-6 text-lg font-bold">
                 See How It Works
                 <ArrowRight className="ml-3 h-6 w-6" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             
-            <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-semibold">
-              <Link to="/join-beta">
+            <Link to="/join-beta">
+              <Button variant="outline" size="lg" className="px-8 py-6 text-lg font-semibold">
                 Skip to Beta Access
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

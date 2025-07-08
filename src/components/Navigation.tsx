@@ -50,9 +50,11 @@ const Navigation = () => {
                 </Link>
               ))}
               
-              <Button asChild className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white">
-                <Link to="/join-beta">Join Beta</Link>
-              </Button>
+              <Link to="/join-beta">
+                <Button className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white">
+                  Join Beta
+                </Button>
+              </Link>
             </nav>
           </div>
         </div>
