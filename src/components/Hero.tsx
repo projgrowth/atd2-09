@@ -227,11 +227,12 @@ const Hero = () => {
                     onClick={() => handleViewChange('homeowner')}
                     disabled={isTransitioning}
                     className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
+                      "py-2 rounded-lg text-sm font-semibold transition-all duration-300",
                       viewType === 'homeowner'
                         ? "bg-atd-primary text-white shadow-sm"
                         : "text-muted-enhanced hover:text-enhanced"
                     )}
+                    style={{ paddingLeft: '1rem', paddingRight: '1rem' }}
                   >
                     Homeowner View
                   </button>
@@ -239,11 +240,12 @@ const Hero = () => {
                     onClick={() => handleViewChange('provider')}
                     disabled={isTransitioning}
                     className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
+                      "py-2 rounded-lg text-sm font-semibold transition-all duration-300",
                       viewType === 'provider'
                         ? "bg-atd-warning text-white shadow-sm"
                         : "text-muted-enhanced hover:text-enhanced"
                     )}
+                    style={{ paddingLeft: '1rem', paddingRight: '1rem' }}
                   >
                     Provider View
                   </button>

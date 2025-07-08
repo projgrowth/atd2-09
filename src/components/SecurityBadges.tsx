@@ -30,8 +30,8 @@ const SecurityBadges = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="container max-w-6xl mx-auto">
+    <section className="section-spacing section-bg-primary section-separator">
+      <div className="container-wide">
         <div className="text-center mb-12 animate-fade-in-up">
           <h3 className="text-2xl font-bold text-[hsl(var(--atd-text))] mb-4">
             Built with Security & Privacy in Mind

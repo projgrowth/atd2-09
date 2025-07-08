@@ -36,7 +36,7 @@ const FAQ = () => {
 
   return (
     <section className="section-spacing section-bg-info section-separator">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container-narrow">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
             Frequently Asked Questions
@@ -52,7 +52,8 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="card-base px-6 md:px-8 border-2 hover:border-gray-200"
+                className="card-base border-2 hover:border-gray-200"
+                style={{ paddingLeft: '1.5rem', paddingRight: '2rem' }}
               >
                 <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 md:py-8 text-enhanced mobile-text-readable">
                   {faq.question}

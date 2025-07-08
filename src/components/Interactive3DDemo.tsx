@@ -18,7 +18,7 @@ const Interactive3DDemo = () => {
 
   return (
     <section className="section-spacing-large section-bg-elevated section-divider">
-      <div className="container max-w-7xl mx-auto" id="interactive-demo">
+      <div className="container-wide" id="interactive-demo">
         {/* Story Bridge */}
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-block bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 border border-primary/20">

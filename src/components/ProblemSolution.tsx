@@ -51,7 +51,7 @@ const ProblemSolution = () => {
 
   return (
     <section className="section-spacing-large section-bg-content">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container-narrow">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-6 text-enhanced">

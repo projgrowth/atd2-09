@@ -40,8 +40,8 @@ const ProviderSpotlight = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-blue-50/30 via-background to-green-50/20">
-      <div className="container max-w-6xl mx-auto">
+    <section className="section-spacing section-bg-interactive section-separator">
+      <div className="container-wide">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-[hsl(var(--atd-text))] mb-4">
             Trusted Service Providers

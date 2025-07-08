@@ -45,8 +45,8 @@ const CaseStudies = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-gray-50 via-background to-blue-50/30">
-      <div className="container max-w-6xl mx-auto">
+    <section className="section-spacing section-bg-interactive section-separator">
+      <div className="container-wide">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-[hsl(var(--atd-text))] mb-4">
             Real Stories, Real Results

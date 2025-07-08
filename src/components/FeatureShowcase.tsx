@@ -190,8 +190,8 @@ const FeatureShowcase = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-blue-50/30">
-      <div className="container max-w-6xl mx-auto">
+    <section className="section-spacing section-bg-content section-separator">
+      <div className="container-wide">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6">
             Everything You Need
