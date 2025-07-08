@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { MapPin, Clock, CheckCircle, Navigation, Smartphone } from "lucide-react";
+import { MapPin, Clock, CheckCircle, Navigation, Smartphone, Zap } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { useDemoContext } from "@/contexts/DemoContext";
+import { useRealtimeSync } from "@/hooks/useRealtimeSync";
 import { cn } from "@/lib/utils";
 
 interface JobStatus {
@@ -9,6 +12,7 @@ interface JobStatus {
   status: "completed" | "current" | "upcoming";
   timestamp?: string;
   location?: string;
+  estimatedTime?: string;
 }
 
 interface JobProgressTrackerProps {
@@ -18,27 +22,58 @@ interface JobProgressTrackerProps {
 }
 
 const JobProgressTracker = ({ currentStatusId, onStatusChange, isLive = false }: JobProgressTrackerProps) => {
-  const [statuses] = useState<JobStatus[]>([
-    { id: "assigned", label: "Job Assigned", status: "completed", timestamp: "8:00 AM" },
-    { id: "enroute", label: "En Route", status: "completed", timestamp: "9:30 AM", location: "2.3 miles away" },
-    { id: "onsite", label: "On Site", status: "current", timestamp: "10:15 AM" },
-    { id: "inprogress", label: "Work In Progress", status: "upcoming" },
-    { id: "complete", label: "Job Complete", status: "upcoming" }
+  const { state } = useDemoContext();
+  const { syncProviderAction } = useRealtimeSync();
+  const { currentJob, userType } = state;
+  
+  const [statuses, setStatuses] = useState<JobStatus[]>([
+    { id: "scheduled", label: "Job Assigned", status: "completed", timestamp: "8:00 AM", estimatedTime: "5 min" },
+    { id: "enroute", label: "En Route", status: "completed", timestamp: "9:30 AM", location: "2.3 miles away", estimatedTime: "15 min" },
+    { id: "onsite", label: "On Site", status: "current", timestamp: "10:15 AM", estimatedTime: "45 min" },
+    { id: "inprogress", label: "Work In Progress", status: "upcoming", estimatedTime: "90 min" },
+    { id: "complete", label: "Job Complete", status: "upcoming", estimatedTime: "5 min" }
   ]);
 
+  // Update statuses based on actual job data
+  useEffect(() => {
+    setStatuses(prev => prev.map(status => {
+      const currentIndex = prev.findIndex(s => s.id === currentStatusId);
+      const statusIndex = prev.findIndex(s => s.id === status.id);
+      
+      if (statusIndex < currentIndex) {
+        return { ...status, status: "completed" as const };
+      } else if (statusIndex === currentIndex) {
+        return { ...status, status: "current" as const };
+      } else {
+        return { ...status, status: "upcoming" as const };
+      }
+    }));
+  }, [currentStatusId]);
+
   const currentIndex = statuses.findIndex(s => s.id === currentStatusId);
-  const progress = ((currentIndex + 1) / statuses.length) * 100;
+  const progress = currentJob.progress;
+
+  // Sync status changes across demos
+  const handleStatusChange = (statusId: string) => {
+    onStatusChange?.(statusId);
+    syncProviderAction('status_updated', { status: statusId });
+  };
 
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-4">
         <h4 className="font-semibold text-[hsl(var(--atd-text))]">Job Progress</h4>
-        {isLive && (
-          <div className="flex items-center space-x-2 text-xs text-green-600">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span>Live Updates</span>
-          </div>
-        )}
+        <div className="flex items-center space-x-2">
+          {isLive && (
+            <div className="flex items-center space-x-2 text-xs text-green-600">
+              <Zap className="w-3 h-3" />
+              <span>Live</span>
+            </div>
+          )}
+          <Badge variant="outline" className="text-xs">
+            {progress}% Complete
+          </Badge>
+        </div>
       </div>
 
       <Progress value={progress} className="h-2 mb-4" />

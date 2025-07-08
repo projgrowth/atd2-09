@@ -9,25 +9,38 @@ import JobProgressTracker from "./job-tracking/JobProgressTracker";
 import PhotoProgressDocumentation from "./job-tracking/PhotoProgressDocumentation";
 import RealtimeMessaging from "./job-tracking/RealtimeMessaging";
 import TimeTrackingInvoice from "./job-tracking/TimeTrackingInvoice";
+import InvoiceGenerator from "./job-tracking/InvoiceGenerator";
+import ProviderStatusPanel from "./provider/ProviderStatusPanel";
 import { useDemoContext } from "@/contexts/DemoContext";
+import { useRealtimeSync } from "@/hooks/useRealtimeSync";
 import { cn } from "@/lib/utils";
 
 const PocketOfficeDemo = () => {
   const { state, actions } = useDemoContext();
   const { currentJob, userType, notifications } = state;
+  const { syncProviderAction } = useRealtimeSync();
   const [activeTab, setActiveTab] = useState("progress");
   const isMobile = useIsMobile();
 
-  const tabs = [
-    { id: "progress", label: "Progress", icon: MapPin },
-    { id: "photos", label: "Photos", icon: Camera },
-    { id: "chat", label: "Chat", icon: MessageSquare },
-    { id: "invoice", label: "Invoice", icon: Clock }
-  ];
+  const tabs = userType === 'provider' 
+    ? [
+        { id: "status", label: "Status", icon: MapPin },
+        { id: "progress", label: "Progress", icon: Clock },
+        { id: "photos", label: "Photos", icon: Camera },
+        { id: "chat", label: "Chat", icon: MessageSquare },
+        { id: "invoice", label: "Invoice", icon: Clock }
+      ]
+    : [
+        { id: "progress", label: "Progress", icon: MapPin },
+        { id: "photos", label: "Photos", icon: Camera },
+        { id: "chat", label: "Chat", icon: MessageSquare },
+        { id: "invoice", label: "Invoice", icon: Clock }
+      ];
 
   // Auto-advance job status simulation
   const handleStatusChange = (statusId: string) => {
     actions.updateJobStatus(statusId as any);
+    syncProviderAction('status_updated', { status: statusId });
   };
 
   return (
@@ -97,6 +110,12 @@ const PocketOfficeDemo = () => {
         </TabsList>
 
         <div className="min-h-[400px]">
+          {userType === 'provider' && (
+            <TabsContent value="status" className="mt-0">
+              <ProviderStatusPanel />
+            </TabsContent>
+          )}
+
           <TabsContent value="progress" className="mt-0">
             <JobProgressTracker
               currentStatusId={currentJob.status}
@@ -112,6 +131,7 @@ const PocketOfficeDemo = () => {
                   url: '/placeholder-progress-photo.jpg',
                   description: photoDescription
                 });
+                syncProviderAction('photo_uploaded', { description: photoDescription });
               }}
             />
           </TabsContent>
@@ -124,18 +144,13 @@ const PocketOfficeDemo = () => {
                   sender: userType === 'provider' ? 'provider' : 'homeowner',
                   message: message
                 });
+                syncProviderAction('message_sent', { message });
               }}
             />
           </TabsContent>
 
           <TabsContent value="invoice" className="mt-0">
-            <TimeTrackingInvoice
-              isActive={currentJob.status === "inprogress" || currentJob.status === "onsite"}
-              onInvoiceGenerated={(invoice) => {
-                // Update job with actual cost when invoice is generated
-                // This would normally update the global state
-              }}
-            />
+            <InvoiceGenerator />
           </TabsContent>
         </div>
       </Tabs>

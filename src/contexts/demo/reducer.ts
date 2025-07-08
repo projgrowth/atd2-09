@@ -28,20 +28,31 @@ export function demoReducer(state: DemoState, action: DemoAction): DemoState {
         'inprogress': 75,
         'complete': 100
       };
+
+      const statusDescriptions = {
+        'scheduled': 'Job has been scheduled and assigned',
+        'enroute': 'Provider is on the way to your location',
+        'onsite': 'Provider has arrived at your property',
+        'inprogress': 'Work is currently in progress',
+        'complete': 'Service has been completed successfully'
+      };
       
       return {
         ...state,
         currentJob: {
           ...state.currentJob,
           status: action.payload,
-          progress: statusProgressMap[action.payload] || state.currentJob.progress
+          progress: statusProgressMap[action.payload] || state.currentJob.progress,
+          ...(action.payload === 'complete' && { 
+            actualCost: Math.round(state.currentJob.estimatedCost * (0.9 + Math.random() * 0.2)) 
+          })
         },
         notifications: [
           {
             id: `notif-${Date.now()}`,
             type: 'status',
             title: 'Job Status Updated',
-            description: `Status changed to ${action.payload}`,
+            description: statusDescriptions[action.payload] || `Status changed to ${action.payload}`,
             timestamp: new Date(),
             read: false
           },
