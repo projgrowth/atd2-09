@@ -28,7 +28,7 @@ const Home = () => {
       <SocialProofTeaser />
       
       {/* Final CTA Section */}
-      <section className="section-spacing-xl section-bg-premium section-divider">
+      <section className="section-spacing-large section-bg-premium section-divider">
         <div className="container-standard text-center">
           <h2 className="heading-secondary mb-6 text-enhanced">
             Transform Your Home Management Today
