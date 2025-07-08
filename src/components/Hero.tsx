@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowDown, Eye, EyeOff } from "lucide-react";
+import { ArrowDown, Eye, EyeOff, Smartphone, QrCode, MessageSquare, CreditCard, Camera, Star, Zap, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,10 +9,11 @@ const Hero = () => {
   const [viewType, setViewType] = useState<ViewType>('homeowner');
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleViewChange = () => {
+  const handleViewChange = (newViewType: ViewType) => {
+    if (newViewType === viewType) return;
     setIsTransitioning(true);
     setTimeout(() => {
-      setViewType(prev => prev === 'homeowner' ? 'provider' : 'homeowner');
+      setViewType(newViewType);
       setIsTransitioning(false);
     }, 300);
   };
@@ -92,7 +93,13 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      )
+      ),
+      features: [
+        { icon: Smartphone, title: "Unified Dashboard", description: "All your projects in one place" },
+        { icon: QrCode, title: "QR Provider Access", description: "Secure, instant provider onboarding" },
+        { icon: MessageSquare, title: "Direct Messaging", description: "Real-time communication with providers" },
+        { icon: CreditCard, title: "Secure Payments", description: "Protected payment processing" }
+      ]
     },
     provider: {
       headline: "Streamlined Mobile Workflow",
@@ -155,7 +162,13 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      )
+      ),
+      features: [
+        { icon: Camera, title: "Photo Updates", description: "Document progress with instant sharing" },
+        { icon: Settings, title: "Job Management", description: "Track time, status, and tasks" },
+        { icon: Star, title: "Client Ratings", description: "Build your reputation with reviews" },
+        { icon: Zap, title: "Fast Payments", description: "Get paid quickly and securely" }
+      ]
     }
   };
 
@@ -187,25 +200,6 @@ const Hero = () => {
               <span className="text-gradient block mt-1 sm:mt-2 md:mt-3">{currentView.subHeadline}</span>
             </h1>
 
-            {/* View Toggle */}
-            <div className="flex justify-center lg:justify-start items-center space-x-4 mb-6 sm:mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <span className="text-sm font-medium text-muted-enhanced">View as:</span>
-              <Button
-                onClick={handleViewChange}
-                disabled={isTransitioning}
-                className={cn(
-                  "flex items-center space-x-2 px-4 py-2 transition-all duration-300",
-                  viewType === 'homeowner' 
-                    ? "bg-primary text-white hover:bg-primary/90" 
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                )}
-              >
-                {viewType === 'homeowner' ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
-                <span className="font-semibold">
-                  {viewType === 'homeowner' ? 'Homeowner' : 'Service Provider'}
-                </span>
-              </Button>
-            </div>
 
             {/* Dynamic Subheadline */}
             <p className={cn(
@@ -227,14 +221,71 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side - Screen Content (40%) */}
-          <div className="lg:col-span-2 flex justify-center lg:justify-end">
-            <div className={cn(
-              "w-full max-w-sm animate-fade-in-up transition-all duration-500",
-              isTransitioning && "opacity-70 scale-95"
-            )} style={{ animationDelay: '0.4s' }}>
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                {currentView.content}
+          {/* Right side - Interactive Showcase (40%) */}
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-end">
+            <div className="w-full max-w-sm space-y-6">
+              {/* View Toggle */}
+              <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                <div className="flex bg-white rounded-xl p-1 shadow-lg border border-gray-200">
+                  <button
+                    onClick={() => handleViewChange('homeowner')}
+                    disabled={isTransitioning}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
+                      viewType === 'homeowner'
+                        ? "bg-blue-600 text-white shadow-sm"
+                        : "text-gray-600 hover:text-gray-800"
+                    )}
+                  >
+                    Homeowner View
+                  </button>
+                  <button
+                    onClick={() => handleViewChange('provider')}
+                    disabled={isTransitioning}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
+                      viewType === 'provider'
+                        ? "bg-orange-600 text-white shadow-sm"
+                        : "text-gray-600 hover:text-gray-800"
+                    )}
+                  >
+                    Provider View
+                  </button>
+                </div>
+              </div>
+
+              {/* Screen Content */}
+              <div className={cn(
+                "animate-fade-in-up transition-all duration-500",
+                isTransitioning && "opacity-70 scale-95"
+              )} style={{ animationDelay: '0.4s' }}>
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                  {currentView.content}
+                </div>
+              </div>
+
+              {/* Feature Showcase */}
+              <div className={cn(
+                "space-y-3 animate-fade-in-up transition-all duration-500",
+                isTransitioning && "opacity-70"
+              )} style={{ animationDelay: '0.5s' }}>
+                {currentView.features.map((feature, index) => {
+                  const IconComponent = feature.icon;
+                  return (
+                    <div key={index} className="flex items-start space-x-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                      <div className={cn(
+                        "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
+                        viewType === 'homeowner' ? "bg-blue-100 text-blue-600" : "bg-orange-100 text-orange-600"
+                      )}>
+                        <IconComponent className="h-4 w-4" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-sm font-semibold text-gray-900 mb-1">{feature.title}</h4>
+                        <p className="text-xs text-gray-600 leading-relaxed">{feature.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
