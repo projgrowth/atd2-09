@@ -60,7 +60,7 @@ const CaseStudies = () => {
           {cases.map((caseStudy, index) => (
             <div 
               key={caseStudy.title}
-              className={`grid lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
+              className={`grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center animate-fade-in-up ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
               style={{ animationDelay: `${0.2 * index}s` }}

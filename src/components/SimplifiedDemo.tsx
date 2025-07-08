@@ -39,7 +39,7 @@ const SimplifiedDemo = () => {
         </div>
 
         {/* Demo Layout - Side by side on desktop, stacked on mobile */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-start max-w-7xl mx-auto mb-12">
           {/* Educational Panel - Left side on desktop */}
           <div className="order-2 lg:order-1">
             <StepInfo 

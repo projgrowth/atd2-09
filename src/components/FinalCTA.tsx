@@ -45,7 +45,7 @@ const FinalCTA = () => {
       <div className="absolute bottom-10 right-10 w-32 h-32 md:w-40 md:h-40 bg-[hsl(var(--atd-accent))]/15 rounded-full blur-3xl"></div>
       
       <div className="container-standard relative">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
           {/* Enhanced Text Content */}
           <div className="text-center lg:text-left animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-balance text-enhanced mobile-text-readable">

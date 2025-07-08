@@ -49,7 +49,7 @@ const DualScreenGraphic = () => {
       </div>
 
       {/* Dual Screen Display */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
         {/* Left Side - Always visible, highlighted when active */}
         <div className={cn(
           "space-y-6 transition-all duration-500",
