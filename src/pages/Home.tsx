@@ -13,26 +13,23 @@ const Home = () => {
       <Hero />
       
       {/* Story Transition */}
-      <StoryConnector text="Here's the challenge most homeowners face" />
+      <StoryConnector />
       
       <ProblemSolution />
       
       {/* Story Transition */}
-      <StoryConnector text="See it in action" />
+      <StoryConnector />
       
       <SimplifiedDemo />
       
       {/* Story Transition */}
-      <StoryConnector text="Join thousands who've solved this problem" />
+      <StoryConnector />
       
       <SocialProofTeaser />
       
       {/* Final CTA Section */}
       <section className="section-spacing-xl section-bg-premium section-divider">
         <div className="container max-w-4xl mx-auto text-center">
-          <div className="inline-block bg-accent/10 text-accent px-6 py-3 rounded-full text-sm font-bold mb-6 border border-accent/20">
-            Ready to Get Started?
-          </div>
           <h2 className="heading-secondary mb-6 text-enhanced">
             Transform Your Home Management Today
           </h2>

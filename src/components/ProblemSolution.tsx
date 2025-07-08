@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle, MessageSquare, FileX, Clock, Shield } from "lucide-react";
+import { ArrowRight, MessageSquare, FileX, Clock, Shield } from "lucide-react";
 
 const ProblemSolution = () => {
   const challenges = [
@@ -6,86 +6,88 @@ const ProblemSolution = () => {
       icon: MessageSquare,
       problem: "Scattered Communication",
       description: "Emails, texts, and calls with different contractors get lost or forgotten",
-      solution: "All communication happens in one secure platform with automatic organization"
+      solution: "All communication happens in one secure platform with automatic organization",
+      benefit: "Never lose track of important conversations again"
     },
     {
       icon: FileX,
       problem: "Missing Documentation", 
       description: "Photos, receipts, and project details scattered across devices and conversations",
-      solution: "Every photo, document, and conversation is automatically saved and searchable"
+      solution: "Every photo, document, and conversation is automatically saved and searchable",
+      benefit: "Complete project history at your fingertips"
     },
     {
       icon: Clock,
       problem: "No Real-Time Updates",
       description: "Wondering if contractors showed up, what they're working on, or when they'll finish",
-      solution: "Live updates with photos and progress tracking from your providers' mobile app"
+      solution: "Live updates with photos and progress tracking from your providers' mobile app",
+      benefit: "Stay informed without constant check-ins"
     },
     {
       icon: Shield,
       problem: "Trust & Accountability",
       description: "Difficulty verifying work quality and ensuring providers follow through",
-      solution: "Two-way rating system and documented work history builds trust and accountability"
+      solution: "Two-way rating system and documented work history builds trust and accountability",
+      benefit: "Confidence in every project outcome"
     }
   ];
 
   return (
     <section className="section-spacing-large section-bg-content">
-      <div className="container max-w-6xl mx-auto">
-        {/* The Challenge */}
+      <div className="container max-w-4xl mx-auto">
+        {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-red-50 border border-red-200 mb-6">
-            <AlertTriangle className="h-5 w-5 text-red-600 mr-2" />
-            <span className="text-sm font-bold text-red-600">The Challenge</span>
-          </div>
           <h2 className="heading-secondary mb-6 text-enhanced">
-            Home Management Chaos
+            Home Management Challenges
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced mobile-text-readable">
-            Most homeowners struggle with the same frustrating problems when managing projects and providers.
+            Most homeowners struggle with the same frustrating problems. Here's how ATD solves each one.
           </p>
         </div>
 
-        {/* Problems & Solutions */}
-        <div className="space-y-12 md:space-y-16">
+        {/* Challenge Cards */}
+        <div className="space-y-8">
           {challenges.map((challenge, index) => (
             <div 
               key={index}
-              className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in-up ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-              }`}
+              className="premium-card group hover:shadow-medium transition-all duration-300 animate-fade-in-up overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Problem Side */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="bg-red-50 border border-red-200 rounded-2xl p-6 md:p-8">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-red-100 p-3 rounded-xl mr-4">
-                      <challenge.icon className="h-6 w-6 text-red-600" />
-                    </div>
-                    <h3 className="text-xl font-bold text-red-900">
+              <div className="p-8">
+                {/* Challenge Header */}
+                <div className="flex items-start space-x-4 mb-6">
+                  <div className="bg-muted/20 p-3 rounded-xl shrink-0">
+                    <challenge.icon className="h-6 w-6 text-muted-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2 text-enhanced">
                       {challenge.problem}
                     </h3>
+                    <p className="text-muted-enhanced leading-relaxed">
+                      {challenge.description}
+                    </p>
                   </div>
-                  <p className="text-red-800 font-semibold leading-relaxed">
-                    {challenge.description}
-                  </p>
                 </div>
-              </div>
 
-              {/* Solution Side */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <div className="bg-green-50 border border-green-200 rounded-2xl p-6 md:p-8">
+                {/* Solution Flow */}
+                <div className="relative">
                   <div className="flex items-center mb-4">
-                    <div className="bg-green-100 p-3 rounded-xl mr-4">
-                      <CheckCircle className="h-6 w-6 text-green-600" />
+                    <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent flex-1"></div>
+                    <div className="mx-4 bg-primary/10 p-2 rounded-full">
+                      <ArrowRight className="h-4 w-4 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold text-green-900">
-                      ATD Solution
-                    </h3>
+                    <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent flex-1"></div>
                   </div>
-                  <p className="text-green-800 font-semibold leading-relaxed">
-                    {challenge.solution}
-                  </p>
+                  
+                  <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
+                    <h4 className="font-bold text-primary mb-2">ATD Solution</h4>
+                    <p className="text-enhanced mb-3 leading-relaxed">
+                      {challenge.solution}
+                    </p>
+                    <div className="text-sm font-semibold text-accent">
+                      {challenge.benefit}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -94,10 +96,6 @@ const ProblemSolution = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-50 border border-green-200 mb-6">
-            <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-            <span className="text-sm font-bold text-green-600">The Solution</span>
-          </div>
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-enhanced">
             Ready to See ATD in Action?
           </h3>
