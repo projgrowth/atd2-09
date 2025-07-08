@@ -530,6 +530,39 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-x-2 {
+  transform: rotateX(2deg);
+}
+
+.rotate-y-2 {
+  transform: rotateY(2deg);
+}
+
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+}
+
 @media (prefers-contrast: high) {
   .card-base {
     @apply border-2 border-gray-400;
