@@ -1,10 +1,8 @@
 
 import Hero from "@/components/Hero";
 import CoreBenefits from "@/components/CoreBenefits";
-import HowItWorks from "@/components/HowItWorks";
 import InteractiveDemo from "@/components/InteractiveDemo";
 import SocialProof from "@/components/SocialProof";
-import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import MobileNavigation from "@/components/MobileNavigation";
@@ -16,9 +14,7 @@ const Index = () => {
       <Hero />
       <InteractiveDemo />
       <CoreBenefits />
-      <HowItWorks />
       <SocialProof />
-      <FAQ />
       <FinalCTA />
       <Footer />
     </div>

@@ -1,8 +1,5 @@
 
 import TestimonialCarousel from "./TestimonialCarousel";
-import ProviderSpotlight from "./ProviderSpotlight";
-import SecurityBadges from "./SecurityBadges";
-import CaseStudies from "./CaseStudies";
 
 const SocialProof = () => {
   const stats = [
@@ -97,18 +94,6 @@ const SocialProof = () => {
         </div>
       </div>
 
-      {/* Additional Social Proof Sections */}
-      <div className="mt-24">
-        <SecurityBadges />
-      </div>
-      
-      <div className="mt-16">
-        <ProviderSpotlight />
-      </div>
-      
-      <div className="mt-16">
-        <CaseStudies />
-      </div>
     </section>
   );
 };
