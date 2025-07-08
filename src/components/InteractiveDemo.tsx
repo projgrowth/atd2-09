@@ -105,7 +105,7 @@ const InteractiveDemoContent = () => {
             Experience ATD's dual-perspective platform with hands-on demos for homeowners and providers.
           </p>
           <div className="mt-4 flex justify-center">
-            <div className="bg-white/80 rounded-lg px-4 py-2 border border-blue-200">
+            <div className="bg-white/80 rounded-lg py-2 border border-blue-200" style={{ padding: '0.5rem 1rem' }}>
               <div className="text-sm font-medium text-[hsl(var(--atd-text))]">
                 Demo Progress: {demoProgress.length}/5 explored
               </div>
@@ -138,7 +138,7 @@ const InteractiveDemoContent = () => {
                     onClick={() => handleDemoChange(key)}
                     disabled={isTransitioning}
                     className={cn(
-                      "flex items-center space-x-3 px-4 sm:px-6 py-4 text-sm mobile-interactive",
+                      "flex items-center space-x-3 py-4 text-sm mobile-interactive",
                       "min-h-[52px] transition-all duration-200 font-semibold",
                       activeDemo === key && "animate-mobile-scale-in button-primary-enhanced",
                       activeDemo !== key && "button-secondary-enhanced",

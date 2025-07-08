@@ -75,7 +75,8 @@ const FinalCTA = () => {
             
             <Button 
               size="lg" 
-              className="premium-button px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-bold mb-4 md:mb-6 w-full sm:w-auto"
+              className="premium-button py-4 md:py-6 text-lg md:text-xl font-bold mb-4 md:mb-6 w-full sm:w-auto"
+              style={{ paddingLeft: '2rem', paddingRight: '3rem' }}
               onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
             >
               Get Early Access
@@ -161,7 +162,8 @@ const FinalCTA = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="card-base px-6 md:px-8 border-2 hover:border-gray-200"
+                className="card-base border-2 hover:border-gray-200"
+                style={{ paddingLeft: '1.5rem', paddingRight: '2rem' }}
               >
                 <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 md:py-8 text-enhanced mobile-text-readable">
                   {faq.question}

@@ -26,7 +26,7 @@ const SocialProof = () => {
         <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-block bg-accent/10 text-accent px-6 py-3 rounded-full text-sm font-bold mb-6 border border-accent/20">
+            <div className="inline-block bg-accent/10 text-accent py-3 rounded-full text-sm font-bold mb-6 border border-accent/20" style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
               Trusted by Community
             </div>
             
