@@ -108,14 +108,15 @@ const Navigation = () => {
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="pt-20 px-6">
-            <nav className="space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`w-full flex items-center px-4 py-4 text-left rounded-xl transition-colors duration-200 touch-target ${
+          <div className="pt-20">
+            <div className="px-6">
+              <nav className="space-y-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`w-full flex items-center px-4 py-4 text-left rounded-xl transition-colors duration-200 touch-target ${
                     isActive(item.href)
                       ? 'bg-atd-primary/10 text-atd-primary font-bold'
                       : 'text-enhanced hover:bg-atd-surface-muted'
@@ -125,6 +126,7 @@ const Navigation = () => {
                 </Link>
               ))}
             </nav>
+            </div>
           </div>
         </div>
       </div>

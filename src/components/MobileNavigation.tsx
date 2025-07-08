@@ -32,8 +32,9 @@ const MobileNavigation = () => {
   return (
     <>
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-4 py-3">
-        <div className="flex items-center justify-between">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-3">
+        <div className="container-standard">
+          <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
@@ -56,6 +57,7 @@ const MobileNavigation = () => {
               <Menu className="h-6 w-6 text-[hsl(var(--atd-text))]" />
             )}
           </Button>
+          </div>
         </div>
       </header>
 
@@ -77,7 +79,8 @@ const MobileNavigation = () => {
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="pt-20 px-6">
+          <div className="pt-20">
+            <div className="px-6">
             <nav className="space-y-2">
               {navItems.map((item) => (
                 <button
@@ -101,6 +104,7 @@ const MobileNavigation = () => {
               >
                 Get Early Access
               </Button>
+            </div>
             </div>
           </div>
         </div>
