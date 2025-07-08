@@ -492,6 +492,21 @@
     color: hsl(var(--atd-text-enhanced));
   }
   
+  
+  /* Optical Spacing Adjustments */
+  .optical-spacing-tight { 
+    letter-spacing: -0.02em; 
+  }
+  
+  .optical-spacing-loose { 
+    letter-spacing: 0.01em; 
+  }
+
+  /* Content-Aware Margins */
+  .content-spacing-optimal {
+    @apply space-y-6 sm:space-y-8 lg:space-y-12;
+  }
+  
   /* Enhanced Text Size Classes with Mobile-First Typography */
   .text-body-large {
     @apply text-lg sm:text-xl lg:text-2xl;
