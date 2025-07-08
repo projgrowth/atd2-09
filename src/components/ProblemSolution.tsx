@@ -1,51 +1,35 @@
-import { ArrowRight, MessageSquare, FileX, Clock, Shield, CheckCircle, Zap } from "lucide-react";
-import { useState } from "react";
+import { MessageSquare, FileX, Clock, Shield, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ProblemSolution = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
-
   const challenges = [
     {
       icon: MessageSquare,
       problem: "Scattered Communication",
       description: "Emails, texts, and calls with different contractors get lost or forgotten",
       solution: "All communication happens in one secure platform with automatic organization",
-      benefit: "Never lose track of important conversations again",
-      stats: "87% fewer missed messages",
-      color: "from-blue-500/10 to-blue-600/10",
-      iconColor: "text-blue-600"
+      benefit: "Never lose track of important conversations again"
     },
     {
       icon: FileX,
       problem: "Missing Documentation", 
       description: "Photos, receipts, and project details scattered across devices and conversations",
       solution: "Every photo, document, and conversation is automatically saved and searchable",
-      benefit: "Complete project history at your fingertips",
-      stats: "100% project documentation",
-      color: "from-purple-500/10 to-purple-600/10",
-      iconColor: "text-purple-600"
+      benefit: "Complete project history at your fingertips"
     },
     {
       icon: Clock,
       problem: "No Real-Time Updates",
       description: "Wondering if contractors showed up, what they're working on, or when they'll finish",
       solution: "Live updates with photos and progress tracking from your providers' mobile app",
-      benefit: "Stay informed without constant check-ins",
-      stats: "Real-time notifications",
-      color: "from-green-500/10 to-green-600/10",
-      iconColor: "text-green-600"
+      benefit: "Stay informed without constant check-ins"
     },
     {
       icon: Shield,
       problem: "Trust & Accountability",
       description: "Difficulty verifying work quality and ensuring providers follow through",
       solution: "Two-way rating system and documented work history builds trust and accountability",
-      benefit: "Confidence in every project outcome",
-      stats: "95% satisfaction rate",
-      color: "from-orange-500/10 to-orange-600/10",
-      iconColor: "text-orange-600"
+      benefit: "Confidence in every project outcome"
     }
   ];
 
@@ -62,90 +46,40 @@ const ProblemSolution = () => {
           </p>
         </div>
 
-        {/* Interactive Challenge Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Challenge Cards - Single Column */}
+        <div className="space-y-8">
           {challenges.map((challenge, index) => (
             <div 
               key={index}
               className={cn(
-                "group relative overflow-hidden transition-all duration-500 cursor-pointer",
-                "bg-gradient-to-br from-background to-background/80",
-                "border border-border rounded-2xl hover:border-primary/30",
-                "hover:shadow-xl hover:shadow-primary/5",
-                "animate-fade-in-up",
-                expandedCard === index && "md:col-span-2 scale-[1.02]"
+                "premium-card p-8 transition-all duration-300 hover:shadow-lg animate-fade-in-up"
               )}
               style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
-              onClick={() => setExpandedCard(expandedCard === index ? null : index)}
             >
-              {/* Background Pattern */}
-              <div className={cn(
-                "absolute inset-0 bg-gradient-to-br opacity-50",
-                challenge.color
-              )} />
+              {/* Problem Section */}
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <challenge.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-2 text-enhanced">
+                    {challenge.problem}
+                  </h3>
+                  <p className="text-muted-enhanced leading-relaxed">
+                    {challenge.description}
+                  </p>
+                </div>
+              </div>
               
-              {/* Content */}
-              <div className="relative p-6 lg:p-8">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-start space-x-4">
-                    <div className={cn(
-                      "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300",
-                      "bg-background/80 backdrop-blur-sm border border-border",
-                      hoveredCard === index && "scale-110 shadow-lg"
-                    )}>
-                      <challenge.icon className={cn("h-6 w-6", challenge.iconColor)} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl font-bold mb-2 text-enhanced">
-                        {challenge.problem}
-                      </h3>
-                      <p className="text-muted-enhanced leading-relaxed">
-                        {challenge.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Stats Badge */}
-                  <div className="text-xs bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1 font-bold text-primary">
-                    {challenge.stats}
-                  </div>
-                </div>
-
-                {/* Transformation Arrow */}
-                <div className={cn(
-                  "flex items-center justify-center mb-6 transition-all duration-300",
-                  hoveredCard === index && "scale-110"
-                )}>
-                  <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent flex-1 max-w-20"></div>
-                  <div className="mx-4 bg-primary/10 p-3 rounded-full border border-primary/20">
-                    <Zap className="h-4 w-4 text-primary" />
-                  </div>
-                  <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent flex-1 max-w-20"></div>
-                </div>
-                
-                {/* Solution */}
-                <div className={cn(
-                  "bg-background/60 backdrop-blur-sm rounded-xl p-6 border border-border/50 transition-all duration-300",
-                  hoveredCard === index && "bg-primary/5 border-primary/20"
-                )}>
-                  <div className="flex items-start space-x-3 mb-4">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-primary mb-2">ATD Solution</h4>
-                      <p className="text-enhanced leading-relaxed">
-                        {challenge.solution}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Benefit Highlight */}
-                  <div className={cn(
-                    "border-t border-border/50 pt-4 transition-all duration-300",
-                    hoveredCard === index && "border-primary/20"
-                  )}>
+              {/* Solution Section */}
+              <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
+                <div className="flex items-start space-x-3 mb-4">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-primary mb-2">ATD Solution</h4>
+                    <p className="text-enhanced leading-relaxed mb-3">
+                      {challenge.solution}
+                    </p>
                     <div className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
                       <span className="text-sm font-semibold text-accent">
@@ -154,21 +88,7 @@ const ProblemSolution = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Expand Indicator */}
-                <div className={cn(
-                  "flex items-center justify-center mt-4 transition-all duration-300",
-                  expandedCard === index ? "rotate-180" : ""
-                )}>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground rotate-90" />
-                </div>
               </div>
-
-              {/* Hover Glow Effect */}
-              <div className={cn(
-                "absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300",
-                hoveredCard === index && "opacity-100"
-              )} />
             </div>
           ))}
         </div>
