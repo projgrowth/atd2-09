@@ -18,11 +18,15 @@ const Hero = () => {
     }, 300);
   };
 
+  // Consistent copy for left side regardless of view
+  const heroContent = {
+    headline: "One Command Center",
+    subHeadline: "for Your Home",
+    description: "Stop juggling emails, texts, and spreadsheets. ATD brings your trusted providers and all your home projects into one organized platform."
+  };
+
   const viewContent = {
     homeowner: {
-      headline: "One Command Center",
-      subHeadline: "for Your Home",
-      description: "Stop juggling emails, texts, and spreadsheets. ATD brings your trusted providers and all your home projects into one organized platform.",
       content: (
         <div className="h-full bg-gradient-to-br from-blue-50 to-blue-100 p-4">
           {/* Header */}
@@ -102,9 +106,6 @@ const Hero = () => {
       ]
     },
     provider: {
-      headline: "Streamlined Mobile Workflow",
-      subHeadline: "for Contractors",
-      description: "Professional tools designed for service providers. Manage jobs, update clients, and get paid faster with ATD's PocketOffice mobile experience.",
       content: (
         <div className="h-full bg-gradient-to-br from-orange-50 to-orange-100 p-4">
           {/* Header */}
@@ -191,29 +192,24 @@ const Hero = () => {
               </span>
             </div>
 
-            {/* Dynamic Headlines */}
-            <h1 className={cn(
-              "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 animate-fade-in-up text-enhanced leading-tight transition-all duration-300",
-              isTransitioning && "opacity-50"
-            )} style={{ animationDelay: '0.05s' }}>
-              {currentView.headline}
-              <span className="text-gradient block mt-1 sm:mt-2 md:mt-3">{currentView.subHeadline}</span>
+            {/* Static Headlines */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 animate-fade-in-up text-enhanced leading-tight"
+                style={{ animationDelay: '0.05s' }}>
+              {heroContent.headline}
+              <span className="text-gradient block mt-1 sm:mt-2 md:mt-3">{heroContent.subHeadline}</span>
             </h1>
 
-
-            {/* Dynamic Subheadline */}
-            <p className={cn(
-              "text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced transition-all duration-300",
-              isTransitioning && "opacity-50"
-            )} style={{ animationDelay: '0.15s' }}>
-              {currentView.description}
+            {/* Static Subheadline */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-8 md:mb-12 animate-fade-in-up leading-relaxed font-semibold text-enhanced"
+               style={{ animationDelay: '0.15s' }}>
+              {heroContent.description}
             </p>
 
             {/* Single CTA */}
             <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
-                className="premium-button w-full sm:w-auto px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-bold"
+                className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-base sm:text-lg md:text-xl font-bold transition-colors duration-200"
                 onClick={() => document.getElementById('enhanced-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
