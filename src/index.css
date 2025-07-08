@@ -625,6 +625,139 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Enhanced Glass Morphism Components */
+.glass-morphism-card {
+  @apply relative p-6 md:p-8 lg:p-10 rounded-3xl transition-all duration-500 cursor-default;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-morphism-card:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    0 35px 70px -12px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-morphism-card::before {
+  content: '';
+  @apply absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500;
+  background: linear-gradient(135deg, 
+    hsl(var(--atd-primary) / 0.1) 0%, 
+    hsl(var(--atd-accent) / 0.1) 100%
+  );
+}
+
+.glass-morphism-card:hover::before {
+  opacity: 1;
+}
+
+/* Icon Container */
+.icon-container {
+  @apply relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center;
+  background: linear-gradient(135deg, 
+    hsl(var(--atd-primary)) 0%, 
+    hsl(var(--atd-accent)) 100%
+  );
+  box-shadow: 
+    0 10px 25px -5px hsl(var(--atd-primary) / 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.icon-glow {
+  @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500;
+  background: linear-gradient(135deg, 
+    hsl(var(--atd-primary) / 0.4) 0%, 
+    hsl(var(--atd-accent) / 0.4) 100%
+  );
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.glass-morphism-card:hover .icon-glow {
+  opacity: 1;
+}
+
+/* Step Badge */
+.step-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-bold transition-all duration-300;
+  background: linear-gradient(135deg, 
+    hsl(var(--atd-primary) / 0.1) 0%, 
+    hsl(var(--atd-accent) / 0.1) 100%
+  );
+  border: 1px solid hsl(var(--atd-primary) / 0.2);
+  color: hsl(var(--atd-primary));
+}
+
+/* Progress Section */
+.progress-section {
+  @apply mt-8 pt-6 border-t border-white/10 space-y-4;
+}
+
+.progress-dot {
+  @apply relative w-4 h-4 rounded-full transition-all duration-300 border-2 flex items-center justify-center;
+  border-color: hsl(var(--atd-border-medium));
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-dot:hover {
+  @apply scale-110;
+  border-color: hsl(var(--atd-primary));
+}
+
+.progress-dot.active {
+  @apply scale-125;
+  background: linear-gradient(135deg, 
+    hsl(var(--atd-primary)) 0%, 
+    hsl(var(--atd-accent)) 100%
+  );
+  border-color: hsl(var(--atd-primary));
+  box-shadow: 0 0 0 3px hsl(var(--atd-primary) / 0.2);
+}
+
+.progress-dot.completed {
+  background: hsl(var(--atd-accent));
+  border-color: hsl(var(--atd-accent));
+}
+
+.checkmark {
+  @apply text-white text-xs font-bold;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  @apply relative w-full h-1 rounded-full overflow-hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar-fill {
+  @apply h-full rounded-full transition-all duration-700 ease-out;
+  background: linear-gradient(90deg, 
+    hsl(var(--atd-primary)) 0%, 
+    hsl(var(--atd-accent)) 100%
+  );
+  box-shadow: 0 0 10px hsl(var(--atd-primary) / 0.5);
+}
+
+/* Interaction Hint */
+.interaction-hint {
+  @apply mt-4 text-center opacity-0 transition-opacity duration-300;
+}
+
+.glass-morphism-card:hover .interaction-hint {
+  opacity: 1;
+}
+
 /* Accessibility Enhancements */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in-up,

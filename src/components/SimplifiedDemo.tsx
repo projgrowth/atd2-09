@@ -43,6 +43,8 @@ const SimplifiedDemo = () => {
           currentStep={currentStep}
           title={currentDemo.title}
           description={currentDemo.description}
+          totalSteps={demoSteps.length}
+          onStepChange={setCurrentStep}
         />
 
         {/* iPhone 16 Pro Max Mockup - Centered */}
