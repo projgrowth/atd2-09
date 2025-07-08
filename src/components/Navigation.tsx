@@ -24,7 +24,7 @@ const Navigation = () => {
     <>
       {/* Desktop Navigation */}
       <header className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-atd-surface/95 backdrop-blur-sm border-b border-atd-border/20">
-        <div className="section-container py-4">
+        <div className="container max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
@@ -51,7 +51,7 @@ const Navigation = () => {
               ))}
               
               <Link to="/join-beta">
-                <Button size="sm" className="btn-primary">
+                <Button className="btn-primary">
                   Join Beta
                 </Button>
               </Link>
