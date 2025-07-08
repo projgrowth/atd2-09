@@ -6,7 +6,7 @@ const SignupSuccess = () => {
   return (
     <div className="min-h-screen bg-background">
       <section className="section-spacing-xl section-bg-primary">
-        <div className="container max-w-4xl mx-auto text-center">
+        <div className="container-narrow text-center">
           {/* Success Icon */}
           <div className="mb-8 animate-fade-in-up">
             <div className="bg-atd-success/10 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6">

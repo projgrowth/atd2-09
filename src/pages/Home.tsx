@@ -29,7 +29,7 @@ const Home = () => {
       
       {/* Final CTA Section */}
       <section className="section-spacing-xl section-bg-premium section-divider">
-        <div className="container max-w-4xl mx-auto text-center">
+        <div className="container-narrow text-center">
           <h2 className="heading-secondary mb-6 text-enhanced">
             Transform Your Home Management Today
           </h2>
@@ -39,7 +39,7 @@ const Home = () => {
           
           <div className="flex justify-center">
             <Link to="/join-beta">
-              <Button size="lg">
+              <Button size="lg" className="touch-target">
                 Join Beta Program
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>

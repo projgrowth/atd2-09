@@ -23,8 +23,8 @@ const Signup = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <div className="container max-w-6xl mx-auto pt-8">
-        <Button asChild variant="ghost" className="mb-8">
+      <div className="container-standard pt-8">
+        <Button asChild variant="ghost" className="mb-8 touch-target">
           <Link to="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
@@ -34,7 +34,7 @@ const Signup = () => {
 
       {/* Main Content */}
       <section className="section-spacing section-bg-primary">
-        <div className="container max-w-2xl mx-auto">
+        <div className="container-text">
           <div className="text-center mb-8">
             <h1 className="heading-primary text-enhanced">
               {titles[userType]}
