@@ -44,7 +44,7 @@ const FinalCTA = () => {
       <div className="absolute top-10 left-10 w-24 h-24 md:w-32 md:h-32 bg-[hsl(var(--atd-primary))]/15 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 md:w-40 md:h-40 bg-[hsl(var(--atd-accent))]/15 rounded-full blur-3xl"></div>
       
-      <div className="container max-w-6xl mx-auto relative">
+      <div className="container-standard relative">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Enhanced Text Content */}
           <div className="text-center lg:text-left animate-fade-in-up">
@@ -145,7 +145,7 @@ const FinalCTA = () => {
 
     {/* FAQ Section */}
     <section className="section-spacing section-bg-info section-separator">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container-narrow">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
             Frequently Asked Questions
