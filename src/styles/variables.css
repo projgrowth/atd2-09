@@ -30,9 +30,12 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    /* Premium Design System - ATD */
+    /* Premium ATD Design System - ATD */
     --atd-primary: 214 84% 56%;
     --atd-accent: 142 71% 45%;
+    
+    /* Premium Text Colors */
+    --atd-text: var(--atd-neutral-900);
     
     /* Sophisticated Neutrals */
     --atd-neutral-50: 210 20% 98%;

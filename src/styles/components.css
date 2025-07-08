@@ -40,8 +40,13 @@
   }
 
   .section-bg-dark {
-    background: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(214 84% 46%) 100%);
+    background: linear-gradient(135deg, hsl(var(--atd-primary)) 0%, hsl(var(--atd-primary) / 0.9) 100%);
     color: white;
+    position: relative;
+  }
+
+  .section-bg-interactive {
+    background: linear-gradient(135deg, hsl(var(--atd-surface-primary)) 0%, hsl(var(--atd-surface-secondary)) 100%);
     position: relative;
   }
 
@@ -74,7 +79,7 @@
   /* Premium Button System */
   .premium-button-primary {
     @apply relative overflow-hidden font-semibold text-white transition-all duration-200 border-0;
-    background: hsl(214 84% 56%); /* Unified blue-600 equivalent */
+    background: hsl(var(--atd-primary));
     border-radius: var(--button-radius);
     box-shadow: var(--shadow-medium);
     padding: 0.75rem 1.5rem;
@@ -82,7 +87,7 @@
   }
   
   .premium-button-primary:hover {
-    background: hsl(214 84% 50%); /* Darker blue on hover */
+    background: hsl(var(--atd-primary) / 0.9);
     box-shadow: var(--shadow-elevated);
     transform: translateY(-1px);
   }

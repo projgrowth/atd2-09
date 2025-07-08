@@ -32,7 +32,7 @@ export const ChallengeCard = ({
       onMouseLeave={onMouseLeave}
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-60 rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-atd-primary/5 to-atd-primary/10 opacity-60 rounded-3xl" />
       
       {/* Content */}
       <div className="relative p-8">
@@ -40,14 +40,14 @@ export const ChallengeCard = ({
         <div className="mb-8">
           <div className="flex items-start justify-between mb-6">
             <div className={cn(
-              "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 bg-blue-600",
+              "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 bg-atd-primary",
               hoveredCard === index && "scale-110 shadow-lg"
             )}>
               <challenge.icon className="h-7 w-7 text-white" />
             </div>
             
             {/* Impact Stat */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-atd-primary text-white">
               <StatIcon className="h-3 w-3" />
               {challenge.timesSaved}
             </div>
@@ -67,14 +67,14 @@ export const ChallengeCard = ({
         {/* Solution Transform */}
         <div className={cn(
           "relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300",
-          hoveredCard === index ? "border-blue-200 shadow-md" : "border-gray-200"
+          hoveredCard === index ? "border-atd-primary/20 shadow-md" : "border-gray-200"
         )}>
           <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-atd-primary rounded-xl flex items-center justify-center flex-shrink-0">
               <CheckCircle className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">
-              <h4 className="font-bold text-blue-600 mb-2">ATD Solution</h4>
+              <h4 className="font-bold text-atd-primary mb-2">ATD Solution</h4>
               <p className="text-gray-800 font-medium mb-3 leading-relaxed">
                 {challenge.solution}
               </p>
@@ -82,7 +82,7 @@ export const ChallengeCard = ({
                 <span className="text-sm font-semibold text-gray-600">
                   {challenge.benefit}
                 </span>
-                <span className="text-sm font-bold text-blue-600">
+                <span className="text-sm font-bold text-atd-primary">
                   {challenge.impact}
                 </span>
               </div>
@@ -93,7 +93,7 @@ export const ChallengeCard = ({
 
       {/* Hover Glow Effect */}
       <div className={cn(
-        "absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 transition-opacity duration-300 rounded-3xl",
+        "absolute inset-0 bg-gradient-to-br from-atd-primary/5 to-transparent opacity-0 transition-opacity duration-300 rounded-3xl",
         hoveredCard === index && "opacity-100"
       )} />
     </div>
