@@ -209,7 +209,7 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
-                className="btn-primary btn-large w-full sm:w-auto"
+                className="w-full sm:w-auto"
                 onClick={() => document.getElementById('enhanced-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
@@ -222,7 +222,7 @@ const Hero = () => {
             <div className="w-full max-w-sm space-y-6">
               {/* View Toggle */}
               <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <div className="flex bg-atd-surface rounded-xl p-1 shadow-lg border border-atd-border">
+                <div className="flex premium-card rounded-xl p-1">
                   <button
                     onClick={() => handleViewChange('homeowner')}
                     disabled={isTransitioning}
@@ -255,7 +255,7 @@ const Hero = () => {
                 "animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="bg-atd-surface rounded-2xl shadow-lg border border-atd-border overflow-hidden">
+                <div className="premium-card-elevated rounded-2xl overflow-hidden">
                   {currentView.content}
                 </div>
               </div>
@@ -268,7 +268,7 @@ const Hero = () => {
                 {currentView.features.map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-3 bg-atd-surface rounded-xl p-4 shadow-sm border border-atd-border/50">
+                    <div key={index} className="premium-card p-4 flex items-start space-x-3">
                       <div className={cn(
                         "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
                         viewType === 'homeowner' ? "bg-atd-primary/10 text-atd-primary" : "bg-atd-warning/10 text-atd-warning"

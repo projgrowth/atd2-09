@@ -54,6 +54,7 @@
     --atd-warning: 38 92% 50%;
     
     /* Surface System */
+    --atd-surface: 0 0% 100%;
     --atd-surface-primary: 0 0% 100%;
     --atd-surface-secondary: 210 20% 98%;
     --atd-surface-muted: 210 16% 93%;

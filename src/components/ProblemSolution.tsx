@@ -68,10 +68,7 @@ const ProblemSolution = () => {
             <div 
               key={index}
               className={cn(
-                "group relative overflow-hidden transition-all duration-500 cursor-pointer",
-                "bg-gradient-to-br from-background to-background/80",
-                "border border-border rounded-2xl hover:border-primary/30",
-                "hover:shadow-xl hover:shadow-primary/5",
+                "premium-card enhanced-card-hover group relative overflow-hidden cursor-pointer transition-all duration-500",
                 "animate-fade-in-up",
                 expandedCard === index && "md:col-span-2 scale-[1.02]"
               )}
@@ -128,7 +125,7 @@ const ProblemSolution = () => {
                 
                 {/* Solution */}
                 <div className={cn(
-                  "bg-background/60 backdrop-blur-sm rounded-xl p-6 border border-border/50 transition-all duration-300",
+                  "premium-card p-6 transition-all duration-300",
                   hoveredCard === index && "bg-primary/5 border-primary/20"
                 )}>
                   <div className="flex items-start space-x-3 mb-4">

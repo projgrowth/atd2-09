@@ -39,7 +39,7 @@ const Home = () => {
           
           <div className="flex justify-center">
             <Link to="/join-beta">
-              <Button size="lg" className="btn-primary btn-large">
+              <Button size="lg">
                 Join Beta Program
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>

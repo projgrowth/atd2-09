@@ -51,7 +51,7 @@ const Navigation = () => {
               ))}
               
               <Link to="/join-beta">
-                <Button className="btn-primary">
+                <Button>
                   Join Beta
                 </Button>
               </Link>
