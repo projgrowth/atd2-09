@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ArrowDown, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import IPhoneMockup from "./demo/iPhoneMockup";
 
 type ViewType = 'homeowner' | 'provider';
 
@@ -228,15 +227,15 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side - Single iPhone Mockup (40%) */}
+          {/* Right side - Screen Content (40%) */}
           <div className="lg:col-span-2 flex justify-center lg:justify-end">
             <div className={cn(
-              "animate-fade-in-up transition-all duration-500",
+              "w-full max-w-sm animate-fade-in-up transition-all duration-500",
               isTransitioning && "opacity-70 scale-95"
             )} style={{ animationDelay: '0.4s' }}>
-              <IPhoneMockup>
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
                 {currentView.content}
-              </IPhoneMockup>
+              </div>
             </div>
           </div>
         </div>
