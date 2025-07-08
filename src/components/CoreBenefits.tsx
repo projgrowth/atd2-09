@@ -7,7 +7,7 @@ const CoreBenefits = () => {
       title: "Bring Your Own Trusted Pros",
       description: "Work with providers you already trust, or choose from our vetted network. Your home, your choice.",
       mockup: (
-        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-3 md:p-4 border border-blue-100">
+        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 md:p-6 border border-blue-100">
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-3 space-y-2 sm:space-y-0">
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-primary))]" />
@@ -18,7 +18,7 @@ const CoreBenefits = () => {
             </div>
           </div>
           <div className="space-y-3">
-            <div className="bg-white rounded-lg p-3 md:p-4 shadow-sm border border-gray-100 min-h-[60px] touch-target">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px] touch-target">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm md:text-base text-white font-bold">TH</span>
@@ -29,7 +29,7 @@ const CoreBenefits = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 md:p-4 shadow-sm border border-gray-100 min-h-[60px] touch-target">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px] touch-target">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm md:text-base text-white font-bold">MC</span>
@@ -49,7 +49,7 @@ const CoreBenefits = () => {
       title: "Track Everything in Real-Time",
       description: "Jobs, payments, documents, and communication—all organized automatically. See exactly what's happening and what you owe.",
       mockup: (
-        <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-3 md:p-4 border border-green-100">
+        <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 md:p-6 border border-green-100">
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-3 space-y-2 sm:space-y-0">
             <div className="flex items-center space-x-2">
               <Activity className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-accent))]" />
@@ -60,7 +60,7 @@ const CoreBenefits = () => {
               <span className="text-xs md:text-sm text-green-600">Live</span>
             </div>
           </div>
-          <div className="bg-white rounded-lg p-3 md:p-4 shadow-sm border border-gray-100 min-h-[100px]">
+          <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[100px]">
             <div className="space-y-3">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-2 sm:space-y-0">
                 <span className="text-sm md:text-base font-medium">Kitchen Repair</span>
@@ -89,7 +89,7 @@ const CoreBenefits = () => {
       title: "Secure Document Vault",
       description: "Contracts, warranties, and receipts—safely stored and always accessible when you need them.",
       mockup: (
-        <div className="bg-gradient-to-br from-purple-50 to-white rounded-lg p-4 border border-purple-100">
+        <div className="bg-gradient-to-br from-purple-50 to-white rounded-lg p-4 md:p-6 border border-purple-100">
           <div className="flex items-center space-x-2 mb-3">
             <Shield className="h-4 w-4 text-purple-600" />
             <span className="text-sm font-medium">Document Vault</span>
@@ -98,7 +98,7 @@ const CoreBenefits = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 flex items-center space-x-3">
               <FileText className="h-4 w-4 text-blue-500" />
               <div className="flex-1">
                 <div className="text-xs font-medium">HVAC_Contract_2024.pdf</div>
@@ -106,7 +106,7 @@ const CoreBenefits = () => {
               </div>
               <div className="w-2 h-2 bg-green-400 rounded-full"></div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 flex items-center space-x-3">
               <FileText className="h-4 w-4 text-purple-500" />
               <div className="flex-1">
                 <div className="text-xs font-medium">Appliance_Warranties.pdf</div>
@@ -123,7 +123,7 @@ const CoreBenefits = () => {
       title: "Smart Access Control",
       description: "Give family members and assistants exactly the access they need—nothing more, nothing less. Your home, your rules.",
       mockup: (
-        <div className="bg-gradient-to-br from-orange-50 to-white rounded-lg p-4 border border-orange-100">
+        <div className="bg-gradient-to-br from-orange-50 to-white rounded-lg p-4 md:p-6 border border-orange-100">
           <div className="flex items-center space-x-2 mb-3">
             <Share2 className="h-4 w-4 text-orange-600" />
             <span className="text-sm font-medium">Access Control</span>
@@ -132,7 +132,7 @@ const CoreBenefits = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
@@ -146,7 +146,7 @@ const CoreBenefits = () => {
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">

@@ -8,7 +8,7 @@ const FeatureShowcase = () => {
       title: "Secure Document Vault",
       description: "Contracts, warranties, and receipts—safely stored and always accessible.",
       mockup: (
-        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 space-y-3 border border-blue-100">
+        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 md:p-6 space-y-3 border border-blue-100">
           <div className="flex items-center space-x-2 mb-3">
             <Shield className="h-4 w-4 text-[hsl(var(--atd-primary))]" />
             <span className="text-sm font-medium">Document Vault</span>
@@ -17,7 +17,7 @@ const FeatureShowcase = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 flex items-center space-x-3">
               <FileText className="h-4 w-4 text-blue-500" />
               <div className="flex-1">
                 <div className="text-xs font-medium">HVAC_Contract_2024.pdf</div>
@@ -25,7 +25,7 @@ const FeatureShowcase = () => {
               </div>
               <div className="w-2 h-2 bg-green-400 rounded-full"></div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 flex items-center space-x-3">
               <FileText className="h-4 w-4 text-purple-500" />
               <div className="flex-1">
                 <div className="text-xs font-medium">Appliance_Warranties.pdf</div>
@@ -33,7 +33,7 @@ const FeatureShowcase = () => {
               </div>
               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 flex items-center space-x-3">
               <FileText className="h-4 w-4 text-green-500" />
               <div className="flex-1">
                 <div className="text-xs font-medium">Cleaning_Receipt_Nov.pdf</div>
@@ -50,7 +50,7 @@ const FeatureShowcase = () => {
       title: "Real-Time Job + Payment Tracker",
       description: "See exactly what's happening and what you owe—no surprises.",
       mockup: (
-        <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 border border-green-100">
+        <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 md:p-6 border border-green-100">
           <div className="flex items-center space-x-2 mb-3">
             <Activity className="h-4 w-4 text-[hsl(var(--atd-accent))]" />
             <span className="text-sm font-medium">Live Tracking</span>
@@ -60,7 +60,7 @@ const FeatureShowcase = () => {
             </div>
           </div>
           <div className="space-y-3">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium">Kitchen Repair</span>
                 <span className="text-caption text-atd-success bg-atd-success/10 px-2 py-1 rounded-full">75% Complete</span>
@@ -79,7 +79,7 @@ const FeatureShowcase = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium">Plumbing Check</span>
                 <span className="text-caption text-atd-primary bg-atd-primary/10 px-2 py-1 rounded-full">Scheduled</span>
@@ -98,7 +98,7 @@ const FeatureShowcase = () => {
       title: "PocketOffice for Providers",
       description: "Your pros get a clean, simple interface to update jobs and communicate.",
       mockup: (
-        <div className="bg-gradient-to-br from-purple-50 to-white rounded-lg p-4 border border-purple-100">
+        <div className="bg-gradient-to-br from-purple-50 to-white rounded-lg p-4 md:p-6 border border-purple-100">
           <div className="flex items-center space-x-2 mb-3">
             <Smartphone className="h-4 w-4 text-atd-accent" />
             <span className="text-sm font-medium">PocketOffice</span>
@@ -107,7 +107,7 @@ const FeatureShowcase = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="text-xs font-medium mb-2">Current Job: Kitchen Repair</div>
               <div className="space-y-2">
                 <button className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-3 md:p-4 text-sm md:text-base font-medium hover:from-purple-600 hover:to-purple-700 transition-all duration-200 min-h-[48px] touch-target">
@@ -134,7 +134,7 @@ const FeatureShowcase = () => {
       title: "Shared Access Control",
       description: "Give family members exactly the access they need—nothing more, nothing less.",
       mockup: (
-        <div className="bg-gradient-to-br from-orange-50 to-white rounded-lg p-4 border border-orange-100">
+        <div className="bg-gradient-to-br from-orange-50 to-white rounded-lg p-4 md:p-6 border border-orange-100">
           <div className="flex items-center space-x-2 mb-3">
             <Share2 className="h-4 w-4 text-atd-warning" />
             <span className="text-sm font-medium">Access Control</span>
@@ -143,7 +143,7 @@ const FeatureShowcase = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
@@ -157,7 +157,7 @@ const FeatureShowcase = () => {
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
@@ -171,7 +171,7 @@ const FeatureShowcase = () => {
                 <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center space-x-2">
                   <Users className="h-4 w-4 text-gray-400" />
