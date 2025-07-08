@@ -1,8 +1,7 @@
 
 import Hero from "@/components/Hero";
-import WhyATD from "@/components/WhyATD";
+import CoreBenefits from "@/components/CoreBenefits";
 import HowItWorks from "@/components/HowItWorks";
-import FeatureShowcase from "@/components/FeatureShowcase";
 import InteractiveDemo from "@/components/InteractiveDemo";
 import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
@@ -16,9 +15,8 @@ const Index = () => {
       <MobileNavigation />
       <Hero />
       <InteractiveDemo />
-      <WhyATD />
+      <CoreBenefits />
       <HowItWorks />
-      <FeatureShowcase />
       <SocialProof />
       <FAQ />
       <FinalCTA />
