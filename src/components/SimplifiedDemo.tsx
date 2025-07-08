@@ -38,20 +38,25 @@ const SimplifiedDemo = () => {
           </p>
         </div>
 
-        {/* Step Information */}
-        <StepInfo 
-          currentStep={currentStep}
-          title={currentDemo.title}
-          description={currentDemo.description}
-          totalSteps={demoSteps.length}
-          onStepChange={setCurrentStep}
-        />
+        {/* Demo Layout - Side by side on desktop, stacked on mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-7xl mx-auto mb-12">
+          {/* Educational Panel - Left side on desktop */}
+          <div className="order-2 lg:order-1">
+            <StepInfo 
+              currentStep={currentStep}
+              title={currentDemo.title}
+              description={currentDemo.description}
+              totalSteps={demoSteps.length}
+              onStepChange={setCurrentStep}
+            />
+          </div>
 
-        {/* iPhone 16 Pro Max Mockup - Centered */}
-        <div className="flex justify-center mb-12">
-          <IPhoneMockup>
-            <DemoContent currentStep={currentStep} />
-          </IPhoneMockup>
+          {/* iPhone Mockup - Right side on desktop */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-start">
+            <IPhoneMockup>
+              <DemoContent currentStep={currentStep} />
+            </IPhoneMockup>
+          </div>
         </div>
 
         {/* Navigation Controls */}
