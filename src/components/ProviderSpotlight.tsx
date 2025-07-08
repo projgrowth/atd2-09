@@ -41,7 +41,7 @@ const ProviderSpotlight = () => {
 
   return (
     <section className="section-spacing section-bg-interactive section-separator">
-      <div className="container-wide">
+      <div className="container-standard">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-[hsl(var(--atd-text))] mb-4">
             Trusted Service Providers

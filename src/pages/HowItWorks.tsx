@@ -34,7 +34,7 @@ const HowItWorks = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <div className="container-wide pt-8">
+      <div className="container-standard pt-8">
         <Link to="/">
           <Button variant="ghost" className="mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -45,7 +45,7 @@ const HowItWorks = () => {
 
       {/* Page Header */}
       <section className="section-spacing section-bg-primary">
-        <div className="container-narrow text-center">
+        <div className="container-standard text-center">
           <h1 className="heading-primary text-enhanced">
             How ATD Works
           </h1>
@@ -106,7 +106,7 @@ const HowItWorks = () => {
 
       {/* CTA Section */}
       <section className="section-spacing section-bg-primary section-separator">
-        <div className="container-narrow text-center">
+        <div className="container-standard text-center">
           <h2 className="heading-secondary mb-6 text-enhanced">
             Sound like what you need?
           </h2>

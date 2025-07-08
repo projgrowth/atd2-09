@@ -74,7 +74,7 @@ const InteractiveDemoContent = () => {
 
   return (
     <section className="section-spacing section-bg-content section-separator">
-      <div className="container-wide">
+      <div className="container-standard">
         <div className="text-center mb-16 animate-fade-in-up" id="interactive-demo">
           <div className="flex items-center justify-center mb-6 space-x-4">
             <h2 className="text-4xl lg:text-5xl font-bold text-enhanced">

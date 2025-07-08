@@ -40,7 +40,7 @@ const SocialProofPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <div className="container-wide pt-8">
+      <div className="container-standard pt-8">
         <Link to="/how-it-works">
           <Button variant="ghost" className="mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -51,7 +51,7 @@ const SocialProofPage = () => {
 
       {/* Page Header */}
       <section className="section-spacing section-bg-primary">
-        <div className="container-narrow text-center">
+        <div className="container-standard text-center">
           <h1 className="heading-primary text-enhanced">
             The Problems We're Solving
           </h1>
@@ -66,7 +66,7 @@ const SocialProofPage = () => {
 
       {/* FAQ Section */}
       <section className="section-spacing section-bg-content section-separator">
-        <div className="container-narrow">
+        <div className="container-standard">
           <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
             <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
               Common Questions
@@ -99,7 +99,7 @@ const SocialProofPage = () => {
 
       {/* CTA Section */}
       <section className="section-spacing section-bg-primary section-separator">
-        <div className="container-narrow text-center">
+        <div className="container-standard text-center">
           <h2 className="heading-secondary mb-6 text-enhanced">
             Ready for a better way?
           </h2>

@@ -16,7 +16,7 @@ const SocialProof = () => {
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.08'%3E%3Cpath d='M0 0h40v40H0z'/%3E%3Cpath d='M40 40h40v40H40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
       }}></div>
 
-      <div className="container-wide relative z-10">
+      <div className="container-standard relative z-10">
         {/* Main Testimonial Carousel */}
         <div className="mb-24">
           <TestimonialCarousel />

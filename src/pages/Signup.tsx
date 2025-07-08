@@ -34,7 +34,7 @@ const Signup = () => {
 
       {/* Main Content */}
       <section className="section-spacing section-bg-primary">
-        <div className="container-text">
+        <div className="container-standard">
           <div className="text-center mb-8">
             <h1 className="heading-primary text-enhanced">
               {titles[userType]}

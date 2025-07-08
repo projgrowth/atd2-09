@@ -30,7 +30,7 @@ const WhyATD = () => {
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M0 0h100v100H0z'/%3E%3Cpath d='M20 20h60v60H20z' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
       }}></div>
 
-      <div className="container-responsive relative z-10">
+      <div className="container-standard relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
           <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 rounded-full bg-blue-100 border-2 border-blue-200 mb-6 md:mb-8">

@@ -146,7 +146,7 @@ const FinalCTA = () => {
 
     {/* FAQ Section */}
     <section className="section-spacing section-bg-info section-separator">
-      <div className="container-narrow">
+      <div className="container-standard">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
             Frequently Asked Questions

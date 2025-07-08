@@ -65,7 +65,7 @@ const JoinBeta = () => {
 
       {/* Hero Section */}
       <section className="section-spacing section-bg-primary">
-        <div className="container-narrow text-center">
+        <div className="container-standard text-center">
           <div className="inline-flex items-center rounded-full bg-atd-primary/10 border-2 border-atd-primary/20 mb-8" style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}>
             <div className="w-3 h-3 bg-atd-primary rounded-full mr-3"></div>
             <span className="text-sm font-bold text-atd-primary">Early Access Program</span>
@@ -139,7 +139,7 @@ const JoinBeta = () => {
 
       {/* CTA Section */}
       <section className="section-spacing section-bg-primary section-separator">
-        <div className="container-narrow">
+        <div className="container-standard">
           <div className="grid-responsive-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h2 className="heading-secondary mb-6 text-enhanced">
@@ -194,7 +194,7 @@ const JoinBeta = () => {
 
       {/* Final FAQ */}
       <section className="section-spacing section-bg-content">
-        <div className="container-narrow">
+        <div className="container-standard">
           <div className="text-center mb-12">
             <h2 className="heading-secondary mb-6 text-enhanced">
               Final Questions?
