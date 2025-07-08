@@ -187,7 +187,7 @@ const Hero = () => {
           <div className="lg:col-span-3 text-center lg:text-left">
             {/* Problem Statement */}
             <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
-              <span className="inline-block bg-atd-error/10 text-atd-error px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20">
+              <span className="inline-block bg-atd-error/10 text-atd-error py-1.5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20" style={{ paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>
                 Managing home projects shouldn't be chaotic
               </span>
             </div>

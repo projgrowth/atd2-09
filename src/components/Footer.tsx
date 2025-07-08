@@ -76,7 +76,8 @@ const Footer = () => {
                 <p className="text-white/70 text-sm mb-4 mobile-text-readable">Join our early access list and be among the first to experience the future of home management.</p>
                 <Link
                   to="/signup"
-                  className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] text-white font-semibold hover:shadow-lg hover:shadow-[hsl(var(--atd-primary))]/25 transition-all duration-300 group touch-target"
+                  className="inline-flex items-center rounded-xl bg-gradient-to-r from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] text-white font-semibold hover:shadow-lg hover:shadow-[hsl(var(--atd-primary))]/25 transition-all duration-300 group touch-target"
+                  style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}
                 >
                   Join Early Access
                   <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

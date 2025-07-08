@@ -138,7 +138,8 @@ const CaseStudies = () => {
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <Button 
             size="lg"
-            className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white px-8 py-4 rounded-full font-semibold"
+            className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white py-4 rounded-full font-semibold"
+            style={{ paddingLeft: '2rem', paddingRight: '2rem' }}
             onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
           >
             Start Your Success Story
