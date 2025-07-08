@@ -242,7 +242,7 @@ const Interactive3DDemo = () => {
 
         {/* Interactive Features */}
         <div className="text-center mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
               { title: "QR Code Onboarding", desc: "Instant provider access with simple scan", icon: "📱" },
               { title: "Real-Time Sync", desc: "Updates flow seamlessly between platforms", icon: "⚡" },

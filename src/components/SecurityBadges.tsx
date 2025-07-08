@@ -41,11 +41,11 @@ const SecurityBadges = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {badges.map((badge, index) => (
             <div 
               key={badge.title}
-              className="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-lg transition-all duration-300"
+              className="text-center p-4 md:p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-lg transition-all duration-300"
             >
               <div className={`inline-flex p-3 rounded-full bg-gray-50 mb-4 ${badge.color}`}>
                 <badge.icon className="h-6 w-6" />

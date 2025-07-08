@@ -44,7 +44,7 @@ const QuickBenefits = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="h-8 w-8 md:h-10 md:w-10 text-[hsl(var(--atd-primary))]" />
+                <benefit.icon className="h-10 w-10 md:h-12 md:w-12 text-[hsl(var(--atd-primary))]" />
               </div>
               
               <h3 className="text-lg md:text-xl font-bold mb-3 text-enhanced">

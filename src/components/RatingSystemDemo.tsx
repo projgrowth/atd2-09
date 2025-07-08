@@ -252,7 +252,7 @@ const RatingSystemDemo = () => {
         </TabsContent>
 
         <TabsContent value="mutual" className="space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="bg-blue-50 rounded-lg p-4">
               <div className="text-center">
                 <Heart className="h-6 w-6 text-blue-600 mx-auto mb-2" />

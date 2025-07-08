@@ -170,18 +170,18 @@ const CoreBenefits = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
               className="group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="premium-card enhanced-card-hover p-6 h-full">
+              <div className="premium-card enhanced-card-hover p-4 md:p-6 h-full">
                 <div className="flex items-start space-x-4 md:space-x-6">
                   <div className="flex-shrink-0">
                     <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <benefit.icon className="h-6 w-6 md:h-8 md:w-8 text-[hsl(var(--atd-primary))]" />
+                      <benefit.icon className="h-8 w-8 md:h-10 md:w-10 text-[hsl(var(--atd-primary))]" />
                     </div>
                   </div>
                   

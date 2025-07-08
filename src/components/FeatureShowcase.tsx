@@ -201,11 +201,11 @@ const FeatureShowcase = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up"
+              className="group bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex items-start space-x-6">

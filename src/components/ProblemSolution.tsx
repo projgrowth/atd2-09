@@ -63,7 +63,7 @@ const ProblemSolution = () => {
         </div>
 
         {/* Interactive Challenge Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {challenges.map((challenge, index) => (
             <div 
               key={index}
@@ -93,7 +93,7 @@ const ProblemSolution = () => {
                       "bg-background/80 backdrop-blur-sm border border-border",
                       hoveredCard === index && "scale-110 shadow-lg"
                     )}>
-                      <challenge.icon className={cn("h-6 w-6", challenge.iconColor)} />
+                      <challenge.icon className={cn("h-8 w-8 md:h-10 md:w-10", challenge.iconColor)} />
                     </div>
                     <div className="flex-1">
                       <h3 className="heading-quaternary text-enhanced mb-2">
