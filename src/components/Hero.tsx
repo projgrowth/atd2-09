@@ -180,7 +180,7 @@ const Hero = () => {
       {/* Clean, minimal background */}
       <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
-      <div className="container-wide relative z-10 py-16 sm:py-20 md:py-24">
+      <div className="container-standard relative z-10 py-16 sm:py-20 md:py-24">
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left side - Text content (60%) */}

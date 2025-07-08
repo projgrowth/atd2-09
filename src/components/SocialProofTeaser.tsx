@@ -12,7 +12,7 @@ const SocialProofTeaser = () => {
 
   return (
     <section className="section-spacing-large section-bg-dark section-divider">
-      <div className="container-wide">
+      <div className="container-standard">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left side - Stats */}
           <div className="animate-fade-in-up">

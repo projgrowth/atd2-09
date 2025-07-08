@@ -29,7 +29,7 @@ const Home = () => {
       
       {/* Final CTA Section */}
       <section className="section-spacing-xl section-bg-premium section-divider">
-        <div className="container-narrow text-center">
+        <div className="container-standard text-center">
           <h2 className="heading-secondary mb-6 text-enhanced">
             Transform Your Home Management Today
           </h2>
