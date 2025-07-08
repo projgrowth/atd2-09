@@ -44,7 +44,7 @@ const Hero = () => {
 
           {/* Active Projects */}
           <div className="space-y-3 mb-4">
-            <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
+            <div className="card-standard card-padding-sm">
               <div className="flex justify-between items-start mb-2">
                 <div>
                   <h3 className="font-heading text-enhanced text-sm">Kitchen Renovation</h3>
@@ -59,7 +59,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
+            <div className="card-standard card-padding-sm">
               <div className="flex justify-between items-start mb-2">
                 <div>
                   <h3 className="font-heading text-enhanced text-sm">Bathroom Repair</h3>
@@ -74,16 +74,16 @@ const Hero = () => {
 
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <button className="bg-atd-primary text-white rounded-lg py-2 px-3 text-xs font-medium">
+            <Button size="sm" className="btn-primary flex-1">
               Add Provider
-            </button>
-            <button className="bg-atd-surface-muted text-enhanced rounded-lg py-2 px-3 text-xs font-medium">
+            </Button>
+            <Button size="sm" variant="outline" className="flex-1">
               New Project
-            </button>
+            </Button>
           </div>
 
           {/* Recent Activity */}
-          <div className="bg-atd-surface rounded-lg p-3 shadow-sm">
+          <div className="card-standard card-padding-sm">
             <h4 className="font-heading text-enhanced text-xs mb-2">Recent Updates</h4>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
@@ -122,7 +122,7 @@ const Hero = () => {
           </div>
 
           {/* Current Job */}
-          <div className="bg-atd-surface rounded-lg p-3 shadow-sm mb-4">
+          <div className="card-standard card-padding-sm mb-4">
             <div className="flex justify-between items-start mb-3">
               <div>
                 <h3 className="font-heading text-enhanced text-sm">Kitchen Renovation</h3>
@@ -141,23 +141,23 @@ const Hero = () => {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-2">
-              <button className="bg-atd-warning text-white rounded-lg py-2 px-3 text-xs font-medium">
+              <Button size="sm" className="btn-primary flex-1">
                 Add Photo
-              </button>
-              <button className="bg-atd-surface-muted text-enhanced rounded-lg py-2 px-3 text-xs font-medium">
+              </Button>
+              <Button size="sm" variant="outline" className="flex-1">
                 Update Status
-              </button>
+              </Button>
             </div>
           </div>
 
           {/* Recent Updates */}
           <div className="space-y-2">
             <h4 className="font-heading text-enhanced text-xs mb-2">Today's Updates</h4>
-            <div className="bg-atd-surface rounded-lg p-2 border-l-4 border-atd-warning">
+            <div className="card-standard card-padding-sm border-l-4 border-atd-warning">
               <p className="text-xs font-medium text-enhanced">Progress photo sent</p>
               <p className="text-xs text-muted-enhanced">✓ Client notified</p>
             </div>
-            <div className="bg-atd-surface rounded-lg p-2">
+            <div className="card-standard card-padding-sm">
               <p className="text-xs font-medium text-enhanced">Started work at 8:30 AM</p>
               <p className="text-xs text-muted-enhanced">Auto-tracked</p>
             </div>
@@ -180,7 +180,7 @@ const Hero = () => {
       {/* Clean, minimal background */}
       <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
-      <div className="container max-w-7xl mx-auto relative z-10 py-16 sm:py-20 md:py-24">
+      <div className="section-container relative z-10 py-16 sm:py-20 md:py-24">
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left side - Text content (60%) */}
@@ -222,31 +222,31 @@ const Hero = () => {
             <div className="w-full max-w-sm space-y-6">
               {/* View Toggle */}
               <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <div className="flex bg-atd-surface rounded-xl p-1 shadow-lg border border-atd-border">
-                  <button
+                <div className="flex bg-atd-surface radius-xl p-1 shadow-elevated border border-atd-border">
+                  <Button
                     onClick={() => handleViewChange('homeowner')}
                     disabled={isTransitioning}
+                    size="sm"
+                    variant={viewType === 'homeowner' ? 'default' : 'ghost'}
                     className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
-                      viewType === 'homeowner'
-                        ? "bg-atd-primary text-white shadow-sm"
-                        : "text-muted-enhanced hover:text-enhanced"
+                      "transition-all duration-300",
+                      viewType === 'homeowner' && "bg-atd-primary text-white"
                     )}
-                  >
-                    Homeowner View
-                  </button>
-                  <button
-                    onClick={() => handleViewChange('provider')}
-                    disabled={isTransitioning}
-                    className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
-                      viewType === 'provider'
-                        ? "bg-atd-warning text-white shadow-sm"
-                        : "text-muted-enhanced hover:text-enhanced"
-                    )}
-                  >
-                    Provider View
-                  </button>
+                   >
+                     Homeowner View
+                   </Button>
+                   <Button
+                     onClick={() => handleViewChange('provider')}
+                     disabled={isTransitioning}
+                     size="sm"
+                     variant={viewType === 'provider' ? 'default' : 'ghost'}
+                     className={cn(
+                       "transition-all duration-300",
+                       viewType === 'provider' && "bg-atd-warning text-white"
+                     )}
+                   >
+                     Provider View
+                   </Button>
                 </div>
               </div>
 
@@ -255,7 +255,7 @@ const Hero = () => {
                 "animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="bg-atd-surface rounded-2xl shadow-lg border border-atd-border overflow-hidden">
+                <div className="card-elevated radius-2xl overflow-hidden">
                   {currentView.content}
                 </div>
               </div>
@@ -268,18 +268,20 @@ const Hero = () => {
                 {currentView.features.map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-3 bg-atd-surface rounded-xl p-4 shadow-sm border border-atd-border/50">
-                      <div className={cn(
-                        "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
-                        viewType === 'homeowner' ? "bg-atd-primary/10 text-atd-primary" : "bg-atd-warning/10 text-atd-warning"
-                      )}>
-                        <IconComponent className="h-4 w-4" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-heading text-enhanced text-sm mb-1">{feature.title}</h4>
-                        <p className="text-caption leading-relaxed">{feature.description}</p>
-                      </div>
-                    </div>
+                     <div key={index} className="card-interactive radius-xl card-padding-sm">
+                       <div className="flex items-start space-x-3">
+                         <div className={cn(
+                           "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
+                           viewType === 'homeowner' ? "bg-atd-primary/10 text-atd-primary" : "bg-atd-warning/10 text-atd-warning"
+                         )}>
+                           <IconComponent className="h-4 w-4" />
+                         </div>
+                         <div className="flex-1 min-w-0">
+                           <h4 className="font-heading text-enhanced text-sm mb-1">{feature.title}</h4>
+                           <p className="text-caption leading-relaxed">{feature.description}</p>
+                         </div>
+                       </div>
+                     </div>
                   );
                 })}
               </div>
@@ -289,7 +291,7 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="bg-atd-surface/80 p-2 md:p-3 rounded-full shadow-lg">
+          <div className="bg-atd-surface/80 p-2 md:p-3 radius shadow-elevated">
             <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-enhanced" />
           </div>
         </div>

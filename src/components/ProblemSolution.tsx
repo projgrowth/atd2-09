@@ -51,7 +51,7 @@ const ProblemSolution = () => {
 
   return (
     <section className="section-spacing-large section-bg-content">
-      <div className="container max-w-4xl mx-auto">
+      <div className="section-container-sm">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-6 text-enhanced">
@@ -63,15 +63,12 @@ const ProblemSolution = () => {
         </div>
 
         {/* Interactive Challenge Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid-responsive-2 gap-6">
           {challenges.map((challenge, index) => (
             <div 
               key={index}
               className={cn(
-                "group relative overflow-hidden transition-all duration-500 cursor-pointer",
-                "bg-gradient-to-br from-background to-background/80",
-                "border border-border rounded-2xl hover:border-primary/30",
-                "hover:shadow-xl hover:shadow-primary/5",
+                "card-interactive transition-all duration-500 cursor-pointer",
                 "animate-fade-in-up",
                 expandedCard === index && "md:col-span-2 scale-[1.02]"
               )}
@@ -87,7 +84,7 @@ const ProblemSolution = () => {
               )} />
               
               {/* Content */}
-              <div className="relative p-6 lg:p-8">
+              <div className="relative card-padding-lg">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-start space-x-4">
@@ -128,7 +125,7 @@ const ProblemSolution = () => {
                 
                 {/* Solution */}
                 <div className={cn(
-                  "bg-background/60 backdrop-blur-sm rounded-xl p-6 border border-border/50 transition-all duration-300",
+                  "card-standard card-padding transition-all duration-300",
                   hoveredCard === index && "bg-primary/5 border-primary/20"
                 )}>
                   <div className="flex items-start space-x-3 mb-4">

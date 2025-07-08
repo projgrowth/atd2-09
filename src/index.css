@@ -579,7 +579,88 @@
     
     .heading-tertiary {
       @apply text-xl md:text-2xl lg:text-3xl;
-    }
+  }
+  
+  /* Standardized Component System */
+  
+  /* Card System - Unified Design */
+  .card-standard {
+    @apply premium-card;
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.2s ease-out;
+  }
+  
+  .card-standard:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
+  
+  .card-elevated {
+    @apply card-standard;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-2px);
+  }
+  
+  .card-interactive {
+    @apply card-standard;
+    cursor: pointer;
+  }
+  
+  .card-interactive:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-2px);
+    border-color: hsl(var(--atd-primary) / 0.3);
+  }
+  
+  /* Card Padding Variants */
+  .card-padding-sm { @apply p-4; }
+  .card-padding { @apply p-6; }
+  .card-padding-lg { @apply p-8; }
+  
+  /* Section Container System */
+  .section-container {
+    @apply container max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+  
+  .section-container-sm {
+    @apply container max-w-4xl mx-auto px-4 md:px-6;
+  }
+  
+  .section-container-lg {
+    @apply container max-w-8xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+  
+  /* Unified Border Radius System */
+  .radius-sm { border-radius: 0.25rem; } /* 4px */
+  .radius { border-radius: var(--card-radius); } /* 8px */
+  .radius-lg { border-radius: 0.75rem; } /* 12px */
+  .radius-xl { border-radius: 1rem; } /* 16px */
+  .radius-2xl { border-radius: 1.5rem; } /* 24px */
+  
+  /* Unified Shadow System */
+  .shadow-standard { box-shadow: var(--shadow-subtle); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  
+  /* Grid System Enhancements */
+  .grid-responsive {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
     
     .text-body-large {
       @apply text-base md:text-lg;
