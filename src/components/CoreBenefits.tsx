@@ -8,7 +8,7 @@ const CoreBenefits = () => {
       description: "Work with providers you already trust, or choose from our vetted network. Your home, your choice.",
       mockup: (
         <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 md:p-6 border border-blue-100">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-3 space-y-2 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0 mb-3">
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-primary))]" />
               <span className="text-sm md:text-base font-medium">Your Provider Network</span>
@@ -50,7 +50,7 @@ const CoreBenefits = () => {
       description: "Jobs, payments, documents, and communication—all organized automatically. See exactly what's happening and what you owe.",
       mockup: (
         <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 md:p-6 border border-green-100">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-3 space-y-2 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0 mb-3">
             <div className="flex items-center space-x-2">
               <Activity className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-accent))]" />
               <span className="text-sm md:text-base font-medium">Live Tracking</span>
