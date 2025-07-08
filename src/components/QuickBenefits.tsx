@@ -25,7 +25,7 @@ const QuickBenefits = () => {
   ];
 
   return (
-    <section className="section-spacing section-bg-content">
+    <section className="section-spacing-large section-bg-content">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">

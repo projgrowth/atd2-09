@@ -51,6 +51,8 @@
     --section-bg-interactive: linear-gradient(135deg, hsl(214 100% 97%) 0%, hsl(142 100% 97%) 100%);
     --section-bg-info: 220 13% 98%;
     --section-bg-dark: linear-gradient(135deg, hsl(222 84% 5%) 0%, hsl(215 25% 15%) 100%);
+    --section-bg-elevated: linear-gradient(135deg, hsl(214 84% 58% / 0.05) 0%, hsl(142 71% 47% / 0.05) 100%);
+    --section-bg-premium: linear-gradient(135deg, hsl(214 84% 56% / 0.08) 0%, hsl(142 71% 45% / 0.08) 100%);
     
     /* Unified Card System */
     --card-bg: 0 0% 100%;
@@ -59,13 +61,18 @@
     --card-shadow-hover: 0 4px 16px -4px rgb(0 0 0 / 0.12);
     --card-radius: 1rem;
     
-    /* Mobile-First Spacing System */
-    --spacing-mobile-xs: 0.5rem;
-    --spacing-mobile-sm: 1rem;
-    --spacing-mobile-md: 1.5rem;
-    --spacing-mobile-lg: 2rem;
-    --spacing-mobile-xl: 3rem;
-    --spacing-mobile-2xl: 4rem;
+  /* Enhanced Spacing System */
+  --spacing-mobile-xs: 0.5rem;
+  --spacing-mobile-sm: 1rem;
+  --spacing-mobile-md: 1.5rem;
+  --spacing-mobile-lg: 2rem;
+  --spacing-mobile-xl: 3rem;
+  --spacing-mobile-2xl: 4rem;
+  --spacing-section-xs: 4rem;
+  --spacing-section-sm: 6rem;
+  --spacing-section-md: 8rem;
+  --spacing-section-lg: 10rem;
+  --spacing-section-xl: 12rem;
     
     /* Enhanced Visual Elements */
     --atd-surface: 0 0% 99%;
@@ -176,20 +183,40 @@
     border-color: hsl(var(--atd-border-medium));
   }
   
-  /* Mobile-First Section Spacing */
+  /* Enhanced Section Spacing */
   .section-spacing {
-    @apply py-12 px-4;
+    @apply py-16 px-4;
+  }
+  
+  .section-spacing-large {
+    @apply py-20 px-4;
+  }
+  
+  .section-spacing-xl {
+    @apply py-24 px-4;
   }
   
   @media (min-width: 768px) {
     .section-spacing {
-      @apply py-16 px-6;
+      @apply py-24 px-6;
+    }
+    .section-spacing-large {
+      @apply py-32 px-6;
+    }
+    .section-spacing-xl {
+      @apply py-40 px-6;
     }
   }
   
   @media (min-width: 1024px) {
     .section-spacing {
-      @apply py-20 px-8;
+      @apply py-32 px-8;
+    }
+    .section-spacing-large {
+      @apply py-40 px-8;
+    }
+    .section-spacing-xl {
+      @apply py-48 px-8;
     }
   }
   
@@ -250,6 +277,26 @@
   
   .section-bg-dark {
     background: var(--section-bg-dark);
+  }
+  
+  .section-bg-elevated {
+    background: var(--section-bg-elevated);
+    position: relative;
+  }
+  
+  .section-bg-premium {
+    background: var(--section-bg-premium);
+    position: relative;
+  }
+  
+  .section-divider {
+    @apply relative;
+  }
+  
+  .section-divider::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-32 md:w-48 h-px transform -translate-x-1/2;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--atd-separator)) 50%, transparent 100%);
   }
   
   /* Visual Separators */
@@ -505,6 +552,36 @@
   }
 }
 
+@keyframes device-float {
+  0%, 100% {
+    transform: translateY(0px) rotateX(5deg) rotateY(-5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(5deg) rotateY(-5deg);
+  }
+}
+
+@keyframes device-tilt {
+  0%, 100% {
+    transform: rotateX(5deg) rotateY(-5deg);
+  }
+  25% {
+    transform: rotateX(8deg) rotateY(-3deg);
+  }
+  75% {
+    transform: rotateX(3deg) rotateY(-7deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--atd-primary) / 0.2), 0 0 40px hsl(var(--atd-primary) / 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px hsl(var(--atd-primary) / 0.3), 0 0 50px hsl(var(--atd-primary) / 0.15);
+  }
+}
+
 /* Enhanced Demo Animations */
 .animate-scan-line {
   animation: scan-line 1s ease-in-out infinite;
@@ -512,6 +589,40 @@
 
 .animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.animate-device-float {
+  animation: device-float 6s ease-in-out infinite;
+}
+
+.animate-device-tilt {
+  animation: device-tilt 8s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Enhanced 3D Perspective System */
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.device-shadow {
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.realistic-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Accessibility Enhancements */

@@ -28,7 +28,7 @@ const Home = () => {
       <SocialProofTeaser />
       
       {/* Final CTA Section */}
-      <section className="section-spacing section-bg-content section-separator">
+      <section className="section-spacing-xl section-bg-premium section-divider">
         <div className="container max-w-4xl mx-auto text-center">
           <div className="inline-block bg-accent/10 text-accent px-6 py-3 rounded-full text-sm font-bold mb-6 border border-accent/20">
             Ready to Get Started?
