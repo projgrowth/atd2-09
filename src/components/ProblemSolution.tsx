@@ -15,9 +15,7 @@ const ProblemSolution = () => {
       benefit: "Never miss another important update or decision",
       impact: "87% reduction in miscommunication",
       timesSaved: "3 hours per week",
-      statIcon: TrendingUp,
-      gradient: "from-blue-50 to-blue-100",
-      accentColor: "blue-600"
+      statIcon: TrendingUp
     },
     {
       icon: FileX,
@@ -28,9 +26,7 @@ const ProblemSolution = () => {
       benefit: "Complete documentation without the hassle",
       impact: "100% project transparency",
       timesSaved: "2 hours per project",
-      statIcon: Star,
-      gradient: "from-purple-50 to-purple-100",
-      accentColor: "purple-600"
+      statIcon: Star
     },
     {
       icon: Clock,
@@ -41,9 +37,7 @@ const ProblemSolution = () => {
       benefit: "Complete project visibility from anywhere",
       impact: "Real-time peace of mind",
       timesSaved: "Daily check-ins eliminated",
-      statIcon: Users,
-      gradient: "from-green-50 to-green-100",
-      accentColor: "green-600"
+      statIcon: Users
     },
     {
       icon: Shield,
@@ -54,9 +48,7 @@ const ProblemSolution = () => {
       benefit: "Confidence in every project outcome",
       impact: "95% homeowner satisfaction",
       timesSaved: "Zero quality surprises",
-      statIcon: CheckCircle,
-      gradient: "from-orange-50 to-orange-100",
-      accentColor: "orange-600"
+      statIcon: CheckCircle
     }
   ];
 
@@ -96,10 +88,7 @@ const ProblemSolution = () => {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Background Gradient */}
-                <div className={cn(
-                  "absolute inset-0 bg-gradient-to-br opacity-60 rounded-3xl",
-                  challenge.gradient
-                )} />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-60 rounded-3xl" />
                 
                 {/* Content */}
                 <div className="relative p-8">
@@ -107,18 +96,14 @@ const ProblemSolution = () => {
                   <div className="mb-8">
                     <div className="flex items-start justify-between mb-6">
                       <div className={cn(
-                        "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300",
-                        `bg-${challenge.accentColor}`,
+                        "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 bg-blue-600",
                         hoveredCard === index && "scale-110 shadow-lg"
                       )}>
                         <challenge.icon className="h-7 w-7 text-white" />
                       </div>
                       
                       {/* Impact Stat */}
-                      <div className={cn(
-                        "flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold",
-                        `bg-${challenge.accentColor} text-white`
-                      )}>
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white">
                         <StatIcon className="h-3 w-3" />
                         {challenge.timesSaved}
                       </div>
@@ -150,7 +135,7 @@ const ProblemSolution = () => {
                           {challenge.solution}
                         </p>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-semibold text-green-600">
+                          <span className="text-sm font-semibold text-gray-600">
                             {challenge.benefit}
                           </span>
                           <span className="text-sm font-bold text-blue-600">
