@@ -5,6 +5,13 @@ export interface DemoState {
   activeDemo: string;
   demoProgress: string[];
   
+  // Demo completion tracking
+  completedScenarios: {
+    qrScanCompleted: boolean;
+    ratingSubmitted: boolean;
+    onboardingCompleted: boolean;
+  };
+  
   // Shared data between demos
   currentJob: {
     id: string;
@@ -60,11 +67,17 @@ type DemoAction =
   | { type: 'ADD_PHOTO'; payload: Omit<DemoState['currentJob']['photos'][0], 'id' | 'timestamp'> }
   | { type: 'ADD_NOTIFICATION'; payload: Omit<DemoState['notifications'][0], 'id' | 'timestamp'> }
   | { type: 'TOGGLE_USER_TYPE' }
-  | { type: 'RESET_DEMOS' };
+  | { type: 'RESET_DEMOS' }
+  | { type: 'MARK_SCENARIO_COMPLETE'; payload: keyof DemoState['completedScenarios'] };
 
 const initialState: DemoState = {
   activeDemo: 'dashboard',
   demoProgress: [],
+  completedScenarios: {
+    qrScanCompleted: false,
+    ratingSubmitted: false,
+    onboardingCompleted: false
+  },
   currentJob: {
     id: 'job-001',
     title: 'HVAC Maintenance',
@@ -232,6 +245,15 @@ function demoReducer(state: DemoState, action: DemoAction): DemoState {
         userType: state.userType === 'homeowner' ? 'provider' : 'homeowner'
       };
       
+    case 'MARK_SCENARIO_COMPLETE':
+      return {
+        ...state,
+        completedScenarios: {
+          ...state.completedScenarios,
+          [action.payload]: true
+        }
+      };
+      
     case 'RESET_DEMOS':
       return {
         ...initialState,
@@ -253,6 +275,7 @@ interface DemoContextType {
     addPhoto: (photo: Omit<DemoState['currentJob']['photos'][0], 'id' | 'timestamp'>) => void;
     toggleUserType: () => void;
     resetDemos: () => void;
+    markScenarioComplete: (scenario: keyof DemoState['completedScenarios']) => void;
   };
 }
 
@@ -267,7 +290,8 @@ export const DemoProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     addMessage: (message: Omit<DemoState['currentJob']['messages'][0], 'id' | 'timestamp'>) => dispatch({ type: 'ADD_MESSAGE', payload: message }),
     addPhoto: (photo: Omit<DemoState['currentJob']['photos'][0], 'id' | 'timestamp'>) => dispatch({ type: 'ADD_PHOTO', payload: photo }),
     toggleUserType: () => dispatch({ type: 'TOGGLE_USER_TYPE' }),
-    resetDemos: () => dispatch({ type: 'RESET_DEMOS' })
+    resetDemos: () => dispatch({ type: 'RESET_DEMOS' }),
+    markScenarioComplete: (scenario: keyof DemoState['completedScenarios']) => dispatch({ type: 'MARK_SCENARIO_COMPLETE', payload: scenario })
   };
   
   return (

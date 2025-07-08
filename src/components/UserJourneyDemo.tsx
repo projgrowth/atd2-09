@@ -6,10 +6,13 @@ import { OnboardingStep, RoleSelection } from "./user-journey/OnboardingComponen
 import { HomeownerPropertySetup, HomeownerServiceNeeds, HomeownerMatchingPreview } from "./user-journey/HomeownerFlow";
 import { ProviderProfileCreation, ProviderVerification, ProviderDashboardPreview } from "./user-journey/ProviderFlow";
 import { cn } from "@/lib/utils";
+import { useDemoContext } from "@/contexts/DemoContext";
 
 const UserJourneyDemo = () => {
+  const { state, actions } = useDemoContext();
+  const { userType } = state;
   const [currentStep, setCurrentStep] = useState(1);
-  const [selectedRole, setSelectedRole] = useState<string | null>(null);
+  const [selectedRole, setSelectedRole] = useState<string | null>(userType);
   const [isComplete, setIsComplete] = useState(false);
   
   // Homeowner onboarding data
@@ -151,6 +154,11 @@ const UserJourneyDemo = () => {
     if (currentStep < totalSteps) {
       setCurrentStep(prev => prev + 1);
     } else {
+      // Update global user type when onboarding completes
+      if (selectedRole && selectedRole !== userType) {
+        actions.toggleUserType();
+      }
+      actions.markScenarioComplete('onboardingCompleted');
       setIsComplete(true);
     }
   };

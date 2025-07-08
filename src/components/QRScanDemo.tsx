@@ -5,8 +5,10 @@ import PhoneMockup from "./qr-scan/PhoneMockup";
 import ScanningStates from "./qr-scan/ScanningStates";
 import StatusIndicators from "./qr-scan/StatusIndicators";
 import QRControls from "./qr-scan/QRControls";
+import { useDemoContext } from "@/contexts/DemoContext";
 
 const QRScanDemo = () => {
+  const { state, actions } = useDemoContext();
   const [scanningState, setScanningState] = useState("idle"); // idle, scanning, recognized, profileCreation, accessGranted
   const [animationStep, setAnimationStep] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -44,6 +46,12 @@ const QRScanDemo = () => {
     if (scanningState === "profileCreation") {
       const timeout = setTimeout(() => {
         setScanningState("accessGranted");
+        // Add notification and update job when access is granted
+        actions.addMessage({
+          sender: 'provider',
+          message: `Provider has been granted access via ${showNFC ? 'NFC' : 'QR'} scan. Beginning work shortly.`
+        });
+        actions.markScenarioComplete('qrScanCompleted');
       }, 3000);
       return () => clearTimeout(timeout);
     }

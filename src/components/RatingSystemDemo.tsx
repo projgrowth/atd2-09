@@ -5,8 +5,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TouchRipple } from "./TouchRipple";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
+import { useDemoContext } from "@/contexts/DemoContext";
 
 const RatingSystemDemo = () => {
+  const { state, actions } = useDemoContext();
+  const { currentJob, userType } = state;
   const [homeownerRating, setHomeownerRating] = useState({
     quality: 0,
     timeliness: 0,
@@ -21,7 +24,7 @@ const RatingSystemDemo = () => {
     instructions: 0
   });
   
-  const [activeTab, setActiveTab] = useState("homeowner");
+  const [activeTab, setActiveTab] = useState(userType === 'provider' ? "provider" : "homeowner");
   const [submitState, setSubmitState] = useState("idle"); // idle, submitting, success
   const [feedback, setFeedback] = useState("");
   const isMobile = useIsMobile();
@@ -63,6 +66,15 @@ const RatingSystemDemo = () => {
 
   const submitRating = async () => {
     setSubmitState("submitting");
+    
+    // Add rating notification to shared context
+    const ratingType = activeTab === "homeowner" ? "Provider" : "Homeowner";
+    actions.addMessage({
+      sender: userType,
+      message: `${ratingType} rating submitted: ${activeTab === "homeowner" ? homeownerRating.overall : Math.round((providerRating.payment + providerRating.communication + providerRating.access + providerRating.instructions) / 4)} stars`
+    });
+    actions.markScenarioComplete('ratingSubmitted');
+    
     setTimeout(() => setSubmitState("success"), 1500);
     setTimeout(() => setSubmitState("idle"), 3000);
   };
@@ -98,7 +110,7 @@ const RatingSystemDemo = () => {
             <div className="bg-blue-50 rounded-lg p-4">
               <div className="flex items-center space-x-3 mb-3">
                 <User className="h-5 w-5 text-blue-600" />
-                <span className="font-medium text-blue-700">Rating: Mike Johnson - Plumbing</span>
+                <span className="font-medium text-blue-700">Rating: {currentJob.title} - Provider</span>
               </div>
               
               <div className="space-y-3">
@@ -184,7 +196,7 @@ const RatingSystemDemo = () => {
             <div className="bg-orange-50 rounded-lg p-4">
               <div className="flex items-center space-x-3 mb-3">
                 <Shield className="h-5 w-5 text-orange-600" />
-                <span className="font-medium text-orange-700">Provider Rating: Sarah Chen</span>
+                <span className="font-medium text-orange-700">Provider Rating: {state.selectedProperty.name}</span>
               </div>
               
               <div className="space-y-3">
