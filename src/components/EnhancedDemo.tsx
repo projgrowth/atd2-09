@@ -55,8 +55,8 @@ const EnhancedDemo = () => {
       <div className="container max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center bg-atd-primary/10 text-atd-primary px-6 py-3 rounded-full text-sm font-bold mb-6 border border-atd-primary/20">
-            <div className="w-2 h-2 bg-atd-primary rounded-full mr-3 animate-pulse"></div>
+          <div className="inline-flex items-center bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 border border-primary/20">
+            <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></div>
             Interactive Demo Experience
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
@@ -75,8 +75,8 @@ const EnhancedDemo = () => {
               className={cn(
                 "flex items-center space-x-2 px-6 py-3 transition-all duration-300",
                 viewType === 'homeowner' 
-                  ? "bg-atd-primary text-white hover:bg-atd-primary/90" 
-                  : "bg-atd-surface-secondary text-atd-neutral-700 hover:bg-atd-surface-muted"
+                  ? "bg-primary text-white hover:bg-primary/90" 
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
               )}
             >
               {viewType === 'homeowner' ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
@@ -112,20 +112,20 @@ const EnhancedDemo = () => {
             )}>
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-atd-primary to-atd-primary/80 flex items-center justify-center">
-                  <currentDemo.icon className="h-6 w-6 text-white" />
-                </div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
+                    <currentDemo.icon className="h-6 w-6 text-white" />
+                  </div>
                   <div>
                     <div className="flex items-center space-x-2 mb-2">
-                    <span className="text-xs font-bold text-atd-primary bg-atd-primary/10 px-3 py-1 rounded-full border border-atd-primary/20">
-                      Step {currentStep + 1} of {enhancedDemoSteps.length}
-                    </span>
-                    <span className={cn(
-                      "text-xs font-bold px-3 py-1 rounded-full border",
-                      viewType === 'homeowner' 
-                        ? "text-atd-primary bg-atd-primary/10 border-atd-primary/20" 
-                        : "text-atd-primary bg-atd-primary/10 border-atd-primary/20"
-                    )}>
+                      <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                        Step {currentStep + 1} of {enhancedDemoSteps.length}
+                      </span>
+                      <span className={cn(
+                        "text-xs font-bold px-3 py-1 rounded-full border",
+                        viewType === 'homeowner' 
+                          ? "text-blue-700 bg-blue-50 border-blue-200" 
+                          : "text-purple-700 bg-purple-50 border-purple-200"
+                      )}>
                         {viewType === 'homeowner' ? 'Homeowner View' : 'Provider View'}
                       </span>
                     </div>
@@ -141,13 +141,13 @@ const EnhancedDemo = () => {
 
               {/* Key Features */}
               <div className="space-y-4 mb-6">
-                <h4 className="text-sm font-bold text-atd-primary uppercase tracking-wide">
+                <h4 className="text-sm font-bold text-primary uppercase tracking-wide">
                   Key Features
                 </h4>
                 <ul className="space-y-3">
                   {currentContent.features.map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <ChevronRight className="h-4 w-4 text-atd-primary mt-0.5 flex-shrink-0" />
+                      <ChevronRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-enhanced leading-relaxed">{feature}</span>
                     </li>
                   ))}
@@ -156,8 +156,8 @@ const EnhancedDemo = () => {
 
               {/* Impact */}
               <div className="border-t border-border pt-4">
-                <div className="bg-gradient-to-r from-atd-primary/5 to-atd-accent/5 rounded-xl p-4 border border-atd-primary/10">
-                  <h5 className="text-sm font-bold text-atd-primary mb-2">Real-World Impact</h5>
+                <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-4 border border-primary/10">
+                  <h5 className="text-sm font-bold text-primary mb-2">Real-World Impact</h5>
                   <p className="text-sm text-enhanced leading-relaxed">
                     {currentContent.impact}
                   </p>
@@ -176,22 +176,22 @@ const EnhancedDemo = () => {
                     className={cn(
                       "p-3 rounded-lg border text-left transition-all duration-200 hover:scale-[1.02]",
                       index === currentStep 
-                        ? "border-atd-primary bg-atd-primary/5 shadow-md" 
+                        ? "border-primary bg-primary/5 shadow-md" 
                         : completedSteps.has(index)
-                        ? "border-atd-success/50 bg-atd-success/5"
-                        : "border-border bg-background hover:border-atd-primary/30"
+                        ? "border-green-200 bg-green-50"
+                        : "border-border bg-background hover:border-primary/30"
                     )}
                   >
                     <div className="flex items-center space-x-2 mb-1">
                       <step.icon className={cn(
                         "h-4 w-4",
-                        index === currentStep ? "text-atd-primary" : 
-                        completedSteps.has(index) ? "text-atd-success" : "text-muted-foreground"
+                        index === currentStep ? "text-primary" : 
+                        completedSteps.has(index) ? "text-green-600" : "text-muted-foreground"
                       )} />
                       <span className={cn(
                         "text-xs font-medium",
-                        index === currentStep ? "text-atd-primary" : 
-                        completedSteps.has(index) ? "text-atd-success" : "text-muted-foreground"
+                        index === currentStep ? "text-primary" : 
+                        completedSteps.has(index) ? "text-green-700" : "text-muted-foreground"
                       )}>
                         {step.homeowner.title.split(' ')[0]}
                       </span>
@@ -227,10 +227,10 @@ const EnhancedDemo = () => {
                 className={cn(
                   "h-2 rounded-full transition-all duration-300 hover:scale-110",
                   index === currentStep 
-                    ? "bg-atd-primary w-8" 
+                    ? "bg-primary w-8" 
                     : completedSteps.has(index)
-                    ? "bg-atd-success w-6"
-                    : "bg-muted w-2 hover:bg-atd-primary/50"
+                    ? "bg-green-500 w-6"
+                    : "bg-muted w-2 hover:bg-primary/50"
                 )}
                 aria-label={`Go to step ${index + 1}`}
               />

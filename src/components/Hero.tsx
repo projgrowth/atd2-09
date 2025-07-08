@@ -24,19 +24,19 @@ const Hero = () => {
       subHeadline: "for Your Home",
       description: "Stop juggling emails, texts, and spreadsheets. ATD brings your trusted providers and all your home projects into one organized platform.",
       content: (
-          <div className="h-full bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-atd-primary rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">ATD</span>
-                </div>
-                <span className="font-bold text-gray-800">Dashboard</span>
+        <div className="h-full bg-gradient-to-br from-blue-50 to-blue-100 p-4">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">ATD</span>
               </div>
-              <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full font-medium">
-                2 Active Jobs
-              </div>
+              <span className="font-bold text-gray-800">Dashboard</span>
             </div>
+            <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">
+              2 Active Jobs
+            </div>
+          </div>
 
           {/* Active Projects */}
           <div className="space-y-3 mb-4">
@@ -46,12 +46,12 @@ const Hero = () => {
                   <h3 className="font-bold text-gray-800 text-sm">Kitchen Renovation</h3>
                   <p className="text-xs text-gray-600">Mike Johnson - Elite Construction</p>
                 </div>
-                <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full">
+                <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
                   75% Complete
                 </div>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-1.5">
-                <div className="bg-atd-success h-1.5 rounded-full" style={{ width: '75%' }}></div>
+                <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '75%' }}></div>
               </div>
             </div>
 
@@ -61,7 +61,7 @@ const Hero = () => {
                   <h3 className="font-bold text-gray-800 text-sm">Bathroom Repair</h3>
                   <p className="text-xs text-gray-600">Sarah Davis - Fix It Fast</p>
                 </div>
-                <div className="text-xs bg-atd-primary/10 text-atd-primary px-2 py-1 rounded-full">
+                <div className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
                   Starting Soon
                 </div>
               </div>
@@ -70,7 +70,7 @@ const Hero = () => {
 
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <button className="bg-atd-primary text-white rounded-lg py-2 px-3 text-xs font-medium">
+            <button className="bg-blue-600 text-white rounded-lg py-2 px-3 text-xs font-medium">
               Add Provider
             </button>
             <button className="bg-gray-100 text-gray-700 rounded-lg py-2 px-3 text-xs font-medium">
@@ -81,16 +81,16 @@ const Hero = () => {
           {/* Recent Activity */}
           <div className="bg-white rounded-lg p-3 shadow-sm">
             <h4 className="font-bold text-gray-800 text-xs mb-2">Recent Updates</h4>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-atd-success rounded-full"></div>
-                  <span className="text-xs text-gray-700">New photos from Mike</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-atd-primary rounded-full"></div>
-                  <span className="text-xs text-gray-700">Payment processed</span>
-                </div>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span className="text-xs text-gray-700">New photos from Mike</span>
               </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span className="text-xs text-gray-700">Payment processed</span>
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -106,19 +106,19 @@ const Hero = () => {
       subHeadline: "for Contractors",
       description: "Professional tools designed for service providers. Manage jobs, update clients, and get paid faster with ATD's PocketOffice mobile experience.",
       content: (
-          <div className="h-full bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-atd-primary rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">PO</span>
-                </div>
-                <span className="font-bold text-gray-800">PocketOffice</span>
+        <div className="h-full bg-gradient-to-br from-orange-50 to-orange-100 p-4">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">PO</span>
               </div>
-              <div className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">
-                Active Job
-              </div>
+              <span className="font-bold text-gray-800">PocketOffice</span>
             </div>
+            <div className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">
+              Active Job
+            </div>
+          </div>
 
           {/* Current Job */}
           <div className="bg-white rounded-lg p-3 shadow-sm mb-4">
@@ -127,9 +127,9 @@ const Hero = () => {
                 <h3 className="font-bold text-gray-800 text-sm">Kitchen Renovation</h3>
                 <p className="text-xs text-gray-600">Sarah Johnson • 123 Oak St</p>
               </div>
-                <div className="text-xs bg-atd-success/10 text-atd-success px-2 py-1 rounded-full">
-                  In Progress
-                </div>
+              <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+                In Progress
+              </div>
             </div>
             
             {/* Timer */}
@@ -140,7 +140,7 @@ const Hero = () => {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-2">
-              <button className="bg-atd-primary text-white rounded-lg py-2 px-3 text-xs font-medium">
+              <button className="bg-orange-600 text-white rounded-lg py-2 px-3 text-xs font-medium">
                 Add Photo
               </button>
               <button className="bg-gray-100 text-gray-700 rounded-lg py-2 px-3 text-xs font-medium">
@@ -152,7 +152,7 @@ const Hero = () => {
           {/* Recent Updates */}
           <div className="space-y-2">
             <h4 className="text-xs font-bold text-gray-700">Today's Updates</h4>
-            <div className="bg-white rounded-lg p-2 border-l-4 border-atd-primary">
+            <div className="bg-white rounded-lg p-2 border-l-4 border-orange-500">
               <p className="text-xs font-medium text-gray-800">Progress photo sent</p>
               <p className="text-xs text-gray-600">✓ Client notified</p>
             </div>
@@ -223,7 +223,7 @@ const Hero = () => {
 
           {/* Right side - Interactive Showcase (40%) */}
           <div className="lg:col-span-2 flex flex-col items-center lg:items-end">
-            <div className="w-full max-w-md space-y-6">
+            <div className="w-full max-w-sm space-y-6">
               {/* View Toggle */}
               <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex bg-white rounded-xl p-1 shadow-lg border border-gray-200">
@@ -233,8 +233,8 @@ const Hero = () => {
                     className={cn(
                       "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
                       viewType === 'homeowner'
-                        ? "bg-atd-primary text-white shadow-sm"
-                        : "text-atd-neutral-600 hover:text-atd-neutral-800"
+                        ? "bg-blue-600 text-white shadow-sm"
+                        : "text-gray-600 hover:text-gray-800"
                     )}
                   >
                     Homeowner View
@@ -243,10 +243,10 @@ const Hero = () => {
                     onClick={() => handleViewChange('provider')}
                     disabled={isTransitioning}
                     className={cn(
-                       "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
-                       viewType === 'provider'
-                        ? "bg-atd-primary text-white shadow-sm"
-                        : "text-atd-neutral-600 hover:text-atd-neutral-800"
+                      "px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300",
+                      viewType === 'provider'
+                        ? "bg-orange-600 text-white shadow-sm"
+                        : "text-gray-600 hover:text-gray-800"
                     )}
                   >
                     Provider View
@@ -259,23 +259,23 @@ const Hero = () => {
                 "animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden h-80">
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
                   {currentView.content}
                 </div>
               </div>
 
               {/* Feature Showcase */}
               <div className={cn(
-                "grid grid-cols-1 gap-3 animate-fade-in-up transition-all duration-500",
+                "space-y-3 animate-fade-in-up transition-all duration-500",
                 isTransitioning && "opacity-70"
               )} style={{ animationDelay: '0.5s' }}>
                 {currentView.features.map((feature, index) => {
                   const IconComponent = feature.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-3 bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                    <div key={index} className="flex items-start space-x-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
                       <div className={cn(
                         "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
-                        "bg-atd-primary/10 text-atd-primary"
+                        viewType === 'homeowner' ? "bg-blue-100 text-blue-600" : "bg-orange-100 text-orange-600"
                       )}>
                         <IconComponent className="h-4 w-4" />
                       </div>

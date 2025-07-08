@@ -17,17 +17,17 @@ const StoryConnector = ({
       "flex items-center justify-center my-12 md:my-16 lg:my-20 animate-fade-in-up",
       className
     )}>
-      <div className="bg-gradient-to-r from-transparent via-atd-primary/20 to-transparent h-px flex-1 max-w-60 md:max-w-80"></div>
+      <div className="bg-gradient-to-r from-transparent via-primary/20 to-transparent h-px flex-1 max-w-60 md:max-w-80"></div>
       
       <div className="mx-6 flex items-center space-x-2">
         {direction === 'down' ? (
-          <ArrowDown className="h-4 w-4 text-atd-primary/60 animate-bounce" />
+          <ArrowDown className="h-4 w-4 text-primary/60 animate-bounce" />
         ) : (
-          <ChevronRight className="h-4 w-4 text-atd-primary/60" />
+          <ChevronRight className="h-4 w-4 text-primary/60" />
         )}
       </div>
       
-      <div className="bg-gradient-to-r from-transparent via-atd-primary/20 to-transparent h-px flex-1 max-w-60 md:max-w-80"></div>
+      <div className="bg-gradient-to-r from-transparent via-primary/20 to-transparent h-px flex-1 max-w-60 md:max-w-80"></div>
     </div>
   );
 };

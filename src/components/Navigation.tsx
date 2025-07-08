@@ -28,10 +28,10 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-atd-primary to-atd-accent p-2 rounded-lg">
+              <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
                 <Home className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-atd-text">All Things Done</span>
+              <span className="text-xl font-bold text-[hsl(var(--atd-text))]">All Things Done</span>
             </Link>
 
             {/* Navigation Links */}
@@ -42,8 +42,8 @@ const Navigation = () => {
                   to={item.href}
                   className={`font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-atd-primary border-b-2 border-atd-primary pb-1'
-                      : 'text-atd-text hover:text-atd-primary'
+                      ? 'text-[hsl(var(--atd-primary))] border-b-2 border-[hsl(var(--atd-primary))] pb-1'
+                      : 'text-[hsl(var(--atd-text))] hover:text-[hsl(var(--atd-primary))]'
                   }`}
                 >
                   {item.name}
@@ -51,7 +51,7 @@ const Navigation = () => {
               ))}
               
               <Link to="/join-beta">
-                <Button className="premium-button">
+                <Button className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white">
                   Join Beta
                 </Button>
               </Link>
@@ -65,10 +65,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-br from-atd-primary to-atd-accent p-2 rounded-lg">
+            <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
               <Home className="h-5 w-5 text-white" />
             </div>
-            <span className="text-lg font-bold text-atd-text">ATD</span>
+            <span className="text-lg font-bold text-[hsl(var(--atd-text))]">ATD</span>
           </Link>
 
           {/* Hamburger Button */}
@@ -80,9 +80,9 @@ const Navigation = () => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-atd-text" />
+              <X className="h-6 w-6 text-[hsl(var(--atd-text))]" />
             ) : (
-              <Menu className="h-6 w-6 text-atd-text" />
+              <Menu className="h-6 w-6 text-[hsl(var(--atd-text))]" />
             )}
           </Button>
         </div>
@@ -115,8 +115,8 @@ const Navigation = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`w-full flex items-center px-4 py-4 text-left rounded-xl transition-colors duration-200 min-h-[52px] ${
                     isActive(item.href)
-                      ? 'bg-atd-primary/10 text-atd-primary font-bold'
-                      : 'text-atd-text hover:bg-gray-50'
+                      ? 'bg-[hsl(var(--atd-primary))]/10 text-[hsl(var(--atd-primary))] font-bold'
+                      : 'text-[hsl(var(--atd-text))] hover:bg-gray-50'
                   }`}
                 >
                   <span className="font-medium text-lg">{item.name}</span>
