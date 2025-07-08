@@ -176,11 +176,11 @@ const Hero = () => {
   const currentView = viewContent[viewType];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-primary px-4 sm:px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-bg-primary">
       {/* Clean, minimal background */}
       <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
-      <div className="container max-w-7xl mx-auto relative z-10 py-16 sm:py-20 md:py-24">
+      <div className="container-wide relative z-10 py-16 sm:py-20 md:py-24">
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left side - Text content (60%) */}

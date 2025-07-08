@@ -52,7 +52,7 @@ const EnhancedDemo = () => {
 
   return (
     <section className="section-spacing-large section-bg-elevated section-divider" id="enhanced-demo">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container-wide">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-flex items-center bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 border border-primary/20">
@@ -101,7 +101,7 @@ const EnhancedDemo = () => {
         </div>
 
         {/* Demo Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
           
           {/* Educational Panel */}
           <div className="order-2 lg:order-1 space-y-6">

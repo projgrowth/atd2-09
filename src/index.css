@@ -230,17 +230,22 @@
     transform: translateY(-2px) scale(1.01);
   }
   
-  /* Enhanced Section Spacing */
+  /* Enhanced Section Spacing - Vertical Only */
   .section-spacing {
-    @apply py-16 px-4 sm:py-20 sm:px-6 lg:py-24 lg:px-8;
+    @apply py-16 sm:py-20 lg:py-24;
   }
   
   .section-spacing-large {
-    @apply py-20 px-4 sm:py-28 sm:px-6 lg:py-32 lg:px-8;
+    @apply py-20 sm:py-28 lg:py-32;
   }
   
   .section-spacing-xl {
-    @apply py-24 px-4 sm:py-32 sm:px-6 lg:py-40 lg:px-8;
+    @apply py-24 sm:py-32 lg:py-40;
+  }
+
+  /* Override-Safe Container Utilities */
+  .container-force {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 !important;
   }
 
   /* Unified Container System */
