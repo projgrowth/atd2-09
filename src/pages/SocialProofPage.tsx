@@ -41,12 +41,12 @@ const SocialProofPage = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <div className="container max-w-6xl mx-auto pt-8">
-        <Button asChild variant="ghost" className="mb-8">
-          <Link to="/how-it-works">
+        <Link to="/how-it-works">
+          <Button variant="ghost" className="mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to How It Works
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
 
       {/* Page Header */}
@@ -107,12 +107,12 @@ const SocialProofPage = () => {
             Get early access to the home management solution that actually works.
           </p>
           
-          <Button asChild size="lg" className="premium-button px-12 py-6 text-xl font-bold">
-            <Link to="/join-beta">
+          <Link to="/join-beta">
+            <Button size="lg" className="premium-button px-12 py-6 text-xl font-bold">
               Join the Beta Program
               <ArrowRight className="ml-3 h-6 w-6" />
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

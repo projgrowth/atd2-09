@@ -35,12 +35,12 @@ const HowItWorks = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <div className="container max-w-6xl mx-auto pt-8">
-        <Button asChild variant="ghost" className="mb-8">
-          <Link to="/">
+        <Link to="/">
+          <Button variant="ghost" className="mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
 
       {/* Page Header */}
@@ -115,18 +115,18 @@ const HowItWorks = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="premium-button px-8 py-6 text-lg font-bold">
-              <Link to="/social-proof">
+            <Link to="/social-proof">
+              <Button size="lg" className="premium-button px-8 py-6 text-lg font-bold">
                 See What Others Say
                 <ArrowRight className="ml-3 h-6 w-6" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             
-            <Button asChild variant="outline" size="lg" className="px-8 py-6 text-lg font-semibold">
-              <Link to="/join-beta">
+            <Link to="/join-beta">
+              <Button variant="outline" size="lg" className="px-8 py-6 text-lg font-semibold">
                 Join the Beta Now
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
