@@ -72,24 +72,24 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
 
   return (
     <div className="lg:sticky lg:top-8">
-      {/* Clean Educational Card */}
-      <div className="card-base p-6 lg:p-8 space-y-6 animate-fade-in-up">
+      {/* Premium Educational Card */}
+      <div className="premium-card p-6 lg:p-8 space-y-6 animate-fade-in-up">
         {/* Step Header */}
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-atd-primary to-atd-accent flex items-center justify-center">
+            <div className="w-12 h-12 rounded-lg bg-atd-primary flex items-center justify-center">
               <IconComponent className="h-6 w-6 text-white" />
             </div>
             <div>
               <div className="flex items-center space-x-2 mb-1">
-                <span className="text-xs font-medium text-atd-primary bg-atd-primary/10 px-2 py-1 rounded-full">
+                <span className="text-xs font-medium text-atd-primary bg-atd-surface-secondary px-2 py-1 rounded-md">
                   Step {currentStep + 1} of {totalSteps}
                 </span>
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold text-enhanced leading-tight">
+              <h3 className="text-xl lg:text-2xl premium-heading leading-tight">
                 {content.title}
               </h3>
-              <p className="text-sm font-semibold text-atd-primary">
+              <p className="text-sm premium-text-secondary">
                 {content.subtitle}
               </p>
             </div>
@@ -98,28 +98,28 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
 
         {/* Key Benefits */}
         <div className="space-y-4">
-          <h4 className="text-sm font-bold text-atd-text-emphasis uppercase tracking-wide">
+          <h4 className="text-sm font-semibold premium-text-primary uppercase tracking-wide">
             Key Benefits
           </h4>
           <ul className="space-y-2">
             {content.benefits.map((benefit, index) => (
               <li key={index} className="flex items-start space-x-3">
-                <CheckCircle className="h-4 w-4 text-atd-accent mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-atd-text-muted leading-relaxed">{benefit}</span>
+                <CheckCircle className="h-4 w-4 premium-icon-success mt-0.5 flex-shrink-0" />
+                <span className="text-sm premium-text-secondary leading-relaxed">{benefit}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Technical Feature */}
-        <div className="border-t border-atd-border-light pt-4">
+        <div className="border-t border-atd-border pt-4">
           <div className="flex items-start space-x-3">
-            <Zap className="h-4 w-4 text-atd-primary mt-0.5 flex-shrink-0" />
+            <Zap className="h-4 w-4 premium-icon-primary mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-xs font-semibold text-atd-primary uppercase tracking-wide mb-1">
+              <p className="text-xs font-semibold premium-text-primary uppercase tracking-wide mb-1">
                 Technical
               </p>
-              <p className="text-sm text-atd-text-muted leading-relaxed">
+              <p className="text-sm premium-text-secondary leading-relaxed">
                 {content.technical}
               </p>
             </div>
@@ -127,14 +127,14 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
         </div>
 
         {/* Real-world Impact */}
-        <div className="border-t border-atd-border-light pt-4">
+        <div className="border-t border-atd-border pt-4">
           <div className="flex items-start space-x-3">
-            <Clock className="h-4 w-4 text-atd-accent mt-0.5 flex-shrink-0" />
+            <Clock className="h-4 w-4 premium-icon-primary mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-xs font-semibold text-atd-accent uppercase tracking-wide mb-1">
+              <p className="text-xs font-semibold premium-text-primary uppercase tracking-wide mb-1">
                 Real-World Impact
               </p>
-              <p className="text-sm text-atd-text-muted leading-relaxed">
+              <p className="text-sm premium-text-secondary leading-relaxed">
                 {content.impact}
               </p>
             </div>
@@ -142,7 +142,7 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
         </div>
 
         {/* Navigation */}
-        <div className="border-t border-atd-border-light pt-4 space-y-3">
+        <div className="border-t border-atd-border pt-4 space-y-3">
           <div className="flex justify-center space-x-2">
             {Array.from({ length: totalSteps }).map((_, index) => (
               <button
@@ -152,8 +152,8 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
                   index === currentStep 
                     ? 'bg-atd-primary w-6' 
                     : index < currentStep 
-                    ? 'bg-atd-accent' 
-                    : 'bg-atd-border-medium'
+                    ? 'bg-atd-success' 
+                    : 'bg-atd-neutral-300'
                 }`}
                 aria-label={`Go to step ${index + 1}`}
               />
@@ -161,7 +161,7 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
           </div>
           
           <div className="text-center">
-            <p className="text-xs text-atd-text-light">
+            <p className="text-xs premium-text-muted">
               Click dots to navigate • Auto-advancing every 4 seconds
             </p>
           </div>

@@ -70,17 +70,17 @@ const SimplifiedDemo = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in-up">
-          <div className="card-enhanced p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4 text-enhanced">
+          <div className="premium-card p-8 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4 premium-heading">
               Ready to Transform Your Home Management?
             </h3>
-            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-muted-enhanced">
+            <p className="text-lg mb-8 max-w-2xl mx-auto premium-text-secondary">
               This is just a preview. Join our beta to experience the full platform and help shape the future of home management.
             </p>
             
             <Button 
               size="lg" 
-              className="premium-button px-10 py-6 text-lg"
+              className="premium-button-primary px-10 py-6 text-lg"
               onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
             >
               Join Beta Program

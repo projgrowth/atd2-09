@@ -66,23 +66,31 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Enhanced ATD colors with better contrast
+				// Premium ATD Design System
 				atd: {
 					primary: 'hsl(var(--atd-primary))',
-					'primary-dark': 'hsl(var(--atd-primary-dark))',
-					'primary-light': 'hsl(var(--atd-primary-light))',
 					accent: 'hsl(var(--atd-accent))',
-					'accent-dark': 'hsl(var(--atd-accent-dark))',
-					'accent-light': 'hsl(var(--atd-accent-light))',
-					text: 'hsl(var(--atd-text))',
-					'text-muted': 'hsl(var(--atd-text-muted))',
-					'text-light': 'hsl(var(--atd-text-light))',
-					'text-strong': 'hsl(var(--atd-text-strong))',
-					'text-emphasis': 'hsl(var(--atd-text-emphasis))',
-					surface: 'hsl(var(--atd-surface))',
-					'surface-elevated': 'hsl(var(--atd-surface-elevated))',
-					'border-light': 'hsl(var(--atd-border-light))',
-					'border-medium': 'hsl(var(--atd-border-medium))',
+					success: 'hsl(var(--atd-success))',
+					error: 'hsl(var(--atd-error))',
+					warning: 'hsl(var(--atd-warning))',
+					neutral: {
+						50: 'hsl(var(--atd-neutral-50))',
+						100: 'hsl(var(--atd-neutral-100))',
+						200: 'hsl(var(--atd-neutral-200))',
+						300: 'hsl(var(--atd-neutral-300))',
+						400: 'hsl(var(--atd-neutral-400))',
+						500: 'hsl(var(--atd-neutral-500))',
+						600: 'hsl(var(--atd-neutral-600))',
+						700: 'hsl(var(--atd-neutral-700))',
+						800: 'hsl(var(--atd-neutral-800))',
+						900: 'hsl(var(--atd-neutral-900))',
+					},
+					surface: {
+						primary: 'hsl(var(--atd-surface-primary))',
+						secondary: 'hsl(var(--atd-surface-secondary))',
+						muted: 'hsl(var(--atd-surface-muted))',
+					},
+					border: 'hsl(var(--atd-border))',
 				}
 			},
 			borderRadius: {
@@ -102,12 +110,9 @@ export default {
 				'5xl': 'var(--spacing-5xl)',
 			},
 			boxShadow: {
-				'sm': 'var(--shadow-sm)',
-				'md': 'var(--shadow-md)',
-				'lg': 'var(--shadow-lg)',
-				'xl': 'var(--shadow-xl)',
-				'2xl': 'var(--shadow-2xl)',
-				'colored': 'var(--shadow-colored)',
+				'subtle': 'var(--shadow-subtle)',
+				'medium': 'var(--shadow-medium)',
+				'elevated': 'var(--shadow-elevated)',
 			},
 			keyframes: {
 				'accordion-down': {
