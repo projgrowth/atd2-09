@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Monitor, Smartphone, QrCode, Users, Star, RotateCcw, Eye, EyeOff } from "lucide-react";
+import { Monitor, Smartphone, QrCode, Users, Star, RotateCcw, Eye, EyeOff, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InteractiveDashboard from "./InteractiveDashboard";
 import PocketOfficeDemo from "./PocketOfficeDemo";
@@ -7,11 +7,37 @@ import QRScanDemo from "./QRScanDemo";
 import UserJourneyDemo from "./UserJourneyDemo";
 import RatingSystemDemo from "./RatingSystemDemo";
 import { DemoProvider, useDemoContext } from "@/contexts/DemoContext";
+import { useDemoTransitions } from "@/hooks/useDemoTransitions";
+import DemoSuggestions from "./demo-flow/DemoSuggestions";
+import DemoProgress from "./demo-flow/DemoProgress";
+import DemoTransition from "./demo-flow/DemoTransition";
 import { cn } from "@/lib/utils";
 
 const InteractiveDemoContent = () => {
   const { state, actions } = useDemoContext();
   const { activeDemo, demoProgress, userType } = state;
+  const [showProgress, setShowProgress] = useState(false);
+  
+  const { 
+    isTransitioning, 
+    pendingDemo, 
+    fromDemo,
+    transitionToDemo 
+  } = useDemoTransitions({ 
+    duration: 600, 
+    showLoader: true, 
+    showProgress: true 
+  });
+
+  const handleDemoChange = (demoId: string) => {
+    if (demoId === activeDemo) return;
+    
+    transitionToDemo(
+      demoId, 
+      (newDemo) => actions.setActiveDemo(newDemo),
+      activeDemo
+    );
+  };
 
   const demos = {
     dashboard: {
@@ -98,37 +124,78 @@ const InteractiveDemoContent = () => {
           </div>
         </div>
 
-        {/* Demo Selector - Enhanced for mobile */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-          {Object.entries(demos).map(([key, demo]) => {
-            const IconComponent = demo.icon;
-            return (
+        {/* Enhanced Progress Section */}
+        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+          {/* Demo Selector - Enhanced for mobile */}
+          <div className="flex-1">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6">
+              {Object.entries(demos).map(([key, demo]) => {
+                const IconComponent = demo.icon;
+                return (
+                  <Button
+                    key={key}
+                    variant={activeDemo === key ? "default" : "outline"}
+                    onClick={() => handleDemoChange(key)}
+                    disabled={isTransitioning}
+                    className={cn(
+                      "flex items-center space-x-3 px-4 sm:px-6 py-4 text-sm mobile-interactive",
+                      "min-h-[52px] transition-all duration-200 font-semibold",
+                      activeDemo === key && "animate-mobile-scale-in button-primary-enhanced",
+                      activeDemo !== key && "button-secondary-enhanced",
+                      demoProgress.includes(key) && "ring-1 ring-[hsl(var(--atd-primary))]/30",
+                      isTransitioning && "opacity-50 cursor-not-allowed"
+                    )}
+                  >
+                    <IconComponent className="h-5 w-5 flex-shrink-0" />
+                    <div className="text-left">
+                      <div className="font-bold text-sm sm:text-base">{demo.title}</div>
+                      <div className="text-xs opacity-80 hidden lg:block font-medium">{demo.description}</div>
+                    </div>
+                  </Button>
+                );
+              })}
+            </div>
+            
+            {/* Demo Suggestions */}
+            <DemoSuggestions />
+          </div>
+
+          {/* Progress Panel */}
+          <div className="lg:w-80">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-[hsl(var(--atd-text))]">
+                Your Progress
+              </h3>
               <Button
-                key={key}
-                variant={activeDemo === key ? "default" : "outline"}
-                onClick={() => actions.setActiveDemo(key)}
-                className={cn(
-                  "flex items-center space-x-3 px-4 sm:px-6 py-4 text-sm mobile-interactive",
-                  "min-h-[52px] transition-all duration-200 font-semibold",
-                  activeDemo === key && "animate-mobile-scale-in button-primary-enhanced",
-                  activeDemo !== key && "button-secondary-enhanced",
-                  demoProgress.includes(key) && "ring-1 ring-[hsl(var(--atd-primary))]/30"
-                )}
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowProgress(!showProgress)}
+                className="text-xs"
               >
-                <IconComponent className="h-5 w-5 flex-shrink-0" />
-                <div className="text-left">
-                  <div className="font-bold text-sm sm:text-base">{demo.title}</div>
-                  <div className="text-xs opacity-80 hidden lg:block font-medium">{demo.description}</div>
-                </div>
+                <TrendingUp className="h-3 w-3 mr-1" />
+                {showProgress ? 'Hide' : 'Show'} Details
               </Button>
-            );
-          })}
+            </div>
+            
+            {showProgress && <DemoProgress />}
+          </div>
         </div>
 
-        {/* Active Demo */}
-        <div className="animate-fade-in transition-all duration-300">
+        {/* Active Demo with Enhanced Transitions */}
+        <div className={cn(
+          "transition-all duration-300",
+          !isTransitioning && "animate-fade-in",
+          isTransitioning && "opacity-50 scale-95"
+        )}>
           {demos[activeDemo as keyof typeof demos].component}
         </div>
+
+        {/* Demo Transition Overlay */}
+        <DemoTransition
+          isTransitioning={isTransitioning}
+          fromDemo={fromDemo || undefined}
+          toDemo={pendingDemo || undefined}
+        />
 
         {/* Bottom CTA - Enhanced with new form */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>

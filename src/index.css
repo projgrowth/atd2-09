@@ -376,11 +376,28 @@
   .mobile-touch-target {
     @apply min-h-[48px] min-w-[48px];
   }
-  
+
   .mobile-text-readable {
     @apply text-base leading-relaxed;
   }
-  
+
+  /* Enhanced Mobile Interactions */
+  .mobile-interactive {
+    @apply transition-all duration-200 active:scale-95 active:opacity-80;
+  }
+
+  .mobile-button-press {
+    @apply transition-transform duration-150 active:scale-95;
+  }
+
+  .mobile-fade-in {
+    animation: mobileSlideIn 0.3s ease-out forwards;
+  }
+
+  .mobile-scale-in {
+    animation: mobileScaleIn 0.2s ease-out forwards;
+  }
+
   @media (max-width: 640px) {
     .mobile-section-padding {
       @apply py-8 px-4;
@@ -443,6 +460,58 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* Enhanced Mobile Animations */
+@keyframes mobileSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scan-line {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(2px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Enhanced Demo Animations */
+.animate-scan-line {
+  animation: scan-line 1s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
 }
 
 /* Accessibility Enhancements */
