@@ -52,7 +52,7 @@ const SocialProofPage = () => {
       {/* Page Header */}
       <section className="section-spacing section-bg-primary">
         <div className="container max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
+          <h1 className="heading-primary text-enhanced">
             What Our Users Say
           </h1>
           <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable">
@@ -108,7 +108,7 @@ const SocialProofPage = () => {
           </p>
           
           <Link to="/join-beta">
-            <Button size="lg" className="premium-button px-12 py-6 text-xl font-bold">
+            <Button size="lg">
               Join the Beta Program
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>

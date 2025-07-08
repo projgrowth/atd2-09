@@ -177,7 +177,7 @@ const CoreBenefits = () => {
               className="group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="card-interactive card-padding h-full">
+              <div className="premium-card enhanced-card-hover p-6 h-full">
                 <div className="flex items-start space-x-4 md:space-x-6">
                   <div className="flex-shrink-0">
                     <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

@@ -46,7 +46,7 @@ const HowItWorks = () => {
       {/* Page Header */}
       <section className="section-spacing section-bg-primary">
         <div className="container max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
+          <h1 className="heading-primary text-enhanced">
             How ATD Works
           </h1>
           <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable">
@@ -76,13 +76,13 @@ const HowItWorks = () => {
                       </div>
                     </div>
                     
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-enhanced">
+                    <h3 className="heading-tertiary text-enhanced">
                       {step.title}
                     </h3>
-                    <p className="text-base md:text-lg font-semibold text-muted-enhanced mb-4">
+                    <p className="text-body-large text-muted-enhanced mb-4 mobile-text-readable">
                       {step.description}
                     </p>
-                    <p className="text-sm md:text-base text-muted-enhanced">
+                    <p className="text-body text-muted-enhanced mobile-text-readable">
                       {step.details}
                     </p>
                   </div>
@@ -116,14 +116,14 @@ const HowItWorks = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/social-proof">
-              <Button size="lg" className="premium-button px-8 py-6 text-lg font-bold">
+              <Button size="lg">
                 See What Others Say
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>
             
             <Link to="/join-beta">
-              <Button variant="outline" size="lg" className="px-8 py-6 text-lg font-semibold">
+              <Button variant="outline" size="lg">
                 Join the Beta Now
               </Button>
             </Link>

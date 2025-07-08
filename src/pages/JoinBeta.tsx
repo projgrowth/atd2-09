@@ -66,24 +66,24 @@ const JoinBeta = () => {
       {/* Hero Section */}
       <section className="section-spacing section-bg-primary">
         <div className="container max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-100 border-2 border-green-200 mb-8">
-            <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-            <span className="text-sm font-bold text-green-900">Limited Beta Spots Available</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-atd-success/10 border-2 border-atd-success/20 mb-8">
+            <div className="w-3 h-3 bg-atd-success rounded-full mr-3 animate-pulse"></div>
+            <span className="text-sm font-bold text-atd-success">Limited Beta Spots Available</span>
           </div>
           
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
+          <h1 className="heading-primary text-enhanced">
             Join the ATD Beta Program
           </h1>
           <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable mb-8">
             Get early access to the home management solution that puts you back in control.
           </p>
           
-          <div className="bg-white/80 rounded-2xl p-6 md:p-8 border border-gray-200 mb-8">
+          <div className="premium-card p-6 md:p-8 mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <Clock className="h-5 w-5 text-orange-500" />
-              <span className="text-lg font-bold text-orange-900">Beta capacity: 80% full</span>
+              <Clock className="h-5 w-5 text-atd-warning" />
+              <span className="text-lg font-bold text-enhanced">Beta capacity: 80% full</span>
             </div>
-            <p className="text-sm text-gray-600">Only 50 spots remaining for Q1 2024 cohort</p>
+            <p className="text-body text-muted-enhanced mobile-text-readable">Only 50 spots remaining for Q1 2024 cohort</p>
           </div>
         </div>
       </section>
@@ -104,7 +104,7 @@ const JoinBeta = () => {
                 className="animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="card-interactive p-6 h-full">
+                <div className="premium-card enhanced-card-hover p-6 h-full">
                   <div className="flex items-start space-x-4">
                     <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="h-6 w-6 text-[hsl(var(--atd-primary))]" />
@@ -124,12 +124,12 @@ const JoinBeta = () => {
           </div>
 
           {/* Risk Reversal */}
-          <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-200 text-center">
-            <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-4 text-enhanced">
+          <div className="premium-card-elevated p-8 text-center">
+            <Shield className="h-12 w-12 text-atd-success mx-auto mb-4" />
+            <h3 className="heading-tertiary mb-4 text-enhanced">
               Zero Risk, Maximum Reward
             </h3>
-            <p className="text-base font-semibold text-muted-enhanced mobile-text-readable">
+            <p className="text-body-large text-muted-enhanced mobile-text-readable">
               Free beta access, personal onboarding, and grandfathered pricing. 
               If you're not completely satisfied in 30 days, we'll help you transition back to your old system.
             </p>
@@ -142,7 +142,7 @@ const JoinBeta = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-enhanced">
+              <h2 className="heading-secondary mb-6 text-enhanced">
                 Ready to take control?
               </h2>
               <p className="text-lg mb-8 font-semibold text-muted-enhanced mobile-text-readable">
@@ -151,7 +151,7 @@ const JoinBeta = () => {
               
               <Button 
                 size="lg" 
-                className="premium-button px-12 py-6 text-xl font-bold mb-6 w-full lg:w-auto"
+                className="mb-6 w-full lg:w-auto"
                 onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
               >
                 Get Early Access Now
@@ -164,23 +164,23 @@ const JoinBeta = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 relative">
+              <div className="premium-card-elevated p-6 relative">
                 <div className="text-center space-y-4">
-                  <div className="bg-gradient-to-br from-[hsl(var(--atd-accent))] to-green-500 rounded-full p-4 mx-auto w-fit">
+                  <div className="bg-gradient-to-br from-atd-accent to-atd-success rounded-full p-4 mx-auto w-fit">
                     <CheckCircle className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-[hsl(var(--atd-text))]">Welcome to ATD!</div>
-                    <div className="text-sm text-[hsl(var(--atd-text-muted))]">Your home command center is ready.</div>
+                    <div className="text-lg font-bold text-enhanced">Welcome to ATD!</div>
+                    <div className="text-body text-muted-enhanced">Your home command center is ready.</div>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mt-4">
-                    <div className="bg-blue-50 rounded-lg p-3 text-center">
-                      <div className="text-sm font-bold">1 Home</div>
-                      <div className="text-xs text-gray-500">Connected</div>
+                    <div className="bg-atd-primary/10 rounded-lg p-3 text-center">
+                      <div className="text-body font-bold text-enhanced">1 Home</div>
+                      <div className="text-caption text-muted-enhanced">Connected</div>
                     </div>
-                    <div className="bg-green-50 rounded-lg p-3 text-center">
-                      <div className="text-sm font-bold">Setup</div>
-                      <div className="text-xs text-gray-500">Complete</div>
+                    <div className="bg-atd-success/10 rounded-lg p-3 text-center">
+                      <div className="text-body font-bold text-enhanced">Setup</div>
+                      <div className="text-caption text-muted-enhanced">Complete</div>
                     </div>
                   </div>
                 </div>
@@ -204,9 +204,9 @@ const JoinBeta = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="card-base px-6 md:px-8 border-2 hover:border-gray-200"
+                className="premium-card enhanced-card-hover px-6 md:px-8"
               >
-                <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 text-enhanced mobile-text-readable">
+                <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-primary py-6 text-enhanced mobile-text-readable">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="leading-relaxed pb-6 text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
@@ -219,7 +219,6 @@ const JoinBeta = () => {
           <div className="text-center mt-12">
             <Button 
               size="lg" 
-              className="premium-button px-12 py-6 text-xl font-bold"
               onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
             >
               Secure Your Beta Spot

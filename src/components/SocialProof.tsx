@@ -47,11 +47,11 @@ const SocialProof = () => {
                 className="group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="premium-card p-8 text-center">
+                <div className="premium-card enhanced-card-hover p-8 text-center">
                   <div className="text-4xl lg:text-5xl font-bold text-primary mb-4 group-hover:scale-105 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-base font-semibold uppercase tracking-wider text-muted-enhanced">
+                  <div className="text-caption font-body-bold uppercase tracking-wider text-muted-enhanced">
                     {stat.label}
                   </div>
                 </div>
@@ -62,22 +62,22 @@ const SocialProof = () => {
           {/* Progress Indicators */}
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="premium-card p-8 text-center">
+              <div className="premium-card enhanced-card-hover p-8 text-center">
                 <div className="mb-6">
-                  <div className="w-full bg-neutral-200 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-atd-surface-muted rounded-full h-3 overflow-hidden">
                     <div className="bg-gradient-to-r from-primary to-accent h-3 rounded-full animate-[width_2s_ease-out] w-4/5"></div>
                   </div>
                 </div>
-                <p className="text-base font-semibold text-enhanced">Beta capacity: <span className="font-bold">80% full</span></p>
+                <p className="text-body font-body-medium text-enhanced mobile-text-readable">Beta capacity: <span className="font-body-bold">80% full</span></p>
               </div>
               
-              <div className="premium-card p-8 text-center">
+              <div className="premium-card enhanced-card-hover p-8 text-center">
                 <div className="mb-6">
-                  <div className="w-full bg-neutral-200 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-atd-surface-muted rounded-full h-3 overflow-hidden">
                     <div className="bg-gradient-to-r from-primary to-accent h-3 rounded-full animate-[width_2s_ease-out_0.5s] w-full"></div>
                   </div>
                 </div>
-                <p className="text-base font-semibold text-enhanced">Satisfaction rate: <span className="font-bold">98%</span></p>
+                <p className="text-body font-body-medium text-enhanced mobile-text-readable">Satisfaction rate: <span className="font-body-bold">98%</span></p>
               </div>
             </div>
           </div>
