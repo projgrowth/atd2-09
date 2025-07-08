@@ -74,18 +74,31 @@
     --shadow-medium: 0 2px 8px -2px rgb(0 0 0 / 0.06), 0 1px 3px -1px rgb(0 0 0 / 0.03);
     --shadow-elevated: 0 8px 25px -5px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.05);
     
-  /* Enhanced Spacing System */
-  --spacing-mobile-xs: 0.5rem;
-  --spacing-mobile-sm: 1rem;
-  --spacing-mobile-md: 1.5rem;
-  --spacing-mobile-lg: 2rem;
-  --spacing-mobile-xl: 3rem;
-  --spacing-mobile-2xl: 4rem;
-  --spacing-section-xs: 4rem;
-  --spacing-section-sm: 6rem;
-  --spacing-section-md: 8rem;
-  --spacing-section-lg: 10rem;
-  --spacing-section-xl: 12rem;
+    /* Card Shadow System */
+    --card-shadow: var(--shadow-subtle);
+    --card-shadow-hover: var(--shadow-medium);
+    
+    /* Separator Color */
+    --atd-separator: var(--atd-neutral-200);
+    
+    /* Enhanced Typography System */
+    --text-enhanced: hsl(var(--atd-neutral-900));
+    --text-muted-enhanced: hsl(var(--atd-neutral-600));
+    --heading-primary: hsl(var(--atd-neutral-900));
+    --heading-secondary: hsl(var(--atd-neutral-900));
+    
+    /* Enhanced Spacing System */
+    --spacing-mobile-xs: 0.5rem;
+    --spacing-mobile-sm: 1rem;
+    --spacing-mobile-md: 1.5rem;
+    --spacing-mobile-lg: 2rem;
+    --spacing-mobile-xl: 3rem;
+    --spacing-mobile-2xl: 4rem;
+    --spacing-section-xs: 4rem;
+    --spacing-section-sm: 6rem;
+    --spacing-section-md: 8rem;
+    --spacing-section-lg: 10rem;
+    --spacing-section-xl: 12rem;
     
     /* Premium Visual Elements */
     --atd-border: hsl(var(--atd-neutral-200));
@@ -130,6 +143,9 @@
     --atd-text-light: 215 20% 65%;
     --card-bg: 222 84% 6%;
     --card-border: 217 32% 20%;
+    --card-shadow: var(--shadow-subtle);
+    --card-shadow-hover: var(--shadow-medium);
+    --atd-separator: var(--atd-border-light);
   }
 }
 
@@ -256,36 +272,29 @@
   
   /* Section Background System */
   .section-bg-primary {
-    background: var(--section-bg-primary);
+    background: hsl(var(--atd-surface-primary));
     position: relative;
   }
-  
+
   .section-bg-content {
-    background: var(--section-bg-content);
-    box-shadow: var(--shadow-section);
-  }
-  
-  .section-bg-interactive {
-    background: var(--section-bg-interactive);
-    border-top: 1px solid hsl(var(--atd-border-light));
-    border-bottom: 1px solid hsl(var(--atd-border-light));
-  }
-  
-  .section-bg-info {
-    background: var(--section-bg-info);
-  }
-  
-  .section-bg-dark {
-    background: var(--section-bg-dark);
-  }
-  
-  .section-bg-elevated {
-    background: var(--section-bg-elevated);
+    background: hsl(var(--atd-surface-secondary));
     position: relative;
   }
-  
+
+  .section-bg-elevated {
+    background: hsl(var(--atd-surface-primary));
+    box-shadow: var(--shadow-subtle);
+    position: relative;
+  }
+
+  .section-bg-dark {
+    background: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(214 84% 46%) 100%);
+    color: white;
+    position: relative;
+  }
+
   .section-bg-premium {
-    background: var(--section-bg-premium);
+    background: linear-gradient(135deg, hsl(var(--atd-surface-primary)) 0%, hsl(var(--atd-surface-secondary)) 100%);
     position: relative;
   }
   
@@ -358,22 +367,44 @@
     letter-spacing: -0.025em;
     color: hsl(var(--atd-neutral-900));
   }
-  
+
+  .text-enhanced {
+    color: var(--text-enhanced);
+    font-weight: 500;
+  }
+
+  .text-muted-enhanced {
+    color: var(--text-muted-enhanced);
+    font-weight: 500;
+  }
+
+  .heading-secondary {
+    @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold;
+    color: var(--heading-secondary);
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--atd-gradient-primary);
+  }
+
   .premium-text-primary {
     color: hsl(var(--atd-neutral-900));
     font-weight: 500;
   }
-  
+
   .premium-text-secondary {
     color: hsl(var(--atd-neutral-600));
     font-weight: 500;
   }
-  
+
   .premium-text-muted {
     color: hsl(var(--atd-neutral-500));
     font-weight: 400;
   }
-  
+
   .premium-gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: var(--atd-gradient-primary);
