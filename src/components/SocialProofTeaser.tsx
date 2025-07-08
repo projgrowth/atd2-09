@@ -23,16 +23,16 @@ const SocialProofTeaser = () => {
               Join hundreds of satisfied homeowners who've transformed their home management.
             </p>
             
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-3 gap-6 mb-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="bg-white/10 w-12 h-12 rounded-xl flex items-center justify-center mb-3 mx-auto">
-                    <stat.icon className="h-6 w-6 text-white" />
+                  <div className="bg-white/10 w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-white/20">
+                    <stat.icon className="h-7 w-7 text-white" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-white/80 font-semibold">
+                  <div className="text-sm text-white/90 font-semibold">
                     {stat.label}
                   </div>
                 </div>

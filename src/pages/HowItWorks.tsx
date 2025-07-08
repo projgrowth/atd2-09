@@ -65,13 +65,13 @@ const HowItWorks = () => {
                 className="animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 rounded-2xl flex items-center justify-center">
-                        <step.icon className="h-8 w-8 text-[hsl(var(--atd-primary))]" />
+                      <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                        <step.icon className="h-8 w-8 text-primary" />
                       </div>
-                      <div className="bg-[hsl(var(--atd-primary))] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                      <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
                         {index + 1}
                       </div>
                     </div>
@@ -79,18 +79,18 @@ const HowItWorks = () => {
                     <h3 className="text-xl md:text-2xl font-bold mb-4 text-enhanced">
                       {step.title}
                     </h3>
-                    <p className="text-base md:text-lg font-semibold text-muted-enhanced mb-4 mobile-text-readable">
+                    <p className="text-base md:text-lg font-semibold text-muted-enhanced mb-4">
                       {step.description}
                     </p>
-                    <p className="text-sm md:text-base text-muted-enhanced mobile-text-readable">
+                    <p className="text-sm md:text-base text-muted-enhanced">
                       {step.details}
                     </p>
                   </div>
                   
                   <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-gray-100">
-                      <div className="aspect-square bg-gradient-to-br from-[hsl(var(--atd-primary))]/10 to-[hsl(var(--atd-accent))]/10 rounded-xl flex items-center justify-center">
-                        <step.icon className="h-16 w-16 text-[hsl(var(--atd-primary))]" />
+                    <div className="premium-card p-8">
+                      <div className="aspect-square bg-primary/5 rounded-xl flex items-center justify-center">
+                        <step.icon className="h-16 w-16 text-primary" />
                       </div>
                     </div>
                   </div>

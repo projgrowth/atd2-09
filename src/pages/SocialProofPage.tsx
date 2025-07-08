@@ -77,17 +77,17 @@ const SocialProofPage = () => {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <Accordion type="single" collapsible className="space-y-4 md:space-y-6">
+            <Accordion type="single" collapsible className="space-y-6">
               {faqs.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="card-base px-6 md:px-8 border-2 hover:border-gray-200"
+                  className="premium-card hover:shadow-medium transition-shadow duration-300"
                 >
-                  <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 md:py-8 text-enhanced mobile-text-readable">
+                  <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-primary py-6 md:py-8 text-enhanced">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="leading-relaxed pb-6 md:pb-8 text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
+                  <AccordionContent className="leading-relaxed pb-6 md:pb-8 text-sm md:text-base text-muted-enhanced">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
