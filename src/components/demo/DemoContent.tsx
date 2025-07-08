@@ -5,24 +5,12 @@ interface DemoContentProps {
 }
 
 const DemoContent = ({ currentStep }: DemoContentProps) => {
+  const currentDemo = demoSteps[currentStep];
+  
   return (
-    <div 
-      className="absolute inset-0 transition-all duration-700 ease-in-out"
-      style={{
-        transform: `translateX(${currentStep * -100}%)`,
-        width: `${demoSteps.length * 100}%`
-      }}
-    >
-      <div className="flex h-full">
-        {demoSteps.map((step, index) => (
-          <div 
-            key={index} 
-            className="w-full h-full flex-shrink-0 relative"
-            style={{ width: `${100 / demoSteps.length}%` }}
-          >
-            {step.screen.content}
-          </div>
-        ))}
+    <div className="absolute inset-0 transition-opacity duration-500 ease-in-out">
+      <div className="w-full h-full relative">
+        {currentDemo.screen.content}
       </div>
     </div>
   );

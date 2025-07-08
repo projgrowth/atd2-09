@@ -6,9 +6,9 @@ interface iPhoneMockupProps {
 
 const IPhoneMockup = ({ children }: iPhoneMockupProps) => {
   return (
-    <div className="relative max-w-sm mx-auto">
-      {/* iPhone 16 Pro Max Frame */}
-      <div className="relative bg-gradient-to-b from-slate-900 via-gray-800 to-black rounded-[3.5rem] p-2 shadow-2xl hover:scale-105 transition-transform duration-300">
+    <div className="relative w-80 mx-auto">
+      {/* iPhone 16 Pro Max Frame - Proper aspect ratio 19.5:9 */}
+      <div className="relative bg-gradient-to-b from-slate-900 via-gray-800 to-black rounded-[3.5rem] p-2 shadow-2xl">
         {/* Titanium Frame */}
         <div className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 rounded-[3.2rem] p-1">
           <div className="bg-black rounded-[3rem] overflow-hidden relative">
@@ -23,13 +23,13 @@ const IPhoneMockup = ({ children }: iPhoneMockupProps) => {
               </div>
             </div>
             
-            {/* Screen Content */}
-            <div className="h-[650px] relative overflow-hidden mt-12">
+            {/* Screen Content - Fixed dimensions */}
+            <div className="w-full h-[680px] relative overflow-hidden mt-12">
               {/* iOS Wallpaper Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 opacity-80"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 via-transparent to-purple-600/30"></div>
               
-              {/* Content */}
+              {/* Content Container - Full screen */}
               <div className="absolute inset-4 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
                 {children}
               </div>
