@@ -84,7 +84,7 @@ const ProblemSolution = () => {
               )} />
               
               {/* Content */}
-              <div className="relative p-6 lg:p-8">
+              <div className="relative">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-start space-x-4">
@@ -125,7 +125,7 @@ const ProblemSolution = () => {
                 
                 {/* Solution */}
                 <div className={cn(
-                  "premium-card p-6 transition-all duration-300",
+                  "premium-card transition-all duration-300",
                   hoveredCard === index && "bg-primary/5 border-primary/20"
                 )}>
                   <div className="flex items-start space-x-3 mb-4">
