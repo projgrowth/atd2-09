@@ -62,7 +62,7 @@ const Interactive3DDemo = () => {
 
         {/* Enhanced 3D Device Showcase */}
         <div className="relative max-w-7xl mx-auto mb-20 perspective-2000">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
             
             {/* Desktop View - Enhanced */}
             <div className={cn(
@@ -242,7 +242,7 @@ const Interactive3DDemo = () => {
 
         {/* Interactive Features */}
         <div className="text-center mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
             {[
               { title: "QR Code Onboarding", desc: "Instant provider access with simple scan", icon: "📱" },
               { title: "Real-Time Sync", desc: "Updates flow seamlessly between platforms", icon: "⚡" },

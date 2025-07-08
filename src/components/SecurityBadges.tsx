@@ -41,7 +41,7 @@ const SecurityBadges = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {badges.map((badge, index) => (
             <div 
               key={badge.title}
