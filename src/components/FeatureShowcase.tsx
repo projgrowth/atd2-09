@@ -190,7 +190,7 @@ const FeatureShowcase = () => {
   ];
 
   return (
-    <section className="section-spacing-large section-bg-content section-separator">
+    <section className="section-spacing-compact section-bg-content section-separator">
       <div className="container-standard">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6">

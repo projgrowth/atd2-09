@@ -235,6 +235,10 @@
     @apply py-16 sm:py-20 lg:py-24;
   }
   
+  .section-spacing-compact {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  
   .section-spacing-large {
     @apply py-20 sm:py-28 lg:py-32;
   }
@@ -250,32 +254,32 @@
 
   /* Unified Container System */
   .container-standard {
-    @apply container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6;
   }
   
   .container-wide {
-    @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container max-w-7xl mx-auto px-3 sm:px-4 lg:px-6;
   }
   
   .container-narrow {
-    @apply container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container max-w-4xl mx-auto px-3 sm:px-4 lg:px-6;
   }
   
   .container-text {
-    @apply container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container max-w-3xl mx-auto px-3 sm:px-4 lg:px-6;
   }
   
   /* Enhanced Mobile-First Grid System */
   .grid-mobile-responsive {
-    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8;
+    @apply grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6;
   }
   
   .grid-responsive-2 {
-    @apply grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-8;
+    @apply grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2 lg:gap-6;
   }
   
   .grid-responsive-4 {
-    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8;
+    @apply grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-6;
   }
   
   /* Enhanced Card Padding System */

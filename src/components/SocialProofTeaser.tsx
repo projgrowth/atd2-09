@@ -11,7 +11,7 @@ const SocialProofTeaser = () => {
   ];
 
   return (
-    <section className="section-spacing-large section-bg-dark section-divider">
+    <section className="section-spacing-compact section-bg-dark section-divider">
       <div className="container-standard">
         <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
           {/* Left side - Stats */}

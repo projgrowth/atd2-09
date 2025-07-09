@@ -17,7 +17,7 @@ const Interactive3DDemo = () => {
   };
 
   return (
-    <section className="section-spacing-large section-bg-elevated section-divider">
+    <section className="section-spacing-compact section-bg-elevated section-divider">
       <div className="container-standard" id="interactive-demo">
         {/* Story Bridge */}
         <div className="text-center mb-16 animate-fade-in-up">

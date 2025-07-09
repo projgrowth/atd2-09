@@ -10,7 +10,7 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="section-spacing-large section-bg-interactive section-separator relative overflow-hidden">
+    <section className="section-spacing-compact section-bg-interactive section-separator relative overflow-hidden">
       {/* Background Elements - enhanced */}
       <div className="absolute inset-0 opacity-4" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.08'%3E%3Cpath d='M0 0h40v40H0z'/%3E%3Cpath d='M40 40h40v40H40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,

@@ -23,7 +23,7 @@ const SimplifiedDemo = () => {
   const currentDemo = demoSteps[currentStep];
 
   return (
-    <section className="section-spacing-large section-bg-elevated section-divider" id="interactive-demo">
+    <section className="section-spacing-compact section-bg-elevated section-divider" id="interactive-demo">
       <div className="container-standard">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">

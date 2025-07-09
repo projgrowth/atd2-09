@@ -51,7 +51,7 @@ const EnhancedDemo = () => {
   const currentContent = currentDemo[viewType];
 
   return (
-    <section className="section-spacing-large section-bg-elevated section-divider" id="enhanced-demo">
+    <section className="section-spacing-compact section-bg-elevated section-divider" id="enhanced-demo">
       <div className="container-standard">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">

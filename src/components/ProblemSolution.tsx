@@ -50,7 +50,7 @@ const ProblemSolution = () => {
   ];
 
   return (
-    <section className="section-spacing-large section-bg-content">
+    <section className="section-spacing-compact section-bg-content">
       <div className="container-standard">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">

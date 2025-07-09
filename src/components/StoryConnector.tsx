@@ -14,7 +14,7 @@ const StoryConnector = ({
 }: StoryConnectorProps) => {
   return (
     <div className={cn(
-      "flex items-center justify-center my-12 md:my-16 lg:my-20 animate-fade-in-up",
+      "flex items-center justify-center my-8 md:my-10 lg:my-12 animate-fade-in-up",
       className
     )}>
       <div className="bg-gradient-to-r from-transparent via-primary/20 to-transparent h-px flex-1 max-w-60 md:max-w-80"></div>

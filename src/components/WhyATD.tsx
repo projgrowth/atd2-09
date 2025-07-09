@@ -24,7 +24,7 @@ const WhyATD = () => {
   ];
 
   return (
-    <section className="section-spacing-large section-bg-content section-separator relative overflow-hidden">
+    <section className="section-spacing-compact section-bg-content section-separator relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-2" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M0 0h100v100H0z'/%3E%3Cpath d='M20 20h60v60H20z' fill='%23ffffff'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,

@@ -38,7 +38,7 @@ const FinalCTA = () => {
 
   return (
     <div>
-    <section className="section-spacing-large section-bg-primary section-separator relative overflow-hidden">
+    <section className="section-spacing-compact section-bg-primary section-separator relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-transparent to-green-100/40"></div>
       <div className="absolute top-10 left-10 w-24 h-24 md:w-32 md:h-32 bg-[hsl(var(--atd-primary))]/15 rounded-full blur-3xl"></div>
@@ -145,7 +145,7 @@ const FinalCTA = () => {
     </section>
 
     {/* FAQ Section */}
-    <section className="section-spacing-large section-bg-info section-separator">
+    <section className="section-spacing-compact section-bg-info section-separator">
       <div className="container-standard">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">

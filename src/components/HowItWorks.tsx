@@ -30,7 +30,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="section-spacing-large section-bg-interactive section-separator">
+    <section className="section-spacing-compact section-bg-interactive section-separator">
       <div className="container-standard">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
           <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
