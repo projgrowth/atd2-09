@@ -28,7 +28,7 @@ const Hero = () => {
   const viewContent = {
     homeowner: {
       content: (
-        <div className="h-full bg-gradient-to-br from-atd-primary/10 to-atd-primary/20 p-4">
+        <div className="h-full bg-gradient-to-br from-atd-primary/10 to-atd-primary/20 p-3">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-2">
@@ -107,7 +107,7 @@ const Hero = () => {
     },
     provider: {
       content: (
-        <div className="h-full bg-gradient-to-br from-atd-warning/10 to-atd-warning/20 p-4">
+        <div className="h-full bg-gradient-to-br from-atd-warning/10 to-atd-warning/20 p-3">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-2">
@@ -181,10 +181,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
       <div className="container-standard relative z-10">
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-          {/* Left side - Text content (60%) */}
-          <div className="lg:col-span-3 text-center lg:text-left">
+        {/* Two-column layout - 2:1 ratio favoring text */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+          {/* Left side - Text content (2/3) */}
+          <div className="lg:col-span-2 text-center lg:text-left">
             {/* Problem Statement */}
             <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
               <span className="inline-block bg-atd-error/10 text-atd-error py-1.5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20" style={{ paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>
@@ -217,9 +217,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side - Interactive Showcase (40%) */}
-          <div className="lg:col-span-2 flex flex-col items-center lg:items-end">
-            <div className="w-full max-w-sm space-y-6">
+          {/* Right side - Interactive Showcase (1/3) */}
+          <div className="lg:col-span-1 flex flex-col items-center lg:items-end">
+            <div className="w-full space-y-3">
               {/* View Toggle */}
               <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex premium-card rounded-xl p-1">
@@ -262,29 +262,6 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Feature Showcase */}
-              <div className={cn(
-                "space-y-3 animate-fade-in-up transition-all duration-500",
-                isTransitioning && "opacity-70"
-              )} style={{ animationDelay: '0.5s' }}>
-                {currentView.features.map((feature, index) => {
-                  const IconComponent = feature.icon;
-                  return (
-                    <div key={index} className="premium-card p-4 flex items-start space-x-3">
-                      <div className={cn(
-                        "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center",
-                        viewType === 'homeowner' ? "bg-atd-primary/10 text-atd-primary" : "bg-atd-warning/10 text-atd-warning"
-                      )}>
-                        <IconComponent className="h-4 w-4" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-heading text-enhanced text-sm mb-1">{feature.title}</h4>
-                        <p className="text-caption leading-relaxed">{feature.description}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
             </div>
           </div>
         </div>
