@@ -214,7 +214,7 @@ export const enhancedDemoSteps: DemoStep[] = [
           </div>
 
           {/* Live Updates Feed */}
-          <div className="space-y-3 overflow-y-auto">
+          <div className="space-y-2 overflow-y-auto">
             <div className="bg-white rounded-lg p-3 shadow-sm animate-fade-in-up">
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
@@ -365,7 +365,7 @@ export const enhancedDemoSteps: DemoStep[] = [
           </div>
           
           {/* Messages */}
-          <div className="space-y-3 mb-4 overflow-y-auto">
+          <div className="space-y-2 mb-3 overflow-y-auto">
             {/* Contractor message */}
             <div className="flex space-x-2">
               <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
@@ -442,7 +442,7 @@ export const enhancedDemoSteps: DemoStep[] = [
           </div>
           
           {/* Messages */}
-          <div className="space-y-3 mb-4 overflow-y-auto">
+          <div className="space-y-2 mb-3 overflow-y-auto">
             {/* Client message */}
             <div className="flex space-x-2">
               <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
@@ -551,7 +551,7 @@ export const enhancedDemoSteps: DemoStep[] = [
           </div>
 
           {/* Payment Milestones */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h4 className="text-sm font-bold text-gray-700">Payment Schedule</h4>
             
             {/* Completed Milestone */}

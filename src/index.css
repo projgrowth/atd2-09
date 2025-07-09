@@ -284,15 +284,15 @@
   
   /* Enhanced Card Padding System */
   .card-padding {
-    @apply p-4 sm:p-6 lg:p-8;
-  }
-  
-  .card-padding-sm {
     @apply p-3 sm:p-4 lg:p-6;
   }
   
+  .card-padding-sm {
+    @apply p-2 sm:p-3 lg:p-4;
+  }
+  
   .card-padding-lg {
-    @apply p-6 sm:p-8 lg:p-10;
+    @apply p-4 sm:p-6 lg:p-8;
   }
   
   /* Section Background System */

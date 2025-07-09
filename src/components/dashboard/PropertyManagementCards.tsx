@@ -78,7 +78,7 @@ const PropertyManagementCards = ({ onPropertySelect, isProviderView = false }: P
 
   if (isProviderView) {
     return (
-      <div className="space-y-3">
+      <div className="space-y-2">
         <div className="text-center py-8">
           <Shield className="h-12 w-12 text-gray-400 mx-auto mb-4" />
           <div className="text-sm text-[hsl(var(--atd-text-muted))]">
@@ -108,7 +108,7 @@ const PropertyManagementCards = ({ onPropertySelect, isProviderView = false }: P
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div className="flex items-center justify-between mb-4">
         <h4 className="font-semibold text-[hsl(var(--atd-text))]">My Properties</h4>
         <Button size="sm" variant="outline" className="text-xs">

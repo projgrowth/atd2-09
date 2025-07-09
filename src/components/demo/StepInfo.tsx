@@ -142,7 +142,7 @@ const StepInfo = ({ currentStep, title, description, totalSteps = 4, onStepChang
         </div>
 
         {/* Navigation */}
-        <div className="border-t border-atd-border pt-4 space-y-3">
+        <div className="border-t border-atd-border pt-3 space-y-2">
           <div className="flex justify-center space-x-2">
             {Array.from({ length: totalSteps }).map((_, index) => (
               <button

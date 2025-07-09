@@ -17,7 +17,7 @@ const CoreBenefits = () => {
               3 Active
             </div>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-2">
             <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px] touch-target">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -61,7 +61,7 @@ const CoreBenefits = () => {
             </div>
           </div>
           <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[100px]">
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-2 sm:space-y-0">
                 <span className="text-sm md:text-base font-medium">Kitchen Repair</span>
                 <span className="text-xs md:text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full w-fit">75% Complete</span>

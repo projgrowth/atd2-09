@@ -8,7 +8,7 @@ const FeatureShowcase = () => {
       title: "Secure Document Vault",
       description: "Contracts, warranties, and receipts—safely stored and always accessible.",
       mockup: (
-        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 md:p-6 space-y-3 border border-blue-100">
+        <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-3 md:p-4 space-y-2 border border-blue-100">
           <div className="flex items-center space-x-2 mb-3">
             <Shield className="h-4 w-4 text-[hsl(var(--atd-primary))]" />
             <span className="text-sm font-medium">Document Vault</span>
@@ -59,7 +59,7 @@ const FeatureShowcase = () => {
               <span className="text-caption text-atd-success">Live</span>
             </div>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-2">
             <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium">Kitchen Repair</span>

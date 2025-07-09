@@ -50,7 +50,7 @@ export const demoSteps = [
             </div>
 
             {/* Quick Info */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="flex items-center justify-between card-base p-3">
                 <div className="flex items-center space-x-3">
                   <User className="h-4 w-4 text-atd-primary" />
@@ -395,7 +395,7 @@ export const demoSteps = [
             </div>
 
             {/* Action Button */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="button-primary-enhanced text-center">
                 <div className="flex items-center justify-center space-x-2">
                   <DollarSign className="h-5 w-5" />

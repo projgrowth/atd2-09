@@ -58,7 +58,7 @@ const FinalCTA = () => {
             </p>
             
             {/* Beta Benefits */}
-            <div className="flex flex-col space-y-3 md:space-y-4 mb-8 md:mb-10">
+            <div className="flex flex-col space-y-2 md:space-y-3 mb-6 md:mb-8">
               <div className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-white/80 rounded-xl border border-gray-200">
                 <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--atd-accent))] flex-shrink-0" />
                 <span className="font-semibold text-enhanced text-sm md:text-base mobile-text-readable">Early access to all features</span>
