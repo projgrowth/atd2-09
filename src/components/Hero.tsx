@@ -35,11 +35,11 @@ const Hero = () => {
 
       <div className="container-standard relative z-10">
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
           {/* Left side - Text content (50%) */}
           <div className="text-center lg:text-left">
             {/* Problem Statement */}
-            <div className="mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+            <div className="mb-2 sm:mb-3 md:mb-4 animate-fade-in-up">
               <span className="inline-block bg-atd-error/10 text-atd-error py-1.5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20" style={{ paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>
                 Managing home projects shouldn't be chaotic
               </span>
@@ -49,17 +49,17 @@ const Hero = () => {
             <h1 className="heading-primary animate-fade-in-up leading-tight"
                 style={{ animationDelay: '0.05s' }}>
               {heroContent.headline}
-              <span className="text-gradient block mt-1 sm:mt-2 md:mt-3">{heroContent.subHeadline}</span>
+              <span className="text-gradient block mt-0.5 sm:mt-1 md:mt-2">{heroContent.subHeadline}</span>
             </h1>
 
             {/* Static Subheadline */}
-            <p className="text-body-large max-w-3xl mx-auto lg:mx-0 mb-4 sm:mb-6 md:mb-8 animate-fade-in-up leading-relaxed"
+            <p className="text-body-large max-w-3xl mx-auto lg:mx-0 mb-3 sm:mb-4 md:mb-5 animate-fade-in-up leading-relaxed"
                style={{ animationDelay: '0.15s' }}>
               {heroContent.description}
             </p>
 
             {/* Single CTA */}
-            <div className="flex justify-center lg:justify-start mb-6 sm:mb-8 md:mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex justify-center lg:justify-start mb-4 sm:mb-5 md:mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
                 className="w-full sm:w-auto"
@@ -72,7 +72,7 @@ const Hero = () => {
 
           {/* Right side - Interactive Showcase (50%) */}
           <div className="flex flex-col items-center lg:items-end">
-            <div className="w-full space-y-3">
+            <div className="w-full space-y-2">
               {/* View Toggle */}
               <HeroToggle 
                 viewType={viewType}
@@ -101,7 +101,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="bg-atd-surface/80 p-2 md:p-3 rounded-full shadow-lg">
             <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-enhanced" />
           </div>
