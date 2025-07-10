@@ -34,7 +34,7 @@ const SocialProof = () => {
               A New Vision for Home Management
             </h3>
             
-            <p className="text-lg max-w-2xl mx-auto font-semibold text-muted-enhanced leading-relaxed">
+            <p className="text-body-lg max-w-2xl mx-auto font-semibold text-muted-enhanced leading-relaxed">
               Built for homeowners who want organization without losing control. Coming soon.
             </p>
           </div>
@@ -63,7 +63,7 @@ const SocialProof = () => {
           <div className="mt-20 sm:mt-24 lg:mt-28 max-w-4xl mx-auto">
             <div className="premium-card enhanced-card-hover card-padding-lg text-center">
               <h4 className="heading-3 mb-6 text-enhanced">Currently in Development</h4>
-              <p className="text-base text-muted-enhanced mb-8 leading-relaxed">
+              <p className="text-body text-muted-enhanced mb-8 leading-relaxed">
                 We're building ATD to solve real problems that homeowners face every day. 
                 No fake promises, no inflated numbers—just honest development toward a better solution.
               </p>
