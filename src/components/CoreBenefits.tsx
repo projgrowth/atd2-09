@@ -10,7 +10,7 @@ const CoreBenefits = () => {
         <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg p-4 md:p-6 border border-blue-100">
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0 mb-3">
             <div className="flex items-center space-x-2">
-              <Users className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-primary))]" />
+              <Users className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
               <span className="text-sm md:text-base font-medium">Your Provider Network</span>
             </div>
             <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs md:text-sm font-medium w-fit">
@@ -18,7 +18,7 @@ const CoreBenefits = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px] touch-target">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px]">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm md:text-base text-white font-bold">TH</span>
@@ -29,7 +29,7 @@ const CoreBenefits = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px] touch-target">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100 min-h-[60px]">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm md:text-base text-white font-bold">MC</span>
@@ -52,7 +52,7 @@ const CoreBenefits = () => {
         <div className="bg-gradient-to-br from-green-50 to-white rounded-lg p-4 md:p-6 border border-green-100">
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0 mb-3">
             <div className="flex items-center space-x-2">
-              <Activity className="h-4 w-4 md:h-5 md:w-5 text-[hsl(var(--atd-accent))]" />
+              <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
               <span className="text-sm md:text-base font-medium">Live Tracking</span>
             </div>
             <div className="flex items-center space-x-1 w-fit">
@@ -167,37 +167,37 @@ const CoreBenefits = () => {
   ];
 
   return (
-    <section className="section section-bg-content section-separator">
-      <div className="container-app">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="heading-2 mb-6 text-enhanced">
+    <section className="py-16 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Everything You Need to Take Control
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-enhanced leading-relaxed">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
             Built for real homes, real people, and real peace of mind. Your trusted providers, organized effortlessly.
           </p>
         </div>
 
-        <div className="grid-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="group animate-fade-in-up"
+              className="group animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
              >
-              <div className="card hover-lift h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[500px]">
+              <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[500px]">
                 <div className="flex flex-col lg:flex-row lg:items-start space-y-6 lg:space-y-0 lg:space-x-8 h-full">
                   <div className="flex-shrink-0 text-center lg:text-left">
-                    <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0 shadow-subtle">
-                      <benefit.icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[hsl(var(--atd-primary))]" />
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0 shadow-sm">
+                      <benefit.icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-blue-600" />
                     </div>
                   </div>
                   
                   <div className="flex-1 text-center lg:text-left">
-                    <h3 className="heading-3 mb-4 text-enhanced leading-tight">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 text-gray-900 leading-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-base md:text-lg leading-relaxed text-muted-enhanced mb-6">
+                    <p className="text-base md:text-lg leading-relaxed text-gray-600 mb-6">
                       {benefit.description}
                     </p>
                     
