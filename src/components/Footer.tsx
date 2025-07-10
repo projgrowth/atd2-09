@@ -26,10 +26,10 @@ const Footer = () => {
               {/* Enhanced Logo */}
               <div className="flex items-center space-x-4">
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-3 rounded-2xl shadow-xl">
+                  <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-3 rounded-2xl shadow-xl">
                     <Home className="h-8 w-8 text-white" />
                   </div>
-                  <div className="absolute -inset-1 bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] rounded-2xl blur opacity-30"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl blur opacity-30"></div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white">All Things Done</div>
@@ -46,7 +46,7 @@ const Footer = () => {
               {/* Social Media Coming Soon */}
               <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                 <p className="text-white/70 text-sm font-medium">
-                  Social Media - <span className="text-[hsl(var(--atd-primary))]">Coming Soon</span>
+                  Social Media - <span className="text-blue-600">Coming Soon</span>
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                       className="group text-white/70 hover:text-white font-medium transition-all duration-300 relative min-h-[48px] py-2"
                     >
                       {link.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   ))}
                 </nav>

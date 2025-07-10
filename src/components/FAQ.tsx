@@ -52,9 +52,9 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-white rounded-xl border-2 border-gray-200 hover:border-atd-primary/20 transition-all duration-300 hover:shadow-lg"
+                className="bg-white rounded-xl border-2 border-gray-200 hover:border-blue-200 transition-all duration-300 hover:shadow-lg"
               >
-                <AccordionTrigger className="text-left font-bold text-base sm:text-lg lg:text-xl hover:text-[hsl(var(--atd-primary))] py-6 sm:py-8 px-6 sm:px-8 text-gray-900 transition-colors duration-200">
+                <AccordionTrigger className="text-left font-bold text-base sm:text-lg lg:text-xl hover:text-blue-600 py-6 sm:py-8 px-6 sm:px-8 text-gray-900 transition-colors duration-200">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="leading-relaxed pb-6 sm:pb-8 px-6 sm:px-8 text-sm sm:text-base lg:text-lg font-semibold text-gray-600">

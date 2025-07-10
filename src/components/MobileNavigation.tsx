@@ -37,7 +37,7 @@ const MobileNavigation = () => {
           <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))] to-[hsl(var(--atd-accent))] p-2 rounded-lg">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-lg">
               <Home className="h-5 w-5 text-white" />
             </div>
             <span className="text-lg font-bold text-[hsl(var(--atd-text))]">ATD</span>
@@ -88,7 +88,7 @@ const MobileNavigation = () => {
                   onClick={() => handleNavClick(item.href, item.external)}
                   className="w-full flex items-center space-x-4 px-4 py-4 text-left text-[hsl(var(--atd-text))] hover:bg-gray-50 rounded-xl transition-colors duration-200 min-h-[52px] group"
                 >
-                  <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/10 to-[hsl(var(--atd-accent))]/10 p-2 rounded-lg group-hover:scale-105 transition-transform duration-200">
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-2 rounded-lg group-hover:scale-105 transition-transform duration-200">
                     <item.icon className="h-5 w-5 text-[hsl(var(--atd-primary))]" />
                   </div>
                   <span className="font-medium text-lg">{item.name}</span>

@@ -115,7 +115,7 @@ const InteractiveDemoContent = () => {
                     key={demoKey}
                     className={cn(
                       "w-2 h-2 rounded-full transition-colors",
-                      demoProgress.includes(demoKey) ? "bg-[hsl(var(--atd-primary))]" : "bg-gray-300"
+                      demoProgress.includes(demoKey) ? "bg-blue-600" : "bg-gray-300"
                     )}
                   />
                 ))}
@@ -142,7 +142,7 @@ const InteractiveDemoContent = () => {
                       "min-h-[52px] transition-all duration-200 font-semibold",
                       activeDemo === key && "animate-mobile-scale-in",
                       activeDemo !== key && "",
-                      demoProgress.includes(key) && "ring-1 ring-[hsl(var(--atd-primary))]/30",
+                      demoProgress.includes(key) && "ring-1 ring-blue-600/30",
                       isTransitioning && "opacity-50 cursor-not-allowed"
                     )}
                   >

@@ -1,4 +1,3 @@
-
 import { ArrowRight, Clock, DollarSign, Users, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -48,10 +47,10 @@ const CaseStudies = () => {
     <section className="py-16 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[hsl(var(--atd-text))] mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Real Stories, Real Results
           </h2>
-          <p className="text-xl text-[hsl(var(--atd-text-muted))] max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             See how ATD is transforming home management for families and service providers
           </p>
         </div>
@@ -74,7 +73,7 @@ const CaseStudies = () => {
                     className="rounded-2xl shadow-xl w-full h-80 object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[hsl(var(--atd-primary))] text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {caseStudy.category}
                     </span>
                   </div>
@@ -85,34 +84,34 @@ const CaseStudies = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-[hsl(var(--atd-text))] mb-2">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
                       {caseStudy.title}
                     </h3>
-                    <p className="text-lg text-[hsl(var(--atd-primary))] font-medium">
+                    <p className="text-lg text-blue-600 font-medium">
                       {caseStudy.subtitle}
                     </p>
                   </div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-[hsl(var(--atd-text))] mb-2">The Challenge</h4>
-                      <p className="text-[hsl(var(--atd-text-muted))]">{caseStudy.challenge}</p>
+                      <h4 className="font-semibold text-gray-900 mb-2">The Challenge</h4>
+                      <p className="text-gray-600">{caseStudy.challenge}</p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-[hsl(var(--atd-text))] mb-2">The ATD Solution</h4>
-                      <p className="text-[hsl(var(--atd-text-muted))]">{caseStudy.solution}</p>
+                      <h4 className="font-semibold text-gray-900 mb-2">The ATD Solution</h4>
+                      <p className="text-gray-600">{caseStudy.solution}</p>
                     </div>
                   </div>
 
                   {/* Results */}
                   <div>
-                    <h4 className="font-semibold text-[hsl(var(--atd-text))] mb-3">Results Achieved</h4>
+                    <h4 className="font-semibold text-gray-900 mb-3">Results Achieved</h4>
                     <div className="grid gap-2">
                       {caseStudy.results.map((result, i) => (
                         <div key={i} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-[hsl(var(--atd-accent))] flex-shrink-0" />
-                          <span className="text-[hsl(var(--atd-text-muted))]">{result}</span>
+                          <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                          <span className="text-gray-600">{result}</span>
                         </div>
                       ))}
                     </div>
@@ -122,8 +121,8 @@ const CaseStudies = () => {
                   <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                     {Object.entries(caseStudy.metrics).map(([key, value]) => (
                       <div key={key} className="text-center">
-                        <div className="font-bold text-[hsl(var(--atd-primary))]">{value}</div>
-                        <div className="text-xs text-[hsl(var(--atd-text-muted))] capitalize">
+                        <div className="font-bold text-blue-600">{value}</div>
+                        <div className="text-xs text-gray-600 capitalize">
                           {key.replace(/([A-Z])/g, ' $1').trim()}
                         </div>
                       </div>
@@ -138,7 +137,7 @@ const CaseStudies = () => {
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <Button 
             size="lg"
-            className="bg-[hsl(var(--atd-primary))] hover:bg-[hsl(var(--atd-primary))]/90 text-white py-4 rounded-full font-semibold"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-full font-semibold"
             style={{ paddingLeft: '2rem', paddingRight: '2rem' }}
             onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
           >
