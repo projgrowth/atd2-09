@@ -94,43 +94,25 @@
     --shadow-medium: 0 2px 8px -2px rgb(0 0 0 / 0.06), 0 1px 3px -1px rgb(0 0 0 / 0.03);
     --shadow-elevated: 0 8px 25px -5px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.05);
     
-  /* Global Spacing System Variables */
-  --spacing-xs: 0.25rem;  /* 4px */
-  --spacing-sm: 0.5rem;   /* 8px */
-  --spacing-md: 1rem;     /* 16px */
-  --spacing-lg: 1.5rem;   /* 24px */
-  --spacing-xl: 2rem;     /* 32px */
-  --spacing-2xl: 2.5rem;  /* 40px */
-  --spacing-3xl: 3rem;    /* 48px */
-  --spacing-4xl: 4rem;    /* 64px */
-  --spacing-5xl: 5rem;    /* 80px */
+  /* ===== UNIFIED SPACING SYSTEM ===== */
+  /* Base spacing scale - mobile-first */
+  --space-1: 0.25rem;   /* 4px  - tiny */
+  --space-2: 0.5rem;    /* 8px  - xs */
+  --space-3: 0.75rem;   /* 12px - sm */
+  --space-4: 1rem;      /* 16px - base */
+  --space-5: 1.25rem;   /* 20px - md */
+  --space-6: 1.5rem;    /* 24px - lg */
+  --space-8: 2rem;      /* 32px - xl */
+  --space-10: 2.5rem;   /* 40px - 2xl */
+  --space-12: 3rem;     /* 48px - 3xl */
+  --space-16: 4rem;     /* 64px - 4xl */
+  --space-20: 5rem;     /* 80px - 5xl */
+  --space-24: 6rem;     /* 96px - 6xl */
   
-  /* Enhanced Spacing System */
-  --spacing-mobile-xs: 0.5rem;
-  --spacing-mobile-sm: 1rem;
-  --spacing-mobile-md: 1.5rem;
-  --spacing-mobile-lg: 2rem;
-  --spacing-mobile-xl: 3rem;
-  --spacing-mobile-2xl: 4rem;
-  --spacing-section-xs: 4rem;
-  --spacing-section-sm: 6rem;
-  --spacing-section-md: 8rem;
-  --spacing-section-lg: 10rem;
-  --spacing-section-xl: 12rem;
-  
-  /* Premium Spacing Tiers */
-  --spacing-premium-xs: 0.75rem;   /* 12px */
-  --spacing-premium-sm: 1.25rem;   /* 20px */
-  --spacing-premium-md: 2rem;      /* 32px */
-  --spacing-premium-lg: 3rem;      /* 48px */
-  --spacing-premium-xl: 4rem;      /* 64px */
-  --spacing-premium-2xl: 6rem;     /* 96px */
-  
-  /* Responsive Grid Gaps */
-  --gap-mobile: 1rem;
-  --gap-tablet: 1.5rem;
-  --gap-desktop: 2rem;
-  --gap-premium: 3rem;
+  /* Semantic spacing aliases */
+  --space-section: var(--space-16);    /* 64px */
+  --space-component: var(--space-6);   /* 24px */
+  --space-element: var(--space-4);     /* 16px */
     
     /* Premium Visual Elements */
     --atd-border: hsl(var(--atd-neutral-200));
@@ -255,105 +237,59 @@
     transform: translateY(-2px) scale(1.01);
   }
   
-  /* Enhanced Section Spacing - Vertical Only */
-  .section-spacing {
-    @apply py-16 sm:py-20 lg:py-24;
+  /* ===== UNIFIED LAYOUT SYSTEM ===== */
+  
+  /* Section spacing - consistent vertical rhythm */
+  .section {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
   }
   
-  .section-spacing-compact {
-    @apply py-12 sm:py-16 lg:py-20;
+  .section-compact {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
   }
   
-  .section-spacing-large {
-    @apply py-20 sm:py-28 lg:py-32;
+  /* Container system - single source of truth */
+  .container-app {
+    @apply container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  .section-spacing-xl {
-    @apply py-24 sm:py-32 lg:py-40;
-  }
-
-  /* Override-Safe Container Utilities */
-  .container-force {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 !important;
-  }
-
-  /* Unified Container System */
-  .container-standard {
-    @apply container max-w-6xl mx-auto px-3 sm:px-4 lg:px-6;
+  /* Grid system - simplified and consistent */
+  .grid-responsive {
+    @apply grid gap-6 sm:gap-8;
   }
   
-  .container-wide {
-    @apply container max-w-7xl mx-auto px-3 sm:px-4 lg:px-6;
+  .grid-2 {
+    @apply grid-responsive grid-cols-1 lg:grid-cols-2;
   }
   
-  .container-narrow {
-    @apply container max-w-4xl mx-auto px-3 sm:px-4 lg:px-6;
+  .grid-3 {
+    @apply grid-responsive grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
   }
   
-  .container-text {
-    @apply container max-w-3xl mx-auto px-3 sm:px-4 lg:px-6;
+  .grid-4 {
+    @apply grid-responsive grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
   }
   
-  /* Enhanced Mobile-First Grid System */
-  .grid-mobile-responsive {
-    @apply grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-6;
+  /* Card system - one consistent design */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-subtle);
+    padding: var(--space-6);
+    transition: all 0.2s ease-out;
   }
   
-  .grid-responsive-2 {
-    @apply grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2 lg:gap-6;
+  .card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
   }
   
-  .grid-responsive-4 {
-    @apply grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-6;
-  }
-  
-  /* Enhanced Card Padding System */
-  .card-padding {
-    @apply p-4 sm:p-6 lg:p-8;
-  }
-  
-  .card-padding-sm {
-    @apply p-3 sm:p-4 lg:p-6;
-  }
-  
-  .card-padding-lg {
-    @apply p-6 sm:p-8 lg:p-10;
-  }
-  
-  .card-padding-xl {
-    @apply p-8 sm:p-10 lg:p-12;
-  }
-  
-  /* Premium Grid System */
-  .grid-premium-responsive {
-    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10 xl:gap-12;
-  }
-  
-  .grid-premium-2 {
-    @apply grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12;
-  }
-  
-  .grid-premium-4 {
-    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-10 xl:gap-12;
-  }
-  
-  /* Feature Card Spacing */
-  .feature-spacing {
-    @apply space-y-4 sm:space-y-6 md:space-y-8;
-  }
-  
-  /* Section Header Spacing */
-  .section-header {
-    @apply mb-12 sm:mb-16 lg:mb-20 xl:mb-24;
-  }
-  
-  /* Touch Target Optimization */
+  /* Touch targets - accessibility first */
   .touch-target {
     @apply min-h-[48px] min-w-[48px];
-  }
-  
-  .touch-target-lg {
-    @apply min-h-[56px] min-w-[56px];
   }
   
   /* Section Background System */
@@ -496,175 +432,68 @@
     color: hsl(var(--atd-text-muted-enhanced));
   }
   
-  /* Enhanced Heading Classes */
-  .heading-primary {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
-    font-family: "Space Grotesk", sans-serif;
-    letter-spacing: -0.025em;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.2;
-  }
+  /* ===== UNIFIED TYPOGRAPHY SYSTEM ===== */
   
-  .heading-secondary {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  /* Heading scale - consistent and responsive */
+  .heading-1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl;
     font-family: "Space Grotesk", sans-serif;
-    letter-spacing: -0.025em;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.3;
-  }
-  
-  .heading-tertiary {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold;
-    font-family: "Space Grotesk", sans-serif;
-    letter-spacing: -0.025em;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.3;
-  }
-  
-  /* Additional Heading Classes */
-  .heading-quaternary {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold;
-    font-family: "Space Grotesk", sans-serif;
-    letter-spacing: -0.025em;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.3;
-  }
-  
-  .heading-small {
-    @apply text-base sm:text-lg md:text-xl lg:text-2xl font-bold;
-    font-family: "Space Grotesk", sans-serif;
-    letter-spacing: -0.025em;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.3;
-  }
-  
-  /* Premium Hero & Display Typography */
-  .text-hero {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
     font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.9;
-    font-family: "Space Grotesk", sans-serif;
-    color: hsl(var(--atd-text-enhanced));
-  }
-
-  .text-display {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     line-height: 1.1;
-    font-family: "Space Grotesk", sans-serif;
     color: hsl(var(--atd-text-enhanced));
   }
   
-  
-  /* Optical Spacing Adjustments */
-  .optical-spacing-tight { 
-    letter-spacing: -0.02em; 
-  }
-  
-  .optical-spacing-loose { 
-    letter-spacing: 0.01em; 
-  }
-
-  /* Content-Aware Margins */
-  .content-spacing-optimal {
-    @apply space-y-6 sm:space-y-8 lg:space-y-12;
-  }
-  
-  /* Enhanced Text Size Classes with Mobile-First Typography */
-  .text-body-large {
-    @apply text-lg sm:text-xl lg:text-2xl;
-    font-weight: 500;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.6;
-  }
-  
-  .text-body {
-    @apply text-base sm:text-lg lg:text-xl;
-    font-weight: 500;
-    color: hsl(var(--atd-text-enhanced));
-    line-height: 1.6;
-  }
-  
-  .text-body-small {
-    @apply text-sm sm:text-base lg:text-lg;
-    font-weight: 500;
-    color: hsl(var(--atd-text-muted-enhanced));
-    line-height: 1.6;
-  }
-  
-  .text-caption {
-    @apply text-xs sm:text-sm lg:text-base;
-    font-weight: 500;
-    color: hsl(var(--atd-text-muted-enhanced));
-    line-height: 1.5;
-  }
-  
-  /* Mobile-Optimized Text */
-  .mobile-text-readable {
-    @apply text-sm sm:text-base lg:text-lg;
-    line-height: 1.7;
-    letter-spacing: 0.01em;
-  }
-  
-  /* Enhanced Font Weight Classes */
-  .font-display {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
-  }
-  
-  .font-heading {
+  .heading-2 {
+    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: hsl(var(--atd-text-enhanced));
   }
   
-  .font-body-bold {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
+  .heading-3 {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    color: hsl(var(--atd-text-enhanced));
   }
   
-  .font-body-medium {
-    font-family: "Inter", sans-serif;
+  /* Body text scale */
+  .text-lg {
+    @apply text-lg sm:text-xl;
     font-weight: 500;
+    line-height: 1.6;
+    color: hsl(var(--atd-text-enhanced));
   }
   
-  .font-body {
-    font-family: "Inter", sans-serif;
+  .text-base {
+    @apply text-base sm:text-lg;
     font-weight: 400;
+    line-height: 1.6;
+    color: hsl(var(--atd-text-enhanced));
   }
   
-  /* Enhanced Animation Classes */
-  .enhanced-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .text-sm {
+    @apply text-sm sm:text-base;
+    font-weight: 400;
+    line-height: 1.5;
+    color: hsl(var(--atd-text-muted-enhanced));
   }
   
-  .enhanced-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-elevated);
+  /* ===== UTILITIES & INTERACTIONS ===== */
+  
+  /* Smooth transitions - subtle and performant */
+  .transition-smooth {
+    transition: all 0.2s ease-out;
   }
   
-  /* Mobile Touch Targets */
-  .touch-target {
-    @apply min-h-[48px] min-w-[48px];
-  }
-  
-  /* Enhanced Grid System with Better Gaps */
-  .grid-airy {
-    @apply grid gap-6 sm:gap-8 lg:gap-10;
-  }
-  
-  .grid-airy-compact {
-    @apply grid gap-4 sm:gap-6 lg:gap-8;
-  }
-  
-  /* Smooth Transitions for Layout Shifts */
-  .transition-layout {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .transition-layout-fast {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  .hover-lift:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
   }
 }
 
