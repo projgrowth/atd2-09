@@ -35,34 +35,34 @@ const Hero = () => {
 
       <div className="container-standard relative z-10">
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center transition-all duration-300">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-center transition-all duration-300">
           {/* Left side - Text content (50%) */}
           <div className="text-center lg:text-left">
             {/* Problem Statement */}
-            <div className="mb-2 sm:mb-3 md:mb-4 animate-fade-in-up">
-              <span className="inline-block bg-atd-error/10 text-atd-error py-1.5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20" style={{ paddingLeft: '0.75rem', paddingRight: '0.75rem' }}>
+            <div className="mb-4 sm:mb-5 md:mb-6 animate-fade-in-up">
+              <span className="inline-block bg-atd-error/10 text-atd-error py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base font-bold border border-atd-error/20" style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
                 Managing home projects shouldn't be chaotic
               </span>
             </div>
 
             {/* Static Headlines */}
-            <h1 className="heading-primary animate-fade-in-up leading-tight"
+            <h1 className="heading-primary animate-fade-in-up leading-tight mb-4 sm:mb-5 md:mb-6"
                 style={{ animationDelay: '0.05s' }}>
               {heroContent.headline}
-              <span className="text-gradient block mt-0.5 sm:mt-1 md:mt-2">{heroContent.subHeadline}</span>
+              <span className="text-gradient block mt-1 sm:mt-1.5 md:mt-2">{heroContent.subHeadline}</span>
             </h1>
 
             {/* Static Subheadline */}
-            <p className="text-body-large max-w-3xl mx-auto lg:mx-0 mb-3 sm:mb-4 md:mb-5 animate-fade-in-up leading-relaxed"
+            <p className="text-body-large max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8 animate-fade-in-up leading-relaxed"
                style={{ animationDelay: '0.15s' }}>
               {heroContent.description}
             </p>
 
             {/* Single CTA */}
-            <div className="flex justify-center lg:justify-start mb-4 sm:mb-5 md:mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex justify-center lg:justify-start mb-6 sm:mb-8 md:mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto min-h-[48px] px-8"
                 onClick={() => document.getElementById('enhanced-demo')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works
@@ -72,7 +72,7 @@ const Hero = () => {
 
           {/* Right side - Interactive Showcase (50%) */}
           <div className="flex flex-col items-center lg:items-end">
-            <div className="w-full space-y-4 sm:space-y-6">
+            <div className="w-full space-y-6 sm:space-y-8 md:space-y-10">
               {/* View Toggle */}
               <HeroToggle 
                 viewType={viewType}
@@ -82,10 +82,10 @@ const Hero = () => {
 
               {/* Screen Content */}
               <div className={cn(
-                "animate-fade-in-up transition-all duration-500",
+                "animate-fade-in-up transition-all duration-500 will-change-transform",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="premium-card-elevated rounded-2xl overflow-hidden">
+                <div className="premium-card-elevated rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[360px]">
                   {currentView.content}
                 </div>
               </div>
