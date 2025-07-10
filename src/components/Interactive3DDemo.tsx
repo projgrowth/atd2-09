@@ -17,29 +17,28 @@ const Interactive3DDemo = () => {
   };
 
   return (
-    <section className="section-spacing-compact section-bg-elevated section-divider">
-      <div className="container-standard" id="interactive-demo">
+    <section className="py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="interactive-demo">
         {/* Story Bridge */}
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-block bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 border border-primary/20">
             See It In Action
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Two Perspectives, One Platform
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced mb-8">
+          <p className="text-xl max-w-3xl mx-auto font-semibold text-gray-600 mb-8">
             Experience how ATD works from both sides - homeowners get complete control, providers get streamlined workflows.
           </p>
           
           {/* View Toggle */}
           <div className="flex justify-center mb-12">
-            <div className="card-base p-2 flex gap-2">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-2 flex gap-2">
               <Button
                 variant={activeView === 'homeowner' ? 'default' : 'outline'}
                 onClick={() => handleViewChange('homeowner')}
                 className={cn(
-                  "px-8 py-4 font-semibold transition-all duration-300",
-                  activeView === 'homeowner' ? "premium-button" : "button-secondary-enhanced"
+                  "px-8 py-4 font-semibold transition-all duration-300"
                 )}
               >
                 <Monitor className="h-5 w-5 mr-2" />
@@ -49,8 +48,7 @@ const Interactive3DDemo = () => {
                 variant={activeView === 'provider' ? 'default' : 'outline'}
                 onClick={() => handleViewChange('provider')}
                 className={cn(
-                  "px-8 py-4 font-semibold transition-all duration-300",
-                  activeView === 'provider' ? "premium-button" : "button-secondary-enhanced"
+                  "px-8 py-4 font-semibold transition-all duration-300"
                 )}
               >
                 <Smartphone className="h-5 w-5 mr-2" />
@@ -90,7 +88,7 @@ const Interactive3DDemo = () => {
                     {/* Dashboard Content */}
                     <div className="bg-white p-8 min-h-[420px]">
                       <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-3xl font-bold text-enhanced">Property Dashboard</h3>
+                        <h3 className="text-3xl font-bold text-gray-900">Property Dashboard</h3>
                         <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">
                           3 Active Projects
                         </div>
@@ -109,8 +107,8 @@ const Interactive3DDemo = () => {
                                 <div className={`w-6 h-6 rounded-full bg-${item.color}-500`}></div>
                               </div>
                               <div>
-                                <h4 className="font-bold text-lg text-enhanced">{item.job}</h4>
-                                <p className="text-muted-enhanced">{item.provider}</p>
+                                <h4 className="font-bold text-lg text-gray-900">{item.job}</h4>
+                                <p className="text-gray-600">{item.provider}</p>
                               </div>
                             </div>
                             <div className="text-right space-y-2">
@@ -139,12 +137,12 @@ const Interactive3DDemo = () => {
                 {/* Enhanced Floating Features */}
                 <div className="absolute -right-12 top-12 realistic-glass rounded-2xl p-4 animate-float border border-blue-200/50 backdrop-blur-sm">
                   <div className="text-sm font-bold text-primary mb-1">⚡ Real-Time Sync</div>
-                  <div className="text-xs text-muted-enhanced">Instant updates</div>
+                  <div className="text-xs text-gray-600">Instant updates</div>
                 </div>
                 
                 <div className="absolute -left-12 bottom-20 realistic-glass rounded-2xl p-4 animate-float border border-green-200/50 backdrop-blur-sm" style={{ animationDelay: '1.5s' }}>
                   <div className="text-sm font-bold text-accent mb-1">🔒 Secure Escrow</div>
-                  <div className="text-xs text-muted-enhanced">Protected payments</div>
+                  <div className="text-xs text-gray-600">Protected payments</div>
                 </div>
               </div>
             </div>
@@ -173,7 +171,7 @@ const Interactive3DDemo = () => {
                       {/* Enhanced Mobile Content */}
                       <div className="bg-white p-6 min-h-[560px]">
                         <div className="text-center mb-8">
-                          <h3 className="text-2xl font-bold text-enhanced mb-3">Today's Schedule</h3>
+                          <h3 className="text-2xl font-bold text-gray-900 mb-3">Today's Schedule</h3>
                           <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                             2 Jobs Active
                           </div>
@@ -187,14 +185,14 @@ const Interactive3DDemo = () => {
                           ].map((item, index) => (
                             <div key={index} className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-4 border-l-4 border-primary">
                               <div className="flex items-center justify-between mb-3">
-                                <h4 className="font-bold text-enhanced">{item.job}</h4>
+                                <h4 className="font-bold text-gray-900">{item.job}</h4>
                                 <div className={cn(
                                   "w-3 h-3 rounded-full",
                                   item.status === "active" && "bg-green-500 animate-pulse",
                                   item.status === "upcoming" && "bg-amber-500"
                                 )}></div>
                               </div>
-                              <p className="text-sm text-muted-enhanced mb-2">{item.address}</p>
+                              <p className="text-sm text-gray-600 mb-2">{item.address}</p>
                               <div className="flex items-center justify-between">
                                 <span className="text-sm font-bold text-primary">{item.time}</span>
                                 <Button size="sm" className="bg-primary hover:bg-primary-dark text-white text-xs px-4 py-2 rounded-full">
@@ -227,12 +225,12 @@ const Interactive3DDemo = () => {
                   {/* Enhanced Floating Features */}
                   <div className="absolute -right-16 top-16 realistic-glass rounded-2xl p-3 animate-float border border-green-200/50">
                     <div className="text-sm font-bold text-accent mb-1">📱 One-Tap</div>
-                    <div className="text-xs text-muted-enhanced">Instant updates</div>
+                    <div className="text-xs text-gray-600">Instant updates</div>
                   </div>
                   
                   <div className="absolute -left-16 bottom-24 realistic-glass rounded-2xl p-3 animate-float border border-blue-200/50" style={{ animationDelay: '2s' }}>
                     <div className="text-sm font-bold text-primary mb-1">💰 Fast Pay</div>
-                    <div className="text-xs text-muted-enhanced">On completion</div>
+                    <div className="text-xs text-gray-600">On completion</div>
                   </div>
                 </div>
               </div>
@@ -248,10 +246,10 @@ const Interactive3DDemo = () => {
               { title: "Real-Time Sync", desc: "Updates flow seamlessly between platforms", icon: "⚡" },
               { title: "Two-Way Ratings", desc: "Accountability for both parties", icon: "⭐" }
             ].map((feature, index) => (
-              <div key={index} className="card-base card-padding text-center hover:scale-105 transition-transform duration-200">
+              <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:scale-105 transition-transform duration-200">
                 <div className="text-3xl mb-3">{feature.icon}</div>
-                <h4 className="font-bold text-lg mb-2 text-enhanced">{feature.title}</h4>
-                <p className="text-sm font-semibold text-muted-enhanced">{feature.desc}</p>
+                <h4 className="font-bold text-lg mb-2 text-gray-900">{feature.title}</h4>
+                <p className="text-sm font-semibold text-gray-600">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -259,18 +257,18 @@ const Interactive3DDemo = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="card-enhanced p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4 text-enhanced">
+          <div className="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg border border-gray-200 p-8 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">
               Ready to Experience ATD?
             </h3>
-            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-muted-enhanced">
+            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-gray-600">
               This demo shows just a glimpse. Join our beta to get full access and help shape the future of home management.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 size="lg" 
-                className="premium-button px-10 w-full sm:w-auto text-lg py-6"
+                className="px-10 w-full sm:w-auto text-lg py-6"
                 onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
               >
                 Join Beta Program
@@ -278,7 +276,7 @@ const Interactive3DDemo = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="button-secondary-enhanced px-10 w-full sm:w-auto text-lg py-6"
+                className="px-10 w-full sm:w-auto text-lg py-6"
                 onClick={() => window.open('https://forms.gle/8rKm3xNz5tB9YdAk7', '_blank')}
               >
                 Apply as Provider

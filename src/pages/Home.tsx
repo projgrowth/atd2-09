@@ -28,18 +28,18 @@ const Home = () => {
       <SocialProofTeaser />
       
       {/* Final CTA Section */}
-      <section className="section-spacing-compact section-bg-premium section-divider">
-        <div className="container-standard text-center">
-          <h2 className="heading-secondary mb-6 text-enhanced">
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Transform Your Home Management Today
           </h2>
-          <p className="text-body-large mb-8 mobile-text-readable">
+          <p className="text-lg md:text-xl mb-8 text-gray-600">
             Experience the complete ATD platform and join our growing community of satisfied homeowners.
           </p>
           
           <div className="flex justify-center">
             <Link to="/join-beta">
-              <Button size="lg" className="touch-target">
+              <Button size="lg" className="min-h-[48px] px-8 py-4">
                 Join Beta Program
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>

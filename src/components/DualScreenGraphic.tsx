@@ -24,13 +24,12 @@ const DualScreenGraphic = () => {
     <div className="w-full max-w-6xl mx-auto">
       {/* Toggle Controls */}
       <div className="flex justify-center mb-8">
-        <div className="card-base p-2 flex gap-2">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-2 flex gap-2">
           <Button
             variant={activeView === 'user' ? 'default' : 'outline'}
             onClick={() => setActiveView('user')}
             className={cn(
-              "px-6 py-3 font-semibold transition-all duration-300",
-              activeView === 'user' ? "premium-button" : "button-secondary-enhanced"
+              "px-6 py-3 font-semibold transition-all duration-300"
             )}
           >
             Homeowner View
@@ -39,8 +38,7 @@ const DualScreenGraphic = () => {
             variant={activeView === 'provider' ? 'default' : 'outline'}
             onClick={() => setActiveView('provider')}
             className={cn(
-              "px-6 py-3 font-semibold transition-all duration-300",
-              activeView === 'provider' ? "premium-button" : "button-secondary-enhanced"
+              "px-6 py-3 font-semibold transition-all duration-300"
             )}
           >
             Provider View
@@ -56,19 +54,19 @@ const DualScreenGraphic = () => {
           activeView === 'user' ? "opacity-100 scale-100" : "opacity-60 scale-95"
         )}>
           <div className="text-center lg:text-left">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-3 text-enhanced">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-3 text-gray-900">
               Homeowner Experience
             </h3>
-            <p className="text-lg font-semibold text-muted-enhanced">
+            <p className="text-lg font-semibold text-gray-600">
               Complete control and transparency
             </p>
           </div>
 
           {/* Mock Dashboard */}
-          <div className="card-base card-padding bg-gradient-to-br from-blue-50 to-white border-2">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 bg-gradient-to-br from-blue-50 to-white border-2">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h4 className="font-bold text-lg text-enhanced">Active Jobs</h4>
+                <h4 className="font-bold text-lg text-gray-900">Active Jobs</h4>
                 <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
                   2 in progress
                 </div>
@@ -82,8 +80,8 @@ const DualScreenGraphic = () => {
                       <IconComponent className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-enhanced">{feature.title}</div>
-                      <div className="text-sm text-muted-enhanced">{feature.desc}</div>
+                      <div className="font-semibold text-gray-900">{feature.title}</div>
+                      <div className="text-sm text-gray-600">{feature.desc}</div>
                     </div>
                   </div>
                 );
@@ -93,9 +91,9 @@ const DualScreenGraphic = () => {
 
           {/* QR Code Demo */}
           <div className="text-center">
-            <div className="inline-block card-base p-4">
+            <div className="inline-block bg-white rounded-xl shadow-sm border border-gray-200 p-4">
               <QrCode className="h-16 w-16 mx-auto mb-2 text-primary" />
-              <p className="text-sm font-semibold text-muted-enhanced">
+              <p className="text-sm font-semibold text-gray-600">
                 Scan to add provider instantly
               </p>
             </div>
@@ -108,19 +106,19 @@ const DualScreenGraphic = () => {
           activeView === 'provider' ? "opacity-100 scale-100" : "opacity-60 scale-95"
         )}>
           <div className="text-center lg:text-left">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-3 text-enhanced">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-3 text-gray-900">
               Provider Experience
             </h3>
-            <p className="text-lg font-semibold text-muted-enhanced">
+            <p className="text-lg font-semibold text-gray-600">
               Streamlined mobile workflow
             </p>
           </div>
 
           {/* Mock Mobile Interface */}
-          <div className="card-base card-padding bg-gradient-to-br from-green-50 to-white border-2">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 bg-gradient-to-br from-green-50 to-white border-2">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h4 className="font-bold text-lg text-enhanced">PocketOffice</h4>
+                <h4 className="font-bold text-lg text-gray-900">PocketOffice</h4>
                 <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                   Mobile Ready
                 </div>
@@ -134,8 +132,8 @@ const DualScreenGraphic = () => {
                       <IconComponent className="h-5 w-5 text-accent" />
                     </div>
                     <div>
-                      <div className="font-semibold text-enhanced">{feature.title}</div>
-                      <div className="text-sm text-muted-enhanced">{feature.desc}</div>
+                      <div className="font-semibold text-gray-900">{feature.title}</div>
+                      <div className="text-sm text-gray-600">{feature.desc}</div>
                     </div>
                   </div>
                 );
@@ -145,9 +143,9 @@ const DualScreenGraphic = () => {
 
           {/* Provider Badge */}
           <div className="text-center">
-            <div className="inline-block card-base p-4">
+            <div className="inline-block bg-white rounded-xl shadow-sm border border-gray-200 p-4">
               <Star className="h-16 w-16 mx-auto mb-2 text-accent" />
-              <p className="text-sm font-semibold text-muted-enhanced">
+              <p className="text-sm font-semibold text-gray-600">
                 Build reputation & get paid fast
               </p>
             </div>
@@ -157,9 +155,9 @@ const DualScreenGraphic = () => {
 
       {/* Bottom Summary */}
       <div className="text-center mt-12">
-        <div className="card-base card-padding max-w-3xl mx-auto">
-          <h4 className="text-xl font-bold mb-3 text-enhanced">One Platform, Two Perspectives</h4>
-          <p className="text-base font-semibold text-muted-enhanced">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 max-w-3xl mx-auto">
+          <h4 className="text-xl font-bold mb-3 text-gray-900">One Platform, Two Perspectives</h4>
+          <p className="text-base font-semibold text-gray-600">
             Seamless experience for homeowners and providers alike. QR code onboarding connects them instantly.
           </p>
         </div>

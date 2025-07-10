@@ -73,11 +73,11 @@ const InteractiveDemoContent = () => {
   };
 
   return (
-    <section className="section-spacing-compact section-bg-content section-separator">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up" id="interactive-demo">
           <div className="flex items-center justify-center mb-6 space-x-4">
-            <h2 className="text-4xl lg:text-5xl font-bold text-enhanced">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
               See It In Action
             </h2>
             <div className="flex items-center space-x-2">
@@ -101,7 +101,7 @@ const InteractiveDemoContent = () => {
               </Button>
             </div>
           </div>
-          <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced">
+          <p className="text-xl max-w-3xl mx-auto font-semibold text-gray-600">
             Experience ATD's dual-perspective platform with hands-on demos for homeowners and providers.
           </p>
           <div className="mt-4 flex justify-center">
@@ -140,8 +140,8 @@ const InteractiveDemoContent = () => {
                     className={cn(
                       "flex items-center space-x-3 py-4 text-sm mobile-interactive",
                       "min-h-[52px] transition-all duration-200 font-semibold",
-                      activeDemo === key && "animate-mobile-scale-in button-primary-enhanced",
-                      activeDemo !== key && "button-secondary-enhanced",
+                      activeDemo === key && "animate-mobile-scale-in",
+                      activeDemo !== key && "",
                       demoProgress.includes(key) && "ring-1 ring-[hsl(var(--atd-primary))]/30",
                       isTransitioning && "opacity-50 cursor-not-allowed"
                     )}
@@ -199,18 +199,18 @@ const InteractiveDemoContent = () => {
 
         {/* Bottom CTA - Enhanced with new form */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="card-enhanced p-8 sm:p-10 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4 text-enhanced">
+          <div className="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg border border-gray-200 p-8 sm:p-10 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">
               Ready to Experience ATD?
             </h3>
-            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-muted-enhanced">
+            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-gray-600">
               These demos show just a glimpse of what's possible. Join our beta to get full access and help shape the future of home management.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 size="lg" 
-                className="premium-button px-10 w-full sm:w-auto text-lg py-6"
+                className="px-10 w-full sm:w-auto text-lg py-6"
                 onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
               >
                 Join Beta Program
@@ -218,7 +218,7 @@ const InteractiveDemoContent = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="button-secondary-enhanced px-10 w-full sm:w-auto text-lg py-6"
+                className="px-10 w-full sm:w-auto text-lg py-6"
                 onClick={() => window.open('https://forms.gle/8rKm3xNz5tB9YdAk7', '_blank')}
               >
                 Apply as Provider

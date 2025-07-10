@@ -11,15 +11,15 @@ const SocialProofTeaser = () => {
   ];
 
   return (
-    <section className="section-spacing-compact section-bg-dark section-divider">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
           {/* Left side - Stats */}
           <div className="animate-fade-in-up">
-            <h2 className="heading-secondary mb-6 text-enhanced">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
               Built on Simple Principles
             </h2>
-            <p className="text-lg md:text-xl mb-8 font-semibold text-muted-enhanced mobile-text-readable">
+            <p className="text-lg md:text-xl mb-8 font-semibold text-gray-300">
               A new approach to home management that puts you back in control.
             </p>
             
@@ -49,7 +49,7 @@ const SocialProofTeaser = () => {
                 </div>
               </div>
               
-              <blockquote className="text-lg md:text-xl font-semibold text-white mb-6 mobile-text-readable">
+              <blockquote className="text-lg md:text-xl font-semibold text-white mb-6">
                 "Home management shouldn't feel like managing a business. It should feel like taking care of what matters most—your home, your family, and your peace of mind."
               </blockquote>
               

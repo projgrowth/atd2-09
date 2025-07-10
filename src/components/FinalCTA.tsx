@@ -38,22 +38,22 @@ const FinalCTA = () => {
 
   return (
     <div>
-    <section className="section-spacing-compact section-bg-primary section-separator relative overflow-hidden">
+    <section className="py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-transparent to-green-100/40"></div>
       <div className="absolute top-10 left-10 w-24 h-24 md:w-32 md:h-32 bg-[hsl(var(--atd-primary))]/15 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 md:w-40 md:h-40 bg-[hsl(var(--atd-accent))]/15 rounded-full blur-3xl"></div>
       
-      <div className="container-standard relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
           {/* Enhanced Text Content */}
           <div className="text-center lg:text-left animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-balance text-enhanced mobile-text-readable">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-balance text-gray-900">
               Take control of your home—
               <span className="text-[hsl(var(--atd-primary))] block mt-2">without the chaos.</span>
             </h2>
             
-            <p className="text-lg md:text-xl mb-8 md:mb-10 leading-relaxed font-semibold text-muted-enhanced mobile-text-readable">
+            <p className="text-lg md:text-xl mb-8 md:mb-10 leading-relaxed font-semibold text-gray-600">
               Join beta users who are already experiencing the calm of total home control.
             </p>
             
@@ -61,21 +61,21 @@ const FinalCTA = () => {
             <div className="flex flex-col space-y-2 md:space-y-3 mb-6 md:mb-8">
               <div className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-white/80 rounded-xl border border-gray-200">
                 <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--atd-accent))] flex-shrink-0" />
-                <span className="font-semibold text-enhanced text-sm md:text-base mobile-text-readable">Early access to all features</span>
+                <span className="font-semibold text-gray-900 text-sm md:text-base">Early access to all features</span>
               </div>
               <div className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-white/80 rounded-xl border border-gray-200">
                 <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--atd-accent))] flex-shrink-0" />
-                <span className="font-semibold text-enhanced text-sm md:text-base mobile-text-readable">Personal onboarding session</span>
+                <span className="font-semibold text-gray-900 text-sm md:text-base">Personal onboarding session</span>
               </div>
               <div className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-white/80 rounded-xl border border-gray-200">
                 <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--atd-accent))] flex-shrink-0" />
-                <span className="font-semibold text-enhanced text-sm md:text-base mobile-text-readable">Direct feedback line to our team</span>
+                <span className="font-semibold text-gray-900 text-sm md:text-base">Direct feedback line to our team</span>
               </div>
             </div>
             
             <Button 
               size="lg" 
-              className="premium-button py-4 md:py-6 text-lg md:text-xl font-bold mb-4 md:mb-6 w-full sm:w-auto"
+              className="py-4 md:py-6 text-lg md:text-xl font-bold mb-4 md:mb-6 w-full sm:w-auto"
               style={{ paddingLeft: '2rem', paddingRight: '3rem' }}
               onClick={() => window.open('https://forms.gle/YXvNQm7P8hW2KzGz9', '_blank')}
             >
@@ -83,7 +83,7 @@ const FinalCTA = () => {
               <ArrowRight className="ml-2 md:ml-3 h-5 w-5 md:h-6 md:w-6" />
             </Button>
             
-            <p className="text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
+            <p className="text-sm md:text-base font-semibold text-gray-600">
               Limited beta spots available. No credit card required.
             </p>
           </div>
@@ -145,13 +145,13 @@ const FinalCTA = () => {
     </section>
 
     {/* FAQ Section */}
-    <section className="section-spacing-compact section-bg-info section-separator">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
-          <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable">
+          <p className="text-lg md:text-xl font-semibold text-gray-600">
             Everything you need to know about All Things Done.
           </p>
         </div>
@@ -162,13 +162,13 @@ const FinalCTA = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="card-base border-2 hover:border-gray-200"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 border-2 hover:border-gray-200"
                 style={{ paddingLeft: '1.5rem', paddingRight: '2rem' }}
               >
-                <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 md:py-8 text-enhanced mobile-text-readable">
+                <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 md:py-8 text-gray-900">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="leading-relaxed pb-6 md:pb-8 text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
+                <AccordionContent className="leading-relaxed pb-6 md:pb-8 text-sm md:text-base font-semibold text-gray-600">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

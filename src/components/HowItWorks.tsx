@@ -30,13 +30,13 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="section-spacing-compact section-bg-interactive section-separator">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
-          <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900">
             How It Works
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced mobile-text-readable">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto font-semibold text-gray-600">
             Four simple steps to transform how you manage your home.
           </p>
         </div>
@@ -48,7 +48,7 @@ const HowItWorks = () => {
               className="relative group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="premium-card h-full">
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 h-full">
                 {/* Step Number */}
                 <div className="absolute -top-3 -left-3 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-elevated">
                   {step.number}
@@ -60,11 +60,11 @@ const HowItWorks = () => {
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-4 text-enhanced">
+                <h3 className="text-xl font-bold mb-4 text-gray-900">
                   {step.title}
                 </h3>
                 
-                <p className="text-sm leading-relaxed text-muted-enhanced">
+                <p className="text-sm leading-relaxed text-gray-600">
                   {step.description}
                 </p>
               </div>
