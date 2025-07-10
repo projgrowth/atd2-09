@@ -18,40 +18,40 @@ const SocialProof = () => {
 
       <div className="container-standard relative z-10">
         {/* Main Testimonial Carousel */}
-        <div className="mb-24">
+        <div className="mb-24 sm:mb-28 lg:mb-32">
           <TestimonialCarousel />
         </div>
 
         {/* Enhanced Trust Indicators */}
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="animate-fade-in-up feature-spacing" style={{ animationDelay: '0.3s' }}>
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block bg-accent/10 text-accent py-3 rounded-full text-sm font-bold mb-6 border border-accent/20" style={{ paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+          <div className="text-center section-header">
+            <div className="inline-block bg-accent/10 text-accent py-3 sm:py-4 px-6 sm:px-8 rounded-full text-sm sm:text-base font-bold mb-8 sm:mb-10 border border-accent/20">
               Trusted by Community
             </div>
             
-            <h3 className="heading-secondary mb-6">
+            <h3 className="heading-secondary mb-6 sm:mb-8">
               A New Vision for Home Management
             </h3>
             
-            <p className="text-xl max-w-2xl mx-auto font-semibold text-muted-enhanced">
+            <p className="text-xl sm:text-2xl max-w-2xl mx-auto font-semibold text-muted-enhanced leading-relaxed">
               Built for homeowners who want organization without losing control. Coming soon.
             </p>
           </div>
           
           {/* Vision Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid-premium-4 max-w-5xl mx-auto">
             {visionPoints.map((point, index) => (
               <div 
                 key={index}
                 className="group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="premium-card enhanced-card-hover p-8 text-center">
-                  <div className="text-4xl lg:text-5xl font-bold text-primary mb-4 group-hover:scale-105 transition-transform duration-300">
+                <div className="premium-card enhanced-card-hover card-padding-lg text-center min-h-[180px] sm:min-h-[200px] flex flex-col justify-center">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 group-hover:scale-105 transition-transform duration-300">
                     {point.number}
                   </div>
-                  <div className="text-caption font-body-bold uppercase tracking-wider text-muted-enhanced">
+                  <div className="text-sm sm:text-base font-bold uppercase tracking-wider text-muted-enhanced">
                     {point.label}
                   </div>
                 </div>
@@ -60,15 +60,15 @@ const SocialProof = () => {
           </div>
 
           {/* Development Status */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="premium-card enhanced-card-hover p-8 text-center">
-              <h4 className="heading-quaternary mb-4 text-enhanced">Currently in Development</h4>
-              <p className="text-body font-body-medium text-muted-enhanced mobile-text-readable mb-6">
+          <div className="mt-20 sm:mt-24 lg:mt-28 max-w-4xl mx-auto">
+            <div className="premium-card enhanced-card-hover card-padding-lg text-center">
+              <h4 className="heading-quaternary mb-6 sm:mb-8 text-enhanced">Currently in Development</h4>
+              <p className="text-lg sm:text-xl text-muted-enhanced mobile-text-readable mb-8 sm:mb-10 leading-relaxed">
                 We're building ATD to solve real problems that homeowners face every day. 
                 No fake promises, no inflated numbers—just honest development toward a better solution.
               </p>
-              <div className="bg-atd-primary/10 rounded-lg p-4">
-                <p className="text-sm font-semibold text-atd-primary">
+              <div className="bg-atd-primary/10 rounded-lg p-6 sm:p-8">
+                <p className="text-base sm:text-lg font-semibold text-atd-primary">
                   Join our early access list to be notified when we're ready for testing.
                 </p>
               </div>

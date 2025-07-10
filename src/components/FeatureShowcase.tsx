@@ -192,34 +192,34 @@ const FeatureShowcase = () => {
   return (
     <section className="section-spacing-compact section-bg-content section-separator">
       <div className="container-standard">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-[hsl(var(--atd-text))] mb-6">
+        <div className="text-center section-header animate-fade-in-up">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-enhanced mb-6 sm:mb-8">
             Everything You Need
           </h2>
-          <p className="text-xl text-[hsl(var(--atd-text-muted))] max-w-3xl mx-auto">
+          <p className="text-xl sm:text-2xl text-muted-enhanced max-w-3xl mx-auto leading-relaxed">
             Built for real homes, real people, and real peace of mind.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid-premium-2">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up"
+              className="group premium-card enhanced-card-hover card-padding-lg transition-all duration-500 animate-fade-in-up min-h-[400px] sm:min-h-[450px]"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="flex items-start space-x-6">
-                <div className="flex-shrink-0">
-                  <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/10 to-[hsl(var(--atd-accent))]/10 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="h-7 w-7 text-[hsl(var(--atd-primary))]" />
+              <div className="flex flex-col lg:flex-row lg:items-start space-y-6 lg:space-y-0 lg:space-x-8 h-full">
+                <div className="flex-shrink-0 text-center lg:text-left">
+                  <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
+                    <feature.icon className="h-8 w-8 sm:h-10 sm:w-10 text-[hsl(var(--atd-primary))]" />
                   </div>
                 </div>
                 
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-[hsl(var(--atd-text))] mb-3">
+                <div className="flex-1 text-center lg:text-left">
+                  <h3 className="text-xl sm:text-2xl font-bold text-enhanced mb-4 sm:mb-6">
                     {feature.title}
                   </h3>
-                  <p className="text-[hsl(var(--atd-text-muted))] mb-4 leading-relaxed">
+                  <p className="text-base sm:text-lg text-muted-enhanced mb-6 sm:mb-8 leading-relaxed">
                     {feature.description}
                   </p>
                   

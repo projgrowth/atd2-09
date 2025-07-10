@@ -117,6 +117,20 @@
   --spacing-section-md: 8rem;
   --spacing-section-lg: 10rem;
   --spacing-section-xl: 12rem;
+  
+  /* Premium Spacing Tiers */
+  --spacing-premium-xs: 0.75rem;   /* 12px */
+  --spacing-premium-sm: 1.25rem;   /* 20px */
+  --spacing-premium-md: 2rem;      /* 32px */
+  --spacing-premium-lg: 3rem;      /* 48px */
+  --spacing-premium-xl: 4rem;      /* 64px */
+  --spacing-premium-2xl: 6rem;     /* 96px */
+  
+  /* Responsive Grid Gaps */
+  --gap-mobile: 1rem;
+  --gap-tablet: 1.5rem;
+  --gap-desktop: 2rem;
+  --gap-premium: 3rem;
     
     /* Premium Visual Elements */
     --atd-border: hsl(var(--atd-neutral-200));
@@ -295,15 +309,51 @@
   
   /* Enhanced Card Padding System */
   .card-padding {
-    @apply p-3 sm:p-4 lg:p-6;
+    @apply p-4 sm:p-6 lg:p-8;
   }
   
   .card-padding-sm {
-    @apply p-2 sm:p-3 lg:p-4;
+    @apply p-3 sm:p-4 lg:p-6;
   }
   
   .card-padding-lg {
-    @apply p-4 sm:p-6 lg:p-8;
+    @apply p-6 sm:p-8 lg:p-10;
+  }
+  
+  .card-padding-xl {
+    @apply p-8 sm:p-10 lg:p-12;
+  }
+  
+  /* Premium Grid System */
+  .grid-premium-responsive {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10 xl:gap-12;
+  }
+  
+  .grid-premium-2 {
+    @apply grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12;
+  }
+  
+  .grid-premium-4 {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-10 xl:gap-12;
+  }
+  
+  /* Feature Card Spacing */
+  .feature-spacing {
+    @apply space-y-4 sm:space-y-6 md:space-y-8;
+  }
+  
+  /* Section Header Spacing */
+  .section-header {
+    @apply mb-12 sm:mb-16 lg:mb-20 xl:mb-24;
+  }
+  
+  /* Touch Target Optimization */
+  .touch-target {
+    @apply min-h-[48px] min-w-[48px];
+  }
+  
+  .touch-target-lg {
+    @apply min-h-[56px] min-w-[56px];
   }
   
   /* Section Background System */

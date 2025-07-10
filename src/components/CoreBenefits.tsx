@@ -169,39 +169,39 @@ const CoreBenefits = () => {
   return (
     <section className="section-spacing-compact section-bg-content section-separator">
       <div className="container-standard">
-        <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
-          <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
+        <div className="text-center section-header animate-fade-in-up">
+          <h2 className="heading-secondary mb-6 sm:mb-8 text-enhanced">
             Everything You Need to Take Control
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced mobile-text-readable">
+          <p className="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto font-semibold text-muted-enhanced mobile-text-readable leading-relaxed">
             Built for real homes, real people, and real peace of mind. Your trusted providers, organized effortlessly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid-premium-2">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
               className="group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
              >
-              <div className="premium-card enhanced-card-hover p-4 md:p-6 h-full min-h-[300px] md:min-h-[350px]">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-4 md:space-x-6 space-y-4 lg:space-y-0">
-                  <div className="flex-shrink-0">
-                    <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
-                      <benefit.icon className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-[hsl(var(--atd-primary))]" />
+              <div className="premium-card enhanced-card-hover card-padding-lg h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[500px]">
+                <div className="flex flex-col lg:flex-row lg:items-start space-y-6 lg:space-y-0 lg:space-x-8 h-full">
+                  <div className="flex-shrink-0 text-center lg:text-left">
+                    <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0 shadow-subtle">
+                      <benefit.icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-[hsl(var(--atd-primary))]" />
                     </div>
                   </div>
                   
                   <div className="flex-1 text-center lg:text-left">
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-enhanced">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-enhanced leading-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-sm md:text-base lg:text-lg leading-relaxed font-semibold text-muted-enhanced mobile-text-readable mb-4 md:mb-6">
+                    <p className="text-base sm:text-lg lg:text-xl leading-relaxed font-semibold text-muted-enhanced mobile-text-readable mb-6 sm:mb-8">
                       {benefit.description}
                     </p>
                     
-                    <div className="transform group-hover:scale-105 transition-transform duration-300">
+                    <div className="transform group-hover:scale-105 transition-transform duration-300 will-change-transform">
                       {benefit.mockup}
                     </div>
                   </div>

@@ -91,29 +91,31 @@ const JoinBeta = () => {
       {/* Beta Benefits */}
       <section className="section-spacing section-bg-content">
         <div className="container-standard">
-          <div className="text-center mb-12">
-            <h2 className="heading-secondary mb-6 text-enhanced">
+          <div className="text-center section-header">
+            <h2 className="heading-secondary mb-8 sm:mb-10 text-enhanced">
               Why Join the Beta?
             </h2>
           </div>
 
-          <div className="grid-responsive-2 gap-6 mb-12">
+          <div className="grid-premium-2 mb-16 sm:mb-20">
             {betaBenefits.map((benefit, index) => (
               <div 
                 key={index}
                 className="animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="premium-card enhanced-card-hover p-6 h-full">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="h-6 w-6 text-[hsl(var(--atd-primary))]" />
+                <div className="premium-card enhanced-card-hover card-padding-lg h-full min-h-[200px] sm:min-h-[220px]">
+                  <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 h-full">
+                    <div className="flex-shrink-0 text-center sm:text-left">
+                      <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 sm:w-18 sm:h-18 rounded-2xl flex items-center justify-center mx-auto sm:mx-0 shadow-subtle">
+                        <benefit.icon className="h-8 w-8 sm:h-9 sm:w-9 text-[hsl(var(--atd-primary))]" />
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-3 text-enhanced">
+                    <div className="flex-1 text-center sm:text-left">
+                      <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 text-enhanced leading-tight">
                         {benefit.title}
                       </h3>
-                      <p className="text-sm font-semibold text-muted-enhanced mobile-text-readable">
+                      <p className="text-base sm:text-lg font-semibold text-muted-enhanced mobile-text-readable leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
@@ -124,12 +126,12 @@ const JoinBeta = () => {
           </div>
 
           {/* Risk Reversal */}
-          <div className="premium-card-elevated p-8 text-center">
-            <Shield className="h-12 w-12 text-atd-success mx-auto mb-4" />
-            <h3 className="heading-tertiary mb-4 text-enhanced">
+          <div className="premium-card-elevated card-padding-xl text-center">
+            <Shield className="h-16 w-16 sm:h-20 sm:w-20 text-atd-success mx-auto mb-6 sm:mb-8" />
+            <h3 className="heading-tertiary mb-6 sm:mb-8 text-enhanced">
               Zero Risk, Maximum Reward
             </h3>
-            <p className="text-body-large text-muted-enhanced mobile-text-readable">
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-enhanced mobile-text-readable leading-relaxed max-w-3xl mx-auto">
               Free beta access, personal onboarding, and grandfathered pricing. 
               If you're not completely satisfied in 30 days, we'll help you transition back to your old system.
             </p>
@@ -201,27 +203,27 @@ const JoinBeta = () => {
             </h2>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="feature-spacing">
             {finalFAQs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="premium-card enhanced-card-hover"
-                style={{ paddingLeft: '1.5rem', paddingRight: '2rem' }}
+                className="premium-card enhanced-card-hover card-padding-lg"
               >
-                <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-primary py-6 text-enhanced mobile-text-readable">
+                <AccordionTrigger className="text-left font-bold text-lg sm:text-xl hover:text-primary py-4 sm:py-6 text-enhanced mobile-text-readable leading-tight">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="leading-relaxed pb-6 text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
+                <AccordionContent className="leading-relaxed pb-6 sm:pb-8 text-base sm:text-lg font-semibold text-muted-enhanced mobile-text-readable">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16 sm:mt-20">
             <Button 
               size="lg" 
+              className="touch-target-lg"
               asChild
             >
               <Link to="/signup">
