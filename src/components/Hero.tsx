@@ -35,7 +35,7 @@ const Hero = () => {
 
       <div className="container-standard relative z-10">
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center transition-all duration-300">
           {/* Left side - Text content (50%) */}
           <div className="text-center lg:text-left">
             {/* Problem Statement */}
@@ -72,7 +72,7 @@ const Hero = () => {
 
           {/* Right side - Interactive Showcase (50%) */}
           <div className="flex flex-col items-center lg:items-end">
-            <div className="w-full space-y-2">
+            <div className="w-full space-y-4 sm:space-y-6">
               {/* View Toggle */}
               <HeroToggle 
                 viewType={viewType}

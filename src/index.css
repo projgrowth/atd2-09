@@ -218,13 +218,13 @@
     border: 1px solid var(--card-border);
     border-radius: var(--card-radius);
     box-shadow: var(--shadow-subtle);
-    transition: all 0.2s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     @apply card-padding;
   }
   
   .premium-card:hover {
     box-shadow: var(--shadow-medium);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
   
   .premium-card-elevated {
@@ -596,7 +596,25 @@
   
   /* Mobile Touch Targets */
   .touch-target {
-    @apply min-h-[44px] min-w-[44px];
+    @apply min-h-[48px] min-w-[48px];
+  }
+  
+  /* Enhanced Grid System with Better Gaps */
+  .grid-airy {
+    @apply grid gap-6 sm:gap-8 lg:gap-10;
+  }
+  
+  .grid-airy-compact {
+    @apply grid gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  /* Smooth Transitions for Layout Shifts */
+  .transition-layout {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-layout-fast {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

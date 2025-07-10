@@ -47,18 +47,17 @@ const FAQ = () => {
         </div>
 
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <Accordion type="single" collapsible className="space-y-4 md:space-y-6">
+          <Accordion type="single" collapsible className="space-y-6 sm:space-y-8">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="card-base border-2 hover:border-gray-200"
-                style={{ paddingLeft: '1.5rem', paddingRight: '2rem' }}
+                className="premium-card border-2 hover:border-atd-primary/20 transition-all duration-300 hover:shadow-medium"
               >
-                <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-[hsl(var(--atd-primary))] py-6 md:py-8 text-enhanced mobile-text-readable">
+                <AccordionTrigger className="text-left font-bold text-base sm:text-lg lg:text-xl hover:text-[hsl(var(--atd-primary))] py-6 sm:py-8 px-6 sm:px-8 text-enhanced mobile-text-readable transition-colors duration-200">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="leading-relaxed pb-6 md:pb-8 text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
+                <AccordionContent className="leading-relaxed pb-6 sm:pb-8 px-6 sm:px-8 text-sm sm:text-base lg:text-lg font-semibold text-muted-enhanced mobile-text-readable">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

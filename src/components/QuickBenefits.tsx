@@ -36,22 +36,22 @@ const QuickBenefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="text-center group animate-fade-in-up"
+              className="text-center group animate-fade-in-up p-4 sm:p-6 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="h-10 w-10 md:h-12 md:w-12 text-[hsl(var(--atd-primary))]" />
+              <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 mx-auto group-hover:scale-110 transition-all duration-300 shadow-subtle">
+                <benefit.icon className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-[hsl(var(--atd-primary))]" />
               </div>
               
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-enhanced">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-enhanced">
                 {benefit.title}
               </h3>
               
-              <p className="leading-relaxed text-sm md:text-base font-semibold text-muted-enhanced mobile-text-readable">
+              <p className="leading-relaxed text-sm sm:text-base lg:text-lg font-semibold text-muted-enhanced mobile-text-readable">
                 {benefit.description}
               </p>
             </div>
