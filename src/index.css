@@ -462,27 +462,7 @@
     color: hsl(var(--atd-text-enhanced));
   }
   
-  /* Body text scale */
-  .text-body-lg {
-    @apply text-lg sm:text-xl;
-    font-weight: 500;
-    line-height: 1.6;
-    color: hsl(var(--atd-text-enhanced));
-  }
-  
-  .text-body {
-    @apply text-base sm:text-lg;
-    font-weight: 400;
-    line-height: 1.6;
-    color: hsl(var(--atd-text-enhanced));
-  }
-  
-  .text-body-sm {
-    @apply text-sm sm:text-base;
-    font-weight: 400;
-    line-height: 1.5;
-    color: hsl(var(--atd-text-muted-enhanced));
-  }
+  /* Clean typography - use native Tailwind utilities */
   
   /* ===== UTILITIES & INTERACTIONS ===== */
   

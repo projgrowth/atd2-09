@@ -173,7 +173,7 @@ const CoreBenefits = () => {
           <h2 className="heading-2 mb-6 text-enhanced">
             Everything You Need to Take Control
           </h2>
-          <p className="text-body-lg max-w-3xl mx-auto font-semibold text-muted-enhanced leading-relaxed">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-enhanced leading-relaxed">
             Built for real homes, real people, and real peace of mind. Your trusted providers, organized effortlessly.
           </p>
         </div>
@@ -197,7 +197,7 @@ const CoreBenefits = () => {
                     <h3 className="heading-3 mb-4 text-enhanced leading-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-body leading-relaxed font-semibold text-muted-enhanced mb-6">
+                    <p className="text-base md:text-lg leading-relaxed text-muted-enhanced mb-6">
                       {benefit.description}
                     </p>
                     

@@ -53,7 +53,7 @@ const Hero = () => {
             </h1>
 
             {/* Static Subheadline */}
-            <p className="text-body-lg max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8 animate-fade-in-up leading-relaxed"
+            <p className="text-lg md:text-xl max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8 animate-fade-in-up leading-relaxed text-muted-enhanced"
                style={{ animationDelay: '0.15s' }}>
               {heroContent.description}
             </p>
