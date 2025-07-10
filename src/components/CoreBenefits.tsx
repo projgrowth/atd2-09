@@ -167,25 +167,25 @@ const CoreBenefits = () => {
   ];
 
   return (
-    <section className="section-spacing-compact section-bg-content section-separator">
-      <div className="container-standard">
-        <div className="text-center section-header animate-fade-in-up">
-          <h2 className="heading-secondary mb-6 sm:mb-8 text-enhanced">
+    <section className="section section-bg-content section-separator">
+      <div className="container-app">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="heading-2 mb-6 text-enhanced">
             Everything You Need to Take Control
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto font-semibold text-muted-enhanced mobile-text-readable leading-relaxed">
+          <p className="text-lg max-w-3xl mx-auto font-semibold text-muted-enhanced leading-relaxed">
             Built for real homes, real people, and real peace of mind. Your trusted providers, organized effortlessly.
           </p>
         </div>
 
-        <div className="grid-premium-2">
+        <div className="grid-2">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
               className="group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
              >
-              <div className="premium-card enhanced-card-hover card-padding-lg h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[500px]">
+              <div className="card hover-lift h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[500px]">
                 <div className="flex flex-col lg:flex-row lg:items-start space-y-6 lg:space-y-0 lg:space-x-8 h-full">
                   <div className="flex-shrink-0 text-center lg:text-left">
                     <div className="bg-gradient-to-br from-[hsl(var(--atd-primary))]/15 to-[hsl(var(--atd-accent))]/15 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0 shadow-subtle">
@@ -194,10 +194,10 @@ const CoreBenefits = () => {
                   </div>
                   
                   <div className="flex-1 text-center lg:text-left">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-enhanced leading-tight">
+                    <h3 className="heading-3 mb-4 text-enhanced leading-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-base sm:text-lg lg:text-xl leading-relaxed font-semibold text-muted-enhanced mobile-text-readable mb-6 sm:mb-8">
+                    <p className="text-base leading-relaxed font-semibold text-muted-enhanced mb-6">
                       {benefit.description}
                     </p>
                     

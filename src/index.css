@@ -215,7 +215,7 @@
     border-radius: var(--card-radius);
     box-shadow: var(--shadow-subtle);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    @apply card-padding;
+    padding: var(--space-6);
   }
   
   .premium-card:hover {

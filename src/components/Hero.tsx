@@ -33,9 +33,9 @@ const Hero = () => {
       {/* Clean, minimal background */}
       <div className="absolute inset-0 bg-gradient-to-br from-atd-surface-secondary/30 via-atd-surface/10 to-atd-surface-muted/20"></div>
 
-      <div className="container-standard relative z-10">
+      <div className="container-app relative z-10">
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-center transition-all duration-300">
+        <div className="grid-2 items-center transition-smooth">
           {/* Left side - Text content (50%) */}
           <div className="text-center lg:text-left">
             {/* Problem Statement */}
@@ -46,14 +46,14 @@ const Hero = () => {
             </div>
 
             {/* Static Headlines */}
-            <h1 className="heading-primary animate-fade-in-up leading-tight mb-4 sm:mb-5 md:mb-6"
+            <h1 className="heading-1 animate-fade-in-up leading-tight mb-4 sm:mb-5 md:mb-6"
                 style={{ animationDelay: '0.05s' }}>
               {heroContent.headline}
               <span className="text-gradient block mt-1 sm:mt-1.5 md:mt-2">{heroContent.subHeadline}</span>
             </h1>
 
             {/* Static Subheadline */}
-            <p className="text-body-large max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8 animate-fade-in-up leading-relaxed"
+            <p className="text-lg max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8 animate-fade-in-up leading-relaxed"
                style={{ animationDelay: '0.15s' }}>
               {heroContent.description}
             </p>
@@ -85,7 +85,7 @@ const Hero = () => {
                 "animate-fade-in-up transition-all duration-500 will-change-transform",
                 isTransitioning && "opacity-70 scale-95"
               )} style={{ animationDelay: '0.4s' }}>
-                <div className="premium-card-elevated rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[360px]">
+                <div className="card rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[360px] shadow-elevated">
                   {currentView.content}
                 </div>
               </div>
