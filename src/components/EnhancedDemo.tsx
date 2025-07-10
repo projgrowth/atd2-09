@@ -51,24 +51,24 @@ const EnhancedDemo = () => {
   const currentContent = currentDemo[viewType];
 
   return (
-    <section className="section-spacing-compact section-bg-elevated section-divider" id="enhanced-demo">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-white border-t border-gray-200" id="enhanced-demo">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <div className="inline-flex items-center bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold mb-6 border border-primary/20">
             <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></div>
             Interactive Demo Experience
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-enhanced">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             See ATD From Every Angle
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-semibold text-muted-enhanced mb-8">
+          <p className="text-xl max-w-3xl mx-auto font-semibold text-gray-600 mb-8">
             Switch between homeowner and provider views to experience how ATD transforms home management for everyone.
           </p>
           
           {/* View Toggle */}
           <div className="flex justify-center items-center space-x-4 mb-8">
-            <span className="text-sm font-medium text-muted-enhanced">View as:</span>
+            <span className="text-sm font-medium text-gray-600">View as:</span>
             <Button
               onClick={handleViewChange}
               disabled={isTransitioning}
@@ -107,7 +107,7 @@ const EnhancedDemo = () => {
           <div className="order-2 lg:order-1 space-y-6">
             {/* Current Step Info */}
             <div className={cn(
-              "premium-card p-8 transition-all duration-500",
+              "bg-white rounded-xl shadow-sm border border-gray-200 p-8 transition-all duration-500",
               isTransitioning && "opacity-50 scale-95"
             )}>
               <div className="flex items-start justify-between mb-6">
@@ -129,10 +129,10 @@ const EnhancedDemo = () => {
                         {viewType === 'homeowner' ? 'Homeowner View' : 'Provider View'}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-bold text-enhanced mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       {currentContent.title}
                     </h3>
-                    <p className="text-muted-enhanced font-medium">
+                    <p className="text-gray-600 font-medium">
                       {currentContent.description}
                     </p>
                   </div>
@@ -148,7 +148,7 @@ const EnhancedDemo = () => {
                   {currentContent.features.map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <ChevronRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-enhanced leading-relaxed">{feature}</span>
+                      <span className="text-sm text-gray-700 leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -158,7 +158,7 @@ const EnhancedDemo = () => {
               <div className="border-t border-border pt-4">
                 <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-4 border border-primary/10">
                   <h5 className="text-sm font-bold text-primary mb-2">Real-World Impact</h5>
-                  <p className="text-sm text-enhanced leading-relaxed">
+                  <p className="text-sm text-gray-700 leading-relaxed">
                     {currentContent.impact}
                   </p>
                 </div>
@@ -166,8 +166,8 @@ const EnhancedDemo = () => {
             </div>
 
             {/* Progress Overview */}
-            <div className="premium-card p-6">
-              <h4 className="text-lg font-bold text-enhanced mb-4">Your Progress</h4>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <h4 className="text-lg font-bold text-gray-900 mb-4">Your Progress</h4>
               <div className="grid grid-cols-2 gap-3">
                 {enhancedDemoSteps.map((step, index) => (
                   <button
@@ -264,11 +264,11 @@ const EnhancedDemo = () => {
 
         {/* Bottom CTA */}
         <div className="text-center animate-fade-in-up">
-          <div className="premium-card p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4 text-enhanced">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">
               Experience Both Perspectives
             </h3>
-            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-muted-enhanced">
+            <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold text-gray-600">
               This demo showcases how ATD creates value for both homeowners and service providers. Join our beta to experience the full platform.
             </p>
             

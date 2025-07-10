@@ -190,22 +190,22 @@ const FeatureShowcase = () => {
   ];
 
   return (
-    <section className="section-spacing-compact section-bg-content section-separator">
-      <div className="container-standard">
-        <div className="text-center section-header animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-enhanced mb-6 sm:mb-8">
+    <section className="py-16 lg:py-20 bg-gray-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
             Everything You Need
           </h2>
-          <p className="text-xl sm:text-2xl text-muted-enhanced max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Built for real homes, real people, and real peace of mind.
           </p>
         </div>
 
-        <div className="grid-premium-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group premium-card enhanced-card-hover card-padding-lg transition-all duration-500 animate-fade-in-up min-h-[400px] sm:min-h-[450px]"
+              className="group bg-white rounded-xl shadow-sm border border-gray-200 p-8 transition-all duration-500 animate-fade-in-up min-h-[400px] sm:min-h-[450px] hover:shadow-lg"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex flex-col lg:flex-row lg:items-start space-y-6 lg:space-y-0 lg:space-x-8 h-full">
@@ -216,10 +216,10 @@ const FeatureShowcase = () => {
                 </div>
                 
                 <div className="flex-1 text-center lg:text-left">
-                  <h3 className="text-xl sm:text-2xl font-bold text-enhanced mb-4 sm:mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                     {feature.title}
                   </h3>
-                  <p className="text-base sm:text-lg text-muted-enhanced mb-6 sm:mb-8 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                     {feature.description}
                   </p>
                   

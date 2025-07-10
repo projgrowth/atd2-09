@@ -35,13 +35,13 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section-spacing-compact section-bg-info section-separator">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-blue-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 animate-fade-in-up">
-          <h2 className="heading-secondary mb-4 md:mb-6 text-enhanced">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-900">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg md:text-xl font-semibold text-muted-enhanced mobile-text-readable">
+          <p className="text-lg md:text-xl font-semibold text-gray-600">
             Everything you need to know about All Things Done.
           </p>
         </div>
@@ -52,12 +52,12 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="premium-card border-2 hover:border-atd-primary/20 transition-all duration-300 hover:shadow-medium"
+                className="bg-white rounded-xl border-2 border-gray-200 hover:border-atd-primary/20 transition-all duration-300 hover:shadow-lg"
               >
-                <AccordionTrigger className="text-left font-bold text-base sm:text-lg lg:text-xl hover:text-[hsl(var(--atd-primary))] py-6 sm:py-8 px-6 sm:px-8 text-enhanced mobile-text-readable transition-colors duration-200">
+                <AccordionTrigger className="text-left font-bold text-base sm:text-lg lg:text-xl hover:text-[hsl(var(--atd-primary))] py-6 sm:py-8 px-6 sm:px-8 text-gray-900 transition-colors duration-200">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="leading-relaxed pb-6 sm:pb-8 px-6 sm:px-8 text-sm sm:text-base lg:text-lg font-semibold text-muted-enhanced mobile-text-readable">
+                <AccordionContent className="leading-relaxed pb-6 sm:pb-8 px-6 sm:px-8 text-sm sm:text-base lg:text-lg font-semibold text-gray-600">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

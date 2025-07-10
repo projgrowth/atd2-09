@@ -50,14 +50,14 @@ const ProblemSolution = () => {
   ];
 
   return (
-    <section className="section-spacing-compact section-bg-content">
-      <div className="container-standard">
+    <section className="py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="heading-secondary mb-6 text-enhanced">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Home Management Challenges
           </h2>
-          <p className="text-body-large mobile-text-readable">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
             Most homeowners struggle with the same frustrating problems. Here's how ATD solves each one.
           </p>
         </div>
@@ -68,7 +68,7 @@ const ProblemSolution = () => {
             <div 
               key={index}
               className={cn(
-                "premium-card enhanced-card-hover group relative overflow-hidden cursor-pointer transition-all duration-500",
+                "bg-white rounded-xl shadow-sm border border-gray-200 p-6 group relative overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-lg",
                 "animate-fade-in-up",
                 expandedCard === index && "md:col-span-2 scale-[1.02]"
               )}
@@ -96,17 +96,17 @@ const ProblemSolution = () => {
                       <challenge.icon className={cn("h-8 w-8 md:h-10 md:w-10", challenge.iconColor)} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="heading-quaternary text-enhanced mb-2">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2">
                         {challenge.problem}
                       </h3>
-                      <p className="text-body leading-relaxed">
+                      <p className="text-base text-gray-600 leading-relaxed">
                         {challenge.description}
                       </p>
                     </div>
                   </div>
                   
                   {/* Stats Badge */}
-                  <div className="text-caption bg-background/80 backdrop-blur-sm border border-border rounded-full px-3 py-1 font-heading text-primary">
+                  <div className="text-sm bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-3 py-1 font-semibold text-primary">
                     {challenge.stats}
                   </div>
                 </div>
@@ -125,14 +125,14 @@ const ProblemSolution = () => {
                 
                 {/* Solution */}
                 <div className={cn(
-                  "premium-card transition-all duration-300",
+                  "bg-gray-50 rounded-lg border border-gray-200 p-4 transition-all duration-300",
                   hoveredCard === index && "bg-primary/5 border-primary/20"
                 )}>
                   <div className="flex items-start space-x-3 mb-4">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-heading text-primary mb-2">ATD Solution</h4>
-                      <p className="text-body leading-relaxed">
+                      <h4 className="font-bold text-primary mb-2">ATD Solution</h4>
+                      <p className="text-base text-gray-600 leading-relaxed">
                         {challenge.solution}
                       </p>
                     </div>
@@ -140,12 +140,12 @@ const ProblemSolution = () => {
                   
                   {/* Benefit Highlight */}
                   <div className={cn(
-                    "border-t border-border/50 pt-4 transition-all duration-300",
+                    "border-t border-gray-200 pt-4 transition-all duration-300",
                     hoveredCard === index && "border-primary/20"
                   )}>
                     <div className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                      <span className="text-body-small font-body-bold text-accent">
+                      <span className="text-sm font-bold text-accent">
                         {challenge.benefit}
                       </span>
                     </div>
@@ -172,10 +172,10 @@ const ProblemSolution = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <h3 className="heading-tertiary mb-6 text-enhanced">
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
             Ready to See ATD in Action?
           </h3>
-          <p className="text-body-large mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-600">
             Watch how ATD transforms each of these pain points into organized, efficient home management.
           </p>
         </div>
